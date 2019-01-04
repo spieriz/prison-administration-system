@@ -1,0 +1,32 @@
+footer {
+    position: absolute;
+    bottom: 8px;
+}
+
+.president_menu input {
+    border-left: 0;
+    border-right: 0;
+
+    cursor: pointer;
+
+    color: white;
+    font-size: 24px;
+}
+
+.president_menu input:hover {
+    color: #fffddf;
+}
+
+.president_menu_option {
+    padding: 24px 0;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#content {
+    height: 40%;
+    vertical-align: middle;
+}
+
