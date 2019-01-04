@@ -16,13 +16,20 @@
     </div>
 </header>
 
-<div id="content" class="d-block my-5 h-50">
+<div id="page_title" class="d-block w-100 text-center">
+    <h2>Lista pracowników</h2>
+</div>
+
+<div id="content" class="d-block my-4 h-50">
     <div id="main_container" class="h-100">
         <div class="blur_bg col-lg-8 col-md-10 col-sm-12 col-12 m-auto"></div>
         <div class="table_container big_window h-100 col-lg-8 col-md-10 col-sm-12 col-12 m-auto">
-            <table class="w-100">
+            <table id="table_employees" class="w-100">
                 <thead>
                     <tr>
+                        <th>
+                            ID
+                        </th>
                         <th>
                             Imię i nazwisko
                         </th>
@@ -47,28 +54,63 @@
                 {for $i = 0; $i < 30; $i++}
                     <tr>
                         <td>
-                            Maciej Adamczewski
+                            <span class="employee_info">{$i}</span>
                         </td>
                         <td>
-                            94531245205
+                            <span class="employee_info">Maciej Adamczewski</span>
                         </td>
                         <td>
-                            Barycka 12/3, 42-750 Opole
+                            <span class="employee_info">94531245205</span>
                         </td>
                         <td>
-                            Strażnik
+                            <span class="employee_info">Barycka 12/3, 42-750 Opole</span>
                         </td>
                         <td>
-                            4250,24zł
+                            <span class="employee_info">Strażnik</span>
                         </td>
                         <td>
-                            [X], [M]
+                            <span class="employee_info">4250,24zł</span>
+                        </td>
+                        <td>
+                            <form action="javascript:modifyEmployeeData({$i});" method="post" class="d-inline-block">
+                                <input type="image" src="./styles/images/icons/edit.png" width="12px" alt="Edytuj dane pracownika">
+                            </form>
+                            <form action="#" method="post" class="d-inline-block" style="margin-left: 16px;">
+                                <input type="hidden" name="employee_id" value="{$i}">
+                                <input type="image" src="./styles/images/icons/delete.png" width="12px" alt="Zwolnij pracownika">
+                            </form>
                         </td>
                     </tr>
                 {/for}
+                <tr>
+                    <td>
+                        <form name="employee_form">+</form>
+                    </td>
+                    <td>
+                        <input form="employee_form" name="name_surname" type="text" class="input_text" placeholder="Imię i nazwisko">
+                    </td>
+                    <td>
+                        <input form="employee_form" name="pesel" type="text" class="input_text" placeholder="Pesel">
+                    </td>
+                    <td>
+                        <input form="employee_form" name="address" type="text" class="input_text" placeholder="Adres">
+                    </td>
+                    <td>
+                        <input form="employee_form" name="role" type="text" class="input_text" placeholder="Rola">
+                    </td>
+                    <td>
+                        <input form="employee_form" name="salary" type="text" class="input_text" placeholder="Pensja">
+                    </td>
+                    <td>
+                        <input form="employee_form" name="send" type="submit" class="input_submit" value="Dodaj">
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+    <div id="return_container" class="my-2">
+        <span>Powrót</span>
     </div>
 </div>
 
@@ -76,14 +118,5 @@
     <span class="w-100 text-center d-table-cell">Created by Paweł Ledwig, 2019</span>
 </footer>
 </body>
-<script>
-    $(function() {
-        $(".table_container").niceScroll({
-            cursorcolor:	"rgba(25, 44, 69, 0.5)",
-            cursorwidth:	"4px",
-            cursorborder: 	"1px solid rgba(0, 0, 0, 0.5)",
-            cursorborderradius: "4px"
-        });
-    });
-</script>
+<script type="text/javascript" src="./scripts/president.employees.js"></script>
 </html>
