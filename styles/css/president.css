@@ -36,6 +36,13 @@ input {
 
 .input_id {
     width: 24px;
+
+    margin: auto;
+
+    background: transparent;
+    border: none;
+
+    color: #b4b4b4;
 }
 
 .input_text {
@@ -81,4 +88,8 @@ input {
 .input_submit:hover {
     background: #d2a61f;
     color: #1d294c;
+}
+
+.selectric-items-over {
+    bottom: 100% !important;
 }
