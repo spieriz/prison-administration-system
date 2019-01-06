@@ -23,8 +23,9 @@
             <form class="d-inline" action="#" method="post">
                 <input type="submit" value="Więźniowie" class="small_window president_menu_option d-inline-block col-xl-2 col-lg-3 col-md-3 col-sm-3 mx-xl-5 mx-lg-3 mx-md-2 mx-sm-1">
             </form>
-            <form class="d-inline" action="#" method="post">
+            <form class="d-inline" action="president.php" method="post">
                 <input type="submit" value="Pracownicy" class="small_window president_menu_option d-inline-block col-xl-2 col-lg-3 col-md-3 col-sm-3 mx-xl-5 mx-lg-3 mx-md-2 mx-sm-1">
+                <input type="hidden" name="page" value="presidentEmployees">
             </form>
             <form class="d-inline" action="#" method="post">
                 <input type="submit" value="Statystyki" class="small_window president_menu_option d-inline-block col-xl-2 col-lg-3 col-md-3 col-sm-3 mx-xl-5 mx-lg-3 mx-md-2 mx-sm-1">

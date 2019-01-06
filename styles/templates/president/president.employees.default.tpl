@@ -1,5 +1,7 @@
 {include file="main.header.tpl"}
     <link rel="stylesheet" type="text/css" href="./styles/css/president.css">
+    <link rel="stylesheet" type="text/css" href="./styles/css/selectric.css">
+    <link rel="stylesheet" type="text/css" href="./styles/css/selectric_over.css">
 </head>
 
 <body class="h-100">
@@ -75,7 +77,7 @@
                             <form action="javascript:modifyEmployeeData({$i});" method="post" class="d-inline-block">
                                 <input type="image" src="./styles/images/icons/edit.png" width="12px" alt="Edytuj dane pracownika">
                             </form>
-                            <form action="#" method="post" class="d-inline-block" style="margin-left: 16px;">
+                            <form action="president.php" method="post" class="d-inline-block" style="margin-left: 16px;">
                                 <input type="hidden" name="employee_id" value="{$i}">
                                 <input type="image" src="./styles/images/icons/delete.png" width="12px" alt="Zwolnij pracownika">
                             </form>
@@ -84,25 +86,29 @@
                 {/for}
                 <tr>
                     <td>
-                        <form name="employee_form">+</form>
+                        <form id="employee_add" action="president.php" method="post">+</form>
+                        <input form="employee_add" type="hidden" name="page" value="presidentEmployees">
                     </td>
                     <td>
-                        <input form="employee_form" name="name_surname" type="text" class="input_text" placeholder="Imię i nazwisko">
+                        <input form="employee_add" name="name_surname" type="text" class="input_text text-center" placeholder="Imię i nazwisko">
                     </td>
                     <td>
-                        <input form="employee_form" name="pesel" type="text" class="input_text" placeholder="Pesel">
+                        <input form="employee_add" name="pesel" type="text" class="input_text text-center" placeholder="Pesel">
                     </td>
                     <td>
-                        <input form="employee_form" name="address" type="text" class="input_text" placeholder="Adres">
+                        <input form="employee_add" name="address" type="text" class="input_text text-center" placeholder="Adres">
                     </td>
                     <td>
-                        <input form="employee_form" name="role" type="text" class="input_text" placeholder="Rola">
+                        <select form="employee_add" class="role_select_add" name="uni">
+                            <option value="guard" selected="selected" class="text-center">Strażnik</option>
+                            <option value="duty_officer" class="text-center">Dyżurny</option>
+                        </select>
                     </td>
                     <td>
-                        <input form="employee_form" name="salary" type="text" class="input_text" placeholder="Pensja">
+                        <input form="employee_add" name="salary" type="text" class="input_text text-center" placeholder="Pensja">
                     </td>
                     <td>
-                        <input form="employee_form" name="send" type="submit" class="input_submit" value="Dodaj">
+                        <input form="employee_add" name="send" type="submit" class="input_submit" value="Dodaj">
                     </td>
                 </tr>
                 </tbody>
@@ -110,7 +116,7 @@
         </div>
     </div>
     <div id="return_container" class="my-2">
-        <span>Powrót</span>
+        <a href="president.php"><span>Powrót</span></a>
     </div>
 </div>
 
@@ -119,4 +125,5 @@
 </footer>
 </body>
 <script type="text/javascript" src="./scripts/president.employees.js"></script>
+<script type="text/javascript" src="./scripts/jquery.selectric.min.js"></script>
 </html>

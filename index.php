@@ -11,6 +11,18 @@ require_once ('./includes/common.php');
 
 require('./includes/pages/ShowLoginPage.php');
 
+$user = NULL;
+
+if (isset($_POST['user'])){
+    $user = $_POST['user'];
+}
+
+if (!is_null($user)){
+    $path = require($user . '.php');
+    header("Location: " . $path);
+    die();
+}
+
 $pageObj	= new ShowLoginPage();
 
 $pageObj->show();

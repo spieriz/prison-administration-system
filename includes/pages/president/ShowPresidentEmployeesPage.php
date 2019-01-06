@@ -7,9 +7,9 @@
  * Time: 20:54
  */
 
-require ('AbstractPage.php');
+require_once './includes/pages/AbstractPage.php';
 
-class ShowLoginPage extends AbstractPage
+class ShowPresidentEmployeesPage extends AbstractPage
 {
     function __construct()
     {
@@ -17,6 +17,6 @@ class ShowLoginPage extends AbstractPage
     }
 
     public function show(){
-        $this->display('login.tpl');
+        $this->display('president/president.employees.default.tpl');
     }
 }

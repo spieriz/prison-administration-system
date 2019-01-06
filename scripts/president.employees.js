@@ -7,6 +7,18 @@ $(function() {
     });
 });
 
+$(function() {
+    $('.role_select_add').selectric({
+        customClass: {
+            prefix: 'selectric_over'
+        }
+    });
+});
+
+$(function() {
+    $('.role_select_modify').selectric();
+});
+
 function modifyEmployeeData(id){
     $('#table_employees tbody tr').each(function(){
         let tableLastTd = $(this).find('td').last();
@@ -21,7 +33,7 @@ function modifyEmployeeData(id){
                 // create input
                 let $input = $("<input>", {
                     val: tableData[i].innerHTML,
-                    form: 'employee_add',
+                    form: 'employee_modify_' + id,
                     name: getInputName(i),
                     type: getInputType(i),
                     class: getInputClass(i)
@@ -32,12 +44,45 @@ function modifyEmployeeData(id){
                     $($input).attr('disabled', 'disabled');
 
                     let $form = $("<form>", {
-                        name: 'employee_add',
-                        action: '#',
+                        id: 'employee_modify_' + id,
+                        action: 'president.php',
                         method: 'post'
                     });
+
+                    let $input_page = $("<input>", {
+                        val: 'presidentEmployees',
+                        form: 'employee_modify_' + id,
+                        name: 'page',
+                        type: 'hidden'
+                    });
+
                     $(tableData[i]).replaceWith($form);
                     $form.append($input);
+                    $form.append($input_page);
+                } else if (i === 4){
+                    let $select = $("<select>", {
+                            form: 'employee_modify_' + id,
+                            class: 'role_select_modify',
+                            name: 'uni'
+                        });
+
+                    let $option_1 = $("<option>", {
+                            val: 'guard',
+                            class: 'text-center'
+                        });
+                    $option_1.append('Strażnik');
+
+                    let $option_2 = $("<option>", {
+                        val: 'duty_officer',
+                        class: 'text-center'
+                    });
+                    $option_2.append('Dyżurny');
+
+                    $select.append($option_1);
+                    $select.append($option_2);
+
+                    $(tableData[i]).replaceWith($select);
+                    $('.role_select_modify').selectric();
                 } else {
                     $(tableData[i]).replaceWith($input);
                 }
@@ -49,7 +94,7 @@ function modifyEmployeeData(id){
             // create input
             let $input = $("<input>", {
                 val: 'Zmień',
-                form: 'employee_add',
+                form: 'employee_modify_' + id,
                 name: 'send',
                 type: 'submit',
                 class: 'input_submit'
@@ -76,7 +121,7 @@ function getInputType(i){
 function getInputClass(i){
     switch (i){
         case 0:
-            return 'input_text input_id text-center';
+            return 'input_id text-center';
         case 6:
             return 'input_submit';
         default:
