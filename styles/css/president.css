@@ -41,4 +41,5 @@ input {
 
 .blur_bg {
     background: url("../images/background-president.jpg") center fixed;
+    background-size: cover;
 }
