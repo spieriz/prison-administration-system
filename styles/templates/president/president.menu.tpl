@@ -7,12 +7,11 @@
 <header>
     <div class="header_container" class="d-block">
         <div class="w-100 text-center d-table">
-            <span class="float-left d-xl-table-cell d-lg-table-cell d-md-none d-sm-none d-none">2019-01-23, 13:23</span>
             <h1 class="d-table-cell">SYSTEM ADMINISTRACJI WIĘZIENIEM</h1>
-            <span class="float-right d-table-cell">Wyloguj</span>
         </div>
         <div class="text-center logged_in_header">
-            <span>Jesteś zalogowany jako:</span>
+            <span>Jesteś zalogowany jako: Paweł Ledwig.</span>
+            <span>Wyloguj</span>
         </div>
     </div>
 </header>
