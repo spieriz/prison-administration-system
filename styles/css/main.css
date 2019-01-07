@@ -144,6 +144,67 @@ th {
     -webkit-filter: blur(5px);
 }
 
+.input_id {
+    width: 24px;
+    height: 20px;
+
+    margin: auto;
+
+    background: transparent;
+    border: none;
+
+    color: #b4b4b4;
+}
+
+.input_text {
+    padding-left: 2px;
+    margin: auto auto 2px;
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    font-family: gravity-book, sans-serif;
+
+    color: white;
+    font-size: 12px;
+}
+
+.input_text:hover {
+    border-bottom: 1px solid rgba(118, 196, 255, 0.7);
+}
+
+.input_text:focus {
+    border-bottom: 1px solid rgba(83, 151, 255, 0.7);
+}
+
+.input_submit {
+    margin: auto;
+    width: 64px;
+    background: #fdda7a;
+
+    color: black;
+    font-size: 12px;
+    font-family: gravity, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 1);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+.input_submit:hover {
+    background: #d2a61f;
+    color: #1d294c;
+}
+
+.selectric-items-over {
+    bottom: 100% !important;
+}
+
 @font-face {
     font-family: gravity;
     src: url("../fonts/Gravity-Regular.otf");
