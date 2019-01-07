@@ -13,8 +13,8 @@ require('./includes/pages/ShowLoginPage.php');
 
 $user = NULL;
 
-if (isset($_POST['user'])){
-    $user = $_POST['user'];
+if (isset($_POST['username'])){
+    $user = $_POST['username'];
 }
 
 if (!is_null($user)){
