@@ -106,7 +106,7 @@ th {
 }
 
 .small_window {
-    background: linear-gradient(45deg, rgba(24, 53, 77, 0.3), rgba(0, 94, 172, 0.3));
+    background: linear-gradient(45deg, rgba(24, 53, 77, 0.7), rgba(0, 94, 172, 0.7));
 
     -webkit-box-shadow: 0 5px 25px 7px rgba(0,0,0,0.5);
     -moz-box-shadow: 0 5px 25px 7px rgba(0,0,0,0.5);
@@ -117,7 +117,7 @@ th {
 }
 
 .small_window_buttons .small_window:hover {
-    background: linear-gradient(45deg, rgba(25, 44, 69, 0.5), rgba(0, 112, 192, 0.5));
+    background: linear-gradient(45deg, rgba(25, 44, 69, 0.8), rgba(0, 112, 192, 0.8));
 
     -webkit-box-shadow: 0 5px 25px 7px rgba(0,0,0,0.5);
     -moz-box-shadow: 0 5px 25px 7px rgba(0,0,0,0.5);
