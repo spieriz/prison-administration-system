@@ -141,7 +141,8 @@ th {
     z-index: 2;
     background: url("../images/background-login.jpg") center fixed;
     background-size: cover;
-    -webkit-filter: blur(5px);
+    -webkit-filter: blur(5px) brightness(70%);
+    filter: blur(5px) brightness(70%);
 }
 
 .input_id {

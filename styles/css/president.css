@@ -1,3 +1,8 @@
+body {
+    background: url("../images/background-president.jpg") center fixed;
+    background-size: cover;
+}
+
 footer {
     position: absolute;
     bottom: 8px;
@@ -32,4 +37,8 @@ footer {
 
 input {
     display: block;
+}
+
+.blur_bg {
+    background: url("../images/background-president.jpg") center fixed;
 }
