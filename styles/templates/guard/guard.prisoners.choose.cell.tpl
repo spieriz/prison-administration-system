@@ -1,7 +1,8 @@
 {include file="main.header.tpl"}
-    <link rel="stylesheet" type="text/css" href="./styles/css/guard.css">
-    <link rel="stylesheet" type="text/css" href="./styles/css/selectric.css">
-    <link rel="stylesheet" type="text/css" href="./styles/css/selectric_over.css">
+<link rel="stylesheet" type="text/css" href="./styles/css/guard.css">
+<link rel="stylesheet" type="text/css" href="./styles/css/guard_choose.css">
+<link rel="stylesheet" type="text/css" href="./styles/css/selectric.css">
+<link rel="stylesheet" type="text/css" href="./styles/css/selectric_over.css">
 </head>
 
 <body class="h-100">
@@ -18,6 +19,62 @@
     </div>
 </header>
 
+<div id="outside_cell_container">
+    <div id="content_cell" class="d-block my-4 h-25">
+    <div id="main_container_cell" class="h-100">
+        <div class="blur_bg h-100 col-lg-6 col-md-8 col-sm-10 col-12 m-auto"></div>
+        <div class="table_container big_window h-100 col-lg-6 col-md-8 col-sm-10 col-12 m-auto">
+            <table id="table_cells" class="w-100">
+                <thead>
+        <tr>
+            <th>
+                Numer celi
+            </th>
+            <th>
+                Pojemność
+            </th>
+            <th>
+                Osadzonych
+            </th>
+            <th>
+                Wolnych miejsc
+            </th>
+            <th>
+                Wybór
+            </th>
+        </tr>
+        </thead>
+                <tbody>
+                {for $i = 0; $i < 15; $i++}
+                    <tr>
+                        <td>
+                            {$i}
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <form action="guard.php" method="post" class="d-inline-block">
+                                <input type="hidden" name="mode" value="changeCell">
+                                <input type="hidden" name="prisoner_id" value="{$i}">
+                                <input form="prisoner_add" name="send" type="submit" class="input_submit" value="Zmień celę">
+                            </form>
+                        </td>
+                    </tr>
+                {/for}
+        </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
 <div id="page_title" class="d-block w-100 text-center">
     <h2>Lista pracowników</h2>
 </div>
@@ -28,26 +85,26 @@
         <div class="table_container big_window h-100 col-lg-8 col-md-10 col-sm-12 col-12 m-auto">
             <table id="table_prisoners" class="w-100">
                 <thead>
-                    <tr>
-                        <th>
-                            Numer więźnia
-                        </th>
-                        <th>
-                            Imię i nazwisko
-                        </th>
-                        <th>
-                            Adres
-                        </th>
-                        <th>
-                            Numer celi
-                        </th>
-                        <th>
-                            Izolowany
-                        </th>
-                        <th>
-                            Akcje
-                        </th>
-                    </tr>
+                <tr>
+                    <th>
+                        Numer więźnia
+                    </th>
+                    <th>
+                        Imię i nazwisko
+                    </th>
+                    <th>
+                        Adres
+                    </th>
+                    <th>
+                        Numer celi
+                    </th>
+                    <th>
+                        Izolowany
+                    </th>
+                    <th>
+                        Akcje
+                    </th>
+                </tr>
                 </thead>
                 <tbody>
                 {for $i = 0; $i < 30; $i++}
@@ -65,18 +122,13 @@
                             <span class="prisoner_info">{round($i / 3 + 3) * 2}</span>
                         </td>
                         <td>
-                            {if $i % 4 != 0}
-                                <span class="prisoner_info">Nie
-                            {else}
-                                <span class="prisoner_info" style="color: #edd139">Tak
-                            {/if}
-                                </span>
+                            <span class="prisoner_info">Nie</span>
                         </td>
                         <td>
                             <form action="guard.php" method="post" class="d-inline-block">
-                                <input type="hidden" name="page" value="guardChooseCell">
+                                <input type="hidden" name="mode" value="changeCell">
                                 <input type="hidden" name="prisoner_id" value="{$i}">
-                                <input type="submit" name="send" class="input_submit" value="Zmień celę">
+                                <input form="prisoner_add" name="send" type="submit" class="input_submit" value="Zmień celę">
                             </form>
                         </td>
                     </tr>
