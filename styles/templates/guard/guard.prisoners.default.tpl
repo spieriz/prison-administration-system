@@ -109,6 +109,11 @@
     <div id="return_container" class="my-2">
         <a href="guard.php"><span>Powrót</span></a>
     </div>
+    <div id="message_box" class="w-100 my-1">
+        <div id="message_inner" class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12 m-auto text-center">
+            <span>Zmieniono celę więźnia.</span>
+        </div>
+    </div>
 </div>
 
 <footer class="d-table">
@@ -117,4 +122,9 @@
 </body>
 <script type="text/javascript" src="./scripts/guard.prisoners.js"></script>
 <script type="text/javascript" src="./scripts/jquery.selectric.min.js"></script>
+{if $cell_changed}
+    <script>
+        showPopup(true, 'Zmieniono celę więźnia.');
+    </script>
+{/if}
 </html>

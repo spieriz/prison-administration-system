@@ -86,7 +86,7 @@
                 {/for}
                 <tr>
                     <td>
-                        <form id="employee_add" action="javascript:showPopup(true);" method="post">+</form>
+                        <form id="employee_add" action="javascript:showPopup(true, 'Dodano pracownika.');" method="post">+</form>
                         <input form="employee_add" type="hidden" name="page" value="presidentEmployees">
                     </td>
                     <td>

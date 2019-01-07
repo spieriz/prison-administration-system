@@ -8,12 +8,12 @@ $(function() {
 });
 
 
-function showPopup(success){
+function showPopup(success, message){
     if (success === true) {
-        $('#message_inner > span').text('Dodano pracownika');
+        $('#message_inner > span').text(message);
         $('#message_inner').attr('style', 'background: linear-gradient(45deg, rgba(16, 69, 30, 0.5), rgba(108, 192, 64, 0.5))');
     } else {
-        $('#message_inner > span').text('Błędne dane pracownika');
+        $('#message_inner > span').text(message);
         $('#message_inner').attr('style', 'background: linear-gradient(45deg, rgba(69, 2, 13, 0.5), rgba(192, 91, 77, 0.5))');
     }
 

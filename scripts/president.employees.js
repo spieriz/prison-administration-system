@@ -36,7 +36,7 @@ function modifyEmployeeData(id){
 
                     let $form = $("<form>", {
                         id: 'employee_modify_' + id,
-                        action: 'javascript:showPopup(false);',
+                        action: 'javascript:showPopup(false, "Błędne dane pracownika.");',
                         method: 'post'
                     });
 
