@@ -179,7 +179,7 @@ th {
 
 .input_submit {
     margin: auto;
-    width: 64px;
+    min-width: 64px;
     background: #fdda7a;
 
     color: black;
