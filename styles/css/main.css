@@ -32,13 +32,12 @@ footer span {
 }
 
 a {
-    text-decoration: none;
     color: #fdda7a;
-    font-size: 12px;
 }
 
 a:hover {
-    color: #d2a61f;
+    color: #fdae00;
+    text-decoration: none;
 }
 
 h1 {

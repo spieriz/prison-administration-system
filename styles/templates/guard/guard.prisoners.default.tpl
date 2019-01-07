@@ -13,7 +13,7 @@
         </div>
         <div class="text-center logged_in_header">
             <span>Jesteś zalogowany jako: Paweł Ledwig.</span>
-            <span>Wyloguj</span>
+            <a href="index.php" class="logout_href">Wyloguj</a>
         </div>
     </div>
 </header>
