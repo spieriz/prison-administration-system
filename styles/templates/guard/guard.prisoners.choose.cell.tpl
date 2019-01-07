@@ -40,7 +40,7 @@
                 Wolnych miejsc
             </th>
             <th>
-                Wybór
+                Akcje
             </th>
         </tr>
         </thead>
@@ -63,7 +63,7 @@
                             <form action="guard.php" method="post" class="d-inline-block">
                                 <input type="hidden" name="mode" value="changeCell">
                                 <input type="hidden" name="prisoner_id" value="{$i}">
-                                <input form="prisoner_add" name="send" type="submit" class="input_submit" value="Zmień celę">
+                                <input form="prisoner_add" name="send" type="submit" class="input_submit" value="Wybierz">
                             </form>
                         </td>
                     </tr>

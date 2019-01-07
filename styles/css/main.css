@@ -205,6 +205,34 @@ th {
     bottom: 100% !important;
 }
 
+#message_box {
+    opacity: 0;
+}
+
+#message_inner {
+    background: linear-gradient(45deg, rgba(16, 69, 30, 0.5), rgba(108, 192, 64, 0.5));
+
+    -webkit-box-shadow:     0 0 15px 7px rgba(0,0,0,0.4);
+    -moz-box-shadow:        0 0 15px 7px rgba(0,0,0,0.4);
+    box-shadow:             0 0 15px 7px rgba(0,0,0,0.4);
+    
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid black;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    height: 36px;
+}
+
+#message_inner > span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 36px;
+}
+
 @font-face {
     font-family: gravity;
     src: url("../fonts/Gravity-Regular.otf");

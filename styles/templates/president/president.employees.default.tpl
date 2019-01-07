@@ -86,7 +86,7 @@
                 {/for}
                 <tr>
                     <td>
-                        <form id="employee_add" action="president.php" method="post">+</form>
+                        <form id="employee_add" action="javascript:showPopup(true);" method="post">+</form>
                         <input form="employee_add" type="hidden" name="page" value="presidentEmployees">
                     </td>
                     <td>
@@ -117,6 +117,11 @@
     </div>
     <div id="return_container" class="my-2">
         <a href="president.php"><span>Powrót</span></a>
+    </div>
+    <div id="message_box" class="w-100 my-1">
+        <div id="message_inner" class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12 m-auto text-center">
+            <span>Dodano pracownika.</span>
+        </div>
     </div>
 </div>
 

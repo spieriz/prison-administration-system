@@ -1,13 +1,4 @@
 $(function() {
-    $(".table_container").niceScroll({
-        cursorcolor:	"rgba(25, 44, 69, 0.5)",
-        cursorwidth:	"4px",
-        cursorborder: 	"1px solid rgba(0, 0, 0, 0.5)",
-        cursorborderradius: "4px"
-    });
-});
-
-$(function() {
     $('.role_select_add').selectric({
         customClass: {
             prefix: 'selectric_over'
@@ -45,7 +36,7 @@ function modifyEmployeeData(id){
 
                     let $form = $("<form>", {
                         id: 'employee_modify_' + id,
-                        action: 'president.php',
+                        action: 'javascript:showPopup(false);',
                         method: 'post'
                     });
 
@@ -93,7 +84,7 @@ function modifyEmployeeData(id){
 
             // create input
             let $input = $("<input>", {
-                val: 'Zmień',
+                val: 'Zapisz',
                 form: 'employee_modify_' + id,
                 name: 'send',
                 type: 'submit',

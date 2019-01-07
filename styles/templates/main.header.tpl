@@ -23,3 +23,4 @@
     <link rel="shortcut icon" href="./styles/images/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="./scripts/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./scripts/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
