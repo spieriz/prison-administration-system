@@ -13,7 +13,7 @@ class Database
     protected static $server = "localhost:3306";
     protected static $username = "root";
     protected static $password = "";
-    protected static $db = "psw";
+    protected static $db = "po_saw";
     protected static $connection = NULL;
     public function __construct()
     {

@@ -53,16 +53,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                {for $i = 0; $i < 30; $i++}
+                {foreach $employees as $employee}
                     <tr>
                         <td>
-                            <span class="employee_info">{$i}</span>
+                            <span class="employee_info">{$employee.id}</span>
                         </td>
                         <td>
-                            <span class="employee_info">Maciej Adamczewski</span>
+                            <span class="employee_info">{$employee.name} {$employee.surname}</span>
                         </td>
                         <td>
-                            <span class="employee_info">94531245205</span>
+                            <span class="employee_info">{$employee.pesel}</span>
                         </td>
                         <td>
                             <span class="employee_info">Barycka 12/3, 42-750 Opole</span>
@@ -71,7 +71,7 @@
                             <span class="employee_info">Strażnik</span>
                         </td>
                         <td>
-                            <span class="employee_info">4250,24zł</span>
+                            <span class="employee_info">{$employee.salary} zł</span>
                         </td>
                         <td>
                             <form action="javascript:modifyEmployeeData({$i});" method="post" class="d-inline-block">
@@ -83,7 +83,7 @@
                             </form>
                         </td>
                     </tr>
-                {/for}
+                {/foreach}
                 <tr>
                     <td>
                         <form id="employee_add" action="javascript:showPopup(true, 'Dodano pracownika.');" method="post">+</form>

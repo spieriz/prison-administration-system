@@ -23,6 +23,28 @@ class PersonManager
         return new Guard($id, $name, $surname, $pesel, $salary);
     }
 
+    public static function getAllGuards(){
+        $db = Database::get();
+
+        $sql = "SELECT * FROM guard;";
+        $result = $db->_query($sql);
+
+        return $result;
+    }
+
+    public static function getAllDutyOfficers(){
+        $db = Database::get();
+
+        $sql = "SELECT * FROM duty_officer;";
+        $result = $db->_query($sql);
+
+        return $result;
+    }
+
+    public static function getAllEmployees(){
+        return array_merge(self::getAllGuards(), self::getAllDutyOfficers());
+    }
+
     private static function validateData($name = NULL, $surname = NULL, $pesel = NULL, $salary = NULL){
         if (!is_null($name)){
             if (strlen($name) == 0){

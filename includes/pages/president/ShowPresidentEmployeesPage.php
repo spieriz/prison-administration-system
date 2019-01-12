@@ -26,6 +26,12 @@ class ShowPresidentEmployeesPage extends AbstractPage
 
     public function show(){
 
+        $employees = PersonManager::getAllEmployees();
+
+        $this->assign(array(
+            'employees' => $employees,
+        ));
+
         $this->display('president/president.employees.default.tpl');
     }
 }
