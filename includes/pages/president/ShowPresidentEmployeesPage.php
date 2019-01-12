@@ -16,7 +16,16 @@ class ShowPresidentEmployeesPage extends AbstractPage
         parent::__construct();
     }
 
+    function addEmployee(){
+        try {
+            PersonManager::createGuard();
+        } catch (Exception $e){
+            echo $e->getMessage();
+        }
+    }
+
     public function show(){
+
         $this->display('president/president.employees.default.tpl');
     }
 }

@@ -8,3 +8,4 @@
  */
 
 require_once ('./includes/classes/Template.php');
+require_once ('./includes/classes/PersonManager.php');
