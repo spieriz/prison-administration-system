@@ -7,5 +7,6 @@
  * Time: 20:09
  */
 
+require_once ('./includes/classes/Database.php');
 require_once ('./includes/classes/Template.php');
 require_once ('./includes/classes/PersonManager.php');
