@@ -13,6 +13,22 @@ class Guard extends Person
 {
     private $salary;
 
+    /**
+     * @return float
+     */
+    public function getSalary()
+    {
+        return $this->salary;
+    }
+
+    /**
+     * @param float $salary
+     */
+    public function setSalary($salary)
+    {
+        $this->salary = $salary;
+    }
+
     public function __construct($id = NULL, $name = '', $surname = '', $pesel = '', $address = '', $salary = 0.0)
     {
         parent::__construct($id, $name, $surname, $pesel, $address);
@@ -21,19 +37,19 @@ class Guard extends Person
 
     public function updateGuard($name = NULL, $surname = NULL, $pesel = NULL, $address = NULL, $salary = NULL){
         if (!is_null($name)){
-            $this->name = $name;
+            $this->setName($name);
         }
         if (!is_null($surname)){
-            $this->surname = $surname;
+            $this->setSurname($surname);
         }
         if (!is_null($pesel)){
-            $this->pesel = $pesel;
+            $this->setPesel($pesel);
         }
         if (!is_null($address)){
-            $this->address = $address;
+            $this->setAddress($address);
         }
         if (!is_null($salary)){
-            $this->salary = $salary;
+            $this->setSalary($salary);
         }
     }
 }
