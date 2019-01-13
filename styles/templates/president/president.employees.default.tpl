@@ -68,7 +68,7 @@
                             <span class="employee_info">Barycka 12/3, 42-750 Opole</span>
                         </td>
                         <td>
-                            <span class="employee_info">Strażnik</span>
+                            <span class="employee_info">{if $employee.role == 'guard'}Strażnik{elseif $employee.role == 'duty_officer'}Dyżurny{/if}</span>
                         </td>
                         <td>
                             <span class="employee_info">{$employee.salary} zł</span>
@@ -86,8 +86,9 @@
                 {/foreach}
                 <tr>
                     <td>
-                        <form id="employee_add" action="javascript:showPopup(true, 'Dodano pracownika.');" method="post">+</form>
+                        <form id="employee_add" action="president.php" method="post">+</form>
                         <input form="employee_add" type="hidden" name="page" value="presidentEmployees">
+                        <input form="employee_add" type="hidden" name="mode" value="addEmployee">
                     </td>
                     <td>
                         <input form="employee_add" name="name_surname" type="text" class="input_text text-center" placeholder="Imię i nazwisko">
@@ -118,11 +119,17 @@
     <div id="return_container" class="my-2">
         <a href="president.php"><span>Powrót</span></a>
     </div>
+
     <div id="message_box" class="w-100 my-1">
         <div id="message_inner" class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12 m-auto text-center">
             <span>Dodano pracownika.</span>
         </div>
     </div>
+    {if $message}
+        <script>
+            showPopup({$message_type}, '{$message_text}');
+        </script>
+    {/if}
 </div>
 
 <footer class="d-table">
