@@ -65,7 +65,7 @@
                             <span class="employee_info">{$employee.pesel}</span>
                         </td>
                         <td>
-                            <span class="employee_info">Barycka 12/3, 42-750 Opole</span>
+                            <span class="employee_info">{$employee.address}</span>
                         </td>
                         <td>
                             <span class="employee_info">{if $employee.role == 'guard'}Strażnik{elseif $employee.role == 'duty_officer'}Dyżurny{/if}</span>
@@ -100,8 +100,8 @@
                         <input form="employee_add" name="address" type="text" class="input_text text-center" placeholder="Adres">
                     </td>
                     <td>
-                        <select form="employee_add" class="role_select_add" name="uni">
-                            <option value="guard" selected="selected" class="text-center">Strażnik</option>
+                        <select form="employee_add" class="role_select_add" id="select_role_add" name="role">
+                            <option value="guard" class="text-center" selected="selected">Strażnik</option>
                             <option value="duty_officer" class="text-center">Dyżurny</option>
                         </select>
                     </td>

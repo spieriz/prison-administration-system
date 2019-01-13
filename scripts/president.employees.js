@@ -6,6 +6,13 @@ $(function() {
     });
 });
 
+$(function(){
+    $('.role_select_add').selectric().on('change', function() {
+        $('#select_role_add option').removeAttr('selected');
+        $('#select_role_add option[value=' + ($(this).val()) + ']').attr('selected', 'selected');
+    });
+});
+
 $(function() {
     $('.role_select_modify').selectric();
 });
@@ -54,7 +61,6 @@ function modifyEmployeeData(id){
                     let $select = $("<select>", {
                             form: 'employee_modify_' + id,
                             class: 'role_select_modify',
-                            name: 'uni'
                         });
 
                     let $option_1 = $("<option>", {
