@@ -16,20 +16,44 @@ class ShowPresidentEmployeesPage extends AbstractPage
         parent::__construct();
     }
 
+
     function addEmployee(){
-        try {
-            PersonManager::createGuard();
-        } catch (Exception $e){
-            echo $e->getMessage();
+        $n_s = _GP('name_surname');
+        $pesel = _GP('pesel');
+        $adres = _GP('address');
+        $role = _GP('role');
+        $salary = _GP('salary');
+
+        $n_s = explode(' ', $n_s);
+
+        for ($i = sizeof($n_s); $i < 2; $i++){
+            $n_s[] = '';
         }
+
+        try {
+            if ($role == 'guard'){
+                $new_guard = PersonManager::createGuard(NULL, $n_s[0], $n_s[1], $pesel, $adres, $salary);
+                PersonManager::addGuardToDatabase($new_guard);
+            } elseif ($role == 'duty_officer'){
+                $new_duty_officer = PersonManager::createDutyOfficer(NULL, $n_s[0], $n_s[1], $pesel, $adres, $salary);
+                PersonManager::addDutyOfficerToDatabase($new_duty_officer);
+            }
+        } catch (Exception $e){
+            $this->show($e->getMessage(), false);
+        }
+        $this->show('Dodano pracownika.', true);
     }
 
-    public function show(){
+    public function show($message_text = NULL, $message_type = false){
 
         $employees = PersonManager::getAllEmployees();
 
         $this->assign(array(
             'employees' => $employees,
+
+            'message'       => !is_null($message_text),
+            'message_text'  => $message_text,
+            'message_type'  => ($message_type) ? 'true' : 'false',
         ));
 
         $this->display('president/president.employees.default.tpl');
