@@ -52,6 +52,32 @@ class PersonManager
         return $result;
     }
 
+    public static function getAllPrisoners(){
+        $db = Database::get();
+
+        $sql = "SELECT * FROM prisoner;";
+        $result = $db->_query($sql);
+
+        return $result;
+    }
+
+    public static function getAllCells(){
+        $db = Database::get();
+
+        $sql = "SELECT c.id AS id, c.capacity AS capacity, count(p.cell_id) AS inmates, (c.capacity - count(p.cell_id)) AS free 
+                FROM `cell` AS c LEFT JOIN prisoner as p ON c.id = p.cell_id GROUP BY c.id;";
+        $result = $db->_query($sql);
+
+        return $result;
+    }
+
+    public static function changePrisonersCell($prisoner_id, $cell_id){
+        $db = Database::get();
+
+        $sql = "UPDATE prisoner SET cell_id = '$cell_id' WHERE id = $prisoner_id;";
+        $db->_query($sql);
+    }
+
     public static function addGuardToDatabase(Guard $guard){
         $db = Database::get();
 
@@ -91,6 +117,5 @@ class PersonManager
         if (is_null($salary) || $salary < 0){
             throw new Exception('Pensja nie może być ujemna.');
         }
-
     }
 }

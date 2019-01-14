@@ -22,6 +22,10 @@
     <h2>Lista pracowników</h2>
 </div>
 
+{if $choose_cell == true}
+    {include file="\guard\guard.prisoners.choose.cell.tpl"}
+{/if}
+
 <div id="content" class="d-block my-4 h-50">
     <div id="main_container" class="h-100">
         <div class="blur_bg col-lg-8 col-md-10 col-sm-12 col-12 m-auto"></div>
@@ -50,22 +54,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                {for $i = 0; $i < 30; $i++}
+                {foreach $prisoners as $prisoner}
                     <tr>
                         <td>
-                            <span class="prisoner_info">{($i + 15) * ($i + 1)}</span>
+                            <span class="prisoner_info">{$prisoner.id}</span>
                         </td>
                         <td>
-                            <span class="prisoner_info">Maciej Adamczewski</span>
+                            <span class="prisoner_info">{$prisoner.name} {$prisoner.surname}</span>
                         </td>
                         <td>
-                            <span class="prisoner_info">Barycka 12/3, 42-750 Opole</span>
+                            <span class="prisoner_info">{$prisoner.address}</span>
                         </td>
                         <td>
-                            <span class="prisoner_info">{round($i / 3 + 3) * 2}</span>
+                            <span class="prisoner_info">{$prisoner.cell_id}</span>
                         </td>
                         <td>
-                            {if $i % 4 != 0}
+                            {if $prisoner.isolated == 0}
                                 <span class="prisoner_info">Nie
                             {else}
                                 <span class="prisoner_info" style="color: #edd139">Tak
@@ -74,13 +78,14 @@
                         </td>
                         <td>
                             <form action="guard.php" method="post" class="d-inline-block">
-                                <input type="hidden" name="page" value="guardChooseCell">
-                                <input type="hidden" name="prisoner_id" value="{$i}">
+                                <input type="hidden" name="page" value="guardPrisoners">
+                                <input type="hidden" name="mode" value="showChangeCell">
+                                <input type="hidden" name="prisoner_id" value="{$prisoner.id}">
                                 <input type="submit" name="send" class="input_submit" value="Zmień celę">
                             </form>
                         </td>
                     </tr>
-                {/for}
+                {/foreach}
                 <tr>
                     <td>
                         <form id="prisoner_add" action="guard.php" method="post">+</form>
@@ -109,11 +114,13 @@
     <div id="return_container" class="my-2">
         <a href="guard.php"><span>Powrót</span></a>
     </div>
+    {if $cell_changed == true}
     <div id="message_box" class="w-100 my-1">
         <div id="message_inner" class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12 m-auto text-center">
             <span>Zmieniono celę więźnia.</span>
         </div>
     </div>
+    {/if}
 </div>
 
 <footer class="d-table">
@@ -122,9 +129,7 @@
 </body>
 <script type="text/javascript" src="./scripts/guard.prisoners.js"></script>
 <script type="text/javascript" src="./scripts/jquery.selectric.min.js"></script>
-{if $cell_changed}
     <script>
         showPopup(true, 'Zmieniono celę więźnia.');
     </script>
-{/if}
 </html>
