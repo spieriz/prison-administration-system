@@ -16,10 +16,6 @@ class ShowGuardPrisonersPage extends AbstractPage
         parent::__construct();
     }
 
-    function dupa(){
-        echo 'dupa1';
-    }
-
     function changePrisonersCell(){
         $prisoner_id = _GP('prisoner_id', 0);
         $cell_id = _GP('cell_id', 0);
