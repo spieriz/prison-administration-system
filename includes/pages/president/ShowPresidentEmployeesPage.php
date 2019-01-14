@@ -30,6 +30,8 @@ class ShowPresidentEmployeesPage extends AbstractPage
             $n_s[] = '';
         }
 
+        $salary = str_replace(",", ".", $salary);
+
         try {
             if ($role == 'guard'){
                 $new_guard = PersonManager::createGuard(NULL, $n_s[0], $n_s[1], $pesel, $adres, $salary);
