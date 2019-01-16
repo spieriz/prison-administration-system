@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_AssignByRef" namespace="" name="Smarty_Internal_Method_AssignByRef" abstract="false" final="false" start="12" end="36">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_assignbyref.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_assignbyref.php" size="1312" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="71829142ac94a187b5bb4cae4dff49045619c206" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_assignbyref.php"/>
+  <docblock>
+    <description compact="Smarty Method AssignByRef">Smarty::assignByRef() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <method name="assignByRef" start="25" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="assigns values to template variables by reference"/>
+      <param type="object" variable="$data">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="the template variable name" type="string" variable="$tpl_var"/>
+      <param variable="$value"/>
+      <param description="if true any output of this variable will" type="boolean" variable="$nocache">be not cached</param>
+      <return type="object">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    </parameter>
+    <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+    <parameter name="nocache" byreference="false" type="{unknown}"/>
+  </method>
+</class>

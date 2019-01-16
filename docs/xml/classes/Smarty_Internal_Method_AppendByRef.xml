@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_AppendByRef" namespace="" name="Smarty_Internal_Method_AppendByRef" abstract="false" final="false" start="12" end="49">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_appendbyref.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_appendbyref.php" size="1850" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="84402fde029a5cb49153b57664ce2482f640cf50" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_appendbyref.php"/>
+  <docblock>
+    <description compact="Smarty Method AppendByRef">Smarty::appendByRef() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <method name="appendByRef" start="27" end="48" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="appends values to template variables by reference"/>
+      <api value="Smarty::appendByRef()"/>
+      <link value="http://www.smarty.net/docs/en/api.append.by.ref.tpl"/>
+      <param type="object" variable="$data">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="the template variable name" type="string" variable="$tpl_var"/>
+      <param description="&amp;$value the referenced value to append" type="mixed"/>
+      <param description="flag if array elements shall be merged" type="object" variable="$merge">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    </parameter>
+    <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+    <parameter name="merge" byreference="false" type="boolean" default="false"/>
+  </method>
+</class>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_LoadFilter" namespace="" name="Smarty_Internal_Method_LoadFilter" abstract="false" final="false" start="12" end="77">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_loadfilter.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_loadfilter.php" size="2249" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="e1d6e73cc6d91fc125891ec371f3a4b7f0223ec6" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_loadfilter.php"/>
+  <docblock>
+    <description compact="Smarty Method LoadFilter">Smarty::loadFilter() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="filterTypes" default="" type="array" visibility="private" static="false" line="26">
+    <docblock>
+      <description compact="Valid filter types"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="loadFilter" start="42" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="load a filter of specified type and name"/>
+      <api value="Smarty::loadFilter()"/>
+      <link value="http://www.smarty.net/docs/en/api.load.filter.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="filter type" type="string" variable="$type"/>
+      <param description="filter name" type="string" variable="$name"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws description="if filter could not be loaded" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_checkFilterType" start="71" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if filter type is valid"/>
+      <param type="string" variable="$type"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="Smarty_Internal_Method_UnloadFilter" namespace="" name="Smarty_Internal_Method_UnloadFilter"/>
+  </extenders>
+</class>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Undefined_Variable" namespace="" name="Smarty_Undefined_Variable" abstract="false" final="false" start="10" end="33">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_undefined_variable.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_undefined_variable.php" size="600" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="f2d90ab407da93569c798ffcb449e729322b5273" relative="includes/libs/Smarty/sysplugins/smarty_undefined_variable.php"/>
+  <docblock>
+    <description compact="class for undefined variable object This class defines an object for undefined variable handling"/>
+    <package value="Smarty"/>
+    <subpackage value="Template"/>
+  </docblock>
+  <extends full="Smarty_Variable" namespace="" name="Smarty_Variable"/>
+  <method name="__get" start="19" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns null for not existing properties"/>
+      <param type="string" variable="$name"/>
+      <return type="null"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__toString" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Always returns an empty string."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <parent full="Smarty_Variable" namespace="" name="Smarty_Variable">
+    <member name="value" default="NULL" visibility="public" static="false" line="17">
+      <docblock>
+        <description compact="template variable"/>
+        <var type="mixed"/>
+      </docblock>
+    </member>
+    <member name="nocache" default="false" type="boolean" visibility="public" static="false" line="24">
+      <docblock>
+        <description compact="if true any output of this variable will be not cached"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="32" end="36" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="create Smarty variable object"/>
+        <param description="the value to assign" type="mixed" variable="$value"/>
+        <param description="if true any output of this variable will be not cached" type="boolean" variable="$nocache"/>
+      </docblock>
+      <parameter name="value" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+    </constructor>
+    <method name="__toString" start="43" end="46" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="&lt;&lt;magic&gt;&gt; String conversion"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+  </parent>
+</class>

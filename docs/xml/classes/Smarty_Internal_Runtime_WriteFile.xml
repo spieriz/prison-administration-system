@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_WriteFile" namespace="" name="Smarty_Internal_Runtime_WriteFile" abstract="false" final="false" start="16" end="100">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_writefile.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_writefile.php" size="3568" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="9a493f8f52d24dc17ff10ae950e44de1c3b20310" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_writefile.php"/>
+  <docblock>
+    <description compact="Smarty Internal Write File Class"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+  </docblock>
+  <method name="writeFile" start="28" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Writes file in a safe way to disk"/>
+      <param description="complete filepath" type="string" variable="$_filepath"/>
+      <param description="file content" type="string" variable="$_contents"/>
+      <param description="smarty instance" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <throws type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+      <return description="true" type="boolean"/>
+    </docblock>
+    <parameter name="_filepath" byreference="false" type="{unknown}"/>
+    <parameter name="_contents" byreference="false" type="{unknown}"/>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <inline>
+      <comment value="if subdirs, create dir structure" line="39"/>
+      <comment value="write to tmp file, then move to overt file lock race condition" line="56"/>
+      <comment value="Windows' rename() fails if the destination exists," line="62"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Linux' rename() properly handles the overwrite." line="63"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Simply unlink()ing a file might cause other processes" line="64"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="currently reading that file to fail, but linux' rename()" line="65"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="seems to be smart enough to handle that for us." line="66"/>
+    </inline>
+  </method>
+</class>

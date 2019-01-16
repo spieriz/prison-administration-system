@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Templatelexer" namespace="" name="Smarty_Internal_Templatelexer" abstract="false" final="false" start="19" end="1060">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_templatelexer.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_templatelexer.php" size="36593" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="534b63a2675630895212a1959325e40d9bf41135" relative="includes/libs/Smarty/sysplugins/smarty_internal_templatelexer.php"/>
+  <docblock>
+    <description compact="Smarty_Internal_Templatelexer This is the template file lexer.">It is generated from the smarty_internal_templatelexer.plex file</description>
+    <author value="Uwe Tews &lt;uwe.tews@googlemail.com&gt;"/>
+  </docblock>
+  <constant type="integer" name="TEXT" value="1"/>
+  <constant type="integer" name="TAG" value="2"/>
+  <constant type="integer" name="TAGBODY" value="3"/>
+  <constant type="integer" name="LITERAL" value="4"/>
+  <constant type="integer" name="DOUBLEQUOTEDSTRING" value="5"/>
+  <member name="data" visibility="public" static="false" line="32">
+    <docblock>
+      <description compact="Source"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="dataLength" default="NULL" visibility="public" static="false" line="39">
+    <docblock>
+      <description compact="Source length"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="counter" visibility="public" static="false" line="46">
+    <docblock>
+      <description compact="byte counter"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="token" visibility="public" static="false" line="53">
+    <docblock>
+      <description compact="token number"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="value" visibility="public" static="false" line="60">
+    <docblock>
+      <description compact="token value"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="line" visibility="public" static="false" line="67">
+    <docblock>
+      <description compact="current line"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="taglineno" visibility="public" static="false" line="74">
+    <docblock>
+      <description compact="tag start line"/>
+      <var/>
+    </docblock>
+  </member>
+  <member name="phpType" default="''" type="string" visibility="public" static="false" line="81">
+    <docblock>
+      <description compact="php code type"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="state" default="1" type="integer" visibility="public" static="false" line="88">
+    <docblock>
+      <description compact="state number"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="smarty" default="NULL" visibility="public" static="false" line="95">
+    <docblock>
+      <description compact="Smarty object"/>
+      <var type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="compiler" default="NULL" visibility="public" static="false" line="102">
+    <docblock>
+      <description compact="compiler object"/>
+      <var type="object">
+        <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="yyTraceFILE" visibility="public" static="false" line="109">
+    <docblock>
+      <description compact="trace file"/>
+      <var type="resource"/>
+    </docblock>
+  </member>
+  <member name="yyTracePrompt" visibility="public" static="false" line="116">
+    <docblock>
+      <description compact="trace prompt"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="is_xml" default="false" type="boolean" visibility="public" static="false" line="123">
+    <docblock>
+      <description compact="XML flag true while processing xml"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="state_name" default="" type="array" visibility="public" static="false" line="130">
+    <docblock>
+      <description compact="state names"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="smarty_token_names" default="" type="array" visibility="public" static="false" line="137">
+    <docblock>
+      <description compact="token names"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="literal_cnt" default="0" type="integer" visibility="private" static="false" line="181">
+    <docblock>
+      <description compact="literal tag nesting level"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern1" default="NULL" visibility="private" static="false" line="188">
+    <docblock>
+      <description compact="preg token pattern for state TEXT"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern2" default="NULL" visibility="private" static="false" line="195">
+    <docblock>
+      <description compact="preg token pattern for state TAG"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern3" default="NULL" visibility="private" static="false" line="202">
+    <docblock>
+      <description compact="preg token pattern for state TAGBODY"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern4" default="NULL" visibility="private" static="false" line="209">
+    <docblock>
+      <description compact="preg token pattern for state LITERAL"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern5" default="NULL" visibility="private" static="false" line="216">
+    <docblock>
+      <description compact="preg token pattern for state DOUBLEQUOTEDSTRING"/>
+      <var type="null"/>
+    </docblock>
+  </member>
+  <member name="_yy_state" default="1" type="integer" visibility="private" static="false" line="218"/>
+  <member name="_yy_stack" default="" type="array" visibility="private" static="false" line="220"/>
+  <constructor name="__construct" start="228" end="242" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="constructor"/>
+      <param description="template source" type="string" variable="$source"/>
+      <param type="object" variable="$compiler">
+        <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+  </constructor>
+  <method name="PrintTrace" start="248" end="252" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="open lexer/parser trace file"/>
+    </docblock>
+  </method>
+  <method name="replace" start="261" end="264" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="replace placeholders with runtime preg  code"/>
+      <param type="string" variable="$preg"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="preg" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isAutoLiteral" start="271" end="275" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check if current value is an autoliteral left delimiter"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="yylex" start="277" end="280" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yypushstate" start="282" end="294" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="state" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yypopstate" start="296" end="307" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yybegin" start="309" end="316" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="state" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yylex1" start="318" end="373" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_1" start="375" end="378" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_2" start="380" end="391" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_4" start="393" end="396" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_8" start="398" end="401" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_10" start="403" end="407" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_12" start="409" end="413" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_14" start="415" end="419" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_16" start="421" end="424" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_19" start="426" end="429" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex2" start="431" end="486" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_1" start="488" end="493" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_4" start="495" end="500" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_6" start="502" end="507" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_8" start="509" end="514" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_10" start="516" end="521" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_12" start="523" end="528" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_15" start="530" end="535" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_18" start="537" end="542" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_20" start="544" end="556" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_23" start="558" end="563" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_25" start="565" end="570" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex3" start="572" end="627" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_1" start="629" end="633" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_2" start="635" end="639" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_4" start="641" end="646" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_5" start="648" end="651" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_6" start="653" end="656" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_7" start="658" end="661" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_8" start="663" end="666" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_9" start="668" end="671" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_10" start="673" end="676" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_11" start="678" end="681" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_12" start="683" end="686" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_13" start="688" end="691" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_15" start="693" end="696" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_17" start="698" end="701" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_20" start="703" end="706" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_23" start="708" end="711" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_24" start="713" end="716" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_28" start="718" end="721" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_29" start="723" end="726" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_30" start="728" end="731" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_31" start="733" end="736" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_32" start="738" end="741" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_33" start="743" end="746" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_34" start="748" end="751" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_35" start="753" end="756" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_37" start="758" end="761" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_39" start="763" end="766" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_41" start="768" end="771" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_42" start="773" end="776" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_43" start="778" end="789" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="resolve conflicts with shorttag and right_delimiter starting with '='" line="780"/>
+    </inline>
+  </method>
+  <method name="yy_r3_44" start="791" end="794" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_47" start="796" end="799" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_48" start="801" end="804" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_49" start="806" end="810" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_50" start="812" end="815" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_51" start="817" end="820" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_52" start="822" end="825" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_53" start="827" end="830" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_54" start="832" end="835" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_55" start="837" end="840" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_56" start="842" end="845" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_57" start="847" end="850" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_58" start="852" end="855" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_59" start="857" end="860" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex4" start="862" end="917" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4_1" start="919" end="923" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4_3" start="925" end="934" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4_5" start="936" end="939" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex5" start="941" end="996" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_1" start="998" end="1001" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_3" start="1003" end="1006" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_5" start="1008" end="1011" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_7" start="1013" end="1017" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_9" start="1019" end="1023" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_11" start="1025" end="1030" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_13" start="1032" end="1036" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_14" start="1038" end="1044" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_15" start="1046" end="1049" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_16" start="1051" end="1054" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_17" start="1056" end="1059" abstract="false" final="false" static="false" visibility="public"/>
+</class>

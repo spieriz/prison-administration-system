@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler" abstract="false" final="false" start="18" end="209">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_config_file_compiler.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_config_file_compiler.php" size="6759" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="1e7d80e68300ddc51c3e3481446a510013d219d4" relative="includes/libs/Smarty/sysplugins/smarty_internal_config_file_compiler.php"/>
+  <docblock>
+    <description compact="Main config file compiler class"/>
+    <package value="Smarty"/>
+    <subpackage value="Config"/>
+  </docblock>
+  <member name="lexer_class" visibility="public" static="false" line="25">
+    <docblock>
+      <description compact="Lexer class name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="parser_class" visibility="public" static="false" line="32">
+    <docblock>
+      <description compact="Parser class name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="lex" visibility="public" static="false" line="39">
+    <docblock>
+      <description compact="Lexer object"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="parser" visibility="public" static="false" line="46">
+    <docblock>
+      <description compact="Parser object"/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="smarty" visibility="public" static="false" line="53">
+    <docblock>
+      <description compact="Smarty object"/>
+      <var description="object" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="template" visibility="public" static="false" line="60">
+    <docblock>
+      <description compact="Smarty object"/>
+      <var description="object" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="config_data" default="" type="array" visibility="public" static="false" line="67">
+    <docblock>
+      <description compact="Compiled config data sections and variables"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="write_compiled_code" default="true" type="boolean" visibility="public" static="false" line="74">
+    <docblock>
+      <description compact="compiled config data must always be written"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="83" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize compiler"/>
+      <param description="class name" type="string" variable="$lexer_class"/>
+      <param description="class name" type="string" variable="$parser_class"/>
+      <param description="global instance" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+    </docblock>
+    <parameter name="lexer_class" byreference="false" type="{unknown}"/>
+    <parameter name="parser_class" byreference="false" type="{unknown}"/>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <inline>
+      <comment value="get required plugins" line="86"/>
+    </inline>
+  </constructor>
+  <method name="compileTemplate" start="102" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Method to compile Smarty config source."/>
+      <param type="object" variable="$template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return description="true if compiling succeeded, false if it failed" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <inline>
+      <comment value="init the lexer/parser to compile the config file" line="117"/>
+      <comment value="get tokens from lexer and parse them" line="144"/>
+      <comment value="finish parsing process" line="151"/>
+      <comment value="template header code" line="159"/>
+    </inline>
+  </method>
+  <method name="trigger_config_file_error" start="179" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="display compiler error messages without dying If parameter $args is empty it is a parser detected syntax error.">In this case the parser is called to obtain information about expected tokens.
+If parameter $args contains a string this is used as error message</description>
+      <param description="individual error message or null" type="string" variable="$args"/>
+      <throws type="object">
+        <type full="SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+      </throws>
+    </docblock>
+    <parameter name="args" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="get config source line which has error" line="181"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_ClearCompiledTemplate" namespace="" name="Smarty_Internal_Method_ClearCompiledTemplate" abstract="false" final="false" start="12" end="131">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_clearcompiledtemplate.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_clearcompiledtemplate.php" size="5787" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="0a1693103e488d50fb5a9543cd91a76cffa038c7" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_clearcompiledtemplate.php"/>
+  <docblock>
+    <description compact="Smarty Method ClearCompiledTemplate">Smarty::clearCompiledTemplate() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="1" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="clearCompiledTemplate" start="35" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete compiled template file"/>
+      <api value="Smarty::clearCompiledTemplate()"/>
+      <link value="http://www.smarty.net/docs/en/api.clear.compiled.template.tpl"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="expiration time" type="integer" variable="$exp_time"/>
+      <return description="number of template files deleted" type="int"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="resource_name" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="clear template objects cache" line="37"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_SmartyTemplateCompiler" namespace="" name="Smarty_Internal_SmartyTemplateCompiler" abstract="false" final="false" start="17" end="184">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_smartytemplatecompiler.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_smartytemplatecompiler.php" size="5809" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="0549c4807631ec9b2698b6ba1fb6c1359eff79f3" relative="includes/libs/Smarty/sysplugins/smarty_internal_smartytemplatecompiler.php"/>
+  <docblock>
+    <description compact="Class SmartyTemplateCompiler"/>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+  </docblock>
+  <extends full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+  <member name="lexer_class" visibility="public" static="false" line="24">
+    <docblock>
+      <description compact="Lexer class name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="parser_class" visibility="public" static="false" line="31">
+    <docblock>
+      <description compact="Parser class name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="local_var" default="" type="array" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="array of vars which can be compiled in local scope"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="postCompileCallbacks" default="" type="array" visibility="public" static="false" line="45">
+    <docblock>
+      <description compact="array of callbacks called when the normal compile process of template is finished"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="prefixCompiledCode" default="''" type="string" visibility="public" static="false" line="52">
+    <docblock>
+      <description compact="prefix code"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="postfixCompiledCode" default="''" type="string" visibility="public" static="false" line="59">
+    <docblock>
+      <description compact="postfix code"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="68" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize compiler"/>
+      <param description="class name" type="string" variable="$lexer_class"/>
+      <param description="class name" type="string" variable="$parser_class"/>
+      <param description="global instance" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+    </docblock>
+    <parameter name="lexer_class" byreference="false" type="{unknown}"/>
+    <parameter name="parser_class" byreference="false" type="{unknown}"/>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <inline>
+      <comment value="get required plugins" line="71"/>
+    </inline>
+  </constructor>
+  <method name="doCompile" start="85" end="152" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="method to compile a Smarty template"/>
+      <param description="template source" type="mixed" variable="$_content"/>
+      <param type="object" variable="$isTemplateSource">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="true if compiling succeeded, false if it failed" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+      </throws>
+    </docblock>
+    <parameter name="_content" byreference="false" type="{unknown}"/>
+    <parameter name="isTemplateSource" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="here is where the compiling takes place. Smarty" line="87"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="tags in the templates are replaces with PHP code," line="88"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="then written to compiled files." line="89"/>
+      <comment value="init the lexer/parser to compile the template" line="90"/>
+      <comment value="get tokens from lexer and parse them" line="122"/>
+      <comment value="finish parsing process" line="130"/>
+      <comment value="check for unclosed tags" line="135"/>
+      <comment value="call post compile callbacks" line="144"/>
+      <comment value="return compiled code" line="150"/>
+    </inline>
+  </method>
+  <method name="registerPostCompileCallback" start="163" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a post compile callback - when the callback is called after template compiling the compiler object will be inserted as first parameter"/>
+      <param type="object" variable="$callback">
+        <type full="callback" namespace="" name="callback"/>
+      </param>
+      <param description="optional parameter array" type="array" variable="$parameter"/>
+      <param description="optional key for callback" type="string" variable="$key"/>
+      <param description="if true replace existing keyed callback" type="object" variable="$replace">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="parameter" byreference="false" type="array" default=""/>
+    <parameter name="key" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="replace" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="unregisterPostCompileCallback" start="180" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove a post compile callback"/>
+      <param description="callback key" type="string" variable="$key"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase">
+    <member name="_tag_objects" default="" type="array" visibility="public" static="true" line="29">
+      <docblock>
+        <description compact="compile tag objects cache"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="prefixVariableNumber" default="0" type="integer" visibility="public" static="true" line="36">
+      <docblock>
+        <description compact="counter for prefix variable number"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="smarty" default="NULL" visibility="public" static="false" line="43">
+      <docblock>
+        <description compact="Smarty object"/>
+        <var type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="parser" default="NULL" visibility="public" static="false" line="50">
+      <docblock>
+        <description compact="Parser object"/>
+        <var type="object">
+          <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="nocache_hash" default="NULL" visibility="public" static="false" line="57">
+      <docblock>
+        <description compact="hash for nocache sections"/>
+        <var type="mixed"/>
+      </docblock>
+    </member>
+    <member name="suppressNocacheProcessing" default="false" type="boolean" visibility="public" static="false" line="64">
+      <docblock>
+        <description compact="suppress generation of nocache code"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="caching" default="0" type="integer" visibility="public" static="false" line="71">
+      <docblock>
+        <description compact="caching enabled (copied from template object)"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="_tag_stack" default="" type="array" visibility="public" static="false" line="78">
+      <docblock>
+        <description compact="tag stack"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_tag_stack_count" default="" type="array" visibility="public" static="false" line="85">
+      <docblock>
+        <description compact="tag stack count"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="required_plugins" default="" type="array" visibility="public" static="false" line="92">
+      <docblock>
+        <description compact="Plugins used by template"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="required_plugins_stack" default="" type="array" visibility="public" static="false" line="99">
+      <docblock>
+        <description compact="Required plugins stack"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="template" default="NULL" visibility="public" static="false" line="106">
+      <docblock>
+        <description compact="current template"/>
+        <var type="object">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="mergedSubTemplatesData" default="" type="array" visibility="public" static="false" line="113">
+      <docblock>
+        <description compact="merged included sub template data"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="mergedSubTemplatesCode" default="" type="array" visibility="public" static="false" line="120">
+      <docblock>
+        <description compact="merged sub template code"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="templateProperties" default="" type="array" visibility="public" static="false" line="127">
+      <docblock>
+        <description compact="collected template properties during compilation"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="trace_line_offset" default="0" type="integer" visibility="public" static="false" line="134">
+      <docblock>
+        <description compact="source line offset for error messages"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="trace_uid" default="''" type="string" visibility="public" static="false" line="141">
+      <docblock>
+        <description compact="trace uid"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="trace_filepath" default="''" type="string" visibility="public" static="false" line="148">
+      <docblock>
+        <description compact="trace file path"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="trace_stack" default="" type="array" visibility="public" static="false" line="155">
+      <docblock>
+        <description compact="stack for tracing file and line of nested {block} tags"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="default_handler_plugins" default="" type="array" visibility="public" static="false" line="162">
+      <docblock>
+        <description compact="plugins loaded by default plugin handler"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="default_modifier_list" default="NULL" visibility="public" static="false" line="169">
+      <docblock>
+        <description compact="saved preprocessed modifier list"/>
+        <var type="mixed"/>
+      </docblock>
+    </member>
+    <member name="forceNocache" default="false" type="boolean" visibility="public" static="false" line="176">
+      <docblock>
+        <description compact="force compilation of complete template as nocache"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="write_compiled_code" default="true" type="boolean" visibility="public" static="false" line="183">
+      <docblock>
+        <description compact="flag if compiled template file shall we written"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="tpl_function" default="" type="array" visibility="public" static="false" line="190">
+      <docblock>
+        <description compact="Template functions"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="called_functions" default="" type="array" visibility="public" static="false" line="197">
+      <docblock>
+        <description compact="called sub functions from template function"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="blockOrFunctionCode" default="''" type="string" visibility="public" static="false" line="204">
+      <docblock>
+        <description compact="compiled template or block function code"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="php_handling" default="0" type="integer" visibility="public" static="false" line="211">
+      <docblock>
+        <description compact="php_handling setting either from Smarty or security"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="modifier_plugins" default="" type="array" visibility="public" static="false" line="218">
+      <docblock>
+        <description compact="flags for used modifier plugins"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="known_modifier_type" default="" type="array" visibility="public" static="false" line="225">
+      <docblock>
+        <description compact="type of already compiled modifier"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="parent_compiler" default="NULL" visibility="public" static="false" line="232">
+      <docblock>
+        <description compact="parent compiler object for merged subtemplates and template functions"/>
+        <var type="object">
+          <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="nocache" default="false" type="boolean" visibility="public" static="false" line="239">
+      <docblock>
+        <description compact="Flag true when compiling nocache section"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="tag_nocache" default="false" type="boolean" visibility="public" static="false" line="246">
+      <docblock>
+        <description compact="Flag true when tag is compiled as nocache"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="prefix_code" default="" type="array" visibility="public" static="false" line="253">
+      <docblock>
+        <description compact="Compiled tag prefix code"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="usedPrefixVariables" default="" type="array" visibility="public" static="false" line="260">
+      <docblock>
+        <description compact="used prefix variables by current compiled tag"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="prefixCodeStack" default="" type="array" visibility="public" static="false" line="267">
+      <docblock>
+        <description compact="Prefix code  stack"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="has_code" default="false" type="boolean" visibility="public" static="false" line="274">
+      <docblock>
+        <description compact="Tag has compiled code"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="has_variable_string" default="false" type="boolean" visibility="public" static="false" line="281">
+      <docblock>
+        <description compact="A variable string was compiled"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="variable_filter_stack" default="" type="array" visibility="public" static="false" line="288">
+      <docblock>
+        <description compact="Stack for {setfilter} {/setfilter}"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="variable_filters" default="" type="array" visibility="public" static="false" line="295">
+      <docblock>
+        <description compact="variable filters for {setfilter} {/setfilter}"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="loopNesting" default="0" type="integer" visibility="public" static="false" line="302">
+      <docblock>
+        <description compact="Nesting count of looping tags like {foreach}, {for}, {section}, {while}"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="stripRegEx" default="'![\t ]*[\r\n]+[\t ]*!'" type="string" visibility="public" static="false" line="309">
+      <docblock>
+        <description compact="Strip preg pattern"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="plugin_search_order" default="" type="array" visibility="public" static="false" line="316">
+      <docblock>
+        <description compact="plugin search order"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_cache" default="" type="array" visibility="public" static="false" line="328">
+      <docblock>
+        <description compact="General storage area for tag compiler plugins"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="370" end="381" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Initialize compiler"/>
+        <param description="global instance" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+    </constructor>
+    <method name="compileTemplate" start="393" end="412" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Method to compile a Smarty template"/>
+        <param description="template object to compile" type="object" variable="$template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <param description="true is shall be compiled in nocache mode" type="object" variable="$nocache">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <param type="object" variable="$parent_compiler">
+          <type full="null|Smarty_Internal_TemplateCompilerBase" namespace="" name="null|Smarty_Internal_TemplateCompilerBase"/>
+        </param>
+        <return description="true if compiling succeeded, false if it failed" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <throws type="object">
+          <type full="\Exception" namespace="" name="Exception"/>
+        </throws>
+      </docblock>
+      <parameter name="template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+      <parameter name="nocache" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="parent_compiler" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </parameter>
+      <inline>
+        <comment value="get code frame of compiled template" line="398"/>
+      </inline>
+    </method>
+    <method name="compileTemplateSource" start="424" end="502" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Compile template source and run optional post filter"/>
+        <param type="object" variable="$template">
+          <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <param description="flag if template must be compiled in nocache mode" type="object" variable="$nocache">
+          <type full="null|bool" namespace="" name="null|bool"/>
+        </param>
+        <param type="object" variable="$parent_compiler">
+          <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+        </param>
+        <return type="string"/>
+        <throws type="object">
+          <type full="\Exception" namespace="" name="Exception"/>
+        </throws>
+      </docblock>
+      <parameter name="template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+      <parameter name="nocache" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="parent_compiler" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </parameter>
+    </method>
+    <method name="postFilter" start="512" end="522" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Optionally process compiled code by post filter"/>
+        <param description="compiled code" type="string" variable="$code"/>
+        <return type="string"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="code" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="run post filter if on code" line="514"/>
+      </inline>
+    </method>
+    <method name="preFilter" start="532" end="542" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Run optional prefilter"/>
+        <param description="template source" type="string" variable="$_content"/>
+        <return type="string"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="_content" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="run pre filter if required" line="534"/>
+      </inline>
+    </method>
+    <method name="compileTag" start="561" end="568" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Compile Tag This is a call back from the lexer/parser">Save current prefix code
+Compile tag
+Merge tag prefix code with saved one
+(required nested tags in attributes)</description>
+        <param description="tag name" type="string" variable="$tag"/>
+        <param description="array with tag attributes" type="array" variable="$args"/>
+        <param description="array with compilation parameter" type="array" variable="$parameter"/>
+        <throws type="object">
+          <type full="SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+        <throws type="object">
+          <type full="SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+        <return description="compiled code" type="string"/>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="args" byreference="false" type="{unknown}"/>
+      <parameter name="parameter" byreference="false" type="array" default=""/>
+    </method>
+    <method name="compileVariable" start="577" end="593" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="compile variable"/>
+        <param type="string" variable="$variable"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="variable" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="compileConfigVariable" start="602" end="606" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="compile config variable"/>
+        <param type="string" variable="$variable"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="variable" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="return '$_smarty_tpl-&gt;config_vars[' . $variable . ']';" line="604"/>
+      </inline>
+    </method>
+    <method name="compilePHPFunctionCall" start="617" end="672" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="compile PHP function call"/>
+        <param type="string" variable="$name"/>
+        <param type="array" variable="$parameter"/>
+        <return type="string"/>
+        <throws type="object">
+          <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="parameter" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="processText" start="683" end="742" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This method is called from parser to process a text content section - remove text from inheritance child templates as they may generate output - strip text if strip is enabled"/>
+        <param type="string" variable="$text"/>
+        <return type="object">
+          <type full="null|\Smarty_Internal_ParseTree_Text" namespace="null|" name="Smarty_Internal_ParseTree_Text"/>
+        </return>
+      </docblock>
+      <parameter name="text" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="callTagCompiler" start="759" end="765" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="lazy loads internal compile plugin for tag and calls the compile method compile objects cached for reuse.">class name format:  Smarty_Internal_Compile_TagName
+plugin filename format: Smarty_Internal_TagName.php</description>
+        <param description="tag name" type="string" variable="$tag"/>
+        <param description="list of tag attributes" type="array" variable="$args"/>
+        <param description="optional parameter" type="mixed" variable="$param1"/>
+        <param description="optional parameter" type="mixed" variable="$param2"/>
+        <param description="optional parameter" type="mixed" variable="$param3"/>
+        <return description="compiled code or false" type="object">
+          <type full="bool|string" namespace="" name="bool|string"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="args" byreference="false" type="{unknown}"/>
+      <parameter name="param1" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="param2" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="param3" byreference="false" type="{unknown}" default="NULL"/>
+      <inline>
+        <comment value="compile this tag" line="763"/>
+      </inline>
+    </method>
+    <method name="getTagCompiler" start="777" end="794" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="lazy loads internal compile plugin for tag compile objects cached for reuse.">class name format:  Smarty_Internal_Compile_TagName
+plugin filename format: Smarty_Internal_TagName.php</description>
+        <param description="tag name" type="string" variable="$tag"/>
+        <return description="tag compiler object or false if not found" type="object">
+          <type full="bool|\Smarty_Internal_CompileBase" namespace="bool|" name="Smarty_Internal_CompileBase"/>
+        </return>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="re-use object if already exists" line="779"/>
+      </inline>
+    </method>
+    <method name="getPlugin" start="805" end="860" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check for plugins and return function name"/>
+        <param variable="$plugin_name"/>
+        <param description="type of plugin" type="string" variable="$plugin_type"/>
+        <return description="call name of function" type="string"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="plugin_name" byreference="false" type="{unknown}"/>
+      <parameter name="plugin_type" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="loop through plugin dirs and find the plugin" line="835"/>
+      </inline>
+    </method>
+    <method name="getPluginFromDefaultHandler" start="871" end="919" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check for plugins by default plugin handler"/>
+        <param description="name of tag" type="string" variable="$tag"/>
+        <param description="type of plugin" type="string" variable="$plugin_type"/>
+        <return description="true if found" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+      </docblock>
+      <parameter name="tag" byreference="false" type="{unknown}"/>
+      <parameter name="plugin_type" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="appendCode" start="929" end="938" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Append code segments and remove unneeded ?&gt; &lt;?php transitions"/>
+        <param type="string" variable="$left"/>
+        <param type="string" variable="$right"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="left" byreference="false" type="{unknown}"/>
+      <parameter name="right" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="processNocacheCode" start="951" end="981" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Inject inline code for nocache template sections This method gets the content of each template element from the parser.">If the content is compiled code and it should be not cached the code is injected
+into the rendered output.</description>
+        <param description="content of template element" type="string" variable="$content"/>
+        <param description="true if content is compiled code" type="boolean" variable="$is_code"/>
+        <return description="content" type="string"/>
+      </docblock>
+      <parameter name="content" byreference="false" type="{unknown}"/>
+      <parameter name="is_code" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="If the template is not evaluated and we have a nocache section and or a nocache tag" line="953"/>
+      </inline>
+    </method>
+    <method name="getId" start="990" end="996" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get Id"/>
+        <param type="string" variable="$input"/>
+        <return type="object">
+          <type full="bool|string" namespace="" name="bool|string"/>
+        </return>
+      </docblock>
+      <parameter name="input" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getVariableName" start="1005" end="1011" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get variable name from string"/>
+        <param type="string" variable="$input"/>
+        <return type="object">
+          <type full="bool|string" namespace="" name="bool|string"/>
+        </return>
+      </docblock>
+      <parameter name="input" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setNocacheInVariable" start="1018" end="1029" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set nocache flag in variable or create new variable"/>
+        <param type="string" variable="$varName"/>
+      </docblock>
+      <parameter name="varName" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="create nocache var to make it know for further compiling" line="1020"/>
+      </inline>
+    </method>
+    <method name="convertScope" start="1038" end="1057" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param description="tag attributes" type="array" variable="$_attr"/>
+        <param type="array" variable="$validScopes"/>
+        <return type="object">
+          <type full="int|string" namespace="" name="int|string"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+      </docblock>
+      <parameter name="_attr" byreference="false" type="{unknown}"/>
+      <parameter name="validScopes" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="makeNocacheCode" start="1066" end="1071" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Generate nocache code string"/>
+        <param description="PHP code" type="string" variable="$code"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="code" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="trigger_template_error" start="1085" end="1155" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="display compiler error messages without dying If parameter $args is empty it is a parser detected syntax error.">In this case the parser is called to obtain information about expected tokens.
+If parameter $args contains a string this is used as error message</description>
+        <param description="individual error message or null" type="string" variable="$args"/>
+        <param description="line-number" type="string" variable="$line"/>
+        <param description="if true the line number of last tag" type="object" variable="$tagline">
+          <type full="null|bool" namespace="" name="null|bool"/>
+        </param>
+        <throws description="when an unexpected token is found" type="object">
+          <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+      </docblock>
+      <parameter name="args" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="line" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="tagline" byreference="false" type="{unknown}" default="NULL"/>
+      <inline>
+        <comment value="$line += $this-&gt;trace_line_offset;" line="1117"/>
+      </inline>
+    </method>
+    <method name="getVarExport" start="1164" end="1167" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return var_export() value with all white spaces removed"/>
+        <param type="mixed" variable="$value"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="enterDoubleQuote" start="1173" end="1176" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="enter double quoted string  - save tag stack count"/>
+      </docblock>
+    </method>
+    <method name="getTagStackCount" start="1183" end="1186" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return tag stack count"/>
+        <return type="int"/>
+      </docblock>
+    </method>
+    <method name="replaceDelimiter" start="1193" end="1204" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param variable="$lexerPreg"/>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="lexerPreg" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="initDelimiterPreg" start="1209" end="1236" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Build lexer regular expressions for left and right delimiter and user defined literals"/>
+      </docblock>
+    </method>
+    <method name="leaveDoubleQuote" start="1244" end="1254" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="leave double quoted string  - throw exception if block in string was not closed"/>
+        <throws type="object">
+          <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="getLdelPreg" start="1261" end="1264" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get left delimiter preg"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getRdelPreg" start="1271" end="1274" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get right delimiter preg"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getLdelLength" start="1281" end="1284" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get length of left delimiter"/>
+        <return type="int"/>
+      </docblock>
+    </method>
+    <method name="getRdelLength" start="1291" end="1294" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get length of right delimiter"/>
+        <return type="int"/>
+      </docblock>
+    </method>
+    <method name="getOpenBlockTag" start="1301" end="1309" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get name of current open block tag"/>
+        <return type="object">
+          <type full="string|boolean" namespace="" name="string|boolean"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="isVariable" start="1318" end="1335" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check if $value contains variable elements"/>
+        <param type="mixed" variable="$value"/>
+        <return type="object">
+          <type full="bool|int" namespace="" name="bool|int"/>
+        </return>
+      </docblock>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getNewPrefixVariable" start="1342" end="1346" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get new prefix variable name"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getPrefixVariable" start="1353" end="1356" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get current prefix variable name"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="appendPrefixCode" start="1363" end="1366" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="append  code to prefix buffer"/>
+        <param type="string" variable="$code"/>
+      </docblock>
+      <parameter name="code" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getPrefixCode" start="1373" end="1383" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="get prefix code string"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="saveRequiredPlugins" start="1390" end="1396" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Save current required plugins"/>
+        <param description="if true init required plugins" type="object" variable="$init">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+      </docblock>
+      <parameter name="init" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="restoreRequiredPlugins" start="1401" end="1404" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Restore required plugins"/>
+      </docblock>
+    </method>
+    <method name="compileRequiredPlugins" start="1412" end="1419" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Compile code to call Smarty_Internal_Template::_checkPlugins() for required plugins"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="compileCheckPlugins" start="1429" end="1442" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Compile code to call Smarty_Internal_Template::_checkPlugins   - checks if plugin is callable require otherwise"/>
+        <param variable="$requiredPlugins"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="requiredPlugins" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="doCompile" start="1452" end="1452" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="method to compile a Smarty template"/>
+        <param description="template source" type="mixed" variable="$_content"/>
+        <param type="object" variable="$isTemplateSource">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="true if compiling succeeded, false if it failed" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="_content" byreference="false" type="{unknown}"/>
+      <parameter name="isTemplateSource" byreference="false" type="boolean" default="false"/>
+    </method>
+  </parent>
+</class>

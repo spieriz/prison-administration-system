@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_ParseTree_Template" namespace="" name="Smarty_Internal_ParseTree_Template" abstract="false" final="false" start="19" end="129">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_parsetree_template.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_parsetree_template.php" size="4276" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="295bc3d3879e7aab28d0c03a79eb94d0c12db075" relative="includes/libs/Smarty/sysplugins/smarty_internal_parsetree_template.php"/>
+  <docblock>
+    <description compact="Template element"/>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+    <ignore/>
+  </docblock>
+  <extends full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+  <member name="subtrees" default="" type="array" visibility="public" static="false" line="26">
+    <docblock>
+      <description compact="Array of template elements"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create root of parse tree for template elements"/>
+    </docblock>
+  </constructor>
+  <method name="append_subtree" start="41" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Append buffer to subtree"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <param type="object" variable="$subtree">
+        <type full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+      </param>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+    <parameter name="subtree" byreference="false" type="object">
+      <type full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+    </parameter>
+  </method>
+  <method name="append_array" start="58" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Append array to subtree"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <param type="array" variable="$array" of="object">
+        <type full="\Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+      </param>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+    <parameter name="array" byreference="false" type="array" default=""/>
+  </method>
+  <method name="prepend_array" start="71" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prepend array to subtree"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <param type="array" variable="$array" of="object">
+        <type full="\Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+      </param>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+    <parameter name="array" byreference="false" type="array" default=""/>
+  </method>
+  <method name="to_smarty_php" start="85" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sanitize and merge subtree buffers together"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <return description="template code content" type="string"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+  </method>
+  <parent full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree">
+    <member name="data" visibility="public" static="false" line="24">
+      <docblock>
+        <description compact="Buffer content"/>
+        <var type="mixed"/>
+      </docblock>
+    </member>
+    <member name="subtrees" default="" type="array" visibility="public" static="false" line="31">
+      <docblock>
+        <description compact="Subtree array"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="to_smarty_php" start="40" end="40" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return buffer"/>
+        <param type="object" variable="$parser">
+          <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+        </param>
+        <return description="buffer content" type="string"/>
+      </docblock>
+      <parameter name="parser" byreference="false" type="object">
+        <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </parameter>
+    </method>
+    <destructor name="__destruct" start="45" end="49" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Template data object destructor"/>
+      </docblock>
+    </destructor>
+  </parent>
+</class>

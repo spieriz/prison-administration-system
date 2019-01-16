@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_GetStreamVariable" namespace="" name="Smarty_Internal_Method_GetStreamVariable" abstract="false" final="false" start="12" end="50">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_getstreamvariable.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_getstreamvariable.php" size="1319" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="ded6e856d1c512a604e6f16239d0224a107c751d" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_getstreamvariable.php"/>
+  <docblock>
+    <description compact="Smarty Method GetStreamVariable">Smarty::getStreamVariable() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="7" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for all objects"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="getStreamVariable" start="32" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="gets  a stream variable"/>
+      <api value="Smarty::getStreamVariable()"/>
+      <param type="object" variable="$data">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="the stream of the variable" type="string" variable="$variable"/>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    </parameter>
+    <parameter name="variable" byreference="false" type="{unknown}"/>
+  </method>
+</class>

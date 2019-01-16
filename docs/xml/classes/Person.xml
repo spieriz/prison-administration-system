@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Person" namespace="" name="Person" abstract="true" final="false" start="10" end="106">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/classes" file="Person.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/classes/Person.php" size="1816" time="2019-01-13T01:47:52+01:00" unixtime="1547340472" sha1="a52675ff92d6e52e6773cf4c6c3665504f41a394" relative="includes/classes/Person.php"/>
+  <docblock>
+    <description compact="Project: Prison Administration System Author: Paweł Ledwig IDE: PhpStorm Date: 12.01.2019 Time: 15:13"/>
+  </docblock>
+  <member name="id" visibility="protected" static="false" line="12"/>
+  <member name="name" visibility="protected" static="false" line="13"/>
+  <member name="surname" visibility="protected" static="false" line="14"/>
+  <member name="pesel" visibility="protected" static="false" line="15"/>
+  <member name="address" visibility="protected" static="false" line="16"/>
+  <method name="getId" start="21" end="24" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="null"/>
+    </docblock>
+  </method>
+  <method name="setId" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="null" variable="$id"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getName" start="37" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setName" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSurname" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setSurname" start="61" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$surname"/>
+    </docblock>
+    <parameter name="surname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPesel" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setPesel" start="77" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$pesel"/>
+    </docblock>
+    <parameter name="pesel" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAddress" start="85" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setAddress" start="93" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$address"/>
+    </docblock>
+    <parameter name="address" byreference="false" type="{unknown}"/>
+  </method>
+  <constructor name="__construct" start="98" end="105" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="name" byreference="false" type="string" default="''"/>
+    <parameter name="surname" byreference="false" type="string" default="''"/>
+    <parameter name="pesel" byreference="false" type="string" default="''"/>
+    <parameter name="address" byreference="false" type="string" default="''"/>
+  </constructor>
+  <extenders>
+    <extender full="DutyOfficer" namespace="" name="DutyOfficer"/>
+    <extender full="Guard" namespace="" name="Guard"/>
+  </extenders>
+</class>

@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_TemplateCompilerBase</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_TemplateCompilerBase</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_templatecompilerbase.php.xhtml#line22">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_TemplateCompilerBase</h1>
+        <h4>Main abstract compiler class</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_TemplateCompilerBase
+            {<br/><ul class="none"><li>// members</li><li>public static array <a href="#members">$_tag_objects</a> =
+                        ;
+                    </li><li>public static integer <a href="#members">$prefixVariableNumber</a> =
+                        0;
+                    </li><li>public <span title="Smarty">Smarty</span> <a href="#members">$smarty</a> =
+                        NULL;
+                    </li><li>public <span title="Smarty_Internal_Templateparser">Smarty_Internal_Templateparser</span> <a href="#members">$parser</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$nocache_hash</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$suppressNocacheProcessing</a> =
+                        false;
+                    </li><li>public integer <a href="#members">$caching</a> =
+                        0;
+                    </li><li>public array <a href="#members">$_tag_stack</a> =
+                        ;
+                    </li><li>public array <a href="#members">$_tag_stack_count</a> =
+                        ;
+                    </li><li>public array <a href="#members">$required_plugins</a> =
+                        ;
+                    </li><li>public array <a href="#members">$required_plugins_stack</a> =
+                        ;
+                    </li><li>public <span title="Smarty_Internal_Template">Smarty_Internal_Template</span> <a href="#members">$template</a> =
+                        NULL;
+                    </li><li>public array <a href="#members">$mergedSubTemplatesData</a> =
+                        ;
+                    </li><li>public array <a href="#members">$mergedSubTemplatesCode</a> =
+                        ;
+                    </li><li>public array <a href="#members">$templateProperties</a> =
+                        ;
+                    </li><li>public integer <a href="#members">$trace_line_offset</a> =
+                        0;
+                    </li><li>public string <a href="#members">$trace_uid</a> =
+                        '';
+                    </li><li>public string <a href="#members">$trace_filepath</a> =
+                        '';
+                    </li><li>public array <a href="#members">$trace_stack</a> =
+                        ;
+                    </li><li>public array <a href="#members">$default_handler_plugins</a> =
+                        ;
+                    </li><li>public  <a href="#members">$default_modifier_list</a> =
+                        NULL;
+                    </li><li>public boolean <a href="#members">$forceNocache</a> =
+                        false;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$write_compiled_code</a> =
+                        true;
+                    </li><li>public array <a href="#members">$tpl_function</a> =
+                        ;
+                    </li><li>public array <a href="#members">$called_functions</a> =
+                        ;
+                    </li><li>public string <a href="#members">$blockOrFunctionCode</a> =
+                        '';
+                    </li><li>public integer <a href="#members">$php_handling</a> =
+                        0;
+                    </li><li>public array <a href="#members">$modifier_plugins</a> =
+                        ;
+                    </li><li>public array <a href="#members">$known_modifier_type</a> =
+                        ;
+                    </li><li>public <span title="Smarty_Internal_TemplateCompilerBase">Smarty_Internal_TemplateCompilerBase</span> <a href="#members">$parent_compiler</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$nocache</a> =
+                        false;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$tag_nocache</a> =
+                        false;
+                    </li><li>public array <a href="#members">$prefix_code</a> =
+                        ;
+                    </li><li>public array <a href="#members">$usedPrefixVariables</a> =
+                        ;
+                    </li><li>public array <a href="#members">$prefixCodeStack</a> =
+                        ;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$has_code</a> =
+                        false;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$has_variable_string</a> =
+                        false;
+                    </li><li>public array <a href="#members">$variable_filter_stack</a> =
+                        ;
+                    </li><li>public array <a href="#members">$variable_filters</a> =
+                        ;
+                    </li><li>public integer <a href="#members">$loopNesting</a> =
+                        0;
+                    </li><li>public string <a href="#members">$stripRegEx</a> =
+                        '![\t ]*[\r\n]+[\t ]*!';
+                    </li><li>public array <a href="#members">$plugin_search_order</a> =
+                        ;
+                    </li><li>public array <a href="#members">$_cache</a> =
+                        ;
+                    </li><li>private string <a href="#members">$ldelPreg</a> =
+                        '[{]';
+                    </li><li>private string <a href="#members">$rdelPreg</a> =
+                        '[}]';
+                    </li><li>private integer <a href="#members">$rdelLength</a> =
+                        0;
+                    </li><li>private integer <a href="#members">$ldelLength</a> =
+                        0;
+                    </li><li>private string <a href="#members">$literalPreg</a> =
+                        '';
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/__construct.xhtml">__construct</a>()
+                    </li><li>public bool <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTemplate.xhtml">compileTemplate</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTemplateSource.xhtml">compileTemplateSource</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/postFilter.xhtml">postFilter</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/preFilter.xhtml">preFilter</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTag.xhtml">compileTag</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileVariable.xhtml">compileVariable</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileConfigVariable.xhtml">compileConfigVariable</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compilePHPFunctionCall.xhtml">compilePHPFunctionCall</a>()
+                    </li><li>public Smarty_Internal_ParseTree_Text <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/processText.xhtml">processText</a>()
+                    </li><li>public bool|string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/callTagCompiler.xhtml">callTagCompiler</a>()
+                    </li><li>public Smarty_Internal_CompileBase <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getTagCompiler.xhtml">getTagCompiler</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPlugin.xhtml">getPlugin</a>()
+                    </li><li>public bool <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPluginFromDefaultHandler.xhtml">getPluginFromDefaultHandler</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/appendCode.xhtml">appendCode</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/processNocacheCode.xhtml">processNocacheCode</a>()
+                    </li><li>public bool|string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getId.xhtml">getId</a>()
+                    </li><li>public bool|string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getVariableName.xhtml">getVariableName</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/setNocacheInVariable.xhtml">setNocacheInVariable</a>()
+                    </li><li>public int|string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/convertScope.xhtml">convertScope</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/makeNocacheCode.xhtml">makeNocacheCode</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/trigger_template_error.xhtml">trigger_template_error</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getVarExport.xhtml">getVarExport</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/enterDoubleQuote.xhtml">enterDoubleQuote</a>()
+                    </li><li>public int <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getTagStackCount.xhtml">getTagStackCount</a>()
+                    </li><li>public mixed <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/replaceDelimiter.xhtml">replaceDelimiter</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/initDelimiterPreg.xhtml">initDelimiterPreg</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/leaveDoubleQuote.xhtml">leaveDoubleQuote</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getLdelPreg.xhtml">getLdelPreg</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getRdelPreg.xhtml">getRdelPreg</a>()
+                    </li><li>public int <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getLdelLength.xhtml">getLdelLength</a>()
+                    </li><li>public int <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getRdelLength.xhtml">getRdelLength</a>()
+                    </li><li>public string|boolean <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getOpenBlockTag.xhtml">getOpenBlockTag</a>()
+                    </li><li>public bool|int <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/isVariable.xhtml">isVariable</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getNewPrefixVariable.xhtml">getNewPrefixVariable</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPrefixVariable.xhtml">getPrefixVariable</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/appendPrefixCode.xhtml">appendPrefixCode</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPrefixCode.xhtml">getPrefixCode</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/saveRequiredPlugins.xhtml">saveRequiredPlugins</a>()
+                    </li><li>public void <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/restoreRequiredPlugins.xhtml">restoreRequiredPlugins</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileRequiredPlugins.xhtml">compileRequiredPlugins</a>()
+                    </li><li>public string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileCheckPlugins.xhtml">compileCheckPlugins</a>()
+                    </li><li>protected abstract bool <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/doCompile.xhtml">doCompile</a>()
+                    </li><li>private string <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTag2.xhtml">compileTag2</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="ldelLength"><strong>$ldelLength</strong>
+                —
+                int<br/><span class="indent">Length of left delimiter</span></li>
+            <li id="ldelPreg"><strong>$ldelPreg</strong>
+                —
+                string<br/><span class="indent">Lexer preg pattern for left delimiter</span></li>
+            <li id="literalPreg"><strong>$literalPreg</strong>
+                —
+                string<br/><span class="indent">Lexer preg pattern for user literals</span></li>
+            <li id="rdelLength"><strong>$rdelLength</strong>
+                —
+                int<br/><span class="indent">Length of right delimiter</span></li>
+            <li id="rdelPreg"><strong>$rdelPreg</strong>
+                —
+                string<br/><span class="indent">Lexer preg pattern for right delimiter</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="_cache"><strong>$_cache</strong>
+                —
+                array<br/><span class="indent">General storage area for tag compiler plugins</span></li>
+            <li id="_tag_objects"><strong>$_tag_objects</strong>
+                —
+                array<br/><span class="indent">compile tag objects cache</span></li>
+            <li id="_tag_stack"><strong>$_tag_stack</strong>
+                —
+                array<br/><span class="indent">tag stack</span></li>
+            <li id="_tag_stack_count"><strong>$_tag_stack_count</strong>
+                —
+                array<br/><span class="indent">tag stack count</span></li>
+            <li id="blockOrFunctionCode"><strong>$blockOrFunctionCode</strong>
+                —
+                string<br/><span class="indent">compiled template or block function code</span></li>
+            <li id="caching"><strong>$caching</strong>
+                —
+                int<br/><span class="indent">caching enabled (copied from template object)</span></li>
+            <li id="called_functions"><strong>$called_functions</strong>
+                —
+                array<br/><span class="indent">called sub functions from template function</span></li>
+            <li id="default_handler_plugins"><strong>$default_handler_plugins</strong>
+                —
+                array<br/><span class="indent">plugins loaded by default plugin handler</span></li>
+            <li id="default_modifier_list"><strong>$default_modifier_list</strong>
+                —
+                mixed<br/><span class="indent">saved preprocessed modifier list</span></li>
+            <li id="forceNocache"><strong>$forceNocache</strong>
+                —
+                boolean<br/><span class="indent">force compilation of complete template as nocache</span></li>
+            <li id="has_code"><strong>$has_code</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Tag has compiled code</span></li>
+            <li id="has_variable_string"><strong>$has_variable_string</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">A variable string was compiled</span></li>
+            <li id="known_modifier_type"><strong>$known_modifier_type</strong>
+                —
+                array<br/><span class="indent">type of already compiled modifier</span></li>
+            <li id="loopNesting"><strong>$loopNesting</strong>
+                —
+                int<br/><span class="indent">Nesting count of looping tags like {foreach}, {for}, {section}, {while}</span></li>
+            <li id="mergedSubTemplatesCode"><strong>$mergedSubTemplatesCode</strong>
+                —
+                array<br/><span class="indent">merged sub template code</span></li>
+            <li id="mergedSubTemplatesData"><strong>$mergedSubTemplatesData</strong>
+                —
+                array<br/><span class="indent">merged included sub template data</span></li>
+            <li id="modifier_plugins"><strong>$modifier_plugins</strong>
+                —
+                array<br/><span class="indent">flags for used modifier plugins</span></li>
+            <li id="nocache"><strong>$nocache</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag true when compiling nocache section</span></li>
+            <li id="nocache_hash"><strong>$nocache_hash</strong>
+                —
+                mixed<br/><span class="indent">hash for nocache sections</span></li>
+            <li id="parent_compiler"><strong>$parent_compiler</strong>
+                —
+                <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase.xhtml">Smarty_Internal_TemplateCompilerBase</a><br/><span class="indent">parent compiler object for merged subtemplates and template functions</span></li>
+            <li id="parser"><strong>$parser</strong>
+                —
+                <a title="Smarty_Internal_Templateparser" href="../classes/Smarty_Internal_Templateparser.xhtml">Smarty_Internal_Templateparser</a><br/><span class="indent">Parser object</span></li>
+            <li id="php_handling"><strong>$php_handling</strong>
+                —
+                int<br/><span class="indent">php_handling setting either from Smarty or security</span></li>
+            <li id="plugin_search_order"><strong>$plugin_search_order</strong>
+                —
+                array<br/><span class="indent">plugin search order</span></li>
+            <li id="prefixCodeStack"><strong>$prefixCodeStack</strong>
+                —
+                array<br/><span class="indent">Prefix code  stack</span></li>
+            <li id="prefixVariableNumber"><strong>$prefixVariableNumber</strong>
+                —
+                int<br/><span class="indent">counter for prefix variable number</span></li>
+            <li id="prefix_code"><strong>$prefix_code</strong>
+                —
+                array<br/><span class="indent">Compiled tag prefix code</span></li>
+            <li id="required_plugins"><strong>$required_plugins</strong>
+                —
+                array<br/><span class="indent">Plugins used by template</span></li>
+            <li id="required_plugins_stack"><strong>$required_plugins_stack</strong>
+                —
+                array<br/><span class="indent">Required plugins stack</span></li>
+            <li id="smarty"><strong>$smarty</strong>
+                —
+                <a title="Smarty" href="../classes/Smarty.xhtml">Smarty</a><br/><span class="indent">Smarty object</span></li>
+            <li id="stripRegEx"><strong>$stripRegEx</strong>
+                —
+                string<br/><span class="indent">Strip preg pattern</span></li>
+            <li id="suppressNocacheProcessing"><strong>$suppressNocacheProcessing</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">suppress generation of nocache code</span></li>
+            <li id="tag_nocache"><strong>$tag_nocache</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag true when tag is compiled as nocache</span></li>
+            <li id="template"><strong>$template</strong>
+                —
+                <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template.xhtml">Smarty_Internal_Template</a><br/><span class="indent">current template</span></li>
+            <li id="templateProperties"><strong>$templateProperties</strong>
+                —
+                array<br/><span class="indent">collected template properties during compilation</span></li>
+            <li id="tpl_function"><strong>$tpl_function</strong>
+                —
+                array<br/><span class="indent">Template functions</span></li>
+            <li id="trace_filepath"><strong>$trace_filepath</strong>
+                —
+                string<br/><span class="indent">trace file path</span></li>
+            <li id="trace_line_offset"><strong>$trace_line_offset</strong>
+                —
+                int<br/><span class="indent">source line offset for error messages</span></li>
+            <li id="trace_stack"><strong>$trace_stack</strong>
+                —
+                array<br/><span class="indent">stack for tracing file and line of nested {block} tags</span></li>
+            <li id="trace_uid"><strong>$trace_uid</strong>
+                —
+                string<br/><span class="indent">trace uid</span></li>
+            <li id="usedPrefixVariables"><strong>$usedPrefixVariables</strong>
+                —
+                array<br/><span class="indent">used prefix variables by current compiled tag</span></li>
+            <li id="variable_filter_stack"><strong>$variable_filter_stack</strong>
+                —
+                array<br/><span class="indent">Stack for {setfilter} {/setfilter}</span></li>
+            <li id="variable_filters"><strong>$variable_filters</strong>
+                —
+                array<br/><span class="indent">variable filters for {setfilter} {/setfilter}</span></li>
+            <li id="write_compiled_code"><strong>$write_compiled_code</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if compiled template file shall we written</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="compileTag2"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTag2.xhtml">compileTag2()</a>
+                — Compile Tag</li>
+          </ul>
+          <h4>protected</h4>
+          <ul>
+            <li id="doCompile"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/doCompile.xhtml">doCompile()</a>
+                — method to compile a Smarty template</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/__construct.xhtml">__construct()</a>
+                — Initialize compiler</li>
+            <li id="appendCode"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/appendCode.xhtml">appendCode()</a>
+                — Append code segments and remove unneeded ?&gt; &lt;?php transitions</li>
+            <li id="appendPrefixCode"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/appendPrefixCode.xhtml">appendPrefixCode()</a>
+                — append  code to prefix buffer</li>
+            <li id="callTagCompiler"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/callTagCompiler.xhtml">callTagCompiler()</a>
+                — lazy loads internal compile plugin for tag and calls the compile method compile objects cached for reuse.</li>
+            <li id="compileCheckPlugins"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileCheckPlugins.xhtml">compileCheckPlugins()</a>
+                — Compile code to call Smarty_Internal_Template::_checkPlugins   - checks if plugin is callable require otherwise</li>
+            <li id="compileConfigVariable"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileConfigVariable.xhtml">compileConfigVariable()</a>
+                — compile config variable</li>
+            <li id="compilePHPFunctionCall"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compilePHPFunctionCall.xhtml">compilePHPFunctionCall()</a>
+                — compile PHP function call</li>
+            <li id="compileRequiredPlugins"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileRequiredPlugins.xhtml">compileRequiredPlugins()</a>
+                — Compile code to call Smarty_Internal_Template::_checkPlugins() for required plugins</li>
+            <li id="compileTag"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTag.xhtml">compileTag()</a>
+                — Compile Tag This is a call back from the lexer/parser</li>
+            <li id="compileTemplate"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTemplate.xhtml">compileTemplate()</a>
+                — Method to compile a Smarty template</li>
+            <li id="compileTemplateSource"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileTemplateSource.xhtml">compileTemplateSource()</a>
+                — Compile template source and run optional post filter</li>
+            <li id="compileVariable"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/compileVariable.xhtml">compileVariable()</a>
+                — compile variable</li>
+            <li id="convertScope">
+              <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/convertScope.xhtml">convertScope()</a>
+            </li>
+            <li id="enterDoubleQuote"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/enterDoubleQuote.xhtml">enterDoubleQuote()</a>
+                — enter double quoted string  - save tag stack count</li>
+            <li id="getId"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getId.xhtml">getId()</a>
+                — Get Id</li>
+            <li id="getLdelLength"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getLdelLength.xhtml">getLdelLength()</a>
+                — Get length of left delimiter</li>
+            <li id="getLdelPreg"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getLdelPreg.xhtml">getLdelPreg()</a>
+                — Get left delimiter preg</li>
+            <li id="getNewPrefixVariable"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getNewPrefixVariable.xhtml">getNewPrefixVariable()</a>
+                — Get new prefix variable name</li>
+            <li id="getOpenBlockTag"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getOpenBlockTag.xhtml">getOpenBlockTag()</a>
+                — Get name of current open block tag</li>
+            <li id="getPlugin"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPlugin.xhtml">getPlugin()</a>
+                — Check for plugins and return function name</li>
+            <li id="getPluginFromDefaultHandler"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPluginFromDefaultHandler.xhtml">getPluginFromDefaultHandler()</a>
+                — Check for plugins by default plugin handler</li>
+            <li id="getPrefixCode"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPrefixCode.xhtml">getPrefixCode()</a>
+                — get prefix code string</li>
+            <li id="getPrefixVariable"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getPrefixVariable.xhtml">getPrefixVariable()</a>
+                — Get current prefix variable name</li>
+            <li id="getRdelLength"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getRdelLength.xhtml">getRdelLength()</a>
+                — Get length of right delimiter</li>
+            <li id="getRdelPreg"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getRdelPreg.xhtml">getRdelPreg()</a>
+                — Get right delimiter preg</li>
+            <li id="getTagCompiler"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getTagCompiler.xhtml">getTagCompiler()</a>
+                — lazy loads internal compile plugin for tag compile objects cached for reuse.</li>
+            <li id="getTagStackCount"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getTagStackCount.xhtml">getTagStackCount()</a>
+                — Return tag stack count</li>
+            <li id="getVarExport"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getVarExport.xhtml">getVarExport()</a>
+                — Return var_export() value with all white spaces removed</li>
+            <li id="getVariableName"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/getVariableName.xhtml">getVariableName()</a>
+                — Get variable name from string</li>
+            <li id="initDelimiterPreg"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/initDelimiterPreg.xhtml">initDelimiterPreg()</a>
+                — Build lexer regular expressions for left and right delimiter and user defined literals</li>
+            <li id="isVariable"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/isVariable.xhtml">isVariable()</a>
+                — Check if $value contains variable elements</li>
+            <li id="leaveDoubleQuote"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/leaveDoubleQuote.xhtml">leaveDoubleQuote()</a>
+                — leave double quoted string  - throw exception if block in string was not closed</li>
+            <li id="makeNocacheCode"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/makeNocacheCode.xhtml">makeNocacheCode()</a>
+                — Generate nocache code string</li>
+            <li id="postFilter"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/postFilter.xhtml">postFilter()</a>
+                — Optionally process compiled code by post filter</li>
+            <li id="preFilter"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/preFilter.xhtml">preFilter()</a>
+                — Run optional prefilter</li>
+            <li id="processNocacheCode"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/processNocacheCode.xhtml">processNocacheCode()</a>
+                — Inject inline code for nocache template sections This method gets the content of each template element from the parser.</li>
+            <li id="processText"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/processText.xhtml">processText()</a>
+                — This method is called from parser to process a text content section - remove text from inheritance child templates as they may generate output - strip text if strip is enabled</li>
+            <li id="replaceDelimiter">
+              <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/replaceDelimiter.xhtml">replaceDelimiter()</a>
+            </li>
+            <li id="restoreRequiredPlugins"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/restoreRequiredPlugins.xhtml">restoreRequiredPlugins()</a>
+                — Restore required plugins</li>
+            <li id="saveRequiredPlugins"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/saveRequiredPlugins.xhtml">saveRequiredPlugins()</a>
+                — Save current required plugins</li>
+            <li id="setNocacheInVariable"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/setNocacheInVariable.xhtml">setNocacheInVariable()</a>
+                — Set nocache flag in variable or create new variable</li>
+            <li id="trigger_template_error"><a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase/trigger_template_error.xhtml">trigger_template_error()</a>
+                — display compiler error messages without dying If parameter $args is empty it is a parser detected syntax error.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

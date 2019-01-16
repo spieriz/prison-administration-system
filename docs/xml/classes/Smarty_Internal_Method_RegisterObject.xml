@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_RegisterObject" namespace="" name="Smarty_Internal_Method_RegisterObject" abstract="false" final="false" start="12" end="84">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_registerobject.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_registerobject.php" size="4160" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="2d3b640f192e9a654af74c7b8b456588087c8da8" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_registerobject.php"/>
+  <docblock>
+    <description compact="Smarty Method RegisterObject">Smarty::registerObject() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="registerObject" start="54" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers object to be used in templates"/>
+      <api value="Smarty::registerObject()"/>
+      <link value="http://www.smarty.net/docs/en/api.register.object.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param type="string" variable="$object_name"/>
+      <param description="the" type="object" variable="$object">referenced
+                                                                                                   PHP
+                                                                                                   object
+                                                                                                   to
+                                                                                                   register</param>
+      <param description="list of" type="array" variable="$allowed_methods_properties">allowed
+                                                                                                   methods
+                                                                                                   (empty
+                                                                                                   = all)</param>
+      <param description="smarty" type="object" variable="$format">argument
+                                                                                                   format,
+                                                                                                   else
+                                                                                                   traditional<type full="bool" namespace="" name="bool"/></param>
+      <param description="list of" type="array" variable="$block_methods">block-methods</param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="object_name" byreference="false" type="{unknown}"/>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="allowed_methods_properties" byreference="false" type="array" default=""/>
+    <parameter name="format" byreference="false" type="boolean" default="true"/>
+    <parameter name="block_methods" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="test if allowed methods callable" line="63"/>
+      <comment value="test if block methods callable" line="71"/>
+      <comment value="register the object" line="79"/>
+    </inline>
+  </method>
+</class>

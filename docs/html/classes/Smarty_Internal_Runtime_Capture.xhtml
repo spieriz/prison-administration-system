@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Runtime_Capture</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Runtime_Capture</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_runtime_capture.php.xhtml#line10">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Runtime_Capture</h1>
+        <h4>Runtime Extension Capture</h4>
+        <p/>
+        <ul>
+          <li>Author: Uwe Tews</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Runtime_Capture
+            {<br/><ul class="none"><li>// members</li><li>public <span title="bool">bool</span> <a href="#members">$isPrivateExtension</a> =
+                        true;
+                    </li><li>private array <a href="#members">$captureStack</a> =
+                        ;
+                    </li><li>private integer <a href="#members">$captureCount</a> =
+                        0;
+                    </li><li>private array <a href="#members">$countStack</a> =
+                        ;
+                    </li><li>private array <a href="#members">$namedBuffer</a> =
+                        ;
+                    </li><li>private <span title="bool">bool</span> <a href="#members">$isRegistered</a> =
+                        false;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/open.xhtml">open</a>()
+                    </li><li>private void <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/register.xhtml">register</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/startRender.xhtml">startRender</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/close.xhtml">close</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/error.xhtml">error</a>()
+                    </li><li>public array <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/getBuffer.xhtml">getBuffer</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/endRender.xhtml">endRender</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="captureCount"><strong>$captureCount</strong>
+                —
+                int<br/><span class="indent">Current open capture sections</span></li>
+            <li id="captureStack"><strong>$captureStack</strong>
+                —
+                array<br/><span class="indent">Stack of capture parameter</span></li>
+            <li id="countStack"><strong>$countStack</strong>
+                —
+                array<br/><span class="indent">Count stack</span></li>
+            <li id="isRegistered"><strong>$isRegistered</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag if callbacks are registered</span></li>
+            <li id="namedBuffer"><strong>$namedBuffer</strong>
+                —
+                array<br/><span class="indent">Named buffer</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="isPrivateExtension"><strong>$isPrivateExtension</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag that this instance  will not be cached</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="register"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/register.xhtml">register()</a>
+                — Register callbacks in template class</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="close"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/close.xhtml">close()</a>
+                — Close capture section</li>
+            <li id="endRender"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/endRender.xhtml">endRender()</a>
+                — End render callback</li>
+            <li id="error"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/error.xhtml">error()</a>
+                — Error exception on not matching {capture}{/capture}</li>
+            <li id="getBuffer"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/getBuffer.xhtml">getBuffer()</a>
+                — Return content of named capture buffer by key or as array</li>
+            <li id="open"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/open.xhtml">open()</a>
+                — Open capture section</li>
+            <li id="startRender"><a title="Smarty_Internal_Runtime_Capture" href="../classes/Smarty_Internal_Runtime_Capture/startRender.xhtml">startRender()</a>
+                — Start render callback</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

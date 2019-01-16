@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Template</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Template</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_template.php.xhtml#line27">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Template</h1>
+        <h4>Main class with template data structures and methods</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Template
+                extends <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase.xhtml">Smarty_Internal_TemplateBase</a>
+            {<br/><ul class="none"><li>// members</li><li>public static array <a href="#members">$tplObjCache</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$isCacheTplObj</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$subTplInfo</a> =
+                        ;
+                    </li><li>public integer <a href="#members">$_objType</a> =
+                        2;
+                    </li><li>public <span title="Smarty">Smarty</span> <a href="#members">$smarty</a> =
+                        NULL;
+                    </li><li>public <span title="Smarty_Template_Source|Smarty_Template_Config">Smarty_Template_Source|Smarty_Template_Config</span> <a href="#members">$source</a> =
+                        NULL;
+                    </li><li>public <span title="Smarty_Internal_Runtime_Inheritance">Smarty_Internal_Runtime_Inheritance</span> <a href="#members">$inheritance</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$template_resource</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$mustCompile</a> =
+                        NULL;
+                    </li><li>public <span title="null|string">null|string</span> <a href="#members">$templateId</a> =
+                        NULL;
+                    </li><li>public integer <a href="#members">$scope</a> =
+                        0;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$isRenderingCache</a> =
+                        false;
+                    </li><li>public array <a href="#members">$startRenderCallbacks</a> =
+                        ;
+                    </li><li>public array <a href="#members">$endRenderCallbacks</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Internal_TemplateBase">Smarty_Internal_TemplateBase</span></li><li>public  <a href="#members">$cache_id</a>;
+                        </li><li>public  <a href="#members">$compile_id</a>;
+                        </li><li>public int <a href="#members">$caching</a>;
+                        </li><li>public int <a href="#members">$compile_check</a>;
+                        </li><li>public integer <a href="#members">$cache_lifetime</a>;
+                        </li><li>public array <a href="#members">$tplFunctions</a>;
+                        </li><li>public <span title="array()">array()</span> <a href="#members">$_cache</a>;
+                        </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Internal_Data">Smarty_Internal_Data</span></li><li>public integer <a href="#members">$_objType</a>;
+                        </li><li>public string <a href="#members">$template_class</a>;
+                        </li><li>public array <a href="#members">$tpl_vars</a>;
+                        </li><li>public <span title="Smarty|Smarty_Internal_Template|Smarty_Data">Smarty|Smarty_Internal_Template|Smarty_Data</span> <a href="#members">$parent</a>;
+                        </li><li>public array <a href="#members">$config_vars</a>;
+                        </li><li>public <span title="Smarty_Internal_Extension_Handler">Smarty_Internal_Extension_Handler</span> <a href="#members">$ext</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/render.xhtml">render</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_subTemplateRender.xhtml">_subTemplateRender</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_subTemplateRegister.xhtml">_subTemplateRegister</a>()
+                    </li><li>public bool <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_isSubTpl.xhtml">_isSubTpl</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_assignInScope.xhtml">_assignInScope</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_checkPlugins.xhtml">_checkPlugins</a>()
+                    </li><li>public bool <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_decodeProperties.xhtml">_decodeProperties</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/compileTemplateSource.xhtml">compileTemplateSource</a>()
+                    </li><li>public bool <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/writeCachedContent.xhtml">writeCachedContent</a>()
+                    </li><li>public string <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_getTemplateId.xhtml">_getTemplateId</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/capture_error.xhtml">capture_error</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/loadCompiled.xhtml">loadCompiled</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/loadCached.xhtml">loadCached</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_loadInheritance.xhtml">_loadInheritance</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_cleanUp.xhtml">_cleanUp</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/loadCompiler.xhtml">loadCompiler</a>()
+                    </li><li>public mixed <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__call.xhtml">__call</a>()
+                    </li><li>public mixed|Smarty_Template_Cached <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__get.xhtml">__get</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__set.xhtml">__set</a>()
+                    </li><li>public void <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__destruct.xhtml">__destruct</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Internal_TemplateBase">Smarty_Internal_TemplateBase</span></li><li>public string <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/fetch.xhtml">fetch</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/display.xhtml">display</a>()
+                        </li><li>public bool <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/isCached.xhtml">isCached</a>()
+                        </li><li>public Smarty_Internal_Template <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerPlugin.xhtml">registerPlugin</a>()
+                        </li><li>public bool <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/loadFilter.xhtml">loadFilter</a>()
+                        </li><li>public Smarty_Internal_Template <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerFilter.xhtml">registerFilter</a>()
+                        </li><li>public Smarty_Internal_Template <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerObject.xhtml">registerObject</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileCheck.xhtml">setCompileCheck</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCaching.xhtml">setCaching</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheLifetime.xhtml">setCacheLifetime</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileId.xhtml">setCompileId</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheId.xhtml">setCacheId</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Internal_Data">Smarty_Internal_Data</span></li><li>public void <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__construct.xhtml">__construct</a>()
+                        </li><li>public Smarty_Internal_Data <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assign.xhtml">assign</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/append.xhtml">append</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignGlobal.xhtml">assignGlobal</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/appendByRef.xhtml">appendByRef</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignByRef.xhtml">assignByRef</a>()
+                        </li><li>public mixed <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getTemplateVars.xhtml">getTemplateVars</a>()
+                        </li><li>public Smarty_Variable|Smarty_Undefined_Variable <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getVariable.xhtml">getVariable</a>()
+                        </li><li>public void <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_mergeVars.xhtml">_mergeVars</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isDataObj.xhtml">_isDataObj</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isTplObj.xhtml">_isTplObj</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isSmartyObj.xhtml">_isSmartyObj</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_getSmartyObj.xhtml">_getSmartyObj</a>()
+                        </li><li>public mixed <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__call.xhtml">__call</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase.xhtml">Smarty_Internal_TemplateBase</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="_cache"><strong>$_cache</strong>
+                —
+                <a title="array()" href="../classes/array().xhtml">array()</a><br/><span class="indent">universal cache</span></li>
+            <li id="_objType"><strong>$_objType</strong>
+                —
+                int<br/><span class="indent">This object type (Smarty = 1, template = 2, data = 4)</span></li>
+            <li id="_objType"><strong>$_objType</strong>
+                —
+                int<br/><span class="indent">This object type (Smarty = 1, template = 2, data = 4)</span></li>
+            <li id="cache_id"><strong>$cache_id</strong>
+                —
+                string<br/><span class="indent">Set this if you want different sets of cache files for the same templates.</span></li>
+            <li id="cache_lifetime"><strong>$cache_lifetime</strong>
+                —
+                integer<br/><span class="indent">cache lifetime in seconds</span></li>
+            <li id="caching"><strong>$caching</strong>
+                —
+                int<br/><span class="indent">caching enabled</span></li>
+            <li id="compile_check"><strong>$compile_check</strong>
+                —
+                int<br/><span class="indent">check template for modifications?</span></li>
+            <li id="compile_id"><strong>$compile_id</strong>
+                —
+                string<br/><span class="indent">Set this if you want different sets of compiled files for the same templates.</span></li>
+            <li id="config_vars"><strong>$config_vars</strong>
+                —
+                array<br/><span class="indent">configuration settings</span></li>
+            <li id="endRenderCallbacks"><strong>$endRenderCallbacks</strong>
+                —
+                array<br/><span class="indent">Callbacks called after rendering template</span></li>
+            <li id="ext"><strong>$ext</strong>
+                —
+                <a title="Smarty_Internal_Extension_Handler" href="../classes/Smarty_Internal_Extension_Handler.xhtml">Smarty_Internal_Extension_Handler</a><br/><span class="indent">extension handler</span></li>
+            <li id="inheritance"><strong>$inheritance</strong>
+                —
+                <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance.xhtml">Smarty_Internal_Runtime_Inheritance</a><br/><span class="indent">Inheritance runtime extension</span></li>
+            <li id="isCacheTplObj"><strong>$isCacheTplObj</strong>
+                —
+                array<br/><span class="indent">Template object cache for Smarty::isCached() === true</span></li>
+            <li id="isRenderingCache"><strong>$isRenderingCache</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag which is set while rending a cache file</span></li>
+            <li id="mustCompile"><strong>$mustCompile</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if compiled template is invalid and must be (re)compiled</span></li>
+            <li id="parent"><strong>$parent</strong>
+                —
+                <a title="Smarty|Smarty_Internal_Template|Smarty_Data" href="../classes/Smarty|Smarty_Internal_Template|Smarty_Data.xhtml">Smarty|Smarty_Internal_Template|Smarty_Data</a><br/><span class="indent">parent template (if any)</span></li>
+            <li id="scope"><strong>$scope</strong>
+                —
+                int<br/><span class="indent">Scope in which variables shall be assigned</span></li>
+            <li id="smarty"><strong>$smarty</strong>
+                —
+                <a title="Smarty" href="../classes/Smarty.xhtml">Smarty</a><br/><span class="indent">Global smarty instance</span></li>
+            <li id="source"><strong>$source</strong>
+                —
+                <a title="Smarty_Template_Source|Smarty_Template_Config" href="../classes/Smarty_Template_Source|Smarty_Template_Config.xhtml">Smarty_Template_Source|Smarty_Template_Config</a><br/><span class="indent">Source instance</span></li>
+            <li id="startRenderCallbacks"><strong>$startRenderCallbacks</strong>
+                —
+                array<br/><span class="indent">Callbacks called before rendering template</span></li>
+            <li id="subTplInfo"><strong>$subTplInfo</strong>
+                —
+                array<br/><span class="indent">Sub template Info Cache - index name - value use count</span></li>
+            <li id="templateId"><strong>$templateId</strong>
+                —
+                <a title="null|string" href="../classes/null|string.xhtml">null|string</a><br/><span class="indent">Template Id</span></li>
+            <li id="template_class"><strong>$template_class</strong>
+                —
+                string<br/><span class="indent">name of class used for templates</span></li>
+            <li id="template_resource"><strong>$template_resource</strong>
+                —
+                string<br/><span class="indent">Template resource</span></li>
+            <li id="tplFunctions"><strong>$tplFunctions</strong>
+                —
+                array<br/><span class="indent">Array of source information for known template functions</span></li>
+            <li id="tplObjCache"><strong>$tplObjCache</strong>
+                —
+                array<br/><span class="indent">Template object cache</span></li>
+            <li id="tpl_vars"><strong>$tpl_vars</strong>
+                —
+                array<br/><span class="indent">template variables</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__construct.xhtml">__construct()</a>
+                — Create template data object Some of the global Smarty settings copied to template scope It load the required template resources and caching plugins</li>
+            <li id="__destruct"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__destruct.xhtml">__destruct()</a>
+                — Template data object destructor</li>
+            <li id="__call"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__call.xhtml">__call()</a>
+                — Handle unknown class methods</li>
+            <li id="__get"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__get.xhtml">__get()</a>
+                — get Smarty property in template context</li>
+            <li id="__set"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/__set.xhtml">__set()</a>
+                — set Smarty property in template context</li>
+            <li id="_assignInScope"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_assignInScope.xhtml">_assignInScope()</a>
+                — Assign variable in scope</li>
+            <li id="_checkPlugins"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_checkPlugins.xhtml">_checkPlugins()</a>
+                — Check if plugins are callable require file otherwise</li>
+            <li id="_cleanUp"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_cleanUp.xhtml">_cleanUp()</a>
+                — Unload inheritance object</li>
+            <li id="_decodeProperties"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_decodeProperties.xhtml">_decodeProperties()</a>
+                — This function is executed automatically when a compiled or cached template file is included - Decode saved properties from compiled template and cache files - Check if compiled or cache file is valid</li>
+            <li id="_getTemplateId"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_getTemplateId.xhtml">_getTemplateId()</a>
+                — Get unique template id</li>
+            <li id="_isSubTpl"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_isSubTpl.xhtml">_isSubTpl()</a>
+                — Check if this is a sub template</li>
+            <li id="_loadInheritance"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_loadInheritance.xhtml">_loadInheritance()</a>
+                — Load inheritance object</li>
+            <li id="_subTemplateRegister"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_subTemplateRegister.xhtml">_subTemplateRegister()</a>
+                — Get called sub-templates and save call count</li>
+            <li id="_subTemplateRender"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/_subTemplateRender.xhtml">_subTemplateRender()</a>
+                — Runtime function to render sub-template</li>
+            <li id="capture_error"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/capture_error.xhtml">capture_error()</a>
+                — runtime error not matching capture tags</li>
+            <li id="compileTemplateSource"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/compileTemplateSource.xhtml">compileTemplateSource()</a>
+                — Compiles the template If the template is not evaluated the compiled template is saved on disk</li>
+            <li id="loadCached"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/loadCached.xhtml">loadCached()</a>
+                — Load cached object</li>
+            <li id="loadCompiled"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/loadCompiled.xhtml">loadCompiled()</a>
+                — Load compiled object</li>
+            <li id="loadCompiler"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/loadCompiler.xhtml">loadCompiler()</a>
+                — Load compiler object</li>
+            <li id="render"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/render.xhtml">render()</a>
+                — render template</li>
+            <li id="writeCachedContent"><a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template/writeCachedContent.xhtml">writeCachedContent()</a>
+                — Writes the content to cache resource</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase.xhtml">Smarty_Internal_TemplateBase</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="display"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/display.xhtml">display()</a>
+                — displays a Smarty template</li>
+            <li id="fetch"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/fetch.xhtml">fetch()</a>
+                — fetches a rendered Smarty template</li>
+            <li id="isCached"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/isCached.xhtml">isCached()</a>
+                — test if cache is valid</li>
+            <li id="loadFilter"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/loadFilter.xhtml">loadFilter()</a>
+                — load a filter of specified type and name</li>
+            <li id="registerFilter"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerFilter.xhtml">registerFilter()</a>
+                — Registers a filter function</li>
+            <li id="registerObject"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerObject.xhtml">registerObject()</a>
+                — Registers object to be used in templates</li>
+            <li id="registerPlugin"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerPlugin.xhtml">registerPlugin()</a>
+                — Registers plugin to be used in templates</li>
+            <li id="setCacheId">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheId.xhtml">setCacheId()</a>
+            </li>
+            <li id="setCacheLifetime">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheLifetime.xhtml">setCacheLifetime()</a>
+            </li>
+            <li id="setCaching">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCaching.xhtml">setCaching()</a>
+            </li>
+            <li id="setCompileCheck">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileCheck.xhtml">setCompileCheck()</a>
+            </li>
+            <li id="setCompileId">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileId.xhtml">setCompileId()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data.xhtml">Smarty_Internal_Data</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="__call"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__call.xhtml">__call()</a>
+                — Handle unknown class methods</li>
+            <li id="_getSmartyObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_getSmartyObj.xhtml">_getSmartyObj()</a>
+                — Get Smarty object</li>
+            <li id="_isDataObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isDataObj.xhtml">_isDataObj()</a>
+                — Return true if this instance is a Data obj</li>
+            <li id="_isSmartyObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isSmartyObj.xhtml">_isSmartyObj()</a>
+                — Return true if this instance is a Smarty obj</li>
+            <li id="_isTplObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isTplObj.xhtml">_isTplObj()</a>
+                — Return true if this instance is a template obj</li>
+            <li id="_mergeVars"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_mergeVars.xhtml">_mergeVars()</a>
+                — Follow the parent chain an merge template and config variables</li>
+            <li id="append"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/append.xhtml">append()</a>
+                — appends values to template variables</li>
+            <li id="appendByRef"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/appendByRef.xhtml">appendByRef()</a>
+                — appends values to template variables by reference</li>
+            <li id="assign"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assign.xhtml">assign()</a>
+                — assigns a Smarty variable</li>
+            <li id="assignByRef"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignByRef.xhtml">assignByRef()</a>
+                — assigns values to template variables by reference</li>
+            <li id="assignGlobal"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignGlobal.xhtml">assignGlobal()</a>
+                — assigns a global Smarty variable</li>
+            <li id="getTemplateVars"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getTemplateVars.xhtml">getTemplateVars()</a>
+                — Returns a single or all template variables</li>
+            <li id="getVariable"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getVariable.xhtml">getVariable()</a>
+                — gets the object of a Smarty variable</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

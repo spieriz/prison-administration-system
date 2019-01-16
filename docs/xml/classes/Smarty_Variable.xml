@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Variable" namespace="" name="Smarty_Variable" abstract="false" final="false" start="10" end="47">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_variable.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_variable.php" size="957" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="5c015a4098340a4f2072a1a93a84cfbea7adee7c" relative="includes/libs/Smarty/sysplugins/smarty_variable.php"/>
+  <docblock>
+    <description compact="class for the Smarty variable object This class defines the Smarty variable object"/>
+    <package value="Smarty"/>
+    <subpackage value="Template"/>
+  </docblock>
+  <member name="value" default="NULL" visibility="public" static="false" line="17">
+    <docblock>
+      <description compact="template variable"/>
+      <var type="mixed"/>
+    </docblock>
+  </member>
+  <member name="nocache" default="false" type="boolean" visibility="public" static="false" line="24">
+    <docblock>
+      <description compact="if true any output of this variable will be not cached"/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="32" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="create Smarty variable object"/>
+      <param description="the value to assign" type="mixed" variable="$value"/>
+      <param description="if true any output of this variable will be not cached" type="boolean" variable="$nocache"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+  </constructor>
+  <method name="__toString" start="43" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="&lt;&lt;magic&gt;&gt; String conversion"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <extenders>
+    <extender full="Smarty_Undefined_Variable" namespace="" name="Smarty_Undefined_Variable"/>
+  </extenders>
+</class>

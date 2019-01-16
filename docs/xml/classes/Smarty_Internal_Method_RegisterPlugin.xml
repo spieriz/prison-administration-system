@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_RegisterPlugin" namespace="" name="Smarty_Internal_Method_RegisterPlugin" abstract="false" final="false" start="12" end="56">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_registerplugin.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_registerplugin.php" size="2112" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="d4868cab81b50aec1a75b685269ca861d8706f0f" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_registerplugin.php"/>
+  <docblock>
+    <description compact="Smarty Method RegisterPlugin">Smarty::registerPlugin() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="registerPlugin" start="38" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers plugin to be used in templates"/>
+      <api value="Smarty::registerPlugin()"/>
+      <link value="http://www.smarty.net/docs/en/api.register.plugin.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="plugin type" type="string" variable="$type"/>
+      <param description="name of template tag" type="string" variable="$name"/>
+      <param description="PHP callback to register" type="object" variable="$callback">
+        <type full="callback" namespace="" name="callback"/>
+      </param>
+      <param description="if true (default) this" type="object" variable="$cacheable">function is cache able<type full="bool" namespace="" name="bool"/></param>
+      <param description="caching attributes if any" type="mixed" variable="$cache_attr"/>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws description="when the plugin tag is invalid" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="cacheable" byreference="false" type="boolean" default="true"/>
+    <parameter name="cache_attr" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>

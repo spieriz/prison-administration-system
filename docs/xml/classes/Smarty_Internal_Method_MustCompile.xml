@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_MustCompile" namespace="" name="Smarty_Internal_Method_MustCompile" abstract="false" final="false" start="12" end="50">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_mustcompile.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_mustcompile.php" size="1819" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="f999cd539ce28d2cf53162b5e1b113e254f0c9b3" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_mustcompile.php"/>
+  <docblock>
+    <description compact="Smarty Method MustCompile">Smarty_Internal_Template::mustCompile() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="2" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="mustCompile" start="31" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns if the current template must be compiled by the Smarty compiler It does compare the timestamps of template source and the compiled templates and checks the force compile configuration"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+</class>

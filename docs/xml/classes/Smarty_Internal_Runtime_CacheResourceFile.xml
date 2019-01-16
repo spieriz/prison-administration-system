@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_CacheResourceFile" namespace="" name="Smarty_Internal_Runtime_CacheResourceFile" abstract="false" final="false" start="16" end="139">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_cacheresourcefile.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_cacheresourcefile.php" size="6005" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="726b26f350b7507ecf64bb3e40ee0bd9143db7d0" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_cacheresourcefile.php"/>
+  <docblock>
+    <description compact="Smarty Internal Runtime Cache Resource File Class"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+  </docblock>
+  <method name="clear" start="29" end="138" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Empty cache for a specific template"/>
+      <param type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="expiration time (number of seconds, not timestamp)" type="integer" variable="$exp_time"/>
+      <return description="number of cache files deleted" type="integer"/>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="resource_name" byreference="false" type="{unknown}"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}"/>
+    <parameter name="exp_time" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/Smarty.class.php.xhtml#line110">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty</h1>
+        <h4>This is the main Smarty class</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty
+                extends <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase.xhtml">Smarty_Internal_TemplateBase</a>
+            {<br/><ul class="none"><li>// constants</li><li>const SMARTY_VERSION = '3.1.33';</li><li>const SCOPE_LOCAL = 1;</li><li>const SCOPE_PARENT = 2;</li><li>const SCOPE_TPL_ROOT = 4;</li><li>const SCOPE_ROOT = 8;</li><li>const SCOPE_SMARTY = 16;</li><li>const SCOPE_GLOBAL = 32;</li><li>const CACHING_OFF = 0;</li><li>const CACHING_LIFETIME_CURRENT = 1;</li><li>const CACHING_LIFETIME_SAVED = 2;</li><li>const CLEAR_EXPIRED = 1;</li><li>const COMPILECHECK_OFF = 0;</li><li>const COMPILECHECK_ON = 1;</li><li>const COMPILECHECK_CACHEMISS = 2;</li><li>const DEBUG_OFF = 0;</li><li>const DEBUG_ON = 1;</li><li>const DEBUG_INDIVIDUAL = 2;</li><li>const PHP_PASSTHRU = 0;</li><li>const PHP_QUOTE = 1;</li><li>const PHP_REMOVE = 2;</li><li>const PHP_ALLOW = 3;</li><li>const FILTER_POST = 'post';</li><li>const FILTER_PRE = 'pre';</li><li>const FILTER_OUTPUT = 'output';</li><li>const FILTER_VARIABLE = 'variable';</li><li>const PLUGIN_FUNCTION = 'function';</li><li>const PLUGIN_BLOCK = 'block';</li><li>const PLUGIN_COMPILER = 'compiler';</li><li>const PLUGIN_MODIFIER = 'modifier';</li><li>const PLUGIN_MODIFIERCOMPILER = 'modifiercompiler';</li></ul><ul class="none"><li>// members</li><li>public static array <a href="#members">$global_tpl_vars</a> =
+                        ;
+                    </li><li>public static <a href="#members">$_MBSTRING</a> =
+                        SMARTY_MBSTRING;
+                    </li><li>public static <a href="#members">$_CHARSET</a> =
+                        SMARTY_RESOURCE_CHAR_SET;
+                    </li><li>public static <a href="#members">$_DATE_FORMAT</a> =
+                        SMARTY_RESOURCE_DATE_FORMAT;
+                    </li><li>public static string <a href="#members">$_UTF8_MODIFIER</a> =
+                        'u';
+                    </li><li>public static boolean <a href="#members">$_IS_WINDOWS</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$auto_literal</a> =
+                        true;
+                    </li><li>public boolean <a href="#members">$error_unassigned</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$use_include_path</a> =
+                        false;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$_templateDirNormalized</a> =
+                        false;
+                    </li><li>public  <a href="#members">$_joined_template_dir</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$_configDirNormalized</a> =
+                        false;
+                    </li><li>public  <a href="#members">$_joined_config_dir</a> =
+                        NULL;
+                    </li><li>public <span title="callable">callable</span> <a href="#members">$default_template_handler_func</a> =
+                        NULL;
+                    </li><li>public <span title="callable">callable</span> <a href="#members">$default_config_handler_func</a> =
+                        NULL;
+                    </li><li>public <span title="callable">callable</span> <a href="#members">$default_plugin_handler_func</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$_compileDirNormalized</a> =
+                        false;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$_pluginsDirNormalized</a> =
+                        false;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$_cacheDirNormalized</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$force_compile</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$use_sub_dirs</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$allow_ambiguous_resources</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$merge_compiled_includes</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$extends_recursion</a> =
+                        true;
+                    </li><li>public boolean <a href="#members">$force_cache</a> =
+                        false;
+                    </li><li>public string <a href="#members">$left_delimiter</a> =
+                        "{";
+                    </li><li>public string <a href="#members">$right_delimiter</a> =
+                        "}";
+                    </li><li>public array <a href="#members">$literals</a> =
+                        ;
+                    </li><li>public string <a href="#members">$security_class</a> =
+                        'Smarty_Security';
+                    </li><li>public <span title="Smarty_Security">Smarty_Security</span> <a href="#members">$security_policy</a> =
+                        NULL;
+                    </li><li>public integer <a href="#members">$php_handling</a> =
+                        self::PHP_PASSTHRU;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$allow_php_templates</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$debugging</a> =
+                        false;
+                    </li><li>public string <a href="#members">$debugging_ctrl</a> =
+                        'NONE';
+                    </li><li>public string <a href="#members">$smarty_debug_id</a> =
+                        'SMARTY_DEBUG';
+                    </li><li>public  <a href="#members">$debug_tpl</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$error_reporting</a> =
+                        NULL;
+                    </li><li>public boolean <a href="#members">$config_overwrite</a> =
+                        true;
+                    </li><li>public boolean <a href="#members">$config_booleanize</a> =
+                        true;
+                    </li><li>public boolean <a href="#members">$config_read_hidden</a> =
+                        false;
+                    </li><li>public boolean <a href="#members">$compile_locking</a> =
+                        true;
+                    </li><li>public boolean <a href="#members">$cache_locking</a> =
+                        false;
+                    </li><li>public integer <a href="#members">$locking_timeout</a> =
+                        10;
+                    </li><li>public string <a href="#members">$default_resource_type</a> =
+                        'file';
+                    </li><li>public string <a href="#members">$caching_type</a> =
+                        'file';
+                    </li><li>public string <a href="#members">$default_config_type</a> =
+                        'file';
+                    </li><li>public boolean <a href="#members">$cache_modified_check</a> =
+                        false;
+                    </li><li>public array <a href="#members">$registered_plugins</a> =
+                        ;
+                    </li><li>public array <a href="#members">$registered_objects</a> =
+                        ;
+                    </li><li>public array <a href="#members">$registered_classes</a> =
+                        ;
+                    </li><li>public array <a href="#members">$registered_filters</a> =
+                        ;
+                    </li><li>public array <a href="#members">$registered_resources</a> =
+                        ;
+                    </li><li>public array <a href="#members">$registered_cache_resources</a> =
+                        ;
+                    </li><li>public array <a href="#members">$autoload_filters</a> =
+                        ;
+                    </li><li>public array <a href="#members">$default_modifiers</a> =
+                        ;
+                    </li><li>public boolean <a href="#members">$escape_html</a> =
+                        false;
+                    </li><li>public integer <a href="#members">$start_time</a> =
+                        0;
+                    </li><li>public  <a href="#members">$_current_file</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$_parserdebug</a> =
+                        false;
+                    </li><li>public integer <a href="#members">$_objType</a> =
+                        1;
+                    </li><li>public <span title="Smarty_Internal_Debug">Smarty_Internal_Debug</span> <a href="#members">$_debug</a> =
+                        NULL;
+                    </li><li>protected array <a href="#members">$template_dir</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$_processedTemplateDir</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$config_dir</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$_processedConfigDir</a> =
+                        ;
+                    </li><li>protected string <a href="#members">$compile_dir</a> =
+                        './templates_c/';
+                    </li><li>protected array <a href="#members">$plugins_dir</a> =
+                        ;
+                    </li><li>protected string <a href="#members">$cache_dir</a> =
+                        './cache/';
+                    </li><li>protected array <a href="#members">$obsoleteProperties</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$accessMap</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Internal_TemplateBase">Smarty_Internal_TemplateBase</span></li><li>public  <a href="#members">$cache_id</a>;
+                        </li><li>public  <a href="#members">$compile_id</a>;
+                        </li><li>public int <a href="#members">$caching</a>;
+                        </li><li>public int <a href="#members">$compile_check</a>;
+                        </li><li>public integer <a href="#members">$cache_lifetime</a>;
+                        </li><li>public array <a href="#members">$tplFunctions</a>;
+                        </li><li>public <span title="array()">array()</span> <a href="#members">$_cache</a>;
+                        </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Internal_Data">Smarty_Internal_Data</span></li><li>public integer <a href="#members">$_objType</a>;
+                        </li><li>public string <a href="#members">$template_class</a>;
+                        </li><li>public array <a href="#members">$tpl_vars</a>;
+                        </li><li>public <span title="Smarty|Smarty_Internal_Template|Smarty_Data">Smarty|Smarty_Internal_Template|Smarty_Data</span> <a href="#members">$parent</a>;
+                        </li><li>public array <a href="#members">$config_vars</a>;
+                        </li><li>public <span title="Smarty_Internal_Extension_Handler">Smarty_Internal_Extension_Handler</span> <a href="#members">$ext</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty" href="../classes/Smarty/__construct.xhtml">__construct</a>()
+                    </li><li>public static boolean <a title="Smarty" href="../classes/Smarty/muteExpectedErrors.xhtml">muteExpectedErrors</a>()
+                    </li><li>public static void <a title="Smarty" href="../classes/Smarty/unmuteExpectedErrors.xhtml">unmuteExpectedErrors</a>()
+                    </li><li>public bool <a title="Smarty" href="../classes/Smarty/templateExists.xhtml">templateExists</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/enableSecurity.xhtml">enableSecurity</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/disableSecurity.xhtml">disableSecurity</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/addTemplateDir.xhtml">addTemplateDir</a>()
+                    </li><li>public array <a title="Smarty" href="../classes/Smarty/getTemplateDir.xhtml">getTemplateDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/setTemplateDir.xhtml">setTemplateDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/addConfigDir.xhtml">addConfigDir</a>()
+                    </li><li>public array <a title="Smarty" href="../classes/Smarty/getConfigDir.xhtml">getConfigDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/setConfigDir.xhtml">setConfigDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/addPluginsDir.xhtml">addPluginsDir</a>()
+                    </li><li>public array <a title="Smarty" href="../classes/Smarty/getPluginsDir.xhtml">getPluginsDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/setPluginsDir.xhtml">setPluginsDir</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/getCompileDir.xhtml">getCompileDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/setCompileDir.xhtml">setCompileDir</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/getCacheDir.xhtml">getCacheDir</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/setCacheDir.xhtml">setCacheDir</a>()
+                    </li><li>public Smarty_Internal_Template <a title="Smarty" href="../classes/Smarty/createTemplate.xhtml">createTemplate</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/loadPlugin.xhtml">loadPlugin</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/_getTemplateId.xhtml">_getTemplateId</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/_realpath.xhtml">_realpath</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/_clearTemplateCache.xhtml">_clearTemplateCache</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setUseSubDirs.xhtml">setUseSubDirs</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setErrorReporting.xhtml">setErrorReporting</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setEscapeHtml.xhtml">setEscapeHtml</a>()
+                    </li><li>public boolean <a title="Smarty" href="../classes/Smarty/getAutoLiteral.xhtml">getAutoLiteral</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setAutoLiteral.xhtml">setAutoLiteral</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setForceCompile.xhtml">setForceCompile</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setMergeCompiledIncludes.xhtml">setMergeCompiledIncludes</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/getLeftDelimiter.xhtml">getLeftDelimiter</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setLeftDelimiter.xhtml">setLeftDelimiter</a>()
+                    </li><li>public string <a title="Smarty" href="../classes/Smarty/getRightDelimiter.xhtml">getRightDelimiter</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setRightDelimiter.xhtml">setRightDelimiter</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setDebugging.xhtml">setDebugging</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setConfigOverwrite.xhtml">setConfigOverwrite</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setConfigBooleanize.xhtml">setConfigBooleanize</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setConfigReadHidden.xhtml">setConfigReadHidden</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setCompileLocking.xhtml">setCompileLocking</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setDefaultResourceType.xhtml">setDefaultResourceType</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/setCachingType.xhtml">setCachingType</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/testInstall.xhtml">testInstall</a>()
+                    </li><li>public Smarty <a title="Smarty" href="../classes/Smarty/_getSmartyObj.xhtml">_getSmartyObj</a>()
+                    </li><li>public mixed <a title="Smarty" href="../classes/Smarty/__get.xhtml">__get</a>()
+                    </li><li>public void <a title="Smarty" href="../classes/Smarty/__set.xhtml">__set</a>()
+                    </li><li>private void <a title="Smarty" href="../classes/Smarty/_normalizeDir.xhtml">_normalizeDir</a>()
+                    </li><li>private void <a title="Smarty" href="../classes/Smarty/_normalizeTemplateConfig.xhtml">_normalizeTemplateConfig</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Internal_TemplateBase">Smarty_Internal_TemplateBase</span></li><li>public string <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/fetch.xhtml">fetch</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/display.xhtml">display</a>()
+                        </li><li>public bool <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/isCached.xhtml">isCached</a>()
+                        </li><li>public Smarty_Internal_Template <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerPlugin.xhtml">registerPlugin</a>()
+                        </li><li>public bool <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/loadFilter.xhtml">loadFilter</a>()
+                        </li><li>public Smarty_Internal_Template <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerFilter.xhtml">registerFilter</a>()
+                        </li><li>public Smarty_Internal_Template <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerObject.xhtml">registerObject</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileCheck.xhtml">setCompileCheck</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCaching.xhtml">setCaching</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheLifetime.xhtml">setCacheLifetime</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileId.xhtml">setCompileId</a>()
+                        </li><li>public void <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheId.xhtml">setCacheId</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Internal_Data">Smarty_Internal_Data</span></li><li>public void <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__construct.xhtml">__construct</a>()
+                        </li><li>public Smarty_Internal_Data <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assign.xhtml">assign</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/append.xhtml">append</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignGlobal.xhtml">assignGlobal</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/appendByRef.xhtml">appendByRef</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignByRef.xhtml">assignByRef</a>()
+                        </li><li>public mixed <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getTemplateVars.xhtml">getTemplateVars</a>()
+                        </li><li>public Smarty_Variable|Smarty_Undefined_Variable <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getVariable.xhtml">getVariable</a>()
+                        </li><li>public void <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_mergeVars.xhtml">_mergeVars</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isDataObj.xhtml">_isDataObj</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isTplObj.xhtml">_isTplObj</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isSmartyObj.xhtml">_isSmartyObj</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_getSmartyObj.xhtml">_getSmartyObj</a>()
+                        </li><li>public mixed <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__call.xhtml">__call</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase.xhtml">Smarty_Internal_TemplateBase</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="SMARTY_VERSION">SMARTY_VERSION</td>
+              <td>'3.1.33'</td>
+            </tr>
+            <tr>
+              <td id="SCOPE_LOCAL">SCOPE_LOCAL</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="SCOPE_PARENT">SCOPE_PARENT</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="SCOPE_TPL_ROOT">SCOPE_TPL_ROOT</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="SCOPE_ROOT">SCOPE_ROOT</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="SCOPE_SMARTY">SCOPE_SMARTY</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td id="SCOPE_GLOBAL">SCOPE_GLOBAL</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td id="CACHING_OFF">CACHING_OFF</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="CACHING_LIFETIME_CURRENT">CACHING_LIFETIME_CURRENT</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="CACHING_LIFETIME_SAVED">CACHING_LIFETIME_SAVED</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="CLEAR_EXPIRED">CLEAR_EXPIRED</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="COMPILECHECK_OFF">COMPILECHECK_OFF</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="COMPILECHECK_ON">COMPILECHECK_ON</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="COMPILECHECK_CACHEMISS">COMPILECHECK_CACHEMISS</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="DEBUG_OFF">DEBUG_OFF</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="DEBUG_ON">DEBUG_ON</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="DEBUG_INDIVIDUAL">DEBUG_INDIVIDUAL</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="PHP_PASSTHRU">PHP_PASSTHRU</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td id="PHP_QUOTE">PHP_QUOTE</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="PHP_REMOVE">PHP_REMOVE</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="PHP_ALLOW">PHP_ALLOW</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="FILTER_POST">FILTER_POST</td>
+              <td>'post'</td>
+            </tr>
+            <tr>
+              <td id="FILTER_PRE">FILTER_PRE</td>
+              <td>'pre'</td>
+            </tr>
+            <tr>
+              <td id="FILTER_OUTPUT">FILTER_OUTPUT</td>
+              <td>'output'</td>
+            </tr>
+            <tr>
+              <td id="FILTER_VARIABLE">FILTER_VARIABLE</td>
+              <td>'variable'</td>
+            </tr>
+            <tr>
+              <td id="PLUGIN_FUNCTION">PLUGIN_FUNCTION</td>
+              <td>'function'</td>
+            </tr>
+            <tr>
+              <td id="PLUGIN_BLOCK">PLUGIN_BLOCK</td>
+              <td>'block'</td>
+            </tr>
+            <tr>
+              <td id="PLUGIN_COMPILER">PLUGIN_COMPILER</td>
+              <td>'compiler'</td>
+            </tr>
+            <tr>
+              <td id="PLUGIN_MODIFIER">PLUGIN_MODIFIER</td>
+              <td>'modifier'</td>
+            </tr>
+            <tr>
+              <td id="PLUGIN_MODIFIERCOMPILER">PLUGIN_MODIFIERCOMPILER</td>
+              <td>'modifiercompiler'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_processedConfigDir"><strong>$_processedConfigDir</strong>
+                —
+                array<br/><span class="indent">flags for normalized template directory entries</span></li>
+            <li id="_processedTemplateDir"><strong>$_processedTemplateDir</strong>
+                —
+                array<br/><span class="indent">flags for normalized template directory entries</span></li>
+            <li id="accessMap"><strong>$accessMap</strong>
+                —
+                array<br/><span class="indent">List of private properties which will call getter/setter on a direct access</span></li>
+            <li id="cache_dir"><strong>$cache_dir</strong>
+                —
+                string<br/><span class="indent">cache directory</span></li>
+            <li id="compile_dir"><strong>$compile_dir</strong>
+                —
+                string<br/><span class="indent">compile directory</span></li>
+            <li id="config_dir"><strong>$config_dir</strong>
+                —
+                array<br/><span class="indent">config directory</span></li>
+            <li id="obsoleteProperties"><strong>$obsoleteProperties</strong>
+                —
+                array<br/><span class="indent">removed properties</span></li>
+            <li id="plugins_dir"><strong>$plugins_dir</strong>
+                —
+                array<br/><span class="indent">plugins directory</span></li>
+            <li id="template_dir"><strong>$template_dir</strong>
+                —
+                array<br/><span class="indent">template directory</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="_CHARSET">
+              <strong>$_CHARSET</strong>
+              <br/>
+              <span class="indent">The character set to adhere to (e.g. "UTF-8")</span>
+            </li>
+            <li id="_DATE_FORMAT">
+              <strong>$_DATE_FORMAT</strong>
+              <br/>
+              <span class="indent">The date format to be used internally (accepts date() and strftime())</span>
+            </li>
+            <li id="_IS_WINDOWS">
+              <strong>$_IS_WINDOWS</strong>
+              <br/>
+              <span class="indent">Flag denoting if operating system is windows</span>
+            </li>
+            <li id="_MBSTRING">
+              <strong>$_MBSTRING</strong>
+              <br/>
+              <span class="indent">Flag denoting if Multibyte String functions are available</span>
+            </li>
+            <li id="_UTF8_MODIFIER">
+              <strong>$_UTF8_MODIFIER</strong>
+              <br/>
+              <span class="indent">Flag denoting if PCRE should run in UTF-8 mode</span>
+            </li>
+            <li id="_cache"><strong>$_cache</strong>
+                —
+                <a title="array()" href="../classes/array().xhtml">array()</a><br/><span class="indent">universal cache</span></li>
+            <li id="_cacheDirNormalized"><strong>$_cacheDirNormalized</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if template_dir is normalized</span></li>
+            <li id="_compileDirNormalized"><strong>$_compileDirNormalized</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if template_dir is normalized</span></li>
+            <li id="_configDirNormalized"><strong>$_configDirNormalized</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if config_dir is normalized</span></li>
+            <li id="_current_file"><strong>$_current_file</strong>
+                —
+                string<br/><span class="indent">required by the compiler for BC</span></li>
+            <li id="_debug"><strong>$_debug</strong>
+                —
+                <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug.xhtml">Smarty_Internal_Debug</a><br/><span class="indent">Debug object</span></li>
+            <li id="_joined_config_dir"><strong>$_joined_config_dir</strong>
+                —
+                string<br/><span class="indent">joined config directory string used in cache keys</span></li>
+            <li id="_joined_template_dir"><strong>$_joined_template_dir</strong>
+                —
+                string<br/><span class="indent">joined template directory string used in cache keys</span></li>
+            <li id="_objType"><strong>$_objType</strong>
+                —
+                int<br/><span class="indent">This object type (Smarty = 1, template = 2, data = 4)</span></li>
+            <li id="_objType"><strong>$_objType</strong>
+                —
+                int<br/><span class="indent">This object type (Smarty = 1, template = 2, data = 4)</span></li>
+            <li id="_parserdebug"><strong>$_parserdebug</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">internal flag to enable parser debugging</span></li>
+            <li id="_pluginsDirNormalized"><strong>$_pluginsDirNormalized</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if plugins_dir is normalized</span></li>
+            <li id="_templateDirNormalized"><strong>$_templateDirNormalized</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if template_dir is normalized</span></li>
+            <li id="allow_ambiguous_resources"><strong>$allow_ambiguous_resources</strong>
+                —
+                boolean<br/><span class="indent">allow ambiguous resources (that are made unique by the resource handler)</span></li>
+            <li id="allow_php_templates"><strong>$allow_php_templates</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">controls if the php template file resource is allowed</span></li>
+            <li id="auto_literal"><strong>$auto_literal</strong>
+                —
+                boolean<br/><span class="indent">auto literal on delimiters with whitespace</span></li>
+            <li id="autoload_filters"><strong>$autoload_filters</strong>
+                —
+                array<br/><span class="indent">autoload filter</span></li>
+            <li id="cache_id"><strong>$cache_id</strong>
+                —
+                string<br/><span class="indent">Set this if you want different sets of cache files for the same templates.</span></li>
+            <li id="cache_lifetime"><strong>$cache_lifetime</strong>
+                —
+                integer<br/><span class="indent">cache lifetime in seconds</span></li>
+            <li id="cache_locking"><strong>$cache_locking</strong>
+                —
+                boolean<br/><span class="indent">Controls whether cache resources should use locking mechanism</span></li>
+            <li id="cache_modified_check"><strong>$cache_modified_check</strong>
+                —
+                boolean<br/><span class="indent">check If-Modified-Since headers</span></li>
+            <li id="caching"><strong>$caching</strong>
+                —
+                int<br/><span class="indent">caching enabled</span></li>
+            <li id="caching_type"><strong>$caching_type</strong>
+                —
+                string<br/><span class="indent">caching type Must be an element of $cache_resource_types.</span></li>
+            <li id="compile_check"><strong>$compile_check</strong>
+                —
+                int<br/><span class="indent">check template for modifications?</span></li>
+            <li id="compile_id"><strong>$compile_id</strong>
+                —
+                string<br/><span class="indent">Set this if you want different sets of compiled files for the same templates.</span></li>
+            <li id="compile_locking"><strong>$compile_locking</strong>
+                —
+                boolean<br/><span class="indent">locking concurrent compiles</span></li>
+            <li id="config_booleanize"><strong>$config_booleanize</strong>
+                —
+                boolean<br/><span class="indent">Controls whether config values of on/true/yes and off/false/no get converted to boolean.</span></li>
+            <li id="config_overwrite"><strong>$config_overwrite</strong>
+                —
+                boolean<br/><span class="indent">Controls whether variables with the same name overwrite each other.</span></li>
+            <li id="config_read_hidden"><strong>$config_read_hidden</strong>
+                —
+                boolean<br/><span class="indent">Controls whether hidden config sections/vars are read from the file.</span></li>
+            <li id="config_vars"><strong>$config_vars</strong>
+                —
+                array<br/><span class="indent">configuration settings</span></li>
+            <li id="debug_tpl"><strong>$debug_tpl</strong>
+                —
+                string<br/><span class="indent">Path of debug template.</span></li>
+            <li id="debugging"><strong>$debugging</strong>
+                —
+                boolean<br/><span class="indent">debug mode Setting this to true enables the debug-console.</span></li>
+            <li id="debugging_ctrl"><strong>$debugging_ctrl</strong>
+                —
+                string<br/><span class="indent">This determines if debugging is enable-able from the browser.</span></li>
+            <li id="default_config_handler_func"><strong>$default_config_handler_func</strong>
+                —
+                <a title="callable" href="../classes/callable.xhtml">callable</a><br/><span class="indent">default config handler</span></li>
+            <li id="default_config_type"><strong>$default_config_type</strong>
+                —
+                string<br/><span class="indent">config type</span></li>
+            <li id="default_modifiers"><strong>$default_modifiers</strong>
+                —
+                array<br/><span class="indent">default modifier</span></li>
+            <li id="default_plugin_handler_func"><strong>$default_plugin_handler_func</strong>
+                —
+                <a title="callable" href="../classes/callable.xhtml">callable</a><br/><span class="indent">default plugin handler</span></li>
+            <li id="default_resource_type"><strong>$default_resource_type</strong>
+                —
+                string<br/><span class="indent">resource type used if none given Must be an valid key of $registered_resources.</span></li>
+            <li id="default_template_handler_func"><strong>$default_template_handler_func</strong>
+                —
+                <a title="callable" href="../classes/callable.xhtml">callable</a><br/><span class="indent">default template handler</span></li>
+            <li id="error_reporting"><strong>$error_reporting</strong>
+                —
+                int<br/><span class="indent">When set, smarty uses this value as error_reporting-level.</span></li>
+            <li id="error_unassigned"><strong>$error_unassigned</strong>
+                —
+                boolean<br/><span class="indent">display error on not assigned variables</span></li>
+            <li id="escape_html"><strong>$escape_html</strong>
+                —
+                boolean<br/><span class="indent">autoescape variable output</span></li>
+            <li id="ext"><strong>$ext</strong>
+                —
+                <a title="Smarty_Internal_Extension_Handler" href="../classes/Smarty_Internal_Extension_Handler.xhtml">Smarty_Internal_Extension_Handler</a><br/><span class="indent">extension handler</span></li>
+            <li id="extends_recursion">
+              <strong>$extends_recursion</strong>
+            </li>
+            <li id="force_cache"><strong>$force_cache</strong>
+                —
+                boolean<br/><span class="indent">force cache file creation</span></li>
+            <li id="force_compile"><strong>$force_compile</strong>
+                —
+                boolean<br/><span class="indent">force template compiling?</span></li>
+            <li id="global_tpl_vars">
+              <strong>$global_tpl_vars</strong>
+              <br/>
+              <span class="indent">assigned global tpl vars</span>
+            </li>
+            <li id="left_delimiter"><strong>$left_delimiter</strong>
+                —
+                string<br/><span class="indent">template left-delimiter</span></li>
+            <li id="literals"><strong>$literals</strong>
+                —
+                array<br/><span class="indent">array of strings which shall be treated as literal by compiler</span></li>
+            <li id="locking_timeout"><strong>$locking_timeout</strong>
+                —
+                float<br/><span class="indent">seconds to wait for acquiring a lock before ignoring the write lock</span></li>
+            <li id="merge_compiled_includes"><strong>$merge_compiled_includes</strong>
+                —
+                boolean<br/><span class="indent">merge compiled includes</span></li>
+            <li id="parent"><strong>$parent</strong>
+                —
+                <a title="Smarty|Smarty_Internal_Template|Smarty_Data" href="../classes/Smarty|Smarty_Internal_Template|Smarty_Data.xhtml">Smarty|Smarty_Internal_Template|Smarty_Data</a><br/><span class="indent">parent template (if any)</span></li>
+            <li id="php_handling"><strong>$php_handling</strong>
+                —
+                integer<br/><span class="indent">controls handling of PHP-blocks</span></li>
+            <li id="registered_cache_resources"><strong>$registered_cache_resources</strong>
+                —
+                array<br/><span class="indent">registered cache resources</span></li>
+            <li id="registered_classes"><strong>$registered_classes</strong>
+                —
+                array<br/><span class="indent">registered classes</span></li>
+            <li id="registered_filters"><strong>$registered_filters</strong>
+                —
+                array<br/><span class="indent">registered filters</span></li>
+            <li id="registered_objects"><strong>$registered_objects</strong>
+                —
+                array<br/><span class="indent">registered objects</span></li>
+            <li id="registered_plugins"><strong>$registered_plugins</strong>
+                —
+                array<br/><span class="indent">registered plugins</span></li>
+            <li id="registered_resources"><strong>$registered_resources</strong>
+                —
+                array<br/><span class="indent">registered resources</span></li>
+            <li id="right_delimiter"><strong>$right_delimiter</strong>
+                —
+                string<br/><span class="indent">template right-delimiter</span></li>
+            <li id="security_class"><strong>$security_class</strong>
+                —
+                string<br/><span class="indent">class name This should be instance of Smarty_Security.</span></li>
+            <li id="security_policy"><strong>$security_policy</strong>
+                —
+                <a title="Smarty_Security" href="../classes/Smarty_Security.xhtml">Smarty_Security</a><br/><span class="indent">implementation of security class</span></li>
+            <li id="smarty_debug_id"><strong>$smarty_debug_id</strong>
+                —
+                string<br/><span class="indent">Name of debugging URL-param.</span></li>
+            <li id="start_time"><strong>$start_time</strong>
+                —
+                int<br/><span class="indent">start time for execution time calculation</span></li>
+            <li id="template_class"><strong>$template_class</strong>
+                —
+                string<br/><span class="indent">name of class used for templates</span></li>
+            <li id="tplFunctions"><strong>$tplFunctions</strong>
+                —
+                array<br/><span class="indent">Array of source information for known template functions</span></li>
+            <li id="tpl_vars"><strong>$tpl_vars</strong>
+                —
+                array<br/><span class="indent">template variables</span></li>
+            <li id="use_include_path"><strong>$use_include_path</strong>
+                —
+                boolean<br/><span class="indent">look up relative file path in include_path</span></li>
+            <li id="use_sub_dirs"><strong>$use_sub_dirs</strong>
+                —
+                boolean<br/><span class="indent">use sub dirs for compiled/cached files?</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_normalizeDir"><a title="Smarty" href="../classes/Smarty/_normalizeDir.xhtml">_normalizeDir()</a>
+                — Normalize and set directory string</li>
+            <li id="_normalizeTemplateConfig"><a title="Smarty" href="../classes/Smarty/_normalizeTemplateConfig.xhtml">_normalizeTemplateConfig()</a>
+                — Normalize template_dir or config_dir</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty" href="../classes/Smarty/__construct.xhtml">__construct()</a>
+                — Initialize new Smarty object</li>
+            <li id="__get"><a title="Smarty" href="../classes/Smarty/__get.xhtml">__get()</a>
+                — &lt;&lt;magic&gt;&gt; Generic getter.</li>
+            <li id="__set"><a title="Smarty" href="../classes/Smarty/__set.xhtml">__set()</a>
+                — &lt;&lt;magic&gt;&gt; Generic setter.</li>
+            <li id="_clearTemplateCache"><a title="Smarty" href="../classes/Smarty/_clearTemplateCache.xhtml">_clearTemplateCache()</a>
+                — Empty template objects cache</li>
+            <li id="_getSmartyObj"><a title="Smarty" href="../classes/Smarty/_getSmartyObj.xhtml">_getSmartyObj()</a>
+                — Get Smarty object</li>
+            <li id="_getTemplateId"><a title="Smarty" href="../classes/Smarty/_getTemplateId.xhtml">_getTemplateId()</a>
+                — Get unique template id</li>
+            <li id="_realpath"><a title="Smarty" href="../classes/Smarty/_realpath.xhtml">_realpath()</a>
+                — Normalize path  - remove /./ and /../  - make it absolute if required</li>
+            <li id="addConfigDir"><a title="Smarty" href="../classes/Smarty/addConfigDir.xhtml">addConfigDir()</a>
+                — Add config directory(s)</li>
+            <li id="addPluginsDir"><a title="Smarty" href="../classes/Smarty/addPluginsDir.xhtml">addPluginsDir()</a>
+                — Adds directory of plugin files</li>
+            <li id="addTemplateDir"><a title="Smarty" href="../classes/Smarty/addTemplateDir.xhtml">addTemplateDir()</a>
+                — Add template directory(s)</li>
+            <li id="createTemplate"><a title="Smarty" href="../classes/Smarty/createTemplate.xhtml">createTemplate()</a>
+                — creates a template object</li>
+            <li id="disableSecurity"><a title="Smarty" href="../classes/Smarty/disableSecurity.xhtml">disableSecurity()</a>
+                — Disable security</li>
+            <li id="enableSecurity"><a title="Smarty" href="../classes/Smarty/enableSecurity.xhtml">enableSecurity()</a>
+                — Loads security class and enables security</li>
+            <li id="getAutoLiteral"><a title="Smarty" href="../classes/Smarty/getAutoLiteral.xhtml">getAutoLiteral()</a>
+                — Return auto_literal flag</li>
+            <li id="getCacheDir"><a title="Smarty" href="../classes/Smarty/getCacheDir.xhtml">getCacheDir()</a>
+                — Get cache directory</li>
+            <li id="getCompileDir"><a title="Smarty" href="../classes/Smarty/getCompileDir.xhtml">getCompileDir()</a>
+                — Get compiled directory</li>
+            <li id="getConfigDir"><a title="Smarty" href="../classes/Smarty/getConfigDir.xhtml">getConfigDir()</a>
+                — Get config directory</li>
+            <li id="getLeftDelimiter"><a title="Smarty" href="../classes/Smarty/getLeftDelimiter.xhtml">getLeftDelimiter()</a>
+                — Get left delimiter</li>
+            <li id="getPluginsDir"><a title="Smarty" href="../classes/Smarty/getPluginsDir.xhtml">getPluginsDir()</a>
+                — Get plugin directories</li>
+            <li id="getRightDelimiter"><a title="Smarty" href="../classes/Smarty/getRightDelimiter.xhtml">getRightDelimiter()</a>
+                — Get right delimiter</li>
+            <li id="getTemplateDir"><a title="Smarty" href="../classes/Smarty/getTemplateDir.xhtml">getTemplateDir()</a>
+                — Get template directories</li>
+            <li id="loadPlugin"><a title="Smarty" href="../classes/Smarty/loadPlugin.xhtml">loadPlugin()</a>
+                — Takes unknown classes and loads plugin files for them class name format: Smarty_PluginType_PluginName plugin filename format: plugintype.pluginname.php</li>
+            <li id="muteExpectedErrors"><a title="Smarty" href="../classes/Smarty/muteExpectedErrors.xhtml">muteExpectedErrors()</a>
+                — Enable error handler to mute expected messages</li>
+            <li id="setAutoLiteral"><a title="Smarty" href="../classes/Smarty/setAutoLiteral.xhtml">setAutoLiteral()</a>
+                — Set auto_literal flag</li>
+            <li id="setCacheDir"><a title="Smarty" href="../classes/Smarty/setCacheDir.xhtml">setCacheDir()</a>
+                — Set cache directory</li>
+            <li id="setCachingType">
+              <a title="Smarty" href="../classes/Smarty/setCachingType.xhtml">setCachingType()</a>
+            </li>
+            <li id="setCompileDir">
+              <a title="Smarty" href="../classes/Smarty/setCompileDir.xhtml">setCompileDir()</a>
+            </li>
+            <li id="setCompileLocking">
+              <a title="Smarty" href="../classes/Smarty/setCompileLocking.xhtml">setCompileLocking()</a>
+            </li>
+            <li id="setConfigBooleanize">
+              <a title="Smarty" href="../classes/Smarty/setConfigBooleanize.xhtml">setConfigBooleanize()</a>
+            </li>
+            <li id="setConfigDir"><a title="Smarty" href="../classes/Smarty/setConfigDir.xhtml">setConfigDir()</a>
+                — Set config directory</li>
+            <li id="setConfigOverwrite">
+              <a title="Smarty" href="../classes/Smarty/setConfigOverwrite.xhtml">setConfigOverwrite()</a>
+            </li>
+            <li id="setConfigReadHidden">
+              <a title="Smarty" href="../classes/Smarty/setConfigReadHidden.xhtml">setConfigReadHidden()</a>
+            </li>
+            <li id="setDebugging">
+              <a title="Smarty" href="../classes/Smarty/setDebugging.xhtml">setDebugging()</a>
+            </li>
+            <li id="setDefaultResourceType">
+              <a title="Smarty" href="../classes/Smarty/setDefaultResourceType.xhtml">setDefaultResourceType()</a>
+            </li>
+            <li id="setErrorReporting">
+              <a title="Smarty" href="../classes/Smarty/setErrorReporting.xhtml">setErrorReporting()</a>
+            </li>
+            <li id="setEscapeHtml">
+              <a title="Smarty" href="../classes/Smarty/setEscapeHtml.xhtml">setEscapeHtml()</a>
+            </li>
+            <li id="setForceCompile">
+              <a title="Smarty" href="../classes/Smarty/setForceCompile.xhtml">setForceCompile()</a>
+            </li>
+            <li id="setLeftDelimiter"><a title="Smarty" href="../classes/Smarty/setLeftDelimiter.xhtml">setLeftDelimiter()</a>
+                — Set left delimiter</li>
+            <li id="setMergeCompiledIncludes">
+              <a title="Smarty" href="../classes/Smarty/setMergeCompiledIncludes.xhtml">setMergeCompiledIncludes()</a>
+            </li>
+            <li id="setPluginsDir"><a title="Smarty" href="../classes/Smarty/setPluginsDir.xhtml">setPluginsDir()</a>
+                — Set plugins directory</li>
+            <li id="setRightDelimiter"><a title="Smarty" href="../classes/Smarty/setRightDelimiter.xhtml">setRightDelimiter()</a>
+                — Set right delimiter</li>
+            <li id="setTemplateDir"><a title="Smarty" href="../classes/Smarty/setTemplateDir.xhtml">setTemplateDir()</a>
+                — Set template directory</li>
+            <li id="setUseSubDirs">
+              <a title="Smarty" href="../classes/Smarty/setUseSubDirs.xhtml">setUseSubDirs()</a>
+            </li>
+            <li id="templateExists"><a title="Smarty" href="../classes/Smarty/templateExists.xhtml">templateExists()</a>
+                — Check if a template resource exists</li>
+            <li id="testInstall"><a title="Smarty" href="../classes/Smarty/testInstall.xhtml">testInstall()</a>
+                — Test install</li>
+            <li id="unmuteExpectedErrors"><a title="Smarty" href="../classes/Smarty/unmuteExpectedErrors.xhtml">unmuteExpectedErrors()</a>
+                — Disable error handler muting expected messages</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase.xhtml">Smarty_Internal_TemplateBase</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="display"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/display.xhtml">display()</a>
+                — displays a Smarty template</li>
+            <li id="fetch"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/fetch.xhtml">fetch()</a>
+                — fetches a rendered Smarty template</li>
+            <li id="isCached"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/isCached.xhtml">isCached()</a>
+                — test if cache is valid</li>
+            <li id="loadFilter"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/loadFilter.xhtml">loadFilter()</a>
+                — load a filter of specified type and name</li>
+            <li id="registerFilter"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerFilter.xhtml">registerFilter()</a>
+                — Registers a filter function</li>
+            <li id="registerObject"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerObject.xhtml">registerObject()</a>
+                — Registers object to be used in templates</li>
+            <li id="registerPlugin"><a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/registerPlugin.xhtml">registerPlugin()</a>
+                — Registers plugin to be used in templates</li>
+            <li id="setCacheId">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheId.xhtml">setCacheId()</a>
+            </li>
+            <li id="setCacheLifetime">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCacheLifetime.xhtml">setCacheLifetime()</a>
+            </li>
+            <li id="setCaching">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCaching.xhtml">setCaching()</a>
+            </li>
+            <li id="setCompileCheck">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileCheck.xhtml">setCompileCheck()</a>
+            </li>
+            <li id="setCompileId">
+              <a title="Smarty_Internal_TemplateBase" href="../classes/Smarty_Internal_TemplateBase/setCompileId.xhtml">setCompileId()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data.xhtml">Smarty_Internal_Data</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="__call"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__call.xhtml">__call()</a>
+                — Handle unknown class methods</li>
+            <li id="_getSmartyObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_getSmartyObj.xhtml">_getSmartyObj()</a>
+                — Get Smarty object</li>
+            <li id="_isDataObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isDataObj.xhtml">_isDataObj()</a>
+                — Return true if this instance is a Data obj</li>
+            <li id="_isSmartyObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isSmartyObj.xhtml">_isSmartyObj()</a>
+                — Return true if this instance is a Smarty obj</li>
+            <li id="_isTplObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isTplObj.xhtml">_isTplObj()</a>
+                — Return true if this instance is a template obj</li>
+            <li id="_mergeVars"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_mergeVars.xhtml">_mergeVars()</a>
+                — Follow the parent chain an merge template and config variables</li>
+            <li id="append"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/append.xhtml">append()</a>
+                — appends values to template variables</li>
+            <li id="appendByRef"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/appendByRef.xhtml">appendByRef()</a>
+                — appends values to template variables by reference</li>
+            <li id="assign"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assign.xhtml">assign()</a>
+                — assigns a Smarty variable</li>
+            <li id="assignByRef"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignByRef.xhtml">assignByRef()</a>
+                — assigns values to template variables by reference</li>
+            <li id="assignGlobal"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignGlobal.xhtml">assignGlobal()</a>
+                — assigns a global Smarty variable</li>
+            <li id="getTemplateVars"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getTemplateVars.xhtml">getTemplateVars()</a>
+                — Returns a single or all template variables</li>
+            <li id="getVariable"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getVariable.xhtml">getVariable()</a>
+                — gets the object of a Smarty variable</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

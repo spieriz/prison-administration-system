@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_AddAutoloadFilters" namespace="" name="Smarty_Internal_Method_AddAutoloadFilters" abstract="false" final="false" start="12" end="53">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_addautoloadfilters.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_addautoloadfilters.php" size="2275" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="54c5906561cef991fc58b9678dba6397452c4bc4" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_addautoloadfilters.php"/>
+  <docblock>
+    <description compact="Smarty Method AddAutoloadFilters">Smarty::addAutoloadFilters() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <extends full="Smarty_Internal_Method_SetAutoloadFilters" namespace="" name="Smarty_Internal_Method_SetAutoloadFilters"/>
+  <method name="addAutoloadFilters" start="30" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add autoload filters"/>
+      <api value="Smarty::setAutoloadFilters()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="filters to load automatically" type="array" variable="$filters"/>
+      <param description="&quot;pre&quot;, &quot;output&quot;, … specify" type="string" variable="$type">the filter type to set.
+                                                                                Defaults to none treating
+                                                                                $filters' keys as the
+                                                                                appropriate types</param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="filters" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <parent full="Smarty_Internal_Method_SetAutoloadFilters" namespace="" name="Smarty_Internal_Method_SetAutoloadFilters">
+    <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+      <docblock>
+        <description compact="Valid for Smarty and template object"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <method name="setAutoloadFilters" start="44" end="57" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set autoload filters"/>
+        <api value="Smarty::setAutoloadFilters()"/>
+        <param type="object" variable="$obj">
+          <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+        </param>
+        <param description="filters to load automatically" type="array" variable="$filters"/>
+        <param description="&quot;pre&quot;, &quot;output&quot;, … specify" type="string" variable="$type">the filter type to set.
+                                                                                Defaults to none treating
+                                                                                $filters' keys as the
+                                                                                appropriate types</param>
+        <return type="object">
+          <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="obj" byreference="false" type="object">
+        <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+      </parameter>
+      <parameter name="filters" byreference="false" type="{unknown}"/>
+      <parameter name="type" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="_checkFilterType" start="66" end="71" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check if filter type is valid"/>
+        <param type="string" variable="$type"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

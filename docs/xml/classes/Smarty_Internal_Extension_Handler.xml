@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Extension_Handler" namespace="" name="Smarty_Internal_Extension_Handler" abstract="false" final="false" start="39" end="197">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_extension_handler.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_extension_handler.php" size="8407" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="abad0fc3119017bcbbbffe364d1d67b964de0926" relative="includes/libs/Smarty/sysplugins/smarty_internal_extension_handler.php"/>
+  <docblock>
+    <description compact="Smarty Extension handler">Load extensions dynamically</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews Runtime extensions"/>
+    <property value="Smarty_Internal_Runtime_CacheModify       $_cacheModify"/>
+    <property value="Smarty_Internal_Runtime_CacheResourceFile $_cacheResourceFile"/>
+    <property value="Smarty_Internal_Runtime_Capture           $_capture"/>
+    <property value="Smarty_Internal_Runtime_CodeFrame         $_codeFrame"/>
+    <property value="Smarty_Internal_Runtime_FilterHandler     $_filterHandler"/>
+    <property value="Smarty_Internal_Runtime_Foreach           $_foreach"/>
+    <property value="Smarty_Internal_Runtime_GetIncludePath    $_getIncludePath"/>
+    <property value="Smarty_Internal_Runtime_Make_Nocache      $_make_nocache"/>
+    <property value="Smarty_Internal_Runtime_UpdateCache       $_updateCache"/>
+    <property value="Smarty_Internal_Runtime_UpdateScope       $_updateScope"/>
+    <property value="Smarty_Internal_Runtime_TplFunction       $_tplFunction"/>
+    <property value="Smarty_Internal_Runtime_WriteFile         $_writeFile Method extensions"/>
+    <property value="Smarty_Internal_Method_GetTemplateVars    $getTemplateVars"/>
+    <property value="Smarty_Internal_Method_Append             $append"/>
+    <property value="Smarty_Internal_Method_AppendByRef        $appendByRef"/>
+    <property value="Smarty_Internal_Method_AssignGlobal       $assignGlobal"/>
+    <property value="Smarty_Internal_Method_AssignByRef        $assignByRef"/>
+    <property value="Smarty_Internal_Method_LoadFilter         $loadFilter"/>
+    <property value="Smarty_Internal_Method_LoadPlugin         $loadPlugin"/>
+    <property value="Smarty_Internal_Method_RegisterFilter     $registerFilter"/>
+    <property value="Smarty_Internal_Method_RegisterObject     $registerObject"/>
+    <property value="Smarty_Internal_Method_RegisterPlugin     $registerPlugin"/>
+    <property value="mixed|\Smarty_Template_Cached             configLoad"/>
+  </docblock>
+  <member name="objType" default="NULL" visibility="public" static="false" line="41"/>
+  <member name="_property_info" default="" type="array" visibility="private" static="false" line="49">
+    <docblock>
+      <description compact="Cache for property information from generic getter/setter Preloaded with names which should not use with generic getter/setter"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="resolvedProperties" default="" type="array" visibility="private" static="false" line="55"/>
+  <method name="_callExternalMethod" start="66" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Call external Method"/>
+      <param type="object" variable="$data">
+        <type full="\Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+      </param>
+      <param description="external method names" type="string" variable="$name"/>
+      <param description="argument array" type="array" variable="$args"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="upperCase" start="145" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Make first character of name parts upper case"/>
+      <param type="string" variable="$name"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__get" start="159" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get extension object"/>
+      <param description="property name" type="string" variable="$property_name"/>
+      <return type="object">
+        <type full="mixed|Smarty_Template_Cached" namespace="" name="mixed|Smarty_Template_Cached"/>
+      </return>
+    </docblock>
+    <parameter name="property_name" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="object properties of runtime template extensions will start with '_'" line="161"/>
+    </inline>
+  </method>
+  <method name="__set" start="180" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="set extension property"/>
+      <param description="property name" type="string" variable="$property_name"/>
+      <param description="value" type="mixed" variable="$value"/>
+    </docblock>
+    <parameter name="property_name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__call" start="193" end="196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Call error handler for undefined method"/>
+      <param description="unknown method-name" type="string" variable="$name"/>
+      <param description="argument array" type="array" variable="$args"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+  </method>
+</class>

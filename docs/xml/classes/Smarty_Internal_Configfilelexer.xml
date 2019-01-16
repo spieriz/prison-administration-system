@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Configfilelexer" namespace="" name="Smarty_Internal_Configfilelexer" abstract="false" final="false" start="22" end="739">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_configfilelexer.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_configfilelexer.php" size="25585" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="1f26a057cfc36af0cb4acac3a6a1c01737222da7" relative="includes/libs/Smarty/sysplugins/smarty_internal_configfilelexer.php"/>
+  <docblock>
+    <description compact="Smarty_Internal_Configfilelexer">This is the config file lexer.
+It is generated from the smarty_internal_configfilelexer.plex file</description>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <constant type="integer" name="START" value="1"/>
+  <constant type="integer" name="VALUE" value="2"/>
+  <constant type="integer" name="NAKED_STRING_VALUE" value="3"/>
+  <constant type="integer" name="COMMENT" value="4"/>
+  <constant type="integer" name="SECTION" value="5"/>
+  <constant type="integer" name="TRIPPLE" value="6"/>
+  <member name="data" visibility="public" static="false" line="36">
+    <docblock>
+      <description compact="Source"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="dataLength" default="NULL" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="Source length"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="counter" visibility="public" static="false" line="50">
+    <docblock>
+      <description compact="byte counter"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="token" visibility="public" static="false" line="57">
+    <docblock>
+      <description compact="token number"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="value" visibility="public" static="false" line="64">
+    <docblock>
+      <description compact="token value"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="line" visibility="public" static="false" line="71">
+    <docblock>
+      <description compact="current line"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="state" default="1" type="integer" visibility="public" static="false" line="78">
+    <docblock>
+      <description compact="state number"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="smarty" default="NULL" visibility="public" static="false" line="85">
+    <docblock>
+      <description compact="Smarty object"/>
+      <var type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="yyTraceFILE" visibility="public" static="false" line="92">
+    <docblock>
+      <description compact="trace file"/>
+      <var type="resource"/>
+    </docblock>
+  </member>
+  <member name="yyTracePrompt" visibility="public" static="false" line="99">
+    <docblock>
+      <description compact="trace prompt"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="state_name" default="" type="array" visibility="public" static="false" line="106">
+    <docblock>
+      <description compact="state names"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="smarty_token_names" default="" type="array" visibility="public" static="false" line="115">
+    <docblock>
+      <description compact="token names"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="compiler" default="NULL" visibility="private" static="false" line="123">
+    <docblock>
+      <description compact="compiler object"/>
+      <var type="object">
+        <type full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="configBooleanize" default="false" type="boolean" visibility="private" static="false" line="130">
+    <docblock>
+      <description compact="copy of config_booleanize"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern1" default="NULL" visibility="private" static="false" line="137">
+    <docblock>
+      <description compact="storage for assembled token patterns"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="yy_global_pattern2" default="NULL" visibility="private" static="false" line="139"/>
+  <member name="yy_global_pattern3" default="NULL" visibility="private" static="false" line="141"/>
+  <member name="yy_global_pattern4" default="NULL" visibility="private" static="false" line="143"/>
+  <member name="yy_global_pattern5" default="NULL" visibility="private" static="false" line="145"/>
+  <member name="yy_global_pattern6" default="NULL" visibility="private" static="false" line="147"/>
+  <member name="_yy_state" default="1" type="integer" visibility="private" static="false" line="149"/>
+  <member name="_yy_stack" default="" type="array" visibility="private" static="false" line="151"/>
+  <constructor name="__construct" start="159" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="constructor"/>
+      <param description="template source" type="string" variable="$data"/>
+      <param type="object" variable="$compiler">
+        <type full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler"/>
+      </param>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler"/>
+    </parameter>
+    <inline>
+      <comment value="now all lines are \n-terminated" line="161"/>
+    </inline>
+  </constructor>
+  <method name="replace" start="173" end="176" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="PrintTrace" start="178" end="182" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex" start="184" end="187" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yypushstate" start="189" end="209" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="state" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yypopstate" start="211" end="230" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yybegin" start="232" end="243" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="state" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yylex1" start="245" end="300" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_1" start="302" end="306" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_2" start="308" end="312" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_3" start="314" end="317" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_4" start="319" end="323" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_5" start="325" end="328" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_6" start="330" end="333" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_7" start="335" end="338" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1_8" start="340" end="343" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex2" start="345" end="400" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_1" start="402" end="405" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_2" start="407" end="411" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_3" start="413" end="417" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_4" start="419" end="423" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_5" start="425" end="429" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_6" start="431" end="435" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_7" start="437" end="448" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_8" start="450" end="454" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r2_9" start="456" end="461" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex3" start="463" end="517" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r3_1" start="519" end="523" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex4" start="525" end="579" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4_1" start="581" end="584" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4_2" start="586" end="589" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4_3" start="591" end="595" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex5" start="597" end="651" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_1" start="653" end="656" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5_2" start="658" end="662" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yylex6" start="664" end="718" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r6_1" start="720" end="725" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r6_2" start="727" end="738" abstract="false" final="false" static="false" visibility="public"/>
+</class>

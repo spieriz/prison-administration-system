@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Security" namespace="" name="Smarty_Security" abstract="false" final="false" start="22" end="721">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_security.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_security.php" size="24189" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="3f47d4c82231bd4c6406e77b9b3c946b20fb65ba" relative="includes/libs/Smarty/sysplugins/smarty_security.php"/>
+  <docblock>
+    <description compact="This class does contain the security settings"/>
+  </docblock>
+  <member name="php_handling" default="" type="{unknown}" constant="Smarty::PHP_PASSTHRU" visibility="public" static="false" line="36">
+    <docblock>
+      <description compact="This determines how Smarty handles &quot;&lt;?php ... ?&gt;&quot; tags in templates.">possible values:
+&lt;ul&gt;
+  &lt;li&gt;Smarty::PHP_PASSTHRU -&gt; echo PHP tags as they are&lt;/li&gt;
+  &lt;li&gt;Smarty::PHP_QUOTE    -&gt; escape tags as entities&lt;/li&gt;
+  &lt;li&gt;Smarty::PHP_REMOVE   -&gt; remove php tags&lt;/li&gt;
+  &lt;li&gt;Smarty::PHP_ALLOW    -&gt; execute php tags&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <var type="integer"/>
+    </docblock>
+  </member>
+  <member name="secure_dir" default="" type="array" visibility="public" static="false" line="44">
+    <docblock>
+      <description compact="This is the list of template directories that are considered secure.">$template_dir is in this list implicitly.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="trusted_dir" default="" type="array" visibility="public" static="false" line="52">
+    <docblock>
+      <description compact="This is an array of directories where trusted php scripts reside.">{@link $security} is disabled during their inclusion/execution.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="trusted_uri" default="" type="array" visibility="public" static="false" line="59">
+    <docblock>
+      <description compact="List of regular expressions (PCRE) that include trusted URIs"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="trusted_constants" default="" type="array" visibility="public" static="false" line="66">
+    <docblock>
+      <description compact="List of trusted constants names"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="static_classes" default="" type="array" visibility="public" static="false" line="75">
+    <docblock>
+      <description compact="This is an array of trusted static classes.">If empty access to all static classes is allowed.
+If set to 'none' none is allowed.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="trusted_static_methods" default="" type="array" visibility="public" static="false" line="89">
+    <docblock>
+      <description compact="This is an nested array of trusted classes and static methods.">If empty access to all static classes and methods is allowed.
+Format:
+array (
+        'class_1' =&gt; array('method_1', 'method_2'), // allowed methods listed
+        'class_2' =&gt; array(),                       // all methods of class allowed
+      )
+If set to null none is allowed.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="trusted_static_properties" default="" type="array" visibility="public" static="false" line="103">
+    <docblock>
+      <description compact="This is an array of trusted static properties.">If empty access to all static classes and properties is allowed.
+Format:
+array (
+        'class_1' =&gt; array('prop_1', 'prop_2'), // allowed properties listed
+        'class_2' =&gt; array(),                   // all properties of class allowed
+      )
+If set to null none is allowed.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="php_functions" default="" type="array" visibility="public" static="false" line="112">
+    <docblock>
+      <description compact="This is an array of trusted PHP functions.">If empty all functions are allowed.
+To disable all PHP functions set $php_functions = null.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="php_modifiers" default="" type="array" visibility="public" static="false" line="121">
+    <docblock>
+      <description compact="This is an array of trusted PHP modifiers.">If empty all modifiers are allowed.
+To disable all modifier set $php_modifiers = null.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="allowed_tags" default="" type="array" visibility="public" static="false" line="129">
+    <docblock>
+      <description compact="This is an array of allowed tags.">If empty no restriction by allowed_tags.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="disabled_tags" default="" type="array" visibility="public" static="false" line="137">
+    <docblock>
+      <description compact="This is an array of disabled tags.">If empty no restriction by disabled_tags.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="allowed_modifiers" default="" type="array" visibility="public" static="false" line="145">
+    <docblock>
+      <description compact="This is an array of allowed modifier plugins.">If empty no restriction by allowed_modifiers.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="disabled_modifiers" default="" type="array" visibility="public" static="false" line="153">
+    <docblock>
+      <description compact="This is an array of disabled modifier plugins.">If empty no restriction by disabled_modifiers.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="disabled_special_smarty_vars" default="" type="array" visibility="public" static="false" line="160">
+    <docblock>
+      <description compact="This is an array of disabled special $smarty variables."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="streams" default="" type="array" visibility="public" static="false" line="169">
+    <docblock>
+      <description compact="This is an array of trusted streams.">If empty all streams are allowed.
+To disable all streams set $streams = null.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="allow_constants" default="true" type="boolean" visibility="public" static="false" line="176">
+    <docblock>
+      <description compact="+ flag if constants can be accessed from template"/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="allow_super_globals" default="true" type="boolean" visibility="public" static="false" line="183">
+    <docblock>
+      <description compact="+ flag if super globals can be accessed from template"/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="max_template_nesting" default="0" type="integer" visibility="public" static="false" line="190">
+    <docblock>
+      <description compact="max template nesting level"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_current_template_nesting" default="0" type="integer" visibility="private" static="false" line="197">
+    <docblock>
+      <description compact="current template nesting level"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_resource_dir" default="" type="array" visibility="protected" static="false" line="204">
+    <docblock>
+      <description compact="Cache for $resource_dir lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_template_dir" default="" type="array" visibility="protected" static="false" line="211">
+    <docblock>
+      <description compact="Cache for $template_dir lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_config_dir" default="" type="array" visibility="protected" static="false" line="218">
+    <docblock>
+      <description compact="Cache for $config_dir lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_secure_dir" default="" type="array" visibility="protected" static="false" line="225">
+    <docblock>
+      <description compact="Cache for $secure_dir lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_php_resource_dir" default="NULL" visibility="protected" static="false" line="232">
+    <docblock>
+      <description compact="Cache for $php_resource_dir lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_trusted_dir" default="NULL" visibility="protected" static="false" line="239">
+    <docblock>
+      <description compact="Cache for $trusted_dir lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_include_path_status" default="false" type="boolean" visibility="protected" static="false" line="246">
+    <docblock>
+      <description compact="Cache for include path status"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_include_dir" default="" type="array" visibility="protected" static="false" line="253">
+    <docblock>
+      <description compact="Cache for $_include_array lookup"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="258" end="261" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="isTrustedPhpFunction" start="271" end="280" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if PHP function is trusted."/>
+      <param type="string" variable="$function_name"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if function is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="function_name" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="279"/>
+    </inline>
+  </method>
+  <method name="isTrustedStaticClass" start="290" end="299" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if static class is trusted."/>
+      <param type="string" variable="$class_name"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if class is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="class_name" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="298"/>
+    </inline>
+  </method>
+  <method name="isTrustedStaticClassAccess" start="310" end="337" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if static class method/property is trusted."/>
+      <param type="string" variable="$class_name"/>
+      <param type="string" variable="$params"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if class method is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="class_name" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="336"/>
+    </inline>
+  </method>
+  <method name="isTrustedPhpModifier" start="347" end="356" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if PHP modifier is trusted."/>
+      <param type="string" variable="$modifier_name"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if modifier is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="modifier_name" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="355"/>
+    </inline>
+  </method>
+  <method name="isTrustedTag" start="366" end="394" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if tag is trusted."/>
+      <param type="string" variable="$tag_name"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if tag is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="tag_name" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="check for internal always required tags" line="368"/>
+      <comment value="check security settings" line="381"/>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="393"/>
+    </inline>
+  </method>
+  <method name="isTrustedSpecialSmartyVar" start="404" end="416" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if special $smarty variable is trusted."/>
+      <param type="string" variable="$var_name"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if tag is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="var_name" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="415"/>
+    </inline>
+  </method>
+  <method name="isTrustedModifier" start="426" end="455" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if modifier plugin is trusted."/>
+      <param type="string" variable="$modifier_name"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return description="true if tag is trusted" type="boolean"/>
+    </docblock>
+    <parameter name="modifier_name" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="check for internal always allowed modifier" line="428"/>
+      <comment value="check security settings" line="432"/>
+      <comment value="should not, but who knows what happens to the compiler in the future?" line="454"/>
+    </inline>
+  </method>
+  <method name="isTrustedConstant" start="465" end="482" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if constants are enabled or trusted"/>
+      <param description="constant name" type="string" variable="$const"/>
+      <param description="compiler object" type="object" variable="$compiler"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="const" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isTrustedStream" start="492" end="498" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if stream is trusted."/>
+      <param type="string" variable="$stream_name"/>
+      <return description="true if stream is trusted" type="boolean"/>
+      <throws description="if stream is not trusted" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="stream_name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isTrustedResourceDir" start="509" end="543" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if directory of file resource is trusted."/>
+      <param type="string" variable="$filepath"/>
+      <param type="object" variable="$isConfig">
+        <type full="null|bool" namespace="" name="null|bool"/>
+      </param>
+      <return description="true if directory is trusted" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws description="if directory is not trusted" type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="filepath" byreference="false" type="{unknown}"/>
+    <parameter name="isConfig" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="isTrustedUri" start="557" end="569" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if URI (e.g. {fetch} or {html_image}) is trusted To simplify things, isTrustedUri() resolves all input to &quot;{$PROTOCOL}://{$HOSTNAME}&quot;.">So "http://username:password@hello.world.example.org:8080/some-path?some=query-string"
+is reduced to "http://hello.world.example.org" prior to applying the patters from <link xmlns="http://xml.phpdox.net/src" value="$trusted_uri"/>.
+</description>
+      <param type="string" variable="$uri"/>
+      <return description="true if URI is trusted" type="boolean"/>
+      <throws description="if URI is not trusted" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+      <uses value="$trusted_uri for list of patterns to match against $uri"/>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isTrustedPHPDir" start="579" end="598" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if directory of file resource is trusted."/>
+      <param type="string" variable="$filepath"/>
+      <return description="true if directory is trusted" type="boolean"/>
+      <throws description="if PHP directory is not trusted" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="filepath" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="check if index is outdated" line="584"/>
+    </inline>
+  </method>
+  <method name="_updateResourceDir" start="606" end="621" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Remove old directories and its sub folders, add new directories"/>
+      <param type="array" variable="$oldDir"/>
+      <param type="array" variable="$newDir"/>
+    </docblock>
+    <parameter name="oldDir" byreference="false" type="{unknown}"/>
+    <parameter name="newDir" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_checkDir" start="632" end="655" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Check if file is inside a valid directory"/>
+      <param type="string" variable="$filepath"/>
+      <param description="valid directories" type="array" variable="$dirs"/>
+      <return type="object">
+        <type full="array|bool" namespace="" name="array|bool"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="filepath" byreference="false" type="{unknown}"/>
+    <parameter name="dirs" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="give up" line="653"/>
+    </inline>
+  </method>
+  <method name="enableSecurity" start="666" end="685" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Loads security class and enables security"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="if a string is used, it must be class-name" type="object" variable="$security_class">
+        <type full="string|Smarty_Security" namespace="" name="string|Smarty_Security"/>
+      </param>
+      <return description="current Smarty instance for chaining" type="object">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </return>
+      <throws description="when an invalid class name is provided" type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="security_class" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="startTemplate" start="694" end="699" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Start template processing"/>
+      <param variable="$template"/>
+      <throws type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="template" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="endTemplate" start="704" end="709" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Exit template processing"/>
+    </docblock>
+  </method>
+  <method name="registerCallBacks" start="716" end="720" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register callback functions call at start/end of template rendering"/>
+      <param type="object" variable="$template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+</class>

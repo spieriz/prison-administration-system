@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_ClearAllCache" namespace="" name="Smarty_Internal_Method_ClearAllCache" abstract="false" final="false" start="12" end="41">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_clearallcache.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_clearallcache.php" size="1035" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="196c1c611dc77b96f0760246b031f1da1d6ce409" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_clearallcache.php"/>
+  <docblock>
+    <description compact="Smarty Method ClearAllCache">Smarty::clearAllCache() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="1" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="clearAllCache" start="34" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Empty cache folder"/>
+      <api value="Smarty::clearAllCache()"/>
+      <link value="http://www.smarty.net/docs/en/api.clear.all.cache.tpl"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="expiration time" type="integer" variable="$exp_time"/>
+      <param description="resource type" type="string" variable="$type"/>
+      <return description="number of cache files deleted" type="int"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="load cache resource and call clearAll" line="37"/>
+    </inline>
+  </method>
+</class>

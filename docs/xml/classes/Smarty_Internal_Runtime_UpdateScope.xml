@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_UpdateScope" namespace="" name="Smarty_Internal_Runtime_UpdateScope" abstract="false" final="false" start="10" end="115">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_updatescope.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_updatescope.php" size="4068" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="e6158af7e866e4c5f45ec1b2369bce3fcc55fdaa" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_updatescope.php"/>
+  <docblock>
+    <description compact="Runtime Extension updateScope"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <method name="_updateScope" start="19" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update new assigned template or config variable in other effected scopes"/>
+      <param description="data object" type="object" variable="$tpl">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="variable name" type="object" variable="$varName">
+        <type full="string|null" namespace="" name="string|null"/>
+      </param>
+      <param description="tag scope to which bubble up variable value" type="int" variable="$tagScope"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="varName" byreference="false" type="{unknown}"/>
+    <parameter name="tagScope" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="_getAffectedScopes" start="51" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get array of objects which needs to be updated  by given scope value"/>
+      <param type="object" variable="$tpl">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="merged tag and template scope to which bubble up variable value" type="int" variable="$mergedScope"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="mergedScope" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_updateVariableInOtherScope" start="91" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update variable in other scope"/>
+      <param description="template variable array" type="array" variable="$tpl_vars"/>
+      <param type="object" variable="$from">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="variable name" type="string" variable="$varName"/>
+    </docblock>
+    <parameter name="tpl_vars" byreference="true" type="{unknown}"/>
+    <parameter name="from" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="varName" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_updateVarStack" start="107" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update variable in template local variable stack"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="variable name or null for config variables" type="object" variable="$varName">
+        <type full="string|null" namespace="" name="string|null"/>
+      </param>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="varName" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PersonManager" namespace="" name="PersonManager" abstract="false" final="false" start="13" end="121">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/classes" file="PersonManager.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/classes/PersonManager.php" size="3881" time="2019-01-14T15:49:20+01:00" unixtime="1547477360" sha1="b2b094d0e432756c47d718e44b84acdd01ea019e" relative="includes/classes/PersonManager.php"/>
+  <method name="createGuard" start="15" end="20" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="name" byreference="false" type="string" default="''"/>
+    <parameter name="surname" byreference="false" type="string" default="''"/>
+    <parameter name="pesel" byreference="false" type="string" default="''"/>
+    <parameter name="address" byreference="false" type="string" default="''"/>
+    <parameter name="salary" byreference="false" type="float" default="0.0"/>
+  </method>
+  <method name="createDutyOfficer" start="22" end="27" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="name" byreference="false" type="string" default="''"/>
+    <parameter name="surname" byreference="false" type="string" default="''"/>
+    <parameter name="pesel" byreference="false" type="string" default="''"/>
+    <parameter name="address" byreference="false" type="string" default="''"/>
+    <parameter name="salary" byreference="false" type="float" default="0.0"/>
+  </method>
+  <method name="getAllGuards" start="29" end="40" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="getAllDutyOfficers" start="42" end="53" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="getAllPrisoners" start="55" end="62" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="getAllCells" start="64" end="72" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="changePrisonersCell" start="74" end="79" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="prisoner_id" byreference="false" type="{unknown}"/>
+    <parameter name="cell_id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addGuardToDatabase" start="81" end="88" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="guard" byreference="false" type="object">
+      <type full="Guard" namespace="" name="Guard"/>
+    </parameter>
+  </method>
+  <method name="addDutyOfficerToDatabase" start="90" end="98" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="dutyOfficer" byreference="false" type="object">
+      <type full="DutyOfficer" namespace="" name="DutyOfficer"/>
+    </parameter>
+  </method>
+  <method name="getAllEmployees" start="100" end="102" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="validateData" start="104" end="120" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="surname" byreference="false" type="{unknown}"/>
+    <parameter name="pesel" byreference="false" type="{unknown}"/>
+    <parameter name="address" byreference="false" type="{unknown}"/>
+    <parameter name="salary" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Debug</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Debug</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_debug.php.xhtml#line17">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Debug</h1>
+        <h4>Smarty Internal Plugin Debug Class</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Debug
+                extends <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data.xhtml">Smarty_Internal_Data</a>
+            {<br/><ul class="none"><li>// members</li><li>public array <a href="#members">$template_data</a> =
+                        ;
+                    </li><li>public array <a href="#members">$ignore_uid</a> =
+                        ;
+                    </li><li>public integer <a href="#members">$index</a> =
+                        0;
+                    </li><li>public integer <a href="#members">$offset</a> =
+                        0;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Internal_Data">Smarty_Internal_Data</span></li><li>public integer <a href="#members">$_objType</a>;
+                        </li><li>public string <a href="#members">$template_class</a>;
+                        </li><li>public array <a href="#members">$tpl_vars</a>;
+                        </li><li>public <span title="Smarty|Smarty_Internal_Template|Smarty_Data">Smarty|Smarty_Internal_Template|Smarty_Data</span> <a href="#members">$parent</a>;
+                        </li><li>public array <a href="#members">$config_vars</a>;
+                        </li><li>public <span title="Smarty_Internal_Extension_Handler">Smarty_Internal_Extension_Handler</span> <a href="#members">$ext</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_template.xhtml">start_template</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_template.xhtml">end_template</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_compile.xhtml">start_compile</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_compile.xhtml">end_compile</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_render.xhtml">start_render</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_render.xhtml">end_render</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_cache.xhtml">start_cache</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_cache.xhtml">end_cache</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/register_template.xhtml">register_template</a>()
+                    </li><li>public static void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/register_data.xhtml">register_data</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/display_debug.xhtml">display_debug</a>()
+                    </li><li>public StdClass <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/get_debug_vars.xhtml">get_debug_vars</a>()
+                    </li><li>private string <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/get_key.xhtml">get_key</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/ignore.xhtml">ignore</a>()
+                    </li><li>public void <a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/debugUrl.xhtml">debugUrl</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Internal_Data">Smarty_Internal_Data</span></li><li>public void <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__construct.xhtml">__construct</a>()
+                        </li><li>public Smarty_Internal_Data <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assign.xhtml">assign</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/append.xhtml">append</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignGlobal.xhtml">assignGlobal</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/appendByRef.xhtml">appendByRef</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignByRef.xhtml">assignByRef</a>()
+                        </li><li>public mixed <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getTemplateVars.xhtml">getTemplateVars</a>()
+                        </li><li>public Smarty_Variable|Smarty_Undefined_Variable <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getVariable.xhtml">getVariable</a>()
+                        </li><li>public void <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_mergeVars.xhtml">_mergeVars</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isDataObj.xhtml">_isDataObj</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isTplObj.xhtml">_isTplObj</a>()
+                        </li><li>public bool <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isSmartyObj.xhtml">_isSmartyObj</a>()
+                        </li><li>public Smarty <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_getSmartyObj.xhtml">_getSmartyObj</a>()
+                        </li><li>public mixed <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__call.xhtml">__call</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data.xhtml">Smarty_Internal_Data</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="_objType"><strong>$_objType</strong>
+                —
+                int<br/><span class="indent">This object type (Smarty = 1, template = 2, data = 4)</span></li>
+            <li id="config_vars"><strong>$config_vars</strong>
+                —
+                array<br/><span class="indent">configuration settings</span></li>
+            <li id="ext"><strong>$ext</strong>
+                —
+                <a title="Smarty_Internal_Extension_Handler" href="../classes/Smarty_Internal_Extension_Handler.xhtml">Smarty_Internal_Extension_Handler</a><br/><span class="indent">extension handler</span></li>
+            <li id="ignore_uid"><strong>$ignore_uid</strong>
+                —
+                array<br/><span class="indent">List of uid's which shall be ignored</span></li>
+            <li id="index"><strong>$index</strong>
+                —
+                int<br/><span class="indent">Index of display() and fetch() calls</span></li>
+            <li id="offset"><strong>$offset</strong>
+                —
+                int<br/><span class="indent">Counter for window offset</span></li>
+            <li id="parent"><strong>$parent</strong>
+                —
+                <a title="Smarty|Smarty_Internal_Template|Smarty_Data" href="../classes/Smarty|Smarty_Internal_Template|Smarty_Data.xhtml">Smarty|Smarty_Internal_Template|Smarty_Data</a><br/><span class="indent">parent template (if any)</span></li>
+            <li id="template_class"><strong>$template_class</strong>
+                —
+                string<br/><span class="indent">name of class used for templates</span></li>
+            <li id="template_data"><strong>$template_data</strong>
+                —
+                array<br/><span class="indent">template data</span></li>
+            <li id="tpl_vars"><strong>$tpl_vars</strong>
+                —
+                array<br/><span class="indent">template variables</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="get_key"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/get_key.xhtml">get_key()</a>
+                — Return key into $template_data for template</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="debugUrl"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/debugUrl.xhtml">debugUrl()</a>
+                — handle 'URL' debugging mode</li>
+            <li id="display_debug"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/display_debug.xhtml">display_debug()</a>
+                — Opens a window for the Smarty Debugging Console and display the data</li>
+            <li id="end_cache"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_cache.xhtml">end_cache()</a>
+                — End logging of cache time</li>
+            <li id="end_compile"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_compile.xhtml">end_compile()</a>
+                — End logging of compile time</li>
+            <li id="end_render"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_render.xhtml">end_render()</a>
+                — End logging of compile time</li>
+            <li id="end_template"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/end_template.xhtml">end_template()</a>
+                — End logging of cache time</li>
+            <li id="get_debug_vars"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/get_debug_vars.xhtml">get_debug_vars()</a>
+                — Recursively gets variables from all template/data scopes</li>
+            <li id="ignore"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/ignore.xhtml">ignore()</a>
+                — Ignore template</li>
+            <li id="register_data"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/register_data.xhtml">register_data()</a>
+                — Register data object</li>
+            <li id="register_template"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/register_template.xhtml">register_template()</a>
+                — Register template object</li>
+            <li id="start_cache"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_cache.xhtml">start_cache()</a>
+                — Start logging of cache time</li>
+            <li id="start_compile"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_compile.xhtml">start_compile()</a>
+                — Start logging of compile time</li>
+            <li id="start_render"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_render.xhtml">start_render()</a>
+                — Start logging of render time</li>
+            <li id="start_template"><a title="Smarty_Internal_Debug" href="../classes/Smarty_Internal_Debug/start_template.xhtml">start_template()</a>
+                — Start logging template</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data.xhtml">Smarty_Internal_Data</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="__call"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/__call.xhtml">__call()</a>
+                — Handle unknown class methods</li>
+            <li id="_getSmartyObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_getSmartyObj.xhtml">_getSmartyObj()</a>
+                — Get Smarty object</li>
+            <li id="_isDataObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isDataObj.xhtml">_isDataObj()</a>
+                — Return true if this instance is a Data obj</li>
+            <li id="_isSmartyObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isSmartyObj.xhtml">_isSmartyObj()</a>
+                — Return true if this instance is a Smarty obj</li>
+            <li id="_isTplObj"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_isTplObj.xhtml">_isTplObj()</a>
+                — Return true if this instance is a template obj</li>
+            <li id="_mergeVars"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/_mergeVars.xhtml">_mergeVars()</a>
+                — Follow the parent chain an merge template and config variables</li>
+            <li id="append"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/append.xhtml">append()</a>
+                — appends values to template variables</li>
+            <li id="appendByRef"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/appendByRef.xhtml">appendByRef()</a>
+                — appends values to template variables by reference</li>
+            <li id="assign"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assign.xhtml">assign()</a>
+                — assigns a Smarty variable</li>
+            <li id="assignByRef"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignByRef.xhtml">assignByRef()</a>
+                — assigns values to template variables by reference</li>
+            <li id="assignGlobal"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/assignGlobal.xhtml">assignGlobal()</a>
+                — assigns a global Smarty variable</li>
+            <li id="getTemplateVars"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getTemplateVars.xhtml">getTemplateVars()</a>
+                — Returns a single or all template variables</li>
+            <li id="getVariable"><a title="Smarty_Internal_Data" href="../classes/Smarty_Internal_Data/getVariable.xhtml">getVariable()</a>
+                — gets the object of a Smarty variable</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

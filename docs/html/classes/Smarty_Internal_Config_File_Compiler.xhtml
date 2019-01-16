@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Config_File_Compiler</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Config_File_Compiler</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_config_file_compiler.php.xhtml#line18">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Config_File_Compiler</h1>
+        <h4>Main config file compiler class</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Config_File_Compiler
+            {<br/><ul class="none"><li>// members</li><li>public  <a href="#members">$lexer_class</a>;
+                    </li><li>public  <a href="#members">$parser_class</a>;
+                    </li><li>public <span title=""/> <a href="#members">$lex</a>;
+                    </li><li>public <span title=""/> <a href="#members">$parser</a>;
+                    </li><li>public <span title="Smarty">Smarty</span> <a href="#members">$smarty</a>;
+                    </li><li>public <span title="Smarty_Internal_Template">Smarty_Internal_Template</span> <a href="#members">$template</a>;
+                    </li><li>public array <a href="#members">$config_data</a> =
+                        ;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$write_compiled_code</a> =
+                        true;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler/__construct.xhtml">__construct</a>()
+                    </li><li>public bool <a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler/compileTemplate.xhtml">compileTemplate</a>()
+                    </li><li>public void <a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler/trigger_config_file_error.xhtml">trigger_config_file_error</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="config_data"><strong>$config_data</strong>
+                —
+                array<br/><span class="indent">Compiled config data sections and variables</span></li>
+            <li id="lex"><strong>$lex</strong>
+                —
+                <a title="" href="../classes/.xhtml"/><br/><span class="indent">Lexer object</span></li>
+            <li id="lexer_class"><strong>$lexer_class</strong>
+                —
+                string<br/><span class="indent">Lexer class name</span></li>
+            <li id="parser"><strong>$parser</strong>
+                —
+                <a title="" href="../classes/.xhtml"/><br/><span class="indent">Parser object</span></li>
+            <li id="parser_class"><strong>$parser_class</strong>
+                —
+                string<br/><span class="indent">Parser class name</span></li>
+            <li id="smarty"><strong>$smarty</strong>
+                —
+                <a title="Smarty" href="../classes/Smarty.xhtml">Smarty</a><br/><span class="indent">Smarty object</span></li>
+            <li id="template"><strong>$template</strong>
+                —
+                <a title="Smarty_Internal_Template" href="../classes/Smarty_Internal_Template.xhtml">Smarty_Internal_Template</a><br/><span class="indent">Smarty object</span></li>
+            <li id="write_compiled_code"><strong>$write_compiled_code</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">compiled config data must always be written</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler/__construct.xhtml">__construct()</a>
+                — Initialize compiler</li>
+            <li id="compileTemplate"><a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler/compileTemplate.xhtml">compileTemplate()</a>
+                — Method to compile Smarty config source.</li>
+            <li id="trigger_config_file_error"><a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler/trigger_config_file_error.xhtml">trigger_config_file_error()</a>
+                — display compiler error messages without dying If parameter $args is empty it is a parser detected syntax error.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

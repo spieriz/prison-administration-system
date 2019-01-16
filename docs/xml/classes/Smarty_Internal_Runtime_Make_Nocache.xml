@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_Make_Nocache" namespace="" name="Smarty_Internal_Runtime_Make_Nocache" abstract="false" final="false" start="10" end="54">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_make_nocache.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_make_nocache.php" size="2124" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="3faf499d4dda8d43f0bcaf9415dc0d203c0e3d96" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_make_nocache.php"/>
+  <docblock>
+    <description compact="{make_nocache} Runtime Methods save(), store()"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <method name="save" start="21" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save current variable value while rendering compiled template and inject nocache code to assign variable value in cahed template"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="variable name" type="string" variable="$var"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="store" start="42" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Store variable value saved while rendering compiled template in cached template context"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="variable name" type="string" variable="$var"/>
+      <param type="array" variable="$properties"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+    <parameter name="properties" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="do not overwrite existing nocache variables" line="44"/>
+    </inline>
+  </method>
+</class>

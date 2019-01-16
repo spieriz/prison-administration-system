@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_ParseTree_Text" namespace="" name="Smarty_Internal_ParseTree_Text" abstract="false" final="false" start="17" end="40">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_parsetree_text.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_parsetree_text.php" size="878" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="549f96e354f6eb4d1f2c6450c143bf63be4ce14a" relative="includes/libs/Smarty/sysplugins/smarty_internal_parsetree_text.php"/>
+  <docblock>
+    <description compact="Smarty Internal Plugin Templateparser Parse Tree These are classes to build parse tree in the template parser"/>
+    <package value="Smarty"/>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+    <subpackage value="Compiler"/>
+    <author value="Thue Kristensen"/>
+    <author value="Uwe Tews template text"/>
+    <ignore/>
+  </docblock>
+  <extends full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+  <constructor name="__construct" start="24" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create template text buffer"/>
+      <param description="text" type="string" variable="$data"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="to_smarty_php" start="36" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return buffer content"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <return description="text" type="string"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+  </method>
+  <parent full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree">
+    <member name="data" visibility="public" static="false" line="24">
+      <docblock>
+        <description compact="Buffer content"/>
+        <var type="mixed"/>
+      </docblock>
+    </member>
+    <member name="subtrees" default="" type="array" visibility="public" static="false" line="31">
+      <docblock>
+        <description compact="Subtree array"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="to_smarty_php" start="40" end="40" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return buffer"/>
+        <param type="object" variable="$parser">
+          <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+        </param>
+        <return description="buffer content" type="string"/>
+      </docblock>
+      <parameter name="parser" byreference="false" type="object">
+        <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </parameter>
+    </method>
+    <destructor name="__destruct" start="45" end="49" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Template data object destructor"/>
+      </docblock>
+    </destructor>
+  </parent>
+</class>

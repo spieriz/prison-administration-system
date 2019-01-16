@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Templatelexer</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Templatelexer</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_templatelexer.php.xhtml#line19">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Templatelexer</h1>
+        <h4>Smarty_Internal_Templatelexer This is the template file lexer.</h4>
+        <p>It is generated from the smarty_internal_templatelexer.plex file</p>
+        <ul>
+          <li>Author: Uwe Tews &lt;uwe.tews@googlemail.com&gt;</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Templatelexer
+            {<br/><ul class="none"><li>// constants</li><li>const TEXT = 1;</li><li>const TAG = 2;</li><li>const TAGBODY = 3;</li><li>const LITERAL = 4;</li><li>const DOUBLEQUOTEDSTRING = 5;</li></ul><ul class="none"><li>// members</li><li>public  <a href="#members">$data</a>;
+                    </li><li>public  <a href="#members">$dataLength</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$counter</a>;
+                    </li><li>public  <a href="#members">$token</a>;
+                    </li><li>public  <a href="#members">$value</a>;
+                    </li><li>public  <a href="#members">$line</a>;
+                    </li><li>public  <a href="#members">$taglineno</a>;
+                    </li><li>public string <a href="#members">$phpType</a> =
+                        '';
+                    </li><li>public integer <a href="#members">$state</a> =
+                        1;
+                    </li><li>public <span title="Smarty">Smarty</span> <a href="#members">$smarty</a> =
+                        NULL;
+                    </li><li>public <span title="Smarty_Internal_TemplateCompilerBase">Smarty_Internal_TemplateCompilerBase</span> <a href="#members">$compiler</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$yyTraceFILE</a>;
+                    </li><li>public  <a href="#members">$yyTracePrompt</a>;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$is_xml</a> =
+                        false;
+                    </li><li>public array <a href="#members">$state_name</a> =
+                        ;
+                    </li><li>public array <a href="#members">$smarty_token_names</a> =
+                        ;
+                    </li><li>private integer <a href="#members">$literal_cnt</a> =
+                        0;
+                    </li><li>private  <a href="#members">$yy_global_pattern1</a> =
+                        NULL;
+                    </li><li>private  <a href="#members">$yy_global_pattern2</a> =
+                        NULL;
+                    </li><li>private  <a href="#members">$yy_global_pattern3</a> =
+                        NULL;
+                    </li><li>private  <a href="#members">$yy_global_pattern4</a> =
+                        NULL;
+                    </li><li>private  <a href="#members">$yy_global_pattern5</a> =
+                        NULL;
+                    </li><li>private integer <a href="#members">$_yy_state</a> =
+                        1;
+                    </li><li>private array <a href="#members">$_yy_stack</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/PrintTrace.xhtml">PrintTrace</a>()
+                    </li><li>public string <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/replace.xhtml">replace</a>()
+                    </li><li>public bool <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/isAutoLiteral.xhtml">isAutoLiteral</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex.xhtml">yylex</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yypushstate.xhtml">yypushstate</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yypopstate.xhtml">yypopstate</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yybegin.xhtml">yybegin</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex1.xhtml">yylex1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_1.xhtml">yy_r1_1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_2.xhtml">yy_r1_2</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_4.xhtml">yy_r1_4</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_8.xhtml">yy_r1_8</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_10.xhtml">yy_r1_10</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_12.xhtml">yy_r1_12</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_14.xhtml">yy_r1_14</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_16.xhtml">yy_r1_16</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_19.xhtml">yy_r1_19</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex2.xhtml">yylex2</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_1.xhtml">yy_r2_1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_4.xhtml">yy_r2_4</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_6.xhtml">yy_r2_6</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_8.xhtml">yy_r2_8</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_10.xhtml">yy_r2_10</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_12.xhtml">yy_r2_12</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_15.xhtml">yy_r2_15</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_18.xhtml">yy_r2_18</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_20.xhtml">yy_r2_20</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_23.xhtml">yy_r2_23</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_25.xhtml">yy_r2_25</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex3.xhtml">yylex3</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_1.xhtml">yy_r3_1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_2.xhtml">yy_r3_2</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_4.xhtml">yy_r3_4</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_5.xhtml">yy_r3_5</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_6.xhtml">yy_r3_6</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_7.xhtml">yy_r3_7</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_8.xhtml">yy_r3_8</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_9.xhtml">yy_r3_9</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_10.xhtml">yy_r3_10</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_11.xhtml">yy_r3_11</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_12.xhtml">yy_r3_12</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_13.xhtml">yy_r3_13</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_15.xhtml">yy_r3_15</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_17.xhtml">yy_r3_17</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_20.xhtml">yy_r3_20</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_23.xhtml">yy_r3_23</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_24.xhtml">yy_r3_24</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_28.xhtml">yy_r3_28</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_29.xhtml">yy_r3_29</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_30.xhtml">yy_r3_30</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_31.xhtml">yy_r3_31</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_32.xhtml">yy_r3_32</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_33.xhtml">yy_r3_33</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_34.xhtml">yy_r3_34</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_35.xhtml">yy_r3_35</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_37.xhtml">yy_r3_37</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_39.xhtml">yy_r3_39</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_41.xhtml">yy_r3_41</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_42.xhtml">yy_r3_42</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_43.xhtml">yy_r3_43</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_44.xhtml">yy_r3_44</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_47.xhtml">yy_r3_47</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_48.xhtml">yy_r3_48</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_49.xhtml">yy_r3_49</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_50.xhtml">yy_r3_50</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_51.xhtml">yy_r3_51</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_52.xhtml">yy_r3_52</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_53.xhtml">yy_r3_53</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_54.xhtml">yy_r3_54</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_55.xhtml">yy_r3_55</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_56.xhtml">yy_r3_56</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_57.xhtml">yy_r3_57</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_58.xhtml">yy_r3_58</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_59.xhtml">yy_r3_59</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex4.xhtml">yylex4</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r4_1.xhtml">yy_r4_1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r4_3.xhtml">yy_r4_3</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r4_5.xhtml">yy_r4_5</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex5.xhtml">yylex5</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_1.xhtml">yy_r5_1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_3.xhtml">yy_r5_3</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_5.xhtml">yy_r5_5</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_7.xhtml">yy_r5_7</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_9.xhtml">yy_r5_9</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_11.xhtml">yy_r5_11</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_13.xhtml">yy_r5_13</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_14.xhtml">yy_r5_14</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_15.xhtml">yy_r5_15</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_16.xhtml">yy_r5_16</a>()
+                    </li><li>public void <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_17.xhtml">yy_r5_17</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="TEXT">TEXT</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="TAG">TAG</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="TAGBODY">TAGBODY</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="LITERAL">LITERAL</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="DOUBLEQUOTEDSTRING">DOUBLEQUOTEDSTRING</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_yy_stack">
+              <strong>$_yy_stack</strong>
+            </li>
+            <li id="_yy_state">
+              <strong>$_yy_state</strong>
+            </li>
+            <li id="literal_cnt"><strong>$literal_cnt</strong>
+                —
+                int<br/><span class="indent">literal tag nesting level</span></li>
+            <li id="yy_global_pattern1"><strong>$yy_global_pattern1</strong>
+                —
+                string<br/><span class="indent">preg token pattern for state TEXT</span></li>
+            <li id="yy_global_pattern2"><strong>$yy_global_pattern2</strong>
+                —
+                string<br/><span class="indent">preg token pattern for state TAG</span></li>
+            <li id="yy_global_pattern3"><strong>$yy_global_pattern3</strong>
+                —
+                string<br/><span class="indent">preg token pattern for state TAGBODY</span></li>
+            <li id="yy_global_pattern4"><strong>$yy_global_pattern4</strong>
+                —
+                string<br/><span class="indent">preg token pattern for state LITERAL</span></li>
+            <li id="yy_global_pattern5"><strong>$yy_global_pattern5</strong>
+                —
+                null<br/><span class="indent">preg token pattern for state DOUBLEQUOTEDSTRING</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="compiler"><strong>$compiler</strong>
+                —
+                <a title="Smarty_Internal_TemplateCompilerBase" href="../classes/Smarty_Internal_TemplateCompilerBase.xhtml">Smarty_Internal_TemplateCompilerBase</a><br/><span class="indent">compiler object</span></li>
+            <li id="counter"><strong>$counter</strong>
+                —
+                int<br/><span class="indent">byte counter</span></li>
+            <li id="data"><strong>$data</strong>
+                —
+                string<br/><span class="indent">Source</span></li>
+            <li id="dataLength"><strong>$dataLength</strong>
+                —
+                int<br/><span class="indent">Source length</span></li>
+            <li id="is_xml"><strong>$is_xml</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">XML flag true while processing xml</span></li>
+            <li id="line"><strong>$line</strong>
+                —
+                int<br/><span class="indent">current line</span></li>
+            <li id="phpType"><strong>$phpType</strong>
+                —
+                string<br/><span class="indent">php code type</span></li>
+            <li id="smarty"><strong>$smarty</strong>
+                —
+                <a title="Smarty" href="../classes/Smarty.xhtml">Smarty</a><br/><span class="indent">Smarty object</span></li>
+            <li id="smarty_token_names"><strong>$smarty_token_names</strong>
+                —
+                array<br/><span class="indent">token names</span></li>
+            <li id="state"><strong>$state</strong>
+                —
+                int<br/><span class="indent">state number</span></li>
+            <li id="state_name"><strong>$state_name</strong>
+                —
+                array<br/><span class="indent">state names</span></li>
+            <li id="taglineno"><strong>$taglineno</strong>
+                —
+                <br/><span class="indent">tag start line</span></li>
+            <li id="token"><strong>$token</strong>
+                —
+                int<br/><span class="indent">token number</span></li>
+            <li id="value"><strong>$value</strong>
+                —
+                string<br/><span class="indent">token value</span></li>
+            <li id="yyTraceFILE"><strong>$yyTraceFILE</strong>
+                —
+                resource<br/><span class="indent">trace file</span></li>
+            <li id="yyTracePrompt"><strong>$yyTracePrompt</strong>
+                —
+                string<br/><span class="indent">trace prompt</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/__construct.xhtml">__construct()</a>
+                — constructor</li>
+            <li id="PrintTrace"><a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/PrintTrace.xhtml">PrintTrace()</a>
+                — open lexer/parser trace file</li>
+            <li id="isAutoLiteral"><a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/isAutoLiteral.xhtml">isAutoLiteral()</a>
+                — check if current value is an autoliteral left delimiter</li>
+            <li id="replace"><a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/replace.xhtml">replace()</a>
+                — replace placeholders with runtime preg  code</li>
+            <li id="yy_r1_1">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_1.xhtml">yy_r1_1()</a>
+            </li>
+            <li id="yy_r1_10">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_10.xhtml">yy_r1_10()</a>
+            </li>
+            <li id="yy_r1_12">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_12.xhtml">yy_r1_12()</a>
+            </li>
+            <li id="yy_r1_14">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_14.xhtml">yy_r1_14()</a>
+            </li>
+            <li id="yy_r1_16">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_16.xhtml">yy_r1_16()</a>
+            </li>
+            <li id="yy_r1_19">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_19.xhtml">yy_r1_19()</a>
+            </li>
+            <li id="yy_r1_2">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_2.xhtml">yy_r1_2()</a>
+            </li>
+            <li id="yy_r1_4">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_4.xhtml">yy_r1_4()</a>
+            </li>
+            <li id="yy_r1_8">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r1_8.xhtml">yy_r1_8()</a>
+            </li>
+            <li id="yy_r2_1">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_1.xhtml">yy_r2_1()</a>
+            </li>
+            <li id="yy_r2_10">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_10.xhtml">yy_r2_10()</a>
+            </li>
+            <li id="yy_r2_12">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_12.xhtml">yy_r2_12()</a>
+            </li>
+            <li id="yy_r2_15">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_15.xhtml">yy_r2_15()</a>
+            </li>
+            <li id="yy_r2_18">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_18.xhtml">yy_r2_18()</a>
+            </li>
+            <li id="yy_r2_20">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_20.xhtml">yy_r2_20()</a>
+            </li>
+            <li id="yy_r2_23">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_23.xhtml">yy_r2_23()</a>
+            </li>
+            <li id="yy_r2_25">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_25.xhtml">yy_r2_25()</a>
+            </li>
+            <li id="yy_r2_4">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_4.xhtml">yy_r2_4()</a>
+            </li>
+            <li id="yy_r2_6">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_6.xhtml">yy_r2_6()</a>
+            </li>
+            <li id="yy_r2_8">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r2_8.xhtml">yy_r2_8()</a>
+            </li>
+            <li id="yy_r3_1">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_1.xhtml">yy_r3_1()</a>
+            </li>
+            <li id="yy_r3_10">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_10.xhtml">yy_r3_10()</a>
+            </li>
+            <li id="yy_r3_11">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_11.xhtml">yy_r3_11()</a>
+            </li>
+            <li id="yy_r3_12">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_12.xhtml">yy_r3_12()</a>
+            </li>
+            <li id="yy_r3_13">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_13.xhtml">yy_r3_13()</a>
+            </li>
+            <li id="yy_r3_15">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_15.xhtml">yy_r3_15()</a>
+            </li>
+            <li id="yy_r3_17">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_17.xhtml">yy_r3_17()</a>
+            </li>
+            <li id="yy_r3_2">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_2.xhtml">yy_r3_2()</a>
+            </li>
+            <li id="yy_r3_20">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_20.xhtml">yy_r3_20()</a>
+            </li>
+            <li id="yy_r3_23">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_23.xhtml">yy_r3_23()</a>
+            </li>
+            <li id="yy_r3_24">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_24.xhtml">yy_r3_24()</a>
+            </li>
+            <li id="yy_r3_28">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_28.xhtml">yy_r3_28()</a>
+            </li>
+            <li id="yy_r3_29">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_29.xhtml">yy_r3_29()</a>
+            </li>
+            <li id="yy_r3_30">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_30.xhtml">yy_r3_30()</a>
+            </li>
+            <li id="yy_r3_31">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_31.xhtml">yy_r3_31()</a>
+            </li>
+            <li id="yy_r3_32">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_32.xhtml">yy_r3_32()</a>
+            </li>
+            <li id="yy_r3_33">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_33.xhtml">yy_r3_33()</a>
+            </li>
+            <li id="yy_r3_34">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_34.xhtml">yy_r3_34()</a>
+            </li>
+            <li id="yy_r3_35">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_35.xhtml">yy_r3_35()</a>
+            </li>
+            <li id="yy_r3_37">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_37.xhtml">yy_r3_37()</a>
+            </li>
+            <li id="yy_r3_39">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_39.xhtml">yy_r3_39()</a>
+            </li>
+            <li id="yy_r3_4">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_4.xhtml">yy_r3_4()</a>
+            </li>
+            <li id="yy_r3_41">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_41.xhtml">yy_r3_41()</a>
+            </li>
+            <li id="yy_r3_42">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_42.xhtml">yy_r3_42()</a>
+            </li>
+            <li id="yy_r3_43">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_43.xhtml">yy_r3_43()</a>
+            </li>
+            <li id="yy_r3_44">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_44.xhtml">yy_r3_44()</a>
+            </li>
+            <li id="yy_r3_47">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_47.xhtml">yy_r3_47()</a>
+            </li>
+            <li id="yy_r3_48">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_48.xhtml">yy_r3_48()</a>
+            </li>
+            <li id="yy_r3_49">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_49.xhtml">yy_r3_49()</a>
+            </li>
+            <li id="yy_r3_5">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_5.xhtml">yy_r3_5()</a>
+            </li>
+            <li id="yy_r3_50">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_50.xhtml">yy_r3_50()</a>
+            </li>
+            <li id="yy_r3_51">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_51.xhtml">yy_r3_51()</a>
+            </li>
+            <li id="yy_r3_52">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_52.xhtml">yy_r3_52()</a>
+            </li>
+            <li id="yy_r3_53">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_53.xhtml">yy_r3_53()</a>
+            </li>
+            <li id="yy_r3_54">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_54.xhtml">yy_r3_54()</a>
+            </li>
+            <li id="yy_r3_55">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_55.xhtml">yy_r3_55()</a>
+            </li>
+            <li id="yy_r3_56">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_56.xhtml">yy_r3_56()</a>
+            </li>
+            <li id="yy_r3_57">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_57.xhtml">yy_r3_57()</a>
+            </li>
+            <li id="yy_r3_58">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_58.xhtml">yy_r3_58()</a>
+            </li>
+            <li id="yy_r3_59">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_59.xhtml">yy_r3_59()</a>
+            </li>
+            <li id="yy_r3_6">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_6.xhtml">yy_r3_6()</a>
+            </li>
+            <li id="yy_r3_7">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_7.xhtml">yy_r3_7()</a>
+            </li>
+            <li id="yy_r3_8">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_8.xhtml">yy_r3_8()</a>
+            </li>
+            <li id="yy_r3_9">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r3_9.xhtml">yy_r3_9()</a>
+            </li>
+            <li id="yy_r4_1">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r4_1.xhtml">yy_r4_1()</a>
+            </li>
+            <li id="yy_r4_3">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r4_3.xhtml">yy_r4_3()</a>
+            </li>
+            <li id="yy_r4_5">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r4_5.xhtml">yy_r4_5()</a>
+            </li>
+            <li id="yy_r5_1">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_1.xhtml">yy_r5_1()</a>
+            </li>
+            <li id="yy_r5_11">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_11.xhtml">yy_r5_11()</a>
+            </li>
+            <li id="yy_r5_13">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_13.xhtml">yy_r5_13()</a>
+            </li>
+            <li id="yy_r5_14">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_14.xhtml">yy_r5_14()</a>
+            </li>
+            <li id="yy_r5_15">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_15.xhtml">yy_r5_15()</a>
+            </li>
+            <li id="yy_r5_16">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_16.xhtml">yy_r5_16()</a>
+            </li>
+            <li id="yy_r5_17">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_17.xhtml">yy_r5_17()</a>
+            </li>
+            <li id="yy_r5_3">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_3.xhtml">yy_r5_3()</a>
+            </li>
+            <li id="yy_r5_5">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_5.xhtml">yy_r5_5()</a>
+            </li>
+            <li id="yy_r5_7">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_7.xhtml">yy_r5_7()</a>
+            </li>
+            <li id="yy_r5_9">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yy_r5_9.xhtml">yy_r5_9()</a>
+            </li>
+            <li id="yybegin">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yybegin.xhtml">yybegin()</a>
+            </li>
+            <li id="yylex">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex.xhtml">yylex()</a>
+            </li>
+            <li id="yylex1">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex1.xhtml">yylex1()</a>
+            </li>
+            <li id="yylex2">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex2.xhtml">yylex2()</a>
+            </li>
+            <li id="yylex3">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex3.xhtml">yylex3()</a>
+            </li>
+            <li id="yylex4">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex4.xhtml">yylex4()</a>
+            </li>
+            <li id="yylex5">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yylex5.xhtml">yylex5()</a>
+            </li>
+            <li id="yypopstate">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yypopstate.xhtml">yypopstate()</a>
+            </li>
+            <li id="yypushstate">
+              <a title="Smarty_Internal_Templatelexer" href="../classes/Smarty_Internal_Templatelexer/yypushstate.xhtml">yypushstate()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

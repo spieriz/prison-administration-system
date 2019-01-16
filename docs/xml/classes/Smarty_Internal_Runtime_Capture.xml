@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_Capture" namespace="" name="Smarty_Internal_Runtime_Capture" abstract="false" final="false" start="10" end="174">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_capture.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_capture.php" size="4361" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="fc1ccc25d50dd987dada3c6a67d2d90fabd4d361" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_capture.php"/>
+  <docblock>
+    <description compact="Runtime Extension Capture"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="isPrivateExtension" default="true" type="boolean" visibility="public" static="false" line="17">
+    <docblock>
+      <description compact="Flag that this instance  will not be cached"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="captureStack" default="" type="array" visibility="private" static="false" line="24">
+    <docblock>
+      <description compact="Stack of capture parameter"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="captureCount" default="0" type="integer" visibility="private" static="false" line="31">
+    <docblock>
+      <description compact="Current open capture sections"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="countStack" default="" type="array" visibility="private" static="false" line="38">
+    <docblock>
+      <description compact="Count stack"/>
+      <var type="array" of="int"/>
+    </docblock>
+  </member>
+  <member name="namedBuffer" default="" type="array" visibility="private" static="false" line="45">
+    <docblock>
+      <description compact="Named buffer"/>
+      <var type="array" of="string"/>
+    </docblock>
+  </member>
+  <member name="isRegistered" default="false" type="boolean" visibility="private" static="false" line="52">
+    <docblock>
+      <description compact="Flag if callbacks are registered"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="open" start="62" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Open capture section"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="capture name" type="string" variable="$buffer"/>
+      <param description="variable name" type="string" variable="$assign"/>
+      <param description="variable name" type="string" variable="$append"/>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="buffer" byreference="false" type="{unknown}"/>
+    <parameter name="assign" byreference="false" type="{unknown}"/>
+    <parameter name="append" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register" start="81" end="93" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Register callbacks in template class"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="startRender" start="100" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Start render callback"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="close" start="113" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Close capture section"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="error" start="137" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Error exception on not matching {capture}{/capture}"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="getBuffer" start="150" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return content of named capture buffer by key or as array"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="object" variable="$name">
+        <type full="string|null" namespace="" name="string|null"/>
+      </param>
+      <return type="array" of="object">
+        <type full="string|string[]|nu" namespace="" name="string|string[]|nu"/>
+      </return>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="endRender" start="166" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="End render callback"/>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+</class>

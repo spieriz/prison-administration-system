@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_Append" namespace="" name="Smarty_Internal_Method_Append" abstract="false" final="false" start="12" end="74">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_append.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_append.php" size="2941" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="dacbedfaee95e26890158a15ce40d0eea17bc0eb" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_append.php"/>
+  <docblock>
+    <description compact="Smarty Method Append">Smarty::append() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="7" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for all objects"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="append" start="36" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="appends values to template variables"/>
+      <api value="Smarty::append()"/>
+      <link value="http://www.smarty.net/docs/en/api.append.tpl"/>
+      <param type="object" variable="$data">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="the template variable name(s)" type="object" variable="$tpl_var">
+        <type full="array|string" namespace="" name="array|string"/>
+      </param>
+      <param description="the value to append" type="mixed" variable="$value"/>
+      <param description="flag if array elements shall be merged" type="object" variable="$merge">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param description="if true any output of this variable will" type="object" variable="$nocache">be not cached<type full="bool" namespace="" name="bool"/></param>
+      <return type="object">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    </parameter>
+    <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="merge" byreference="false" type="boolean" default="false"/>
+    <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+  </method>
+</class>

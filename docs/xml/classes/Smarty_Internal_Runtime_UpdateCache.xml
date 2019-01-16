@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_UpdateCache" namespace="" name="Smarty_Internal_Runtime_UpdateCache" abstract="false" final="false" start="10" end="183">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_updatecache.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_updatecache.php" size="6810" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="cc9efc97f229d358887f0c9ac7748dc9f2ff05d6" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_updatecache.php"/>
+  <docblock>
+    <description compact="Inline Runtime Methods render, setSourceByUid, setupSubTemplate"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <method name="cacheModifiedCheck" start="19" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check client side cache"/>
+      <param type="object" variable="$cached">
+        <type full="\Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <param type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="string" variable="$content"/>
+    </docblock>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateCache" start="32" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Cache was invalid , so render from compiled and write to cache"/>
+      <param type="object" variable="$cached">
+        <type full="\Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <param type="object" variable="$_template">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param variable="$no_output_filter"/>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="no_output_filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="removeNoCacheHash" start="67" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sanitize content and write it to cache resource"/>
+      <param type="object" variable="$cached">
+        <type full="\Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <param type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="object" variable="$no_output_filter">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="no_output_filter" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="get text between non-cached items" line="79"/>
+      <comment value="get non-cached items" line="85"/>
+      <comment value="loop over items, stitch back together" line="92"/>
+      <comment value="write cache file content" line="125"/>
+    </inline>
+  </method>
+  <method name="writeCachedContent" start="137" end="149" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Writes the content to cache resource"/>
+      <param type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="string" variable="$content"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="write" start="159" end="182" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write this cache object to handler"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="content to cache" type="string" variable="$content"/>
+      <return description="success" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+</class>

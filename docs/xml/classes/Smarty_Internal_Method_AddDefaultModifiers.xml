@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_AddDefaultModifiers" namespace="" name="Smarty_Internal_Method_AddDefaultModifiers" abstract="false" final="false" start="12" end="42">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_adddefaultmodifiers.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_adddefaultmodifiers.php" size="1206" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="8636c83d93e8892bdc1f966bf712dcc83dfd5634" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_adddefaultmodifiers.php"/>
+  <docblock>
+    <description compact="Smarty Method AddDefaultModifiers">Smarty::addDefaultModifiers() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="addDefaultModifiers" start="32" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add default modifiers"/>
+      <api value="Smarty::addDefaultModifiers()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="modifier or list of modifiers" type="object" variable="$modifiers">to add<type full="array|string" namespace="" name="array|string"/></param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="modifiers" byreference="false" type="{unknown}"/>
+  </method>
+</class>

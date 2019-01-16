@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_SetDebugTemplate" namespace="" name="Smarty_Internal_Method_SetDebugTemplate" abstract="false" final="false" start="12" end="41">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_setdebugtemplate.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_setdebugtemplate.php" size="1064" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="56df01bdccefe2baa799be98c2eaf1544edd3a68" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_setdebugtemplate.php"/>
+  <docblock>
+    <description compact="Smarty Method SetDebugTemplate">Smarty::setDebugTemplate() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="setDebugTemplate" start="32" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="set the debug template"/>
+      <api value="Smarty::setDebugTemplate()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param type="string" variable="$tpl_name"/>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws description="if file is not readable" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="tpl_name" byreference="false" type="{unknown}"/>
+  </method>
+</class>

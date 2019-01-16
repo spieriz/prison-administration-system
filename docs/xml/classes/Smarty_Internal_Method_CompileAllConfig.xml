@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_CompileAllConfig" namespace="" name="Smarty_Internal_Method_CompileAllConfig" abstract="false" final="false" start="12" end="36">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_compileallconfig.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_compileallconfig.php" size="1000" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="22a37687dcafb9a6f1ffbb7a400ebe52dd380d35" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_compileallconfig.php"/>
+  <docblock>
+    <description compact="Smarty Method CompileAllConfig">Smarty::compileAllConfig() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <extends full="Smarty_Internal_Method_CompileAllTemplates" namespace="" name="Smarty_Internal_Method_CompileAllTemplates"/>
+  <method name="compileAllConfig" start="27" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compile all config files"/>
+      <api value="Smarty::compileAllConfig()"/>
+      <param description="passed smarty object" type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="file extension" type="string" variable="$extension"/>
+      <param description="force all to recompile" type="object" variable="$force_compile">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param type="int" variable="$time_limit"/>
+      <param type="int" variable="$max_errors"/>
+      <return description="number of template files recompiled" type="int"/>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="extension" byreference="false" type="string" default="'.conf'"/>
+    <parameter name="force_compile" byreference="false" type="boolean" default="false"/>
+    <parameter name="time_limit" byreference="false" type="integer" default="0"/>
+    <parameter name="max_errors" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <parent full="Smarty_Internal_Method_CompileAllTemplates" namespace="" name="Smarty_Internal_Method_CompileAllTemplates">
+    <member name="objMap" default="1" type="integer" visibility="public" static="false" line="19">
+      <docblock>
+        <description compact="Valid for Smarty object"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <method name="compileAllTemplates" start="34" end="42" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Compile all template files"/>
+        <api value="Smarty::compileAllTemplates()"/>
+        <param description="passed smarty object" type="object" variable="$smarty">
+          <type full="\Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="file extension" type="string" variable="$extension"/>
+        <param description="force all to recompile" type="object" variable="$force_compile">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <param type="int" variable="$time_limit"/>
+        <param type="int" variable="$max_errors"/>
+        <return description="number of template files recompiled" type="integer"/>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="extension" byreference="false" type="string" default="'.tpl'"/>
+      <parameter name="force_compile" byreference="false" type="boolean" default="false"/>
+      <parameter name="time_limit" byreference="false" type="integer" default="0"/>
+      <parameter name="max_errors" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="compileAll" start="56" end="129" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Compile all template or config files"/>
+        <param type="object" variable="$smarty">
+          <type full="\Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="template file name extension" type="string" variable="$extension"/>
+        <param description="force all to recompile" type="object" variable="$force_compile">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <param description="set maximum execution time" type="int" variable="$time_limit"/>
+        <param description="set maximum allowed errors" type="int" variable="$max_errors"/>
+        <param description="flag true if called for config files" type="object" variable="$isConfig">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="number of template files compiled" type="int"/>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="extension" byreference="false" type="{unknown}"/>
+      <parameter name="force_compile" byreference="false" type="{unknown}"/>
+      <parameter name="time_limit" byreference="false" type="{unknown}"/>
+      <parameter name="max_errors" byreference="false" type="{unknown}"/>
+      <parameter name="isConfig" byreference="false" type="boolean" default="false"/>
+      <inline>
+        <comment value="switch off time limit" line="64"/>
+        <comment value="loop over array of source directories" line="71"/>
+      </inline>
+    </method>
+  </parent>
+</class>

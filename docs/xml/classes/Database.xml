@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="10" end="65">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/classes" file="Database.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/classes/Database.php" size="1987" time="2019-01-12T22:29:34+01:00" unixtime="1547328574" sha1="bf8f64fbf5203688bbc70494a29a5b1fe2f3895a" relative="includes/classes/Database.php"/>
+  <docblock>
+    <description compact="Project: Prison Administration System Author: Paweł Ledwig IDE: PhpStorm Date: 12.01.2019 Time: 17:08"/>
+  </docblock>
+  <member name="instance" default="NULL" visibility="protected" static="true" line="12"/>
+  <member name="server" default="&quot;localhost:3306&quot;" type="string" visibility="protected" static="true" line="13"/>
+  <member name="username" default="&quot;root&quot;" type="string" visibility="protected" static="true" line="14"/>
+  <member name="password" default="&quot;&quot;" type="string" visibility="protected" static="true" line="15"/>
+  <member name="db" default="&quot;po_saw&quot;" type="string" visibility="protected" static="true" line="16"/>
+  <member name="connection" default="NULL" visibility="protected" static="true" line="17"/>
+  <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="initDatabase" start="22" end="25" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="get" start="26" end="31" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="closeConnection" start="32" end="36" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="isSelectQuery" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="sql" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_query" start="51" end="64" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="sql" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check connection" line="53"/>
+    </inline>
+  </method>
+</class>

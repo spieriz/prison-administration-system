@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Resource_Eval</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Resource_Eval</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#tasks">Tasks</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_resource_eval.php.xhtml#line19">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Resource_Eval</h1>
+        <h4>Smarty Internal Plugin Resource Eval Implements the strings as resource for Smarty template {@internal unlike string-resources the compiled state of eval-resources is NOT saved for subsequent access}}</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Resource_Eval
+                extends <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled.xhtml">Smarty_Resource_Recompiled</a>
+            {<br/><ul class="none"><li>// Inherited members from <span title="Smarty_Resource_Recompiled">Smarty_Resource_Recompiled</span></li><li>public <span title="bool">bool</span> <a href="#members">$recompiled</a>;
+                        </li><li>public <span title="bool">bool</span> <a href="#members">$hasCompiledHandler</a>;
+                        </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Resource">Smarty_Resource</span></li><li>public static array <a href="#members">$sysplugins</a>;
+                        </li><li>public boolean <a href="#members">$uncompiled</a>;
+                        </li><li>public boolean <a href="#members">$recompiled</a>;
+                        </li><li>public <span title="bool">bool</span> <a href="#members">$hasCompiledHandler</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/populate.xhtml">populate</a>()
+                    </li><li>public string <a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/getContent.xhtml">getContent</a>()
+                    </li><li>protected string <a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/decode.xhtml">decode</a>()
+                    </li><li>public string <a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/buildUniqueResourceName.xhtml">buildUniqueResourceName</a>()
+                    </li><li>public string <a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/getBasename.xhtml">getBasename</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Resource_Recompiled">Smarty_Resource_Recompiled</span></li><li>public void <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled/process.xhtml">process</a>()
+                        </li><li>public void <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled/populateCompiledFilepath.xhtml">populateCompiledFilepath</a>()
+                        </li><li>public bool <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled/checkTimestamps.xhtml">checkTimestamps</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Resource">Smarty_Resource</span></li><li>public static Smarty_Resource <a title="Smarty_Resource" href="../classes/Smarty_Resource/load.xhtml">load</a>()
+                        </li><li>public static array <a title="Smarty_Resource" href="../classes/Smarty_Resource/parseResourceName.xhtml">parseResourceName</a>()
+                        </li><li>public static string <a title="Smarty_Resource" href="../classes/Smarty_Resource/getUniqueTemplateName.xhtml">getUniqueTemplateName</a>()
+                        </li><li>public static Smarty_Template_Source <a title="Smarty_Resource" href="../classes/Smarty_Resource/source.xhtml">source</a>()
+                        </li><li>public abstract string <a title="Smarty_Resource" href="../classes/Smarty_Resource/getContent.xhtml">getContent</a>()
+                        </li><li>public abstract void <a title="Smarty_Resource" href="../classes/Smarty_Resource/populate.xhtml">populate</a>()
+                        </li><li>public void <a title="Smarty_Resource" href="../classes/Smarty_Resource/populateTimestamp.xhtml">populateTimestamp</a>()
+                        </li><li>public string <a title="Smarty_Resource" href="../classes/Smarty_Resource/buildUniqueResourceName.xhtml">buildUniqueResourceName</a>()
+                        </li><li>public string <a title="Smarty_Resource" href="../classes/Smarty_Resource/getBasename.xhtml">getBasename</a>()
+                        </li><li>public bool <a title="Smarty_Resource" href="../classes/Smarty_Resource/checkTimestamps.xhtml">checkTimestamps</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled.xhtml">Smarty_Resource_Recompiled</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="tasks">Tasks</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th style="width:3em;">Line</th>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tr>
+            <td class="nummeric">110</td>
+            <td>try default_(template|config)_handler</td>
+          </tr>
+          <tr>
+            <td class="nummeric">153</td>
+            <td>optimize for Smarty's internal resource types</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="hasCompiledHandler"><strong>$hasCompiledHandler</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Resource does implement populateCompiledFilepath() method</span></li>
+            <li id="hasCompiledHandler"><strong>$hasCompiledHandler</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag if resource does implement populateCompiledFilepath() method</span></li>
+            <li id="recompiled"><strong>$recompiled</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag that it's an recompiled resource</span></li>
+            <li id="recompiled"><strong>$recompiled</strong>
+                —
+                boolean<br/><span class="indent">Source must be recompiled on every occasion</span></li>
+            <li id="sysplugins"><strong>$sysplugins</strong>
+                —
+                array<br/><span class="indent">resource types provided by the core</span></li>
+            <li id="uncompiled"><strong>$uncompiled</strong>
+                —
+                boolean<br/><span class="indent">Source is bypassing compiler</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="decode"><a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/decode.xhtml">decode()</a>
+                — decode base64 and urlencode</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="buildUniqueResourceName"><a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/buildUniqueResourceName.xhtml">buildUniqueResourceName()</a>
+                — modify resource_name according to resource handlers specifications</li>
+            <li id="getBasename"><a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/getBasename.xhtml">getBasename()</a>
+                — Determine basename for compiled filename</li>
+            <li id="getContent"><a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/getContent.xhtml">getContent()</a>
+                — Load template's source from $resource_name into current template object</li>
+            <li id="populate"><a title="Smarty_Internal_Resource_Eval" href="../classes/Smarty_Internal_Resource_Eval/populate.xhtml">populate()</a>
+                — populate Source Object with meta data from Resource</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled.xhtml">Smarty_Resource_Recompiled</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="checkTimestamps">
+              <a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled/checkTimestamps.xhtml">checkTimestamps()</a>
+            </li>
+            <li id="populateCompiledFilepath"><a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled/populateCompiledFilepath.xhtml">populateCompiledFilepath()</a>
+                — populate Compiled Object with compiled filepath</li>
+            <li id="process"><a title="Smarty_Resource_Recompiled" href="../classes/Smarty_Resource_Recompiled/process.xhtml">process()</a>
+                — compile template from source</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Resource" href="../classes/Smarty_Resource.xhtml">Smarty_Resource</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="buildUniqueResourceName"><a title="Smarty_Resource" href="../classes/Smarty_Resource/buildUniqueResourceName.xhtml">buildUniqueResourceName()</a>
+                — modify resource_name according to resource handlers specifications</li>
+            <li id="checkTimestamps">
+              <a title="Smarty_Resource" href="../classes/Smarty_Resource/checkTimestamps.xhtml">checkTimestamps()</a>
+            </li>
+            <li id="getBasename"><a title="Smarty_Resource" href="../classes/Smarty_Resource/getBasename.xhtml">getBasename()</a>
+                — Determine basename for compiled filename</li>
+            <li id="getContent"><a title="Smarty_Resource" href="../classes/Smarty_Resource/getContent.xhtml">getContent()</a>
+                — Load template's source into current template object</li>
+            <li id="getUniqueTemplateName"><a title="Smarty_Resource" href="../classes/Smarty_Resource/getUniqueTemplateName.xhtml">getUniqueTemplateName()</a>
+                — modify template_resource according to resource handlers specifications</li>
+            <li id="load"><a title="Smarty_Resource" href="../classes/Smarty_Resource/load.xhtml">load()</a>
+                — Load Resource Handler</li>
+            <li id="parseResourceName"><a title="Smarty_Resource" href="../classes/Smarty_Resource/parseResourceName.xhtml">parseResourceName()</a>
+                — extract resource_type and resource_name from template_resource and config_resource</li>
+            <li id="populate"><a title="Smarty_Resource" href="../classes/Smarty_Resource/populate.xhtml">populate()</a>
+                — populate Source Object with meta data from Resource</li>
+            <li id="populateTimestamp"><a title="Smarty_Resource" href="../classes/Smarty_Resource/populateTimestamp.xhtml">populateTimestamp()</a>
+                — populate Source Object with timestamp and exists from Resource</li>
+            <li id="source"><a title="Smarty_Resource" href="../classes/Smarty_Resource/source.xhtml">source()</a>
+                — initialize Source Object for given resource wrapper for backward compatibility to versions &lt; 3.1.22 Either [$_template] or [$smarty, $template_resource] must be specified</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

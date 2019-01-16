@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Autoloader</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Autoloader</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/Autoloader.php.xhtml#line21">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Autoloader</h1>
+        <h4>Smarty Autoloader</h4>
+        <p/>
+        <ul>
+          <li>Author: Uwe Tews Usage: require_once '...path/Autoloader.php'; Smarty_Autoloader::register(); or include '...path/bootstrap.php';  $smarty = new Smarty();</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Autoloader
+            {<br/><ul class="none"><li>// members</li><li>public static  <a href="#members">$SMARTY_DIR</a> =
+                        NULL;
+                    </li><li>public static  <a href="#members">$SMARTY_SYSPLUGINS_DIR</a> =
+                        NULL;
+                    </li><li>public static array <a href="#members">$rootClasses</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public static void <a title="Smarty_Autoloader" href="../classes/Smarty_Autoloader/registerBC.xhtml">registerBC</a>()
+                    </li><li>public static void <a title="Smarty_Autoloader" href="../classes/Smarty_Autoloader/register.xhtml">register</a>()
+                    </li><li>public static void <a title="Smarty_Autoloader" href="../classes/Smarty_Autoloader/autoload.xhtml">autoload</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="SMARTY_DIR"><strong>$SMARTY_DIR</strong>
+                —
+                string<br/><span class="indent">Filepath to Smarty root</span></li>
+            <li id="SMARTY_SYSPLUGINS_DIR"><strong>$SMARTY_SYSPLUGINS_DIR</strong>
+                —
+                string<br/><span class="indent">Filepath to Smarty internal plugins</span></li>
+            <li id="rootClasses"><strong>$rootClasses</strong>
+                —
+                array<br/><span class="indent">Array with Smarty core classes and their filename</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="autoload"><a title="Smarty_Autoloader" href="../classes/Smarty_Autoloader/autoload.xhtml">autoload()</a>
+                — Handles auto loading of classes.</li>
+            <li id="register"><a title="Smarty_Autoloader" href="../classes/Smarty_Autoloader/register.xhtml">register()</a>
+                — Registers Smarty_Autoloader as an SPL autoloader.</li>
+            <li id="registerBC"><a title="Smarty_Autoloader" href="../classes/Smarty_Autoloader/registerBC.xhtml">registerBC()</a>
+                — Registers Smarty_Autoloader backward compatible to older installations.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

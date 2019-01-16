@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Template_Compiled" namespace="" name="Smarty_Template_Compiled" abstract="false" final="false" start="12" end="257">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_template_compiled.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_template_compiled.php" size="9718" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="8232672fb93fee955a2f31009318694e9bfe4462" relative="includes/libs/Smarty/sysplugins/smarty_template_compiled.php"/>
+  <docblock>
+    <description compact="Smarty Resource Data Object Meta Data Container for Template Files"/>
+    <package value="Smarty"/>
+    <subpackage value="TemplateResources"/>
+    <author value="Rodney Rehm"/>
+    <property value="string $content compiled content"/>
+  </docblock>
+  <extends full="Smarty_Template_Resource_Base" namespace="" name="Smarty_Template_Resource_Base"/>
+  <member name="nocache_hash" default="NULL" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="nocache hash"/>
+      <var type="object">
+        <type full="string|null" namespace="" name="string|null"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="load" start="28" end="37" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="get a Compiled Object of this source"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return description="compiled object" type="object">
+        <type full="Smarty_Template_Compiled" namespace="" name="Smarty_Template_Compiled"/>
+      </return>
+    </docblock>
+    <parameter name="_template" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="populateCompiledFilepath" start="44" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="populate Compiled Object with compiled filepath"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <inline>
+      <comment value="if use_sub_dirs, break file into directories" line="53"/>
+    </inline>
+  </method>
+  <method name="render" start="91" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="render compiled template code"/>
+      <param type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return type="string"/>
+      <throws type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <inline>
+      <comment value="checks if template exists" line="93"/>
+    </inline>
+  </method>
+  <method name="process" start="131" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="load compiled template or compile from source"/>
+      <param description="do not change variable name, is used by compiled template" type="object" variable="$_smarty_tpl">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="_smarty_tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="compileTemplateSource" start="169" end="195" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="compile template from source"/>
+      <param type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <inline>
+      <comment value="compile locking" line="175"/>
+      <comment value="compile locking" line="180"/>
+      <comment value="release compiler object to free memory" line="193"/>
+    </inline>
+  </method>
+  <method name="write" start="206" end="219" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write compiled code by handler"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="compiled code" type="string" variable="$code"/>
+      <return description="success" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="read" start="228" end="234" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read compiled content from handler"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return description="content" type="string"/>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="loadCompiledTemplate" start="242" end="256" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Load fresh compiled template by including the PHP file HHVM requires a work around because of a PHP incompatibility"/>
+      <param description="do not change variable name, is used by compiled template" type="object" variable="$_smarty_tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="_smarty_tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <parent full="Smarty_Template_Resource_Base" namespace="" name="Smarty_Template_Resource_Base">
+    <member name="filepath" default="NULL" visibility="public" static="false" line="17">
+      <docblock>
+        <description compact="Compiled Filepath"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="timestamp" default="false" type="boolean" visibility="public" static="false" line="24">
+      <docblock>
+        <description compact="Compiled Timestamp"/>
+        <var type="object">
+          <type full="integer|bool" namespace="" name="integer|bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="exists" default="false" type="boolean" visibility="public" static="false" line="31">
+      <docblock>
+        <description compact="Compiled Existence"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="compile_id" default="NULL" visibility="public" static="false" line="38">
+      <docblock>
+        <description compact="Template Compile Id (Smarty_Internal_Template::$compile_id)"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="processed" default="false" type="boolean" visibility="public" static="false" line="45">
+      <docblock>
+        <description compact="Compiled Content Loaded"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="unifunc" default="''" type="string" visibility="public" static="false" line="52">
+      <docblock>
+        <description compact="unique function name for compiled template code"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="has_nocache_code" default="false" type="boolean" visibility="public" static="false" line="59">
+      <docblock>
+        <description compact="flag if template does contain nocache code sections"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="file_dependency" default="" type="array" visibility="public" static="false" line="66">
+      <docblock>
+        <description compact="resource file dependency"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="content" default="NULL" visibility="public" static="false" line="73">
+      <docblock>
+        <description compact="Content buffer"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="includes" default="" type="array" visibility="public" static="false" line="82">
+      <docblock>
+        <description compact="Included sub templates - index name - value use count"/>
+        <var type="array" of="int"/>
+      </docblock>
+    </member>
+    <member name="isCache" default="false" type="boolean" visibility="public" static="false" line="89">
+      <docblock>
+        <description compact="Flag if this is a cache resource"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="process" start="96" end="96" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Process resource"/>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+    </method>
+    <method name="getRenderedTemplateCode" start="106" end="138" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="get rendered template content by calling compiled or cached template code"/>
+        <param type="object" variable="$_template">
+          <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <param description="function with template code" type="string" variable="$unifunc"/>
+        <throws type="object">
+          <type full="\Exception" namespace="" name="Exception"/>
+        </throws>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+      <parameter name="unifunc" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="getTimeStamp" start="145" end="151" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get compiled time stamp"/>
+        <return type="int"/>
+      </docblock>
+    </method>
+  </parent>
+</class>

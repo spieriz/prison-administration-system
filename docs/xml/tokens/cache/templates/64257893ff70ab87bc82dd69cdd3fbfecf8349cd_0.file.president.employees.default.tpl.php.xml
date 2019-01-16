@@ -1,0 +1,1030 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="D:/Programy/XAMPP/htdocs/pas/cache/templates" file="64257893ff70ab87bc82dd69cdd3fbfecf8349cd_0.file.president.employees.default.tpl.php" realpath="D:/Programy/XAMPP/htdocs/pas/cache/templates/64257893ff70ab87bc82dd69cdd3fbfecf8349cd_0.file.president.employees.default.tpl.php" size="8134" time="2019-01-13T02:53:53+01:00" unixtime="1547344433" sha1="3a0ec3e3877dbdb7f4e1460f20c1dac036501d3c" relative="cache/templates/64257893ff70ab87bc82dd69cdd3fbfecf8349cd_0.file.president.employees.default.tpl.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_COMMENT">/* Smarty version 3.1.33, created on 2019-01-13 02:53:53</token>
+  </line>
+  <line no="3">
+    <token name="T_COMMENT">  from 'D:\Programy\XAMPP\htdocs\pas\styles\templates\president\president.employees.default.tpl' */</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_COMMENT">/* @var Smarty_Internal_Template $_smarty_tpl */</token>
+  </line>
+  <line no="6">
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">_decodeProperties</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="7">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'version'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'3.1.33'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="8">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'unifunc'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'content_5c3a9a31448d40_82247825'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="9">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'has_nocache_code'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="10">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'file_dependency'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+  </line>
+  <line no="11">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="12">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'64257893ff70ab87bc82dd69cdd3fbfecf8349cd'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+  </line>
+  <line no="13">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="14">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'D:\\Programy\\XAMPP\\htdocs\\pas\\styles\\templates\\president\\president.employees.default.tpl'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="15">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1547344432</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="16">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'file'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="17">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="18">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="19">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'includes'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+  </line>
+  <line no="20">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="21">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'file:main.header.tpl'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="22">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="23">
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="24">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">content_5c3a9a31448d40_82247825</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">Smarty_Internal_Template</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="25">
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">_subTemplateRender</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"file:main.header.tpl"</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">cache_id</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">compile_id</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">cache_lifetime</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="26">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" type="text/css" href="./styles/css/president.css"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" type="text/css" href="./styles/css/selectric.css"&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" type="text/css" href="./styles/css/selectric_over.css"&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">&lt;/head&gt;</token>
+  </line>
+  <line no="31"/>
+  <line no="32">
+    <token name="T_INLINE_HTML">&lt;body class="h-100"&gt;</token>
+  </line>
+  <line no="33"/>
+  <line no="34">
+    <token name="T_INLINE_HTML">&lt;header&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">    &lt;div class="header_container" class="d-block"&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">        &lt;div class="w-100 text-center d-table"&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">            &lt;h1 class="d-table-cell"&gt;SYSTEM ADMINISTRACJI WI&#x118;ZIENIEM&lt;/h1&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">        &lt;div class="text-center logged_in_header"&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">            &lt;span&gt;Jeste&#x15B; zalogowany jako: Pawe&#x142; Ledwig.&lt;/span&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">            &lt;a href="index.php" class="logout_href"&gt;Wyloguj&lt;/a&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="45"/>
+  <line no="46">
+    <token name="T_INLINE_HTML">&lt;div id="page_title" class="d-block w-100 text-center"&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">    &lt;h2&gt;Lista pracownik&#xF3;w&lt;/h2&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="49"/>
+  <line no="50">
+    <token name="T_INLINE_HTML">&lt;div id="content" class="d-block my-4 h-50"&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">    &lt;div id="main_container" class="h-100"&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">        &lt;div class="blur_bg col-lg-8 col-md-10 col-sm-12 col-12 m-auto"&gt;&lt;/div&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">        &lt;div class="table_container big_window h-100 col-lg-8 col-md-10 col-sm-12 col-12 m-auto"&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">            &lt;table id="table_employees" class="w-100"&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                &lt;thead&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                    &lt;tr&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                            ID</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                            Imi&#x119; i nazwisko</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">                            Pesel</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">                            Adres</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                            Rola</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">                            Pensja</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">                            Akcje</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">                        &lt;/th&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                    &lt;/tr&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">                &lt;/thead&gt;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">                &lt;tbody&gt;</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">                </token>
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="82">
+    <token name="T_VARIABLE">$_from</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">smarty</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">ext</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">_foreach</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">init</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employees'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="83">
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_from</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_NOT_IDENTICAL">!==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">null</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="84">
+    <token name="T_FOREACH">foreach</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_from</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_AS">as</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="85">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">                    &lt;tr&gt;</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">                            &lt;span class="employee_info"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'id'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">&lt;/span&gt;</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">                            &lt;span class="employee_info"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'name'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML"> </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'surname'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">&lt;/span&gt;</token>
+  </line>
+  <line no="95">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="96">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="97">
+    <token name="T_INLINE_HTML">                            &lt;span class="employee_info"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'pesel'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="98">
+    <token name="T_INLINE_HTML">&lt;/span&gt;</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">                            &lt;span class="employee_info"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'address'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">&lt;/span&gt;</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="105">
+    <token name="T_INLINE_HTML">                            &lt;span class="employee_info"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'role'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'guard'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">Stra&#x17C;nik</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ELSEIF">elseif</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'role'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'duty_officer'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">Dy&#x17C;urny</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/span&gt;</token>
+  </line>
+  <line no="106">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="107">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="108">
+    <token name="T_INLINE_HTML">                            &lt;span class="employee_info"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'employee'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'salary'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="109">
+    <token name="T_INLINE_HTML"> z&#x142;&lt;/span&gt;</token>
+  </line>
+  <line no="110">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="111">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="112">
+    <token name="T_INLINE_HTML">                            &lt;form action="javascript:modifyEmployeeData(</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'i'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="113">
+    <token name="T_INLINE_HTML">);" method="post" class="d-inline-block"&gt;</token>
+  </line>
+  <line no="114">
+    <token name="T_INLINE_HTML">                                &lt;input type="image" src="./styles/images/icons/edit.png" width="12px" alt="Edytuj dane pracownika"&gt;</token>
+  </line>
+  <line no="115">
+    <token name="T_INLINE_HTML">                            &lt;/form&gt;</token>
+  </line>
+  <line no="116">
+    <token name="T_INLINE_HTML">                            &lt;form action="president.php" method="post" class="d-inline-block" style="margin-left: 16px;"&gt;</token>
+  </line>
+  <line no="117">
+    <token name="T_INLINE_HTML">                                &lt;input type="hidden" name="employee_id" value="</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'i'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="118">
+    <token name="T_INLINE_HTML">"&gt;</token>
+  </line>
+  <line no="119">
+    <token name="T_INLINE_HTML">                                &lt;input type="image" src="./styles/images/icons/delete.png" width="12px" alt="Zwolnij pracownika"&gt;</token>
+  </line>
+  <line no="120">
+    <token name="T_INLINE_HTML">                            &lt;/form&gt;</token>
+  </line>
+  <line no="121">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="122">
+    <token name="T_INLINE_HTML">                    &lt;/tr&gt;</token>
+  </line>
+  <line no="123">
+    <token name="T_INLINE_HTML">                </token>
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="124">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="125">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="126">
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">smarty</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">ext</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">_foreach</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">restore</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="127">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="128">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="129">
+    <token name="T_INLINE_HTML">                        &lt;form id="employee_add" action="president.php" method="post"&gt;+&lt;/form&gt;</token>
+  </line>
+  <line no="130">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" type="hidden" name="page" value="presidentEmployees"&gt;</token>
+  </line>
+  <line no="131">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" type="hidden" name="mode" value="addEmployee"&gt;</token>
+  </line>
+  <line no="132">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="133">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="134">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" name="name_surname" type="text" class="input_text text-center" placeholder="Imi&#x119; i nazwisko"&gt;</token>
+  </line>
+  <line no="135">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="136">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="137">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" name="pesel" type="text" class="input_text text-center" placeholder="Pesel"&gt;</token>
+  </line>
+  <line no="138">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="139">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="140">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" name="address" type="text" class="input_text text-center" placeholder="Adres"&gt;</token>
+  </line>
+  <line no="141">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="142">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="143">
+    <token name="T_INLINE_HTML">                        &lt;select form="employee_add" class="role_select_add" id="select_role_add" name="role"&gt;</token>
+  </line>
+  <line no="144">
+    <token name="T_INLINE_HTML">                            &lt;option value="guard" class="text-center" selected="selected"&gt;Stra&#x17C;nik&lt;/option&gt;</token>
+  </line>
+  <line no="145">
+    <token name="T_INLINE_HTML">                            &lt;option value="duty_officer" class="text-center"&gt;Dy&#x17C;urny&lt;/option&gt;</token>
+  </line>
+  <line no="146">
+    <token name="T_INLINE_HTML">                        &lt;/select&gt;</token>
+  </line>
+  <line no="147">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="148">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="149">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" name="salary" type="text" class="input_text text-center" placeholder="Pensja"&gt;</token>
+  </line>
+  <line no="150">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="151">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="152">
+    <token name="T_INLINE_HTML">                        &lt;input form="employee_add" name="send" type="submit" class="input_submit" value="Dodaj"&gt;</token>
+  </line>
+  <line no="153">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="154">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="155">
+    <token name="T_INLINE_HTML">                &lt;/tbody&gt;</token>
+  </line>
+  <line no="156">
+    <token name="T_INLINE_HTML">            &lt;/table&gt;</token>
+  </line>
+  <line no="157">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="158">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="159">
+    <token name="T_INLINE_HTML">    &lt;div id="return_container" class="my-2"&gt;</token>
+  </line>
+  <line no="160">
+    <token name="T_INLINE_HTML">        &lt;a href="president.php"&gt;&lt;span&gt;Powr&#xF3;t&lt;/span&gt;&lt;/a&gt;</token>
+  </line>
+  <line no="161">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="162"/>
+  <line no="163">
+    <token name="T_INLINE_HTML">    &lt;div id="message_box" class="w-100 my-1"&gt;</token>
+  </line>
+  <line no="164">
+    <token name="T_INLINE_HTML">        &lt;div id="message_inner" class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12 m-auto text-center"&gt;</token>
+  </line>
+  <line no="165">
+    <token name="T_INLINE_HTML">            &lt;span&gt;Dodano pracownika.&lt;/span&gt;</token>
+  </line>
+  <line no="166">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="167">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="168">
+    <token name="T_INLINE_HTML">    </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'message'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="169">
+    <token name="T_INLINE_HTML">        </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'&lt;script'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="170">
+    <token name="T_INLINE_HTML">&gt;</token>
+  </line>
+  <line no="171">
+    <token name="T_INLINE_HTML">            showPopup(</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'message_type'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="172">
+    <token name="T_INLINE_HTML">, '</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">tpl_vars</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'message_text'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">value</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="173">
+    <token name="T_INLINE_HTML">');</token>
+  </line>
+  <line no="174">
+    <token name="T_INLINE_HTML">        </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'&lt;/script'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="175">
+    <token name="T_INLINE_HTML">&gt;</token>
+  </line>
+  <line no="176">
+    <token name="T_INLINE_HTML">    </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="177">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="178"/>
+  <line no="179">
+    <token name="T_INLINE_HTML">&lt;footer class="d-table"&gt;</token>
+  </line>
+  <line no="180">
+    <token name="T_INLINE_HTML">    &lt;span class="w-100 text-center d-table-cell"&gt;Created by Pawe&#x142; Ledwig, 2019&lt;/span&gt;</token>
+  </line>
+  <line no="181">
+    <token name="T_INLINE_HTML">&lt;/footer&gt;</token>
+  </line>
+  <line no="182">
+    <token name="T_INLINE_HTML">&lt;/body&gt;</token>
+  </line>
+  <line no="183">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'&lt;script'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="184">
+    <token name="T_INLINE_HTML"> type="text/javascript" src="./scripts/president.employees.js"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'&lt;/script'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="185">
+    <token name="T_INLINE_HTML">&gt;</token>
+  </line>
+  <line no="186">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'&lt;script'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="187">
+    <token name="T_INLINE_HTML"> type="text/javascript" src="./scripts/jquery.selectric.min.js"&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'&lt;/script'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="188">
+    <token name="T_INLINE_HTML">&gt;</token>
+  </line>
+  <line no="189">
+    <token name="T_INLINE_HTML">&lt;/html&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="190">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="191"/>
+</source>

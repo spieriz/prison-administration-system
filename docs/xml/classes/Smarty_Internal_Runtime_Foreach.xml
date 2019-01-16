@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_Foreach" namespace="" name="Smarty_Internal_Runtime_Foreach" abstract="false" final="false" start="10" end="162">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_foreach.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_foreach.php" size="5639" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="c9f84bdb08f863f3ef9f3090f0e7c01908ceb090" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_foreach.php"/>
+  <docblock>
+    <description compact="Foreach Runtime Methods count(), init(), restore()"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="stack" default="" type="array" visibility="private" static="false" line="17">
+    <docblock>
+      <description compact="Stack of saved variables"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="init" start="35" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Init foreach loop  - save item and key variables, named foreach property data if defined  - init item and key variables, named foreach property data if required  - count total if required"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="values to loop over" type="mixed" variable="$from"/>
+      <param description="variable name" type="string" variable="$item"/>
+      <param description="flag if we need to count values" type="object" variable="$needTotal">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param description="variable name" type="object" variable="$key">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+      <param description="of named foreach" type="object" variable="$name">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+      <param description="of named foreach" type="array" variable="$properties"/>
+      <return description="$from" type="mixed"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="from" byreference="false" type="{unknown}"/>
+    <parameter name="item" byreference="false" type="{unknown}"/>
+    <parameter name="needTotal" byreference="false" type="boolean" default="false"/>
+    <parameter name="key" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="properties" byreference="false" type="array" default=""/>
+  </method>
+  <method name="count" start="117" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="[util function] counts an array, arrayAccess/traversable or PDOStatement object"/>
+      <param type="mixed" variable="$value"/>
+      <return description="the count for arrays and objects that implement countable, 1 for other objects that don't, and 0" type="int">for empty elements</return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="restore" start="143" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Restore saved variables">will be called by {break n} or {continue n} for the required number of levels</description>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="number of levels" type="int" variable="$levels"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="levels" byreference="false" type="integer" default="1"/>
+  </method>
+</class>

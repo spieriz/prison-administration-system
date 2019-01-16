@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_FilterHandler" namespace="" name="Smarty_Internal_Runtime_FilterHandler" abstract="false" final="false" start="17" end="69">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_filterhandler.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_filterhandler.php" size="3046" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="53dedaa037975742f50dadc72cfae4ee3054f11d" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_filterhandler.php"/>
+  <docblock>
+    <description compact="Class for filter processing"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+  </docblock>
+  <method name="runFilter" start="33" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run filters over content The filters will be lazy loaded if required class name format: Smarty_FilterType_FilterName plugin filename format: filtertype.filtername.php Smarty2 filter plugins could be used"/>
+      <param description="the type of filter ('pre','post','output') which shall run" type="string" variable="$type"/>
+      <param description="the content which shall be processed by the filters" type="string" variable="$content"/>
+      <param description="template object" type="object" variable="$template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+      <return description="the filtered content" type="string"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <inline>
+      <comment value="loop over autoload filters of specified type" line="35"/>
+      <comment value="loop over registered filters of specified type" line="60"/>
+      <comment value="return filtered output" line="66"/>
+    </inline>
+  </method>
+</class>

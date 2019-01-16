@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_RegisterDefaultTemplateHandler" namespace="" name="Smarty_Internal_Method_RegisterDefaultTemplateHandler" abstract="false" final="false" start="12" end="88">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_registerdefaulttemplatehandler.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_registerdefaulttemplatehandler.php" size="3103" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="d2bcb0743e70eb012ee199ff3dcde21ee25e4ca3" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_registerdefaulttemplatehandler.php"/>
+  <docblock>
+    <description compact="Smarty Method RegisterDefaultTemplateHandler">Smarty::registerDefaultTemplateHandler() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="registerDefaultTemplateHandler" start="32" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register template default handler"/>
+      <api value="Smarty::registerDefaultTemplateHandler()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="class/method name" type="object" variable="$callback">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws description="if $callback is not callable" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getDefaultTemplate" start="50" end="87" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="get default content from template or config resource handler"/>
+      <param type="object" variable="$source">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="source" byreference="false" type="object">
+      <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+    </parameter>
+  </method>
+</class>

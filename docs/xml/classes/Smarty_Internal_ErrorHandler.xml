@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_ErrorHandler" namespace="" name="Smarty_Internal_ErrorHandler" abstract="false" final="false" start="13" end="113">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_errorhandler.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_errorhandler.php" size="4438" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="d55adb0facd76f2a782f88e85fc938db72f189f8" relative="includes/libs/Smarty/sysplugins/smarty_internal_errorhandler.php"/>
+  <docblock>
+    <description compact="Smarty error handler"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+    <deprecated value="Smarty does no longer use @filemtime()"/>
+  </docblock>
+  <member name="mutedDirectories" default="" type="array" visibility="public" static="true" line="18">
+    <docblock>
+      <description compact="contains directories outside of SMARTY_DIR that are to be muted by muteExpectedErrors()"/>
+    </docblock>
+  </member>
+  <member name="previousErrorHandler" default="NULL" visibility="private" static="true" line="23">
+    <docblock>
+      <description compact="error handler returned by set_error_handler() in self::muteExpectedErrors()"/>
+    </docblock>
+  </member>
+  <method name="muteExpectedErrors" start="29" end="53" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Enable error handler to mute expected messages"/>
+    </docblock>
+    <inline>
+      <comment value="error muting is done because some people implemented custom error_handlers using" line="31"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="http://php.net/set_error_handler and for some reason did not understand the following paragraph:" line="32"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="It is important to remember that the standard PHP error handler is completely bypassed for the" line="33"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="error types specified by error_types unless the callback function returns FALSE." line="34"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="error_reporting() settings will have no effect and your error handler will be called regardless -" line="35"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="however you are still able to read the current value of error_reporting and act appropriately." line="36"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Of particular note is that this value will be 0 if the statement that caused the error was" line="37"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="prepended by the @ error-control operator." line="38"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Smarty deliberately uses @filemtime() over file_exists() and filemtime() in some places. Reasons include" line="39"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="- @filemtime() is almost twice as fast as using an additional file_exists()" line="40"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="- between file_exists() and filemtime() a possible race condition is opened," line="41"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="which does not exist using the simple @filemtime() approach." line="42"/>
+      <comment value="avoid dead loops" line="49"/>
+    </inline>
+  </method>
+  <method name="mutingErrorHandler" start="68" end="112" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Error Handler to mute expected messages"/>
+      <link value="http://php.net/set_error_handler"/>
+      <param description="Error level" type="integer" variable="$errno"/>
+      <param variable="$errstr"/>
+      <param variable="$errfile"/>
+      <param variable="$errline"/>
+      <param variable="$errcontext"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="errno" byreference="false" type="{unknown}"/>
+    <parameter name="errstr" byreference="false" type="{unknown}"/>
+    <parameter name="errfile" byreference="false" type="{unknown}"/>
+    <parameter name="errline" byreference="false" type="{unknown}"/>
+    <parameter name="errcontext" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="add the SMARTY_DIR to the list of muted directories" line="71"/>
+      <comment value="walk the muted directories and test against $errfile" line="79"/>
+      <comment value="pass to next error handler if this error did not occur inside SMARTY_DIR" line="96"/>
+      <comment value="or the error was within smarty but masked to be ignored" line="97"/>
+    </inline>
+  </method>
+</class>

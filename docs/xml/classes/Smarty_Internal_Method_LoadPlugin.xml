@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_LoadPlugin" namespace="" name="Smarty_Internal_Method_LoadPlugin" abstract="false" final="false" start="12" end="111">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_loadplugin.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_loadplugin.php" size="4357" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="bb29fec090055c5487781d7dcb8498a2271f96ba" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_loadplugin.php"/>
+  <docblock>
+    <description compact="Smarty Extension Loadplugin">$smarty-&gt;loadPlugin() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="plugin_files" default="" type="array" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Cache of searched plugin files"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="loadPlugin" start="33" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Takes unknown classes and loads plugin files for them class name format: Smarty_PluginType_PluginName plugin filename format: plugintype.pluginname.php"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="class plugin name to load" type="string" variable="$plugin_name"/>
+      <param description="check if already loaded" type="object" variable="$check">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="bool|string" namespace="" name="bool|string"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="plugin_name" byreference="false" type="{unknown}"/>
+    <parameter name="check" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if function or class exists, exit silently (already loaded)" line="35"/>
+      <comment value="plugin filename is expected to be: [type].[name].php" line="61"/>
+      <comment value="no plugin loaded" line="108"/>
+    </inline>
+  </method>
+</class>

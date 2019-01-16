@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="TPC_yyStackEntry" namespace="" name="TPC_yyStackEntry" abstract="false" final="false" start="3" end="10">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_configfileparser.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_configfileparser.php" size="35686" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="abf88224a435f1934faaae9a858921687bf37157" relative="includes/libs/Smarty/sysplugins/smarty_internal_configfileparser.php"/>
+  <member name="stateno" visibility="public" static="false" line="5"/>
+  <member name="major" visibility="public" static="false" line="6"/>
+  <member name="minor" visibility="public" static="false" line="8"/>
+</class>

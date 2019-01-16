@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Configfileparser</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Configfileparser</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_configfileparser.php.xhtml#line24">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Configfileparser</h1>
+        <h4>Smarty Internal Plugin Configfileparse</h4>
+        <p>This is the config file parser.<br/>It is generated from the smarty_internal_configfileparser.y file</p>
+        <ul>
+          <li>Author: Uwe Tews</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Configfileparser
+            {<br/><ul class="none"><li>// constants</li><li>const TPC_OPENB = 1;</li><li>const TPC_SECTION = 2;</li><li>const TPC_CLOSEB = 3;</li><li>const TPC_DOT = 4;</li><li>const TPC_ID = 5;</li><li>const TPC_EQUAL = 6;</li><li>const TPC_FLOAT = 7;</li><li>const TPC_INT = 8;</li><li>const TPC_BOOL = 9;</li><li>const TPC_SINGLE_QUOTED_STRING = 10;</li><li>const TPC_DOUBLE_QUOTED_STRING = 11;</li><li>const TPC_TRIPPLE_QUOTES = 12;</li><li>const TPC_TRIPPLE_TEXT = 13;</li><li>const TPC_TRIPPLE_QUOTES_END = 14;</li><li>const TPC_NAKED_STRING = 15;</li><li>const TPC_OTHER = 16;</li><li>const TPC_NEWLINE = 17;</li><li>const TPC_COMMENTSTART = 18;</li><li>const YY_NO_ACTION = 60;</li><li>const YY_ACCEPT_ACTION = 59;</li><li>const YY_ERROR_ACTION = 58;</li><li>const YY_SZ_ACTTAB = 38;</li><li>const YY_SHIFT_USE_DFLT = 8;</li><li>const YY_SHIFT_MAX = 19;</li><li>const YY_REDUCE_USE_DFLT = 17;</li><li>const YY_REDUCE_MAX = 10;</li><li>const YYNOCODE = 29;</li><li>const YYSTACKDEPTH = 100;</li><li>const YYNSTATE = 36;</li><li>const YYNRULE = 22;</li><li>const YYERRORSYMBOL = 19;</li><li>const YYERRSYMDT = 'yy0';</li><li>const YYFALLBACK = 0;</li></ul><ul class="none"><li>// members</li><li>public static array <a href="#members">$yy_action</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yy_lookahead</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yy_shift_ofst</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yy_reduce_ofst</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yyExpectedTokens</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yy_default</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yyFallback</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yyRuleName</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yyRuleInfo</a> =
+                        ;
+                    </li><li>public static array <a href="#members">$yyReduceMap</a> =
+                        ;
+                    </li><li>private static array <a href="#members">$escapes_single</a> =
+                        ;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$successful</a> =
+                        true;
+                    </li><li>public integer <a href="#members">$retvalue</a> =
+                        0;
+                    </li><li>public  <a href="#members">$yymajor</a>;
+                    </li><li>public <span title="Smarty_Internal_Config_File_Compiler">Smarty_Internal_Config_File_Compiler</span> <a href="#members">$compiler</a> =
+                        NULL;
+                    </li><li>public <span title="Smarty">Smarty</span> <a href="#members">$smarty</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$yyTraceFILE</a>;
+                    </li><li>public  <a href="#members">$yyTracePrompt</a>;
+                    </li><li>public  <a href="#members">$yyidx</a>;
+                    </li><li>public  <a href="#members">$yyerrcnt</a>;
+                    </li><li>public array <a href="#members">$yystack</a> =
+                        ;
+                    </li><li>public array <a href="#members">$yyTokenName</a> =
+                        ;
+                    </li><li>private <span title="Smarty_Internal_Configfilelexer">Smarty_Internal_Configfilelexer</span> <a href="#members">$lex</a>;
+                    </li><li>private <span title="bool">bool</span> <a href="#members">$internalError</a> =
+                        false;
+                    </li><li>private <span title="bool">bool</span> <a href="#members">$configOverwrite</a> =
+                        false;
+                    </li><li>private <span title="bool">bool</span> <a href="#members">$configReadHidden</a> =
+                        false;
+                    </li><li>private  <a href="#members">$_retvalue</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/__construct.xhtml">__construct</a>()
+                    </li><li>public static void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_destructor.xhtml">yy_destructor</a>()
+                    </li><li>private static string <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_single_quoted_string.xhtml">parse_single_quoted_string</a>()
+                    </li><li>private static string <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_double_quoted_string.xhtml">parse_double_quoted_string</a>()
+                    </li><li>private static string <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_tripple_double_quoted_string.xhtml">parse_tripple_double_quoted_string</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/Trace.xhtml">Trace</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/PrintTrace.xhtml">PrintTrace</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/tokenName.xhtml">tokenName</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_pop_parser_stack.xhtml">yy_pop_parser_stack</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/__destruct.xhtml">__destruct</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_get_expected_tokens.xhtml">yy_get_expected_tokens</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_is_expected_token.xhtml">yy_is_expected_token</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_find_shift_action.xhtml">yy_find_shift_action</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_find_reduce_action.xhtml">yy_find_reduce_action</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_shift.xhtml">yy_shift</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r0.xhtml">yy_r0</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r1.xhtml">yy_r1</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r4.xhtml">yy_r4</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r5.xhtml">yy_r5</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r6.xhtml">yy_r6</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r7.xhtml">yy_r7</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r8.xhtml">yy_r8</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r9.xhtml">yy_r9</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r10.xhtml">yy_r10</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r11.xhtml">yy_r11</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r12.xhtml">yy_r12</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r13.xhtml">yy_r13</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r14.xhtml">yy_r14</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r15.xhtml">yy_r15</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r16.xhtml">yy_r16</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r17.xhtml">yy_r17</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_reduce.xhtml">yy_reduce</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_parse_failed.xhtml">yy_parse_failed</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_syntax_error.xhtml">yy_syntax_error</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_accept.xhtml">yy_accept</a>()
+                    </li><li>public void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/doParse.xhtml">doParse</a>()
+                    </li><li>private bool <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_bool.xhtml">parse_bool</a>()
+                    </li><li>private void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/set_var.xhtml">set_var</a>()
+                    </li><li>private void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/add_global_vars.xhtml">add_global_vars</a>()
+                    </li><li>private void <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/add_section_vars.xhtml">add_section_vars</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="TPC_OPENB">TPC_OPENB</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="TPC_SECTION">TPC_SECTION</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td id="TPC_CLOSEB">TPC_CLOSEB</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td id="TPC_DOT">TPC_DOT</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td id="TPC_ID">TPC_ID</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td id="TPC_EQUAL">TPC_EQUAL</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td id="TPC_FLOAT">TPC_FLOAT</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td id="TPC_INT">TPC_INT</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="TPC_BOOL">TPC_BOOL</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td id="TPC_SINGLE_QUOTED_STRING">TPC_SINGLE_QUOTED_STRING</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td id="TPC_DOUBLE_QUOTED_STRING">TPC_DOUBLE_QUOTED_STRING</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td id="TPC_TRIPPLE_QUOTES">TPC_TRIPPLE_QUOTES</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td id="TPC_TRIPPLE_TEXT">TPC_TRIPPLE_TEXT</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td id="TPC_TRIPPLE_QUOTES_END">TPC_TRIPPLE_QUOTES_END</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td id="TPC_NAKED_STRING">TPC_NAKED_STRING</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td id="TPC_OTHER">TPC_OTHER</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td id="TPC_NEWLINE">TPC_NEWLINE</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <td id="TPC_COMMENTSTART">TPC_COMMENTSTART</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td id="YY_NO_ACTION">YY_NO_ACTION</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td id="YY_ACCEPT_ACTION">YY_ACCEPT_ACTION</td>
+              <td>59</td>
+            </tr>
+            <tr>
+              <td id="YY_ERROR_ACTION">YY_ERROR_ACTION</td>
+              <td>58</td>
+            </tr>
+            <tr>
+              <td id="YY_SZ_ACTTAB">YY_SZ_ACTTAB</td>
+              <td>38</td>
+            </tr>
+            <tr>
+              <td id="YY_SHIFT_USE_DFLT">YY_SHIFT_USE_DFLT</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td id="YY_SHIFT_MAX">YY_SHIFT_MAX</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td id="YY_REDUCE_USE_DFLT">YY_REDUCE_USE_DFLT</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <td id="YY_REDUCE_MAX">YY_REDUCE_MAX</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td id="YYNOCODE">YYNOCODE</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td id="YYSTACKDEPTH">YYSTACKDEPTH</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td id="YYNSTATE">YYNSTATE</td>
+              <td>36</td>
+            </tr>
+            <tr>
+              <td id="YYNRULE">YYNRULE</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td id="YYERRORSYMBOL">YYERRORSYMBOL</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td id="YYERRSYMDT">YYERRSYMDT</td>
+              <td>'yy0'</td>
+            </tr>
+            <tr>
+              <td id="YYFALLBACK">YYFALLBACK</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_retvalue">
+              <strong>$_retvalue</strong>
+            </li>
+            <li id="configOverwrite"><strong>$configOverwrite</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">copy of config_overwrite property</span></li>
+            <li id="configReadHidden"><strong>$configReadHidden</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">copy of config_read_hidden property</span></li>
+            <li id="escapes_single"><strong>$escapes_single</strong>
+                —
+                array<br/><span class="indent">helper map</span></li>
+            <li id="internalError"><strong>$internalError</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">internal error flag</span></li>
+            <li id="lex"><strong>$lex</strong>
+                —
+                <a title="Smarty_Internal_Configfilelexer" href="../classes/Smarty_Internal_Configfilelexer.xhtml">Smarty_Internal_Configfilelexer</a><br/><span class="indent">lexer object</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="compiler"><strong>$compiler</strong>
+                —
+                <a title="Smarty_Internal_Config_File_Compiler" href="../classes/Smarty_Internal_Config_File_Compiler.xhtml">Smarty_Internal_Config_File_Compiler</a><br/><span class="indent">compiler object</span></li>
+            <li id="retvalue"><strong>$retvalue</strong>
+                —
+                mixed<br/><span class="indent">return value</span></li>
+            <li id="smarty"><strong>$smarty</strong>
+                —
+                <a title="Smarty" href="../classes/Smarty.xhtml">Smarty</a><br/><span class="indent">smarty object</span></li>
+            <li id="successful"><strong>$successful</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">result status</span></li>
+            <li id="yyExpectedTokens">
+              <strong>$yyExpectedTokens</strong>
+            </li>
+            <li id="yyFallback">
+              <strong>$yyFallback</strong>
+            </li>
+            <li id="yyReduceMap">
+              <strong>$yyReduceMap</strong>
+            </li>
+            <li id="yyRuleInfo">
+              <strong>$yyRuleInfo</strong>
+            </li>
+            <li id="yyRuleName">
+              <strong>$yyRuleName</strong>
+            </li>
+            <li id="yyTokenName">
+              <strong>$yyTokenName</strong>
+            </li>
+            <li id="yyTraceFILE">
+              <strong>$yyTraceFILE</strong>
+            </li>
+            <li id="yyTracePrompt">
+              <strong>$yyTracePrompt</strong>
+            </li>
+            <li id="yy_action">
+              <strong>$yy_action</strong>
+            </li>
+            <li id="yy_default">
+              <strong>$yy_default</strong>
+            </li>
+            <li id="yy_lookahead">
+              <strong>$yy_lookahead</strong>
+            </li>
+            <li id="yy_reduce_ofst">
+              <strong>$yy_reduce_ofst</strong>
+            </li>
+            <li id="yy_shift_ofst">
+              <strong>$yy_shift_ofst</strong>
+            </li>
+            <li id="yyerrcnt">
+              <strong>$yyerrcnt</strong>
+            </li>
+            <li id="yyidx">
+              <strong>$yyidx</strong>
+            </li>
+            <li id="yymajor"><strong>$yymajor</strong>
+                —
+                </li>
+            <li id="yystack">
+              <strong>$yystack</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="add_global_vars"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/add_global_vars.xhtml">add_global_vars()</a>
+                — add config variable to global vars</li>
+            <li id="add_section_vars"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/add_section_vars.xhtml">add_section_vars()</a>
+                — add config variable to section</li>
+            <li id="parse_bool"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_bool.xhtml">parse_bool()</a>
+                — parse optional boolean keywords</li>
+            <li id="parse_double_quoted_string"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_double_quoted_string.xhtml">parse_double_quoted_string()</a>
+                — parse double quoted string</li>
+            <li id="parse_single_quoted_string"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_single_quoted_string.xhtml">parse_single_quoted_string()</a>
+                — parse single quoted string  remove outer quotes  unescape inner quotes</li>
+            <li id="parse_tripple_double_quoted_string"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/parse_tripple_double_quoted_string.xhtml">parse_tripple_double_quoted_string()</a>
+                — parse triple quoted string</li>
+            <li id="set_var"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/set_var.xhtml">set_var()</a>
+                — set a config variable in target array</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/__construct.xhtml">__construct()</a>
+                — constructor</li>
+            <li id="__destruct">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/__destruct.xhtml">__destruct()</a>
+            </li>
+            <li id="PrintTrace">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/PrintTrace.xhtml">PrintTrace()</a>
+            </li>
+            <li id="Trace">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/Trace.xhtml">Trace()</a>
+            </li>
+            <li id="doParse">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/doParse.xhtml">doParse()</a>
+            </li>
+            <li id="tokenName">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/tokenName.xhtml">tokenName()</a>
+            </li>
+            <li id="yy_accept">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_accept.xhtml">yy_accept()</a>
+            </li>
+            <li id="yy_destructor">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_destructor.xhtml">yy_destructor()</a>
+            </li>
+            <li id="yy_find_reduce_action">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_find_reduce_action.xhtml">yy_find_reduce_action()</a>
+            </li>
+            <li id="yy_find_shift_action">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_find_shift_action.xhtml">yy_find_shift_action()</a>
+            </li>
+            <li id="yy_get_expected_tokens">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_get_expected_tokens.xhtml">yy_get_expected_tokens()</a>
+            </li>
+            <li id="yy_is_expected_token">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_is_expected_token.xhtml">yy_is_expected_token()</a>
+            </li>
+            <li id="yy_parse_failed">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_parse_failed.xhtml">yy_parse_failed()</a>
+            </li>
+            <li id="yy_pop_parser_stack">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_pop_parser_stack.xhtml">yy_pop_parser_stack()</a>
+            </li>
+            <li id="yy_r0">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r0.xhtml">yy_r0()</a>
+            </li>
+            <li id="yy_r1">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r1.xhtml">yy_r1()</a>
+            </li>
+            <li id="yy_r10">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r10.xhtml">yy_r10()</a>
+            </li>
+            <li id="yy_r11">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r11.xhtml">yy_r11()</a>
+            </li>
+            <li id="yy_r12">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r12.xhtml">yy_r12()</a>
+            </li>
+            <li id="yy_r13">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r13.xhtml">yy_r13()</a>
+            </li>
+            <li id="yy_r14">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r14.xhtml">yy_r14()</a>
+            </li>
+            <li id="yy_r15">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r15.xhtml">yy_r15()</a>
+            </li>
+            <li id="yy_r16">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r16.xhtml">yy_r16()</a>
+            </li>
+            <li id="yy_r17">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r17.xhtml">yy_r17()</a>
+            </li>
+            <li id="yy_r4">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r4.xhtml">yy_r4()</a>
+            </li>
+            <li id="yy_r5">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r5.xhtml">yy_r5()</a>
+            </li>
+            <li id="yy_r6">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r6.xhtml">yy_r6()</a>
+            </li>
+            <li id="yy_r7">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r7.xhtml">yy_r7()</a>
+            </li>
+            <li id="yy_r8">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r8.xhtml">yy_r8()</a>
+            </li>
+            <li id="yy_r9">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_r9.xhtml">yy_r9()</a>
+            </li>
+            <li id="yy_reduce">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_reduce.xhtml">yy_reduce()</a>
+            </li>
+            <li id="yy_shift">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_shift.xhtml">yy_shift()</a>
+            </li>
+            <li id="yy_syntax_error">
+              <a title="Smarty_Internal_Configfileparser" href="../classes/Smarty_Internal_Configfileparser/yy_syntax_error.xhtml">yy_syntax_error()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

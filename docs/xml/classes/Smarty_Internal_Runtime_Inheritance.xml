@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_Inheritance" namespace="" name="Smarty_Internal_Runtime_Inheritance" abstract="false" final="false" start="10" end="251">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_inheritance.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_inheritance.php" size="8596" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="d6bf91699471ae09d2904d72833ea61ac84d216d" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_inheritance.php"/>
+  <docblock>
+    <description compact="Inheritance Runtime Methods processBlock, endChild, init"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="state" default="0" type="integer" visibility="public" static="false" line="22">
+    <docblock>
+      <description compact="State machine - 0 idle next extends will create a new inheritance tree - 1 processing child template - 2 wait for next inheritance template - 3 assume parent template, if child will loaded goto state 1     a call to a sub template resets the state to 0"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="childRoot" default="" type="array" visibility="public" static="false" line="29">
+    <docblock>
+      <description compact="Array of root child {block} objects"/>
+      <var type="array" of="object">
+        <type full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="inheritanceLevel" default="0" type="integer" visibility="public" static="false" line="36">
+    <docblock>
+      <description compact="inheritance template nesting level"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="tplIndex" default="1" type="integer" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="inheritance template index"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="sources" default="" type="array" visibility="public" static="false" line="50">
+    <docblock>
+      <description compact="Array of template source objects"/>
+      <var type="array" of="object">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="sourceStack" default="" type="array" visibility="public" static="false" line="57">
+    <docblock>
+      <description compact="Stack of source objects while executing block code"/>
+      <var type="array" of="object">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="init" start="66" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize inheritance"/>
+      <param description="template object of caller" type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="if true init for child template" type="object" variable="$initChild">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param description="outer level block name" type="array" variable="$blockNames"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="initChild" byreference="false" type="{unknown}"/>
+    <parameter name="blockNames" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="if called while executing parent template it must be a sub-template with new inheritance root" line="68"/>
+      <comment value="start of child sub template(s)" line="76"/>
+      <comment value="if state was waiting for parent change state to parent" line="87"/>
+    </inline>
+  </method>
+  <method name="endChild" start="105" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="End of child template(s) - if outer level is reached flush output buffer and switch to wait for parent template state"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="optional name of inheritance parent template" type="object" variable="$template">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+      <param description="uid of inline template" type="object" variable="$uid">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+      <param description="function call name of inline template" type="object" variable="$func">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="template" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="uid" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="func" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="instanceBlock" start="142" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Smarty_Internal_Block constructor.">- if outer level {block} of child template ($state === 1) save it as child root block
+- otherwise process inheritance and render</description>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param variable="$className"/>
+      <param type="string" variable="$name"/>
+      <param description="index of outer level {block} if nested" type="object" variable="$tplIndex">
+        <type full="int|null" namespace="" name="int|null"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="tplIndex" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="make sure we got child block of child template of current block" line="152"/>
+    </inline>
+  </method>
+  <method name="process" start="168" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Goto child block or render this"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="object" variable="$block">
+        <type full="\Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+      </param>
+      <param type="object" variable="$parent">
+        <type full="\Smarty_Internal_Block|null" namespace="" name="Smarty_Internal_Block|null"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="block" byreference="false" type="object">
+      <type full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+    </parameter>
+    <parameter name="parent" byreference="false" type="object" default="NULL">
+      <type full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+    </parameter>
+  </method>
+  <method name="callChild" start="212" end="217" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render child on \$smarty.block.child"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="object" variable="$block">
+        <type full="\Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+      </param>
+      <return description="block content" type="object">
+        <type full="null|string" namespace="" name="null|string"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="block" byreference="false" type="object">
+      <type full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+    </parameter>
+  </method>
+  <method name="callParent" start="229" end="236" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render parent block on \$smarty.block.parent or {block append/prepend}"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param type="object" variable="$block">
+        <type full="\Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+      </param>
+      <param type="string" variable="$tag"/>
+      <return description="block content" type="object">
+        <type full="null|string" namespace="" name="null|string"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="block" byreference="false" type="object">
+      <type full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+    </parameter>
+    <parameter name="tag" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callBlock" start="244" end="250" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="render block"/>
+      <param type="object" variable="$block">
+        <type full="\Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+      </param>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="block" byreference="false" type="object">
+      <type full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block"/>
+    </parameter>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+</class>

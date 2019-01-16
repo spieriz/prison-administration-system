@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_CacheResource_KeyValueStore" namespace="" name="Smarty_CacheResource_KeyValueStore" abstract="true" final="false" start="31" end="538">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_cacheresource_keyvaluestore.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_cacheresource_keyvaluestore.php" size="18189" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="31d7db7674c9b95fdbb25c1f92171a1f0fb0aaec" relative="includes/libs/Smarty/sysplugins/smarty_cacheresource_keyvaluestore.php"/>
+  <docblock>
+    <description compact="Smarty Cache Handler Base for Key/Value Storage Implementations This class implements the functionality required to use simple key/value stores for hierarchical cache groups. key/value stores like memcache or APC do not support wildcards in keys, therefore a cache group cannot be cleared like &quot;a|*&quot; - which is no problem to filesystem and RDBMS implementations.">This implementation is based on the concept of invalidation. While one specific cache
+can be identified and cleared, any range of caches cannot be identified. For this reason
+each level of the cache group hierarchy can have its own value in the store. These values
+are nothing but microtimes, telling us when a particular cache group was cleared for the
+last time. These keys are evaluated for every cache read to determine if the cache has
+been invalidated since it was created and should hence be treated as inexistent.
+Although deep hierarchies are possible, they are not recommended. Try to keep your
+cache groups as shallow as possible. Anything up 3-5 parents should be ok. So
+»a|b|c« is a good depth where »a|b|c|d|e|f|g|h|i|j|k« isn't. Try to join correlating
+cache groups: if your cache groups look somewhat like »a|b|$page|$items|$whatever«
+consider using »a|b|c|$page-$items-$whatever« instead.</description>
+    <package value="Smarty"/>
+    <subpackage value="Cacher"/>
+    <author value="Rodney Rehm"/>
+  </docblock>
+  <extends full="Smarty_CacheResource" namespace="" name="Smarty_CacheResource"/>
+  <member name="contents" default="" type="array" visibility="protected" static="false" line="38">
+    <docblock>
+      <description compact="cache for contents"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="timestamps" default="" type="array" visibility="protected" static="false" line="45">
+    <docblock>
+      <description compact="cache for timestamps"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="populate" start="55" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="populate Cached Object with meta data from Resource"/>
+      <param description="cached object" type="object" variable="$cached">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="populateTimestamp" start="69" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="populate Cached Object with timestamp and exists from Resource"/>
+      <param description="cached object" type="object" variable="$cached">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+  </method>
+  <method name="process" start="97" end="126" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read the cached template and process the header"/>
+      <param description="do not change variable name, is used by compiled template" type="object" variable="$_smarty_tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="cached object" type="object" variable="$cached">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <param description="flag if called because cache update" type="boolean" variable="$update"/>
+      <return description="true or false if the cached content does not exist" type="boolean"/>
+    </docblock>
+    <parameter name="_smarty_tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="cached" byreference="false" type="object" default="NULL">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+    <parameter name="update" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="writeCachedContent" start="136" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write the rendered template output to cache"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="content to cache" type="string" variable="$content"/>
+      <return description="success" type="boolean"/>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readCachedContent" start="149" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read cached template from cache"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return description="content" type="object">
+        <type full="string|false" namespace="" name="string|false"/>
+      </return>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="clearAll" start="184" end="190" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Empty cache {@internal the $exp_time argument is ignored altogether }}"/>
+      <param description="Smarty object" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="expiration time [being ignored]" type="integer" variable="$exp_time"/>
+      <return description="number of cache files deleted [always -1]" type="integer"/>
+      <uses value="purge() to clear the whole store"/>
+      <uses value="invalidate() to mark everything outdated if purge() is inapplicable"/>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="clear" start="208" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Empty cache for a specific template {@internal the $exp_time argument is ignored altogether}}"/>
+      <param description="Smarty object" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="expiration time [being ignored]" type="integer" variable="$exp_time"/>
+      <return description="number of cache files deleted [always -1]" type="int"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+      <uses value="buildCachedFilepath() to generate the CacheID"/>
+      <uses value="invalidate() to mark CacheIDs parent chain as outdated"/>
+      <uses value="delete() to remove CacheID from cache"/>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="resource_name" byreference="false" type="{unknown}"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}"/>
+    <parameter name="exp_time" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTemplateUid" start="227" end="236" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get template's unique ID"/>
+      <param description="Smarty object" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <return description="filepath of cache file" type="string"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="resource_name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="sanitize" start="245" end="252" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Sanitize CacheID components"/>
+      <param description="CacheID component to sanitize" type="string" variable="$string"/>
+      <return description="sanitized CacheID component" type="string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="fetch" start="267" end="288" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Fetch and prepare a cache object."/>
+      <param description="CacheID to fetch" type="string" variable="$cid"/>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="cached content" type="string" variable="$content"/>
+      <param description="&amp;$timestamp cached timestamp (epoch)" type="integer"/>
+      <param description="resource's uid" type="string" variable="$resource_uid"/>
+      <return description="success" type="boolean"/>
+    </docblock>
+    <parameter name="cid" byreference="false" type="{unknown}"/>
+    <parameter name="resource_name" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="content" byreference="true" type="{unknown}" default="NULL"/>
+    <parameter name="timestamp" byreference="true" type="{unknown}" default="NULL"/>
+    <parameter name="resource_uid" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="addMetaTimestamp" start="296" end="301" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Add current microtime to the beginning of $cache_content {@internal the header uses 8 Bytes, the first 4 Bytes are the seconds, the second 4 Bytes are the microseconds}}"/>
+      <param description="&amp;$content the content to be cached" type="string"/>
+    </docblock>
+    <parameter name="content" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="getMetaTimestamp" start="310" end="318" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Extract the timestamp the $content was cached"/>
+      <param description="&amp;$content the cached content" type="string"/>
+      <return description="the microtime the content was cached" type="float"/>
+    </docblock>
+    <parameter name="content" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="invalidate" start="331" end="363" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Invalidate CacheID"/>
+      <param description="CacheID" type="string" variable="$cid"/>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="source's uid" type="string" variable="$resource_uid"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cid" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="resource_name" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="resource_uid" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="invalidate everything" line="340"/>
+    </inline>
+  </method>
+  <method name="getLatestInvalidationTimestamp" start="376" end="398" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine the latest timestamp known to the invalidation chain"/>
+      <param description="CacheID to determine latest invalidation timestamp of" type="string" variable="$cid"/>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="source's filepath" type="string" variable="$resource_uid"/>
+      <return description="the microtime the CacheID was invalidated" type="float"/>
+    </docblock>
+    <parameter name="cid" byreference="false" type="{unknown}"/>
+    <parameter name="resource_name" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="resource_uid" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="abort if there is no CacheID" line="383"/>
+      <comment value="abort if there are no InvalidationKeys to check" line="387"/>
+      <comment value="there are no InValidationKeys" line="391"/>
+      <comment value="make sure we're dealing with floats" line="395"/>
+    </inline>
+  </method>
+  <method name="listInvalidationKeys" start="413" end="454" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Translate a CacheID into the list of applicable InvalidationKeys.">Splits 'some|chain|into|an|array' into array( '#clearAll#', 'some', 'some|chain', 'some|chain|into', ... )</description>
+      <param description="CacheID to translate" type="string" variable="$cid"/>
+      <param description="template name" type="string" variable="$resource_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="source's filepath" type="string" variable="$resource_uid"/>
+      <return description="list of InvalidationKeys" type="array"/>
+      <uses value="$invalidationKeyPrefix to prepend to each InvalidationKey"/>
+    </docblock>
+    <parameter name="cid" byreference="false" type="{unknown}"/>
+    <parameter name="resource_name" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="resource_uid" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="hasLock" start="464" end="469" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check is cache is locked for this template"/>
+      <param description="Smarty object" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="cached object" type="object" variable="$cached">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <return description="true or false if cache is locked" type="boolean"/>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+  </method>
+  <method name="acquireLock" start="479" end="484" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Lock cache for this template"/>
+      <param description="Smarty object" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="cached object" type="object" variable="$cached">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <return type="object">
+        <type full="bool|void" namespace="" name="bool|void"/>
+      </return>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+  </method>
+  <method name="releaseLock" start="494" end="499" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unlock cache for this template"/>
+      <param description="Smarty object" type="object" variable="$smarty">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="cached object" type="object" variable="$cached">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </param>
+      <return type="object">
+        <type full="bool|void" namespace="" name="bool|void"/>
+      </return>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="cached" byreference="false" type="object">
+      <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+    </parameter>
+  </method>
+  <method name="read" start="508" end="508" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Read values for a set of keys from cache"/>
+      <param description="list of keys to fetch" type="array" variable="$keys"/>
+      <return description="list of values with the given keys used as indexes" type="array"/>
+    </docblock>
+    <parameter name="keys" byreference="false" type="array"/>
+  </method>
+  <method name="write" start="518" end="518" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Save values for a set of keys to cache"/>
+      <param description="list of values to save" type="array" variable="$keys"/>
+      <param description="expiration time" type="int" variable="$expire"/>
+      <return description="true on success, false on failure" type="boolean"/>
+    </docblock>
+    <parameter name="keys" byreference="false" type="array"/>
+    <parameter name="expire" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="delete" start="527" end="527" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove values from cache"/>
+      <param description="list of keys to delete" type="array" variable="$keys"/>
+      <return description="true on success, false on failure" type="boolean"/>
+    </docblock>
+    <parameter name="keys" byreference="false" type="array"/>
+  </method>
+  <method name="purge" start="534" end="537" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove *all* values from cache"/>
+      <return description="true on success, false on failure" type="boolean"/>
+    </docblock>
+  </method>
+  <parent full="Smarty_CacheResource" namespace="" name="Smarty_CacheResource">
+    <member name="sysplugins" default="" type="array" visibility="protected" static="true" line="23">
+      <docblock>
+        <description compact="resource types provided by the core"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="populate" start="33" end="33" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="populate Cached Object with meta data from Resource"/>
+        <param description="cached object" type="object" variable="$cached">
+          <type full="\Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="cached" byreference="false" type="object">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+    </method>
+    <method name="populateTimestamp" start="42" end="42" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="populate Cached Object with timestamp and exists from Resource"/>
+        <param type="object" variable="$cached">
+          <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <return type="object">
+          <type full="void" namespace="" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="cached" byreference="false" type="object">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+    </method>
+    <method name="process" start="53" end="57" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Read the cached template and process header"/>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <param description="cached object" type="object" variable="$cached">
+          <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <param description="flag if called because cache update" type="boolean" variable="$update"/>
+        <return description="true or false if the cached content does not exist" type="boolean"/>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+      <parameter name="cached" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+      <parameter name="update" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="writeCachedContent" start="67" end="67" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Write the rendered template output to cache"/>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <param description="content to cache" type="string" variable="$content"/>
+        <return description="success" type="boolean"/>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+      <parameter name="content" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="readCachedContent" start="76" end="76" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Read cached template from cache"/>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <return description="content" type="string"/>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+    </method>
+    <method name="getCachedContent" start="85" end="94" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return cached content"/>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <return type="object">
+          <type full="null|string" namespace="" name="null|string"/>
+        </return>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+    </method>
+    <method name="clearAll" start="104" end="104" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Empty cache"/>
+        <param description="Smarty object" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="expiration time (number of seconds, not timestamp)" type="integer" variable="$exp_time"/>
+        <return description="number of cache files deleted" type="integer"/>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="clear" start="117" end="117" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Empty cache for a specific template"/>
+        <param description="Smarty object" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="template name" type="string" variable="$resource_name"/>
+        <param description="cache id" type="string" variable="$cache_id"/>
+        <param description="compile id" type="string" variable="$compile_id"/>
+        <param description="expiration time (number of seconds, not timestamp)" type="integer" variable="$exp_time"/>
+        <return description="number of cache files deleted" type="integer"/>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="resource_name" byreference="false" type="{unknown}"/>
+      <parameter name="cache_id" byreference="false" type="{unknown}"/>
+      <parameter name="compile_id" byreference="false" type="{unknown}"/>
+      <parameter name="exp_time" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="locked" start="125" end="139" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param type="object" variable="$cached">
+          <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <return type="object">
+          <type full="bool|null" namespace="" name="bool|null"/>
+        </return>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="cached" byreference="false" type="object">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+      <inline>
+        <comment value="theoretically locking_timeout should be checked against time_limit (max_execution_time)" line="127"/>
+      </inline>
+    </method>
+    <method name="hasLock" start="149" end="153" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check is cache is locked for this template"/>
+        <param type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param type="object" variable="$cached">
+          <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="cached" byreference="false" type="object">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+      <inline>
+        <comment value="check if lock exists" line="151"/>
+      </inline>
+    </method>
+    <method name="acquireLock" start="163" end="167" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Lock cache for this template"/>
+        <param type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param type="object" variable="$cached">
+          <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="cached" byreference="false" type="object">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+      <inline>
+        <comment value="create lock" line="165"/>
+      </inline>
+    </method>
+    <method name="releaseLock" start="177" end="181" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Unlock cache for this template"/>
+        <param type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param type="object" variable="$cached">
+          <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+        </param>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="cached" byreference="false" type="object">
+        <type full="Smarty_Template_Cached" namespace="" name="Smarty_Template_Cached"/>
+      </parameter>
+      <inline>
+        <comment value="release lock" line="179"/>
+      </inline>
+    </method>
+    <method name="load" start="192" end="218" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Load Cache Resource Handler"/>
+        <param description="Smarty object" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="name of the cache resource" type="string" variable="$type"/>
+        <throws type="object">
+          <type full="SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+        <return description="Cache Resource Handler" type="object">
+          <type full="Smarty_CacheResource" namespace="" name="Smarty_CacheResource"/>
+        </return>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="type" byreference="false" type="{unknown}" default="NULL"/>
+      <inline>
+        <comment value="try smarty's cache" line="197"/>
+        <comment value="try registered resource" line="201"/>
+        <comment value="try sysplugins dir" line="206"/>
+        <comment value="try plugins dir" line="211"/>
+        <comment value="give up" line="216"/>
+      </inline>
+    </method>
+  </parent>
+</class>

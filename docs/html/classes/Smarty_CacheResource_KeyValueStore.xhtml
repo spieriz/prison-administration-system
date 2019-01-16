@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_CacheResource_KeyValueStore</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_CacheResource_KeyValueStore</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_cacheresource_keyvaluestore.php.xhtml#line31">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_CacheResource_KeyValueStore</h1>
+        <h4>Smarty Cache Handler Base for Key/Value Storage Implementations This class implements the functionality required to use simple key/value stores for hierarchical cache groups. key/value stores like memcache or APC do not support wildcards in keys, therefore a cache group cannot be cleared like "a|*" - which is no problem to filesystem and RDBMS implementations.</h4>
+        <p>This implementation is based on the concept of invalidation. While one specific cache<br/>can be identified and cleared, any range of caches cannot be identified. For this reason<br/>each level of the cache group hierarchy can have its own value in the store. These values<br/>are nothing but microtimes, telling us when a particular cache group was cleared for the<br/>last time. These keys are evaluated for every cache read to determine if the cache has<br/>been invalidated since it was created and should hence be treated as inexistent.<br/>Although deep hierarchies are possible, they are not recommended. Try to keep your<br/>cache groups as shallow as possible. Anything up 3-5 parents should be ok. So<br/>»a|b|c« is a good depth where »a|b|c|d|e|f|g|h|i|j|k« isn't. Try to join correlating<br/>cache groups: if your cache groups look somewhat like »a|b|$page|$items|$whatever«<br/>consider using »a|b|c|$page-$items-$whatever« instead.</p>
+        <ul>
+          <li>Author: Rodney Rehm</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_CacheResource_KeyValueStore
+                extends <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource.xhtml">Smarty_CacheResource</a>
+            {<br/><ul class="none"><li>// members</li><li>protected array <a href="#members">$contents</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$timestamps</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_CacheResource">Smarty_CacheResource</span></li><li>protected static array <a href="#members">$sysplugins</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/populate.xhtml">populate</a>()
+                    </li><li>public void <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/populateTimestamp.xhtml">populateTimestamp</a>()
+                    </li><li>public boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/process.xhtml">process</a>()
+                    </li><li>public boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/writeCachedContent.xhtml">writeCachedContent</a>()
+                    </li><li>public string|false <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/readCachedContent.xhtml">readCachedContent</a>()
+                    </li><li>public integer <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/clearAll.xhtml">clearAll</a>()
+                    </li><li>public int <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/clear.xhtml">clear</a>()
+                    </li><li>protected string <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/getTemplateUid.xhtml">getTemplateUid</a>()
+                    </li><li>protected string <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/sanitize.xhtml">sanitize</a>()
+                    </li><li>protected boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/fetch.xhtml">fetch</a>()
+                    </li><li>protected void <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/addMetaTimestamp.xhtml">addMetaTimestamp</a>()
+                    </li><li>protected float <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/getMetaTimestamp.xhtml">getMetaTimestamp</a>()
+                    </li><li>protected void <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/invalidate.xhtml">invalidate</a>()
+                    </li><li>protected float <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/getLatestInvalidationTimestamp.xhtml">getLatestInvalidationTimestamp</a>()
+                    </li><li>protected array <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/listInvalidationKeys.xhtml">listInvalidationKeys</a>()
+                    </li><li>public boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/hasLock.xhtml">hasLock</a>()
+                    </li><li>public bool|void <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/acquireLock.xhtml">acquireLock</a>()
+                    </li><li>public bool|void <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/releaseLock.xhtml">releaseLock</a>()
+                    </li><li>protected abstract array <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/read.xhtml">read</a>()
+                    </li><li>protected abstract boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/write.xhtml">write</a>()
+                    </li><li>protected abstract boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/delete.xhtml">delete</a>()
+                    </li><li>protected boolean <a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/purge.xhtml">purge</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_CacheResource">Smarty_CacheResource</span></li><li>public abstract void <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/populate.xhtml">populate</a>()
+                        </li><li>public abstract void <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/populateTimestamp.xhtml">populateTimestamp</a>()
+                        </li><li>public abstract boolean <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/process.xhtml">process</a>()
+                        </li><li>public abstract boolean <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/writeCachedContent.xhtml">writeCachedContent</a>()
+                        </li><li>public abstract string <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/readCachedContent.xhtml">readCachedContent</a>()
+                        </li><li>public null|string <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/getCachedContent.xhtml">getCachedContent</a>()
+                        </li><li>public abstract integer <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/clearAll.xhtml">clearAll</a>()
+                        </li><li>public abstract integer <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/clear.xhtml">clear</a>()
+                        </li><li>public bool|null <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/locked.xhtml">locked</a>()
+                        </li><li>public bool <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/hasLock.xhtml">hasLock</a>()
+                        </li><li>public bool <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/acquireLock.xhtml">acquireLock</a>()
+                        </li><li>public bool <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/releaseLock.xhtml">releaseLock</a>()
+                        </li><li>public static Smarty_CacheResource <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/load.xhtml">load</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource.xhtml">Smarty_CacheResource</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="contents"><strong>$contents</strong>
+                —
+                array<br/><span class="indent">cache for contents</span></li>
+            <li id="sysplugins"><strong>$sysplugins</strong>
+                —
+                array<br/><span class="indent">resource types provided by the core</span></li>
+            <li id="timestamps"><strong>$timestamps</strong>
+                —
+                array<br/><span class="indent">cache for timestamps</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="addMetaTimestamp"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/addMetaTimestamp.xhtml">addMetaTimestamp()</a>
+                — Add current microtime to the beginning of $cache_content {@internal the header uses 8 Bytes, the first 4 Bytes are the seconds, the second 4 Bytes are the microseconds}}</li>
+            <li id="delete"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/delete.xhtml">delete()</a>
+                — Remove values from cache</li>
+            <li id="fetch"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/fetch.xhtml">fetch()</a>
+                — Fetch and prepare a cache object.</li>
+            <li id="getLatestInvalidationTimestamp"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/getLatestInvalidationTimestamp.xhtml">getLatestInvalidationTimestamp()</a>
+                — Determine the latest timestamp known to the invalidation chain</li>
+            <li id="getMetaTimestamp"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/getMetaTimestamp.xhtml">getMetaTimestamp()</a>
+                — Extract the timestamp the $content was cached</li>
+            <li id="getTemplateUid"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/getTemplateUid.xhtml">getTemplateUid()</a>
+                — Get template's unique ID</li>
+            <li id="invalidate"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/invalidate.xhtml">invalidate()</a>
+                — Invalidate CacheID</li>
+            <li id="listInvalidationKeys"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/listInvalidationKeys.xhtml">listInvalidationKeys()</a>
+                — Translate a CacheID into the list of applicable InvalidationKeys.</li>
+            <li id="purge"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/purge.xhtml">purge()</a>
+                — Remove *all* values from cache</li>
+            <li id="read"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/read.xhtml">read()</a>
+                — Read values for a set of keys from cache</li>
+            <li id="sanitize"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/sanitize.xhtml">sanitize()</a>
+                — Sanitize CacheID components</li>
+            <li id="write"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/write.xhtml">write()</a>
+                — Save values for a set of keys to cache</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="acquireLock"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/acquireLock.xhtml">acquireLock()</a>
+                — Lock cache for this template</li>
+            <li id="clear"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/clear.xhtml">clear()</a>
+                — Empty cache for a specific template {@internal the $exp_time argument is ignored altogether}}</li>
+            <li id="clearAll"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/clearAll.xhtml">clearAll()</a>
+                — Empty cache {@internal the $exp_time argument is ignored altogether }}</li>
+            <li id="hasLock"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/hasLock.xhtml">hasLock()</a>
+                — Check is cache is locked for this template</li>
+            <li id="populate"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/populate.xhtml">populate()</a>
+                — populate Cached Object with meta data from Resource</li>
+            <li id="populateTimestamp"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/populateTimestamp.xhtml">populateTimestamp()</a>
+                — populate Cached Object with timestamp and exists from Resource</li>
+            <li id="process"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/process.xhtml">process()</a>
+                — Read the cached template and process the header</li>
+            <li id="readCachedContent"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/readCachedContent.xhtml">readCachedContent()</a>
+                — Read cached template from cache</li>
+            <li id="releaseLock"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/releaseLock.xhtml">releaseLock()</a>
+                — Unlock cache for this template</li>
+            <li id="writeCachedContent"><a title="Smarty_CacheResource_KeyValueStore" href="../classes/Smarty_CacheResource_KeyValueStore/writeCachedContent.xhtml">writeCachedContent()</a>
+                — Write the rendered template output to cache</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource.xhtml">Smarty_CacheResource</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="acquireLock"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/acquireLock.xhtml">acquireLock()</a>
+                — Lock cache for this template</li>
+            <li id="clear"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/clear.xhtml">clear()</a>
+                — Empty cache for a specific template</li>
+            <li id="clearAll"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/clearAll.xhtml">clearAll()</a>
+                — Empty cache</li>
+            <li id="getCachedContent"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/getCachedContent.xhtml">getCachedContent()</a>
+                — Return cached content</li>
+            <li id="hasLock"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/hasLock.xhtml">hasLock()</a>
+                — Check is cache is locked for this template</li>
+            <li id="load"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/load.xhtml">load()</a>
+                — Load Cache Resource Handler</li>
+            <li id="locked">
+              <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/locked.xhtml">locked()</a>
+            </li>
+            <li id="populate"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/populate.xhtml">populate()</a>
+                — populate Cached Object with meta data from Resource</li>
+            <li id="populateTimestamp"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/populateTimestamp.xhtml">populateTimestamp()</a>
+                — populate Cached Object with timestamp and exists from Resource</li>
+            <li id="process"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/process.xhtml">process()</a>
+                — Read the cached template and process header</li>
+            <li id="readCachedContent"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/readCachedContent.xhtml">readCachedContent()</a>
+                — Read cached template from cache</li>
+            <li id="releaseLock"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/releaseLock.xhtml">releaseLock()</a>
+                — Unlock cache for this template</li>
+            <li id="writeCachedContent"><a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource/writeCachedContent.xhtml">writeCachedContent()</a>
+                — Write the rendered template output to cache</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

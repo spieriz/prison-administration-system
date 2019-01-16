@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Undefined" namespace="" name="Smarty_Internal_Undefined" abstract="false" final="false" start="12" end="67">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_undefined.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_undefined.php" size="1766" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="6eb05bfd022c8dc71e51ea4de3bdf79336254ba6" relative="includes/libs/Smarty/sysplugins/smarty_internal_undefined.php"/>
+  <docblock>
+    <description compact="Smarty Internal Undefined">Class to handle undefined method calls or calls to obsolete runtime extensions</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="class" default="NULL" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Name of undefined extension class"/>
+      <var type="object">
+        <type full="string|null" namespace="" name="string|null"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="26" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Smarty_Internal_Undefined constructor."/>
+      <param description="name of undefined extension class" type="object" variable="$class">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}" default="NULL"/>
+  </constructor>
+  <method name="decodeProperties" start="40" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Wrapper for obsolete class Smarty_Internal_Runtime_ValidateCompiled"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="special template properties" type="array" variable="$properties"/>
+      <param description="flag if called from cache file" type="object" variable="$cache">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return description="false" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="properties" byreference="false" type="{unknown}"/>
+    <parameter name="cache" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="__call" start="59" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Call error handler for undefined method"/>
+      <param description="unknown method-name" type="string" variable="$name"/>
+      <param description="argument array" type="array" variable="$args"/>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Security</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Security</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_security.php.xhtml#line22">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Security</h1>
+        <h4>This class does contain the security settings</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Security
+            {<br/><ul class="none"><li>// members</li><li>public integer <a href="#members">$php_handling</a> =
+                        Smarty::PHP_PASSTHRU;
+                    </li><li>public array <a href="#members">$secure_dir</a> =
+                        ;
+                    </li><li>public array <a href="#members">$trusted_dir</a> =
+                        ;
+                    </li><li>public array <a href="#members">$trusted_uri</a> =
+                        ;
+                    </li><li>public array <a href="#members">$trusted_constants</a> =
+                        ;
+                    </li><li>public array <a href="#members">$static_classes</a> =
+                        ;
+                    </li><li>public array <a href="#members">$trusted_static_methods</a> =
+                        ;
+                    </li><li>public array <a href="#members">$trusted_static_properties</a> =
+                        ;
+                    </li><li>public array <a href="#members">$php_functions</a> =
+                        ;
+                    </li><li>public array <a href="#members">$php_modifiers</a> =
+                        ;
+                    </li><li>public array <a href="#members">$allowed_tags</a> =
+                        ;
+                    </li><li>public array <a href="#members">$disabled_tags</a> =
+                        ;
+                    </li><li>public array <a href="#members">$allowed_modifiers</a> =
+                        ;
+                    </li><li>public array <a href="#members">$disabled_modifiers</a> =
+                        ;
+                    </li><li>public array <a href="#members">$disabled_special_smarty_vars</a> =
+                        ;
+                    </li><li>public array <a href="#members">$streams</a> =
+                        ;
+                    </li><li>public boolean <a href="#members">$allow_constants</a> =
+                        true;
+                    </li><li>public boolean <a href="#members">$allow_super_globals</a> =
+                        true;
+                    </li><li>public integer <a href="#members">$max_template_nesting</a> =
+                        0;
+                    </li><li>private integer <a href="#members">$_current_template_nesting</a> =
+                        0;
+                    </li><li>protected array <a href="#members">$_resource_dir</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$_template_dir</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$_config_dir</a> =
+                        ;
+                    </li><li>protected array <a href="#members">$_secure_dir</a> =
+                        ;
+                    </li><li>protected  <a href="#members">$_php_resource_dir</a> =
+                        NULL;
+                    </li><li>protected  <a href="#members">$_trusted_dir</a> =
+                        NULL;
+                    </li><li>protected <span title="bool">bool</span> <a href="#members">$_include_path_status</a> =
+                        false;
+                    </li><li>protected array <a href="#members">$_include_dir</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Security" href="../classes/Smarty_Security/__construct.xhtml">__construct</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedPhpFunction.xhtml">isTrustedPhpFunction</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedStaticClass.xhtml">isTrustedStaticClass</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedStaticClassAccess.xhtml">isTrustedStaticClassAccess</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedPhpModifier.xhtml">isTrustedPhpModifier</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedTag.xhtml">isTrustedTag</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedSpecialSmartyVar.xhtml">isTrustedSpecialSmartyVar</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedModifier.xhtml">isTrustedModifier</a>()
+                    </li><li>public bool <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedConstant.xhtml">isTrustedConstant</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedStream.xhtml">isTrustedStream</a>()
+                    </li><li>public bool <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedResourceDir.xhtml">isTrustedResourceDir</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedUri.xhtml">isTrustedUri</a>()
+                    </li><li>public boolean <a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedPHPDir.xhtml">isTrustedPHPDir</a>()
+                    </li><li>private void <a title="Smarty_Security" href="../classes/Smarty_Security/_updateResourceDir.xhtml">_updateResourceDir</a>()
+                    </li><li>private array|bool <a title="Smarty_Security" href="../classes/Smarty_Security/_checkDir.xhtml">_checkDir</a>()
+                    </li><li>public static Smarty <a title="Smarty_Security" href="../classes/Smarty_Security/enableSecurity.xhtml">enableSecurity</a>()
+                    </li><li>public void <a title="Smarty_Security" href="../classes/Smarty_Security/startTemplate.xhtml">startTemplate</a>()
+                    </li><li>public void <a title="Smarty_Security" href="../classes/Smarty_Security/endTemplate.xhtml">endTemplate</a>()
+                    </li><li>public void <a title="Smarty_Security" href="../classes/Smarty_Security/registerCallBacks.xhtml">registerCallBacks</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="_current_template_nesting"><strong>$_current_template_nesting</strong>
+                —
+                int<br/><span class="indent">current template nesting level</span></li>
+          </ul>
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="_config_dir"><strong>$_config_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $config_dir lookup</span></li>
+            <li id="_include_dir"><strong>$_include_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $_include_array lookup</span></li>
+            <li id="_include_path_status"><strong>$_include_path_status</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Cache for include path status</span></li>
+            <li id="_php_resource_dir"><strong>$_php_resource_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $php_resource_dir lookup</span></li>
+            <li id="_resource_dir"><strong>$_resource_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $resource_dir lookup</span></li>
+            <li id="_secure_dir"><strong>$_secure_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $secure_dir lookup</span></li>
+            <li id="_template_dir"><strong>$_template_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $template_dir lookup</span></li>
+            <li id="_trusted_dir"><strong>$_trusted_dir</strong>
+                —
+                array<br/><span class="indent">Cache for $trusted_dir lookup</span></li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="allow_constants"><strong>$allow_constants</strong>
+                —
+                boolean<br/><span class="indent">+ flag if constants can be accessed from template</span></li>
+            <li id="allow_super_globals"><strong>$allow_super_globals</strong>
+                —
+                boolean<br/><span class="indent">+ flag if super globals can be accessed from template</span></li>
+            <li id="allowed_modifiers"><strong>$allowed_modifiers</strong>
+                —
+                array<br/><span class="indent">This is an array of allowed modifier plugins.</span></li>
+            <li id="allowed_tags"><strong>$allowed_tags</strong>
+                —
+                array<br/><span class="indent">This is an array of allowed tags.</span></li>
+            <li id="disabled_modifiers"><strong>$disabled_modifiers</strong>
+                —
+                array<br/><span class="indent">This is an array of disabled modifier plugins.</span></li>
+            <li id="disabled_special_smarty_vars"><strong>$disabled_special_smarty_vars</strong>
+                —
+                array<br/><span class="indent">This is an array of disabled special $smarty variables.</span></li>
+            <li id="disabled_tags"><strong>$disabled_tags</strong>
+                —
+                array<br/><span class="indent">This is an array of disabled tags.</span></li>
+            <li id="max_template_nesting"><strong>$max_template_nesting</strong>
+                —
+                int<br/><span class="indent">max template nesting level</span></li>
+            <li id="php_functions"><strong>$php_functions</strong>
+                —
+                array<br/><span class="indent">This is an array of trusted PHP functions.</span></li>
+            <li id="php_handling"><strong>$php_handling</strong>
+                —
+                integer<br/><span class="indent">This determines how Smarty handles "&lt;?php ... ?&gt;" tags in templates.</span></li>
+            <li id="php_modifiers"><strong>$php_modifiers</strong>
+                —
+                array<br/><span class="indent">This is an array of trusted PHP modifiers.</span></li>
+            <li id="secure_dir"><strong>$secure_dir</strong>
+                —
+                array<br/><span class="indent">This is the list of template directories that are considered secure.</span></li>
+            <li id="static_classes"><strong>$static_classes</strong>
+                —
+                array<br/><span class="indent">This is an array of trusted static classes.</span></li>
+            <li id="streams"><strong>$streams</strong>
+                —
+                array<br/><span class="indent">This is an array of trusted streams.</span></li>
+            <li id="trusted_constants"><strong>$trusted_constants</strong>
+                —
+                array<br/><span class="indent">List of trusted constants names</span></li>
+            <li id="trusted_dir"><strong>$trusted_dir</strong>
+                —
+                array<br/><span class="indent">This is an array of directories where trusted php scripts reside.</span></li>
+            <li id="trusted_static_methods"><strong>$trusted_static_methods</strong>
+                —
+                array<br/><span class="indent">This is an nested array of trusted classes and static methods.</span></li>
+            <li id="trusted_static_properties"><strong>$trusted_static_properties</strong>
+                —
+                array<br/><span class="indent">This is an array of trusted static properties.</span></li>
+            <li id="trusted_uri"><strong>$trusted_uri</strong>
+                —
+                array<br/><span class="indent">List of regular expressions (PCRE) that include trusted URIs</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="_checkDir"><a title="Smarty_Security" href="../classes/Smarty_Security/_checkDir.xhtml">_checkDir()</a>
+                — Check if file is inside a valid directory</li>
+            <li id="_updateResourceDir"><a title="Smarty_Security" href="../classes/Smarty_Security/_updateResourceDir.xhtml">_updateResourceDir()</a>
+                — Remove old directories and its sub folders, add new directories</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Smarty_Security" href="../classes/Smarty_Security/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="enableSecurity"><a title="Smarty_Security" href="../classes/Smarty_Security/enableSecurity.xhtml">enableSecurity()</a>
+                — Loads security class and enables security</li>
+            <li id="endTemplate"><a title="Smarty_Security" href="../classes/Smarty_Security/endTemplate.xhtml">endTemplate()</a>
+                — Exit template processing</li>
+            <li id="isTrustedConstant"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedConstant.xhtml">isTrustedConstant()</a>
+                — Check if constants are enabled or trusted</li>
+            <li id="isTrustedModifier"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedModifier.xhtml">isTrustedModifier()</a>
+                — Check if modifier plugin is trusted.</li>
+            <li id="isTrustedPHPDir"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedPHPDir.xhtml">isTrustedPHPDir()</a>
+                — Check if directory of file resource is trusted.</li>
+            <li id="isTrustedPhpFunction"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedPhpFunction.xhtml">isTrustedPhpFunction()</a>
+                — Check if PHP function is trusted.</li>
+            <li id="isTrustedPhpModifier"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedPhpModifier.xhtml">isTrustedPhpModifier()</a>
+                — Check if PHP modifier is trusted.</li>
+            <li id="isTrustedResourceDir"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedResourceDir.xhtml">isTrustedResourceDir()</a>
+                — Check if directory of file resource is trusted.</li>
+            <li id="isTrustedSpecialSmartyVar"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedSpecialSmartyVar.xhtml">isTrustedSpecialSmartyVar()</a>
+                — Check if special $smarty variable is trusted.</li>
+            <li id="isTrustedStaticClass"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedStaticClass.xhtml">isTrustedStaticClass()</a>
+                — Check if static class is trusted.</li>
+            <li id="isTrustedStaticClassAccess"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedStaticClassAccess.xhtml">isTrustedStaticClassAccess()</a>
+                — Check if static class method/property is trusted.</li>
+            <li id="isTrustedStream"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedStream.xhtml">isTrustedStream()</a>
+                — Check if stream is trusted.</li>
+            <li id="isTrustedTag"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedTag.xhtml">isTrustedTag()</a>
+                — Check if tag is trusted.</li>
+            <li id="isTrustedUri"><a title="Smarty_Security" href="../classes/Smarty_Security/isTrustedUri.xhtml">isTrustedUri()</a>
+                — Check if URI (e.g. {fetch} or {html_image}) is trusted To simplify things, isTrustedUri() resolves all input to "{$PROTOCOL}://{$HOSTNAME}".</li>
+            <li id="registerCallBacks"><a title="Smarty_Security" href="../classes/Smarty_Security/registerCallBacks.xhtml">registerCallBacks()</a>
+                — Register callback functions call at start/end of template rendering</li>
+            <li id="startTemplate"><a title="Smarty_Security" href="../classes/Smarty_Security/startTemplate.xhtml">startTemplate()</a>
+                — Start template processing</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

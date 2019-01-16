@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_GetIncludePath" namespace="" name="Smarty_Internal_Runtime_GetIncludePath" abstract="false" final="false" start="16" end="181">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_getincludepath.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_getincludepath.php" size="5192" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="59f804f584c50e6a51b8a7b423f5adc025e96d23" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_getincludepath.php"/>
+  <docblock>
+    <description compact="Smarty Internal Read Include Path Class"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+  </docblock>
+  <member name="_include_path" default="''" type="string" visibility="public" static="false" line="23">
+    <docblock>
+      <description compact="include path cache"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_include_dirs" default="" type="array" visibility="public" static="false" line="30">
+    <docblock>
+      <description compact="include path directory cache"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_user_dirs" default="" type="array" visibility="public" static="false" line="37">
+    <docblock>
+      <description compact="include path directory cache"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="isFile" default="" type="array" visibility="public" static="false" line="44">
+    <docblock>
+      <description compact="stream cache"/>
+      <var type="array" of="object">
+        <type full="string[]" namespace="" name="string[]"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="isPath" default="" type="array" visibility="public" static="false" line="51">
+    <docblock>
+      <description compact="stream cache"/>
+      <var type="array" of="string"/>
+    </docblock>
+  </member>
+  <member name="number" default="" type="array" visibility="public" static="false" line="58">
+    <docblock>
+      <description compact="stream cache"/>
+      <var type="array" of="int"/>
+    </docblock>
+  </member>
+  <member name="_has_stream_include" default="NULL" visibility="public" static="false" line="65">
+    <docblock>
+      <description compact="status cache"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="counter" default="0" type="integer" visibility="public" static="false" line="72">
+    <docblock>
+      <description compact="Number for array index"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="isNewIncludePath" start="81" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if include path was updated"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+  </method>
+  <method name="getIncludePathDirs" start="105" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="return array with include path directories"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+  </method>
+  <method name="getIncludePath" start="120" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return full file path from PHP include_path"/>
+      <param type="array" variable="$dirs" of="string"/>
+      <param type="string" variable="$file"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <return description="full filepath or false" type="object">
+        <type full="bool|string" namespace="" name="bool|string"/>
+      </return>
+    </docblock>
+    <parameter name="dirs" byreference="false" type="{unknown}"/>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <inline>
+      <comment value="if (!(isset($this-&gt;_has_stream_include) ? $this-&gt;_has_stream_include : $this-&gt;_has_stream_include = false)) {" line="122"/>
+      <comment value="try PHP include_path" line="128"/>
+    </inline>
+  </method>
+</class>

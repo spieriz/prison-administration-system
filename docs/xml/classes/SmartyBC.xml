@@ -1,0 +1,1799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="SmartyBC" namespace="" name="SmartyBC" abstract="false" final="false" start="38" end="477">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty" file="SmartyBC.class.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/SmartyBC.class.php" size="13111" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="506d7a6abe6a0137e885329c0b960545f11b3fe9" relative="includes/libs/Smarty/SmartyBC.class.php"/>
+  <docblock>
+    <description compact="Smarty Backward Compatibility Wrapper Class"/>
+    <package value="Smarty"/>
+  </docblock>
+  <extends full="Smarty" namespace="" name="Smarty"/>
+  <member name="_version" default="" type="{unknown}" constant="self::SMARTY_VERSION" visibility="public" static="false" line="45">
+    <docblock>
+      <description compact="Smarty 2 BC"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="trusted_dir" default="" type="array" visibility="public" static="false" line="52">
+    <docblock>
+      <description compact="This is an array of directories where trusted php scripts reside."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="57" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize new SmartyBC object"/>
+    </docblock>
+  </constructor>
+  <method name="assign_by_ref" start="68" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="wrapper for assign_by_ref"/>
+      <param description="the template variable name" type="string" variable="$tpl_var"/>
+      <param description="&amp;$value the referenced value to assign" type="mixed"/>
+    </docblock>
+    <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="append_by_ref" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="wrapper for append_by_ref"/>
+      <param description="the template variable name" type="string" variable="$tpl_var"/>
+      <param description="&amp;$value the referenced value to append" type="mixed"/>
+      <param description="flag if array elements shall be merged" type="boolean" variable="$merge"/>
+    </docblock>
+    <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="true" type="{unknown}"/>
+    <parameter name="merge" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="clear_assign" start="90" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clear the given assigned template variable."/>
+      <param description="the template variable to clear" type="string" variable="$tpl_var"/>
+    </docblock>
+    <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_function" start="105" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers custom function to be used in templates"/>
+      <param description="the name of the template function" type="string" variable="$function"/>
+      <param description="the name of the PHP function to register" type="string" variable="$function_impl"/>
+      <param type="object" variable="$cacheable">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param type="mixed" variable="$cache_attrs"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+    <parameter name="function_impl" byreference="false" type="{unknown}"/>
+    <parameter name="cacheable" byreference="false" type="boolean" default="true"/>
+    <parameter name="cache_attrs" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="unregister_function" start="115" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister custom function"/>
+      <param description="name of template function" type="string" variable="$function"/>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_object" start="132" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers object to be used in templates"/>
+      <param description="name of template object" type="string" variable="$object"/>
+      <param description="the referenced PHP object to register" type="object" variable="$object_impl"/>
+      <param description="list of allowed methods (empty = all)" type="array" variable="$allowed"/>
+      <param description="smarty argument format, else traditional" type="boolean" variable="$smarty_args"/>
+      <param description="list of methods that are block format" type="array" variable="$block_methods"/>
+      <throws type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+      <internal>param array $block_functs list of methods that are block format</internal>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="object_impl" byreference="false" type="{unknown}"/>
+    <parameter name="allowed" byreference="false" type="array" default=""/>
+    <parameter name="smarty_args" byreference="false" type="boolean" default="true"/>
+    <parameter name="block_methods" byreference="false" type="array" default=""/>
+  </method>
+  <method name="unregister_object" start="149" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister object"/>
+      <param description="name of template object" type="string" variable="$object"/>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_block" start="164" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers block function to be used in templates"/>
+      <param description="name of template block" type="string" variable="$block"/>
+      <param description="PHP function to register" type="string" variable="$block_impl"/>
+      <param type="object" variable="$cacheable">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param type="mixed" variable="$cache_attrs"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="block" byreference="false" type="{unknown}"/>
+    <parameter name="block_impl" byreference="false" type="{unknown}"/>
+    <parameter name="cacheable" byreference="false" type="boolean" default="true"/>
+    <parameter name="cache_attrs" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="unregister_block" start="174" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister block function"/>
+      <param description="name of template function" type="string" variable="$block"/>
+    </docblock>
+    <parameter name="block" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_compiler_function" start="188" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers compiler function"/>
+      <param description="name of template function" type="string" variable="$function"/>
+      <param description="name of PHP function to register" type="string" variable="$function_impl"/>
+      <param type="object" variable="$cacheable">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+    <parameter name="function_impl" byreference="false" type="{unknown}"/>
+    <parameter name="cacheable" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="unregister_compiler_function" start="198" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister compiler function"/>
+      <param description="name of template function" type="string" variable="$function"/>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_modifier" start="211" end="214" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers modifier to be used in templates"/>
+      <param description="name of template modifier" type="string" variable="$modifier"/>
+      <param description="name of PHP function to register" type="string" variable="$modifier_impl"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="modifier" byreference="false" type="{unknown}"/>
+    <parameter name="modifier_impl" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="unregister_modifier" start="221" end="224" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister modifier"/>
+      <param description="name of template modifier" type="string" variable="$modifier"/>
+    </docblock>
+    <parameter name="modifier" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_resource" start="232" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a resource to fetch a template"/>
+      <param description="name of resource" type="string" variable="$type"/>
+      <param description="array of functions to handle resource" type="array" variable="$functions"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="functions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="unregister_resource" start="242" end="245" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister a resource"/>
+      <param description="name of resource" type="string" variable="$type"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_prefilter" start="255" end="258" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a prefilter function to apply to a template before compiling"/>
+      <param type="object" variable="$function">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="unregister_prefilter" start="265" end="268" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister a prefilter function"/>
+      <param type="object" variable="$function">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_postfilter" start="278" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a postfilter function to apply to a compiled template after compilation"/>
+      <param type="object" variable="$function">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="unregister_postfilter" start="288" end="291" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister a postfilter function"/>
+      <param type="object" variable="$function">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="register_outputfilter" start="301" end="304" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers an output filter function to apply to a template output"/>
+      <param type="object" variable="$function">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="unregister_outputfilter" start="311" end="314" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unregister an outputfilter function"/>
+      <param type="object" variable="$function">
+        <type full="callable" namespace="" name="callable"/>
+      </param>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="load_filter" start="324" end="327" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="load a filter of specified type and name"/>
+      <param description="filter type" type="string" variable="$type"/>
+      <param description="filter name" type="string" variable="$name"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clear_cache" start="339" end="342" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clear cached content for the given template and cache id"/>
+      <param description="name of template file" type="string" variable="$tpl_file"/>
+      <param description="name of cache_id" type="string" variable="$cache_id"/>
+      <param description="name of compile_id" type="string" variable="$compile_id"/>
+      <param description="expiration time" type="string" variable="$exp_time"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="tpl_file" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="clear_all_cache" start="351" end="354" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clear the entire contents of cache (all templates)"/>
+      <param description="expire time" type="string" variable="$exp_time"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="is_cached" start="367" end="370" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="test to see if valid cache exists for this template"/>
+      <param description="name of template file" type="string" variable="$tpl_file"/>
+      <param type="string" variable="$cache_id"/>
+      <param type="string" variable="$compile_id"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl_file" byreference="false" type="{unknown}"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="clear_all_assign" start="375" end="378" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clear all the assigned template variables."/>
+    </docblock>
+  </method>
+  <method name="clear_compiled_tpl" start="391" end="394" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clears compiled version of specified template resource, or all compiled template files if one is not specified.">This function is for advanced use only, not normally needed.</description>
+      <param type="string" variable="$tpl_file"/>
+      <param type="string" variable="$compile_id"/>
+      <param type="string" variable="$exp_time"/>
+      <return description="results of {@link smarty_core_rm_auto()}" type="boolean"/>
+    </docblock>
+    <parameter name="tpl_file" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="template_exists" start="404" end="407" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether requested template exists."/>
+      <param type="string" variable="$tpl_file"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl_file" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get_template_vars" start="416" end="419" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array containing template variables"/>
+      <param type="string" variable="$name"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="get_config_vars" start="428" end="431" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array containing config variables"/>
+      <param type="string" variable="$name"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="config_load" start="440" end="443" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="load configuration values"/>
+      <param type="string" variable="$file"/>
+      <param type="string" variable="$section"/>
+      <param type="string" variable="$scope"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="section" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="scope" byreference="false" type="string" default="'global'"/>
+  </method>
+  <method name="get_registered_object" start="452" end="455" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="return a reference to a registered object"/>
+      <param type="string" variable="$name"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clear_config" start="462" end="465" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clear configuration values"/>
+      <param type="string" variable="$var"/>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="trigger_error" start="473" end="476" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="trigger Smarty error"/>
+      <param type="string" variable="$error_msg"/>
+      <param type="integer" variable="$error_type"/>
+    </docblock>
+    <parameter name="error_msg" byreference="false" type="{unknown}"/>
+    <parameter name="error_type" byreference="false" type="{unknown}" default="" constant="E_USER_WARNING"/>
+  </method>
+  <parent full="Smarty" namespace="" name="Smarty">
+    <extends full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    <constant type="{unknown}" name="SMARTY_VERSION" value="'3.1.33'">
+      <docblock>
+        <description compact="smarty version"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="SCOPE_LOCAL" value="1">
+      <docblock>
+        <description compact="define variable scopes"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="SCOPE_PARENT" value="2"/>
+    <constant type="{unknown}" name="SCOPE_TPL_ROOT" value="4"/>
+    <constant type="{unknown}" name="SCOPE_ROOT" value="8"/>
+    <constant type="{unknown}" name="SCOPE_SMARTY" value="16"/>
+    <constant type="{unknown}" name="SCOPE_GLOBAL" value="32"/>
+    <constant type="{unknown}" name="CACHING_OFF" value="0">
+      <docblock>
+        <description compact="define caching modes"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="CACHING_LIFETIME_CURRENT" value="1"/>
+    <constant type="{unknown}" name="CACHING_LIFETIME_SAVED" value="2"/>
+    <constant type="{unknown}" name="CLEAR_EXPIRED" value="1">
+      <docblock>
+        <description compact="define constant for clearing cache files be saved expiration dates"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="COMPILECHECK_OFF" value="0">
+      <docblock>
+        <description compact="define compile check modes"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="COMPILECHECK_ON" value="1"/>
+    <constant type="{unknown}" name="COMPILECHECK_CACHEMISS" value="2"/>
+    <constant type="{unknown}" name="DEBUG_OFF" value="0">
+      <docblock>
+        <description compact="define debug modes"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="DEBUG_ON" value="1"/>
+    <constant type="{unknown}" name="DEBUG_INDIVIDUAL" value="2"/>
+    <constant type="{unknown}" name="PHP_PASSTHRU" value="0">
+      <docblock>
+        <description compact="modes for handling of &quot;&lt;?php ... ?&gt;&quot; tags in templates."/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="PHP_QUOTE" value="1"/>
+    <constant type="{unknown}" name="PHP_REMOVE" value="2"/>
+    <constant type="{unknown}" name="PHP_ALLOW" value="3"/>
+    <constant type="{unknown}" name="FILTER_POST" value="'post'">
+      <docblock>
+        <description compact="filter types"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="FILTER_PRE" value="'pre'"/>
+    <constant type="{unknown}" name="FILTER_OUTPUT" value="'output'"/>
+    <constant type="{unknown}" name="FILTER_VARIABLE" value="'variable'"/>
+    <constant type="{unknown}" name="PLUGIN_FUNCTION" value="'function'">
+      <docblock>
+        <description compact="plugin types"/>
+      </docblock>
+    </constant>
+    <constant type="{unknown}" name="PLUGIN_BLOCK" value="'block'"/>
+    <constant type="{unknown}" name="PLUGIN_COMPILER" value="'compiler'"/>
+    <constant type="{unknown}" name="PLUGIN_MODIFIER" value="'modifier'"/>
+    <constant type="{unknown}" name="PLUGIN_MODIFIERCOMPILER" value="'modifiercompiler'"/>
+    <member name="global_tpl_vars" default="" type="array" visibility="public" static="true" line="173">
+      <docblock>
+        <description compact="assigned global tpl vars"/>
+      </docblock>
+    </member>
+    <member name="_MBSTRING" default="" type="{unknown}" constant="SMARTY_MBSTRING" visibility="public" static="true" line="178">
+      <docblock>
+        <description compact="Flag denoting if Multibyte String functions are available"/>
+      </docblock>
+    </member>
+    <member name="_CHARSET" default="" type="{unknown}" constant="SMARTY_RESOURCE_CHAR_SET" visibility="public" static="true" line="183">
+      <docblock>
+        <description compact="The character set to adhere to (e.g. &quot;UTF-8&quot;)"/>
+      </docblock>
+    </member>
+    <member name="_DATE_FORMAT" default="" type="{unknown}" constant="SMARTY_RESOURCE_DATE_FORMAT" visibility="public" static="true" line="189">
+      <docblock>
+        <description compact="The date format to be used internally (accepts date() and strftime())"/>
+      </docblock>
+    </member>
+    <member name="_UTF8_MODIFIER" default="'u'" type="string" visibility="public" static="true" line="194">
+      <docblock>
+        <description compact="Flag denoting if PCRE should run in UTF-8 mode"/>
+      </docblock>
+    </member>
+    <member name="_IS_WINDOWS" default="false" type="boolean" visibility="public" static="true" line="199">
+      <docblock>
+        <description compact="Flag denoting if operating system is windows"/>
+      </docblock>
+    </member>
+    <member name="auto_literal" default="true" type="boolean" visibility="public" static="false" line="206">
+      <docblock>
+        <description compact="auto literal on delimiters with whitespace"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="error_unassigned" default="false" type="boolean" visibility="public" static="false" line="213">
+      <docblock>
+        <description compact="display error on not assigned variables"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="use_include_path" default="false" type="boolean" visibility="public" static="false" line="220">
+      <docblock>
+        <description compact="look up relative file path in include_path"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="_templateDirNormalized" default="false" type="boolean" visibility="public" static="false" line="227">
+      <docblock>
+        <description compact="flag if template_dir is normalized"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_joined_template_dir" default="NULL" visibility="public" static="false" line="234">
+      <docblock>
+        <description compact="joined template directory string used in cache keys"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="_configDirNormalized" default="false" type="boolean" visibility="public" static="false" line="241">
+      <docblock>
+        <description compact="flag if config_dir is normalized"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_joined_config_dir" default="NULL" visibility="public" static="false" line="248">
+      <docblock>
+        <description compact="joined config directory string used in cache keys"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="default_template_handler_func" default="NULL" visibility="public" static="false" line="255">
+      <docblock>
+        <description compact="default template handler"/>
+        <var type="object">
+          <type full="callable" namespace="" name="callable"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="default_config_handler_func" default="NULL" visibility="public" static="false" line="262">
+      <docblock>
+        <description compact="default config handler"/>
+        <var type="object">
+          <type full="callable" namespace="" name="callable"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="default_plugin_handler_func" default="NULL" visibility="public" static="false" line="269">
+      <docblock>
+        <description compact="default plugin handler"/>
+        <var type="object">
+          <type full="callable" namespace="" name="callable"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_compileDirNormalized" default="false" type="boolean" visibility="public" static="false" line="276">
+      <docblock>
+        <description compact="flag if template_dir is normalized"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_pluginsDirNormalized" default="false" type="boolean" visibility="public" static="false" line="283">
+      <docblock>
+        <description compact="flag if plugins_dir is normalized"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_cacheDirNormalized" default="false" type="boolean" visibility="public" static="false" line="290">
+      <docblock>
+        <description compact="flag if template_dir is normalized"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="force_compile" default="false" type="boolean" visibility="public" static="false" line="297">
+      <docblock>
+        <description compact="force template compiling?"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="use_sub_dirs" default="false" type="boolean" visibility="public" static="false" line="304">
+      <docblock>
+        <description compact="use sub dirs for compiled/cached files?"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="allow_ambiguous_resources" default="false" type="boolean" visibility="public" static="false" line="311">
+      <docblock>
+        <description compact="allow ambiguous resources (that are made unique by the resource handler)"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="merge_compiled_includes" default="false" type="boolean" visibility="public" static="false" line="318">
+      <docblock>
+        <description compact="merge compiled includes"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="extends_recursion" default="true" type="boolean" visibility="public" static="false" line="327"/>
+    <member name="force_cache" default="false" type="boolean" visibility="public" static="false" line="334">
+      <docblock>
+        <description compact="force cache file creation"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="left_delimiter" default="&quot;{&quot;" type="string" visibility="public" static="false" line="341">
+      <docblock>
+        <description compact="template left-delimiter"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="right_delimiter" default="&quot;}&quot;" type="string" visibility="public" static="false" line="348">
+      <docblock>
+        <description compact="template right-delimiter"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="literals" default="" type="array" visibility="public" static="false" line="355">
+      <docblock>
+        <description compact="array of strings which shall be treated as literal by compiler"/>
+        <var description="string" type="array"/>
+      </docblock>
+    </member>
+    <member name="security_class" default="'Smarty_Security'" type="string" visibility="public" static="false" line="364">
+      <docblock>
+        <description compact="class name This should be instance of Smarty_Security."/>
+        <var type="string"/>
+        <see value="Smarty_Security"/>
+      </docblock>
+    </member>
+    <member name="security_policy" default="NULL" visibility="public" static="false" line="371">
+      <docblock>
+        <description compact="implementation of security class"/>
+        <var type="object">
+          <type full="Smarty_Security" namespace="" name="Smarty_Security"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="php_handling" default="" type="{unknown}" constant="self::PHP_PASSTHRU" visibility="public" static="false" line="378">
+      <docblock>
+        <description compact="controls handling of PHP-blocks"/>
+        <var type="integer"/>
+      </docblock>
+    </member>
+    <member name="allow_php_templates" default="false" type="boolean" visibility="public" static="false" line="385">
+      <docblock>
+        <description compact="controls if the php template file resource is allowed"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="debugging" default="false" type="boolean" visibility="public" static="false" line="393">
+      <docblock>
+        <description compact="debug mode Setting this to true enables the debug-console."/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="debugging_ctrl" default="'NONE'" type="string" visibility="public" static="false" line="404">
+      <docblock>
+        <description compact="This determines if debugging is enable-able from the browser.">&lt;ul&gt;
+ &lt;li&gt;NONE =&gt; no debugging control allowed&lt;/li&gt;
+ &lt;li&gt;URL =&gt; enable debugging when SMARTY_DEBUG is found in the URL.&lt;/li&gt;
+&lt;/ul&gt;</description>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="smarty_debug_id" default="'SMARTY_DEBUG'" type="string" visibility="public" static="false" line="413">
+      <docblock>
+        <description compact="Name of debugging URL-param.">Only used when $debugging_ctrl is set to 'URL'.
+The name of the URL-parameter that activates debugging.</description>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="debug_tpl" default="NULL" visibility="public" static="false" line="420">
+      <docblock>
+        <description compact="Path of debug template."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="error_reporting" default="NULL" visibility="public" static="false" line="427">
+      <docblock>
+        <description compact="When set, smarty uses this value as error_reporting-level."/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="config_overwrite" default="true" type="boolean" visibility="public" static="false" line="434">
+      <docblock>
+        <description compact="Controls whether variables with the same name overwrite each other."/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="config_booleanize" default="true" type="boolean" visibility="public" static="false" line="441">
+      <docblock>
+        <description compact="Controls whether config values of on/true/yes and off/false/no get converted to boolean."/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="config_read_hidden" default="false" type="boolean" visibility="public" static="false" line="448">
+      <docblock>
+        <description compact="Controls whether hidden config sections/vars are read from the file."/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="compile_locking" default="true" type="boolean" visibility="public" static="false" line="455">
+      <docblock>
+        <description compact="locking concurrent compiles"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="cache_locking" default="false" type="boolean" visibility="public" static="false" line="462">
+      <docblock>
+        <description compact="Controls whether cache resources should use locking mechanism"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="locking_timeout" default="10" type="integer" visibility="public" static="false" line="469">
+      <docblock>
+        <description compact="seconds to wait for acquiring a lock before ignoring the write lock"/>
+        <var type="float"/>
+      </docblock>
+    </member>
+    <member name="default_resource_type" default="'file'" type="string" visibility="public" static="false" line="477">
+      <docblock>
+        <description compact="resource type used if none given Must be an valid key of $registered_resources."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="caching_type" default="'file'" type="string" visibility="public" static="false" line="485">
+      <docblock>
+        <description compact="caching type Must be an element of $cache_resource_types."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="default_config_type" default="'file'" type="string" visibility="public" static="false" line="492">
+      <docblock>
+        <description compact="config type"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="cache_modified_check" default="false" type="boolean" visibility="public" static="false" line="499">
+      <docblock>
+        <description compact="check If-Modified-Since headers"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="registered_plugins" default="" type="array" visibility="public" static="false" line="506">
+      <docblock>
+        <description compact="registered plugins"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="registered_objects" default="" type="array" visibility="public" static="false" line="513">
+      <docblock>
+        <description compact="registered objects"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="registered_classes" default="" type="array" visibility="public" static="false" line="520">
+      <docblock>
+        <description compact="registered classes"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="registered_filters" default="" type="array" visibility="public" static="false" line="527">
+      <docblock>
+        <description compact="registered filters"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="registered_resources" default="" type="array" visibility="public" static="false" line="534">
+      <docblock>
+        <description compact="registered resources"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="registered_cache_resources" default="" type="array" visibility="public" static="false" line="541">
+      <docblock>
+        <description compact="registered cache resources"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="autoload_filters" default="" type="array" visibility="public" static="false" line="548">
+      <docblock>
+        <description compact="autoload filter"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="default_modifiers" default="" type="array" visibility="public" static="false" line="555">
+      <docblock>
+        <description compact="default modifier"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="escape_html" default="false" type="boolean" visibility="public" static="false" line="562">
+      <docblock>
+        <description compact="autoescape variable output"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="start_time" default="0" type="integer" visibility="public" static="false" line="569">
+      <docblock>
+        <description compact="start time for execution time calculation"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="_current_file" default="NULL" visibility="public" static="false" line="576">
+      <docblock>
+        <description compact="required by the compiler for BC"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="_parserdebug" default="false" type="boolean" visibility="public" static="false" line="583">
+      <docblock>
+        <description compact="internal flag to enable parser debugging"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="_objType" default="1" type="integer" visibility="public" static="false" line="590">
+      <docblock>
+        <description compact="This object type (Smarty = 1, template = 2, data = 4)"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="_debug" default="NULL" visibility="public" static="false" line="597">
+      <docblock>
+        <description compact="Debug object"/>
+        <var type="object">
+          <type full="Smarty_Internal_Debug" namespace="" name="Smarty_Internal_Debug"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="template_dir" default="" type="array" visibility="protected" static="false" line="604">
+      <docblock>
+        <description compact="template directory"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_processedTemplateDir" default="" type="array" visibility="protected" static="false" line="611">
+      <docblock>
+        <description compact="flags for normalized template directory entries"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="config_dir" default="" type="array" visibility="protected" static="false" line="618">
+      <docblock>
+        <description compact="config directory"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_processedConfigDir" default="" type="array" visibility="protected" static="false" line="625">
+      <docblock>
+        <description compact="flags for normalized template directory entries"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="compile_dir" default="'./templates_c/'" type="string" visibility="protected" static="false" line="632">
+      <docblock>
+        <description compact="compile directory"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="plugins_dir" default="" type="array" visibility="protected" static="false" line="639">
+      <docblock>
+        <description compact="plugins directory"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="cache_dir" default="'./cache/'" type="string" visibility="protected" static="false" line="646">
+      <docblock>
+        <description compact="cache directory"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="obsoleteProperties" default="" type="array" visibility="protected" static="false" line="653">
+      <docblock>
+        <description compact="removed properties"/>
+        <var type="array" of="string"/>
+      </docblock>
+    </member>
+    <member name="accessMap" default="" type="array" visibility="protected" static="false" line="664">
+      <docblock>
+        <description compact="List of private properties which will call getter/setter on a direct access"/>
+        <var type="array" of="string"/>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="673" end="690" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Initialize new Smarty object"/>
+      </docblock>
+      <inline>
+        <comment value="Check if we're running on windows" line="684"/>
+        <comment value="let PCRE (preg_*) treat strings as ISO-8859-1 if we're not dealing with UTF-8" line="686"/>
+      </inline>
+    </constructor>
+    <method name="muteExpectedErrors" start="698" end="701" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Enable error handler to mute expected messages"/>
+        <return type="boolean"/>
+        <deprecated/>
+      </docblock>
+    </method>
+    <method name="unmuteExpectedErrors" start="708" end="711" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Disable error handler muting expected messages"/>
+        <deprecated/>
+      </docblock>
+    </method>
+    <method name="templateExists" start="721" end="726" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Check if a template resource exists"/>
+        <param description="template name" type="string" variable="$resource_name"/>
+        <return description="status" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="resource_name" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="create source object" line="723"/>
+      </inline>
+    </method>
+    <method name="enableSecurity" start="736" end="740" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Loads security class and enables security"/>
+        <param description="if a string is used, it must be class-name" type="object" variable="$security_class">
+          <type full="string|Smarty_Security" namespace="" name="string|Smarty_Security"/>
+        </param>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="security_class" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="disableSecurity" start="747" end="751" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Disable security"/>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="addTemplateDir" start="762" end="795" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Add template directory(s)"/>
+        <param description="directory(s) of template sources" type="object" variable="$template_dir">
+          <type full="string|array" namespace="" name="string|array"/>
+        </param>
+        <param description="of the array element to assign the template dir to" type="string" variable="$key"/>
+        <param description="true for config_dir" type="object" variable="$isConfig">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="template_dir" byreference="false" type="{unknown}"/>
+      <parameter name="key" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="isConfig" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="getTemplateDir" start="805" end="819" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get template directories"/>
+        <param description="index of directory to get, null to get all" type="mixed" variable="$index"/>
+        <param description="true for config_dir" type="object" variable="$isConfig">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="list of template directories, or directory of $index" type="array"/>
+      </docblock>
+      <parameter name="index" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="isConfig" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="setTemplateDir" start="829" end="840" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set template directory"/>
+        <param description="directory(s) of template sources" type="object" variable="$template_dir">
+          <type full="string|array" namespace="" name="string|array"/>
+        </param>
+        <param description="true for config_dir" type="object" variable="$isConfig">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="\Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="template_dir" byreference="false" type="{unknown}"/>
+      <parameter name="isConfig" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="addConfigDir" start="850" end="853" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Add config directory(s)"/>
+        <param description="directory(s) of config sources" type="object" variable="$config_dir">
+          <type full="string|array" namespace="" name="string|array"/>
+        </param>
+        <param description="key of the array element to assign the config dir to" type="mixed" variable="$key"/>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="config_dir" byreference="false" type="{unknown}"/>
+      <parameter name="key" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="getConfigDir" start="862" end="865" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get config directory"/>
+        <param description="index of directory to get, null to get all" type="mixed" variable="$index"/>
+        <return description="configuration directory" type="array"/>
+      </docblock>
+      <parameter name="index" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="setConfigDir" start="874" end="877" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set config directory"/>
+        <param variable="$config_dir"/>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="config_dir" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="addPluginsDir" start="886" end="894" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Adds directory of plugin files"/>
+        <param type="object" variable="$plugins_dir">
+          <type full="null|array|string" namespace="" name="null|array|string"/>
+        </param>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="plugins_dir" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getPluginsDir" start="901" end="918" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get plugin directories"/>
+        <return description="list of plugin directories" type="array"/>
+      </docblock>
+    </method>
+    <method name="setPluginsDir" start="927" end="932" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set plugins directory"/>
+        <param description="directory(s) of plugins" type="object" variable="$plugins_dir">
+          <type full="string|array" namespace="" name="string|array"/>
+        </param>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="plugins_dir" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getCompileDir" start="939" end="946" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get compiled directory"/>
+        <return description="path to compiled templates" type="string"/>
+      </docblock>
+    </method>
+    <method name="setCompileDir" start="954" end="959" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param description="directory to store compiled templates in" type="string" variable="$compile_dir"/>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="compile_dir" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getCacheDir" start="966" end="973" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get cache directory"/>
+        <return description="path of cache directory" type="string"/>
+      </docblock>
+    </method>
+    <method name="setCacheDir" start="982" end="987" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set cache directory"/>
+        <param description="directory to store cached templates in" type="string" variable="$cache_dir"/>
+        <return description="current Smarty instance for chaining" type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="cache_dir" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="createTemplate" start="1001" end="1051" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="creates a template object"/>
+        <param description="the resource handle of the template file" type="string" variable="$template"/>
+        <param description="cache id to be used with this template" type="mixed" variable="$cache_id"/>
+        <param description="compile id to be used with this template" type="mixed" variable="$compile_id"/>
+        <param description="next higher level of Smarty variables" type="object" variable="$parent"/>
+        <param description="flag is Smarty object shall be cloned" type="boolean" variable="$do_clone"/>
+        <return description="template object" type="object">
+          <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="template" byreference="false" type="{unknown}"/>
+      <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="parent" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="do_clone" byreference="false" type="boolean" default="true"/>
+      <inline>
+        <comment value="fill data if present" line="1036"/>
+      </inline>
+    </method>
+    <method name="loadPlugin" start="1064" end="1067" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Takes unknown classes and loads plugin files for them class name format: Smarty_PluginType_PluginName plugin filename format: plugintype.pluginname.php"/>
+        <param description="class plugin name to load" type="string" variable="$plugin_name"/>
+        <param description="check if already loaded" type="object" variable="$check">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="|boolean filepath of loaded file or false" type="string"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="plugin_name" byreference="false" type="{unknown}"/>
+      <parameter name="check" byreference="false" type="boolean" default="true"/>
+    </method>
+    <method name="_getTemplateId" start="1081" end="1104" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get unique template id"/>
+        <param type="string" variable="$template_name"/>
+        <param type="object" variable="$cache_id">
+          <type full="null|mixed" namespace="" name="null|mixed"/>
+        </param>
+        <param type="object" variable="$compile_id">
+          <type full="null|mixed" namespace="" name="null|mixed"/>
+        </param>
+        <param type="null" variable="$caching"/>
+        <param type="object" variable="$template">
+          <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <return type="string"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="template_name" byreference="false" type="{unknown}"/>
+      <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="caching" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="template" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+    </method>
+    <method name="_realpath" start="1119" end="1148" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Normalize path  - remove /./ and /../  - make it absolute if required"/>
+        <param description="file path" type="string" variable="$path"/>
+        <param description="if true - convert to absolute" type="object" variable="$realpath">false - convert to relative
+                        null - keep as it is but
+                        remove /./ /../<type full="bool" namespace="" name="bool"/></param>
+        <return type="string"/>
+      </docblock>
+      <parameter name="path" byreference="false" type="{unknown}"/>
+      <parameter name="realpath" byreference="false" type="{unknown}" default="NULL"/>
+      <inline>
+        <comment value="normalize DIRECTORY_SEPARATOR" line="1135"/>
+      </inline>
+    </method>
+    <method name="_clearTemplateCache" start="1153" end="1157" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Empty template objects cache"/>
+      </docblock>
+    </method>
+    <method name="setUseSubDirs" start="1162" end="1165" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$use_sub_dirs"/>
+      </docblock>
+      <parameter name="use_sub_dirs" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setErrorReporting" start="1170" end="1173" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="int" variable="$error_reporting"/>
+      </docblock>
+      <parameter name="error_reporting" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setEscapeHtml" start="1178" end="1181" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$escape_html"/>
+      </docblock>
+      <parameter name="escape_html" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getAutoLiteral" start="1188" end="1191" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return auto_literal flag"/>
+        <return type="boolean"/>
+      </docblock>
+    </method>
+    <method name="setAutoLiteral" start="1198" end="1201" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set auto_literal flag"/>
+        <param type="boolean" variable="$auto_literal"/>
+      </docblock>
+      <parameter name="auto_literal" byreference="false" type="boolean" default="true"/>
+    </method>
+    <method name="setForceCompile" start="1206" end="1209" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$force_compile"/>
+      </docblock>
+      <parameter name="force_compile" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setMergeCompiledIncludes" start="1214" end="1217" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$merge_compiled_includes"/>
+      </docblock>
+      <parameter name="merge_compiled_includes" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getLeftDelimiter" start="1224" end="1227" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get left delimiter"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="setLeftDelimiter" start="1234" end="1237" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set left delimiter"/>
+        <param type="string" variable="$left_delimiter"/>
+      </docblock>
+      <parameter name="left_delimiter" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getRightDelimiter" start="1244" end="1247" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get right delimiter"/>
+        <return description="$right_delimiter" type="string"/>
+      </docblock>
+    </method>
+    <method name="setRightDelimiter" start="1254" end="1257" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Set right delimiter"/>
+        <param type="string"/>
+      </docblock>
+      <parameter name="right_delimiter" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setDebugging" start="1262" end="1265" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$debugging"/>
+      </docblock>
+      <parameter name="debugging" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setConfigOverwrite" start="1270" end="1273" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$config_overwrite"/>
+      </docblock>
+      <parameter name="config_overwrite" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setConfigBooleanize" start="1278" end="1281" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$config_booleanize"/>
+      </docblock>
+      <parameter name="config_booleanize" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setConfigReadHidden" start="1286" end="1289" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$config_read_hidden"/>
+      </docblock>
+      <parameter name="config_read_hidden" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setCompileLocking" start="1294" end="1297" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="boolean" variable="$compile_locking"/>
+      </docblock>
+      <parameter name="compile_locking" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setDefaultResourceType" start="1302" end="1305" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="string" variable="$default_resource_type"/>
+      </docblock>
+      <parameter name="default_resource_type" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setCachingType" start="1310" end="1313" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="string" variable="$caching_type"/>
+      </docblock>
+      <parameter name="caching_type" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="testInstall" start="1320" end="1323" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Test install"/>
+        <param type="null" variable="$errors"/>
+      </docblock>
+      <parameter name="errors" byreference="true" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="_getSmartyObj" start="1330" end="1333" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get Smarty object"/>
+        <return type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="__get" start="1344" end="1357" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="&lt;&lt;magic&gt;&gt; Generic getter.">Calls the appropriate getter function.
+Issues an E_USER_NOTICE if no valid getter is found.</description>
+        <param description="property name" type="string" variable="$name"/>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="__set" start="1368" end="1380" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="&lt;&lt;magic&gt;&gt; Generic setter.">Calls the appropriate setter function.
+Issues an E_USER_NOTICE if no valid setter is found.</description>
+        <param description="property name" type="string" variable="$name"/>
+        <param description="parameter passed to setter" type="mixed" variable="$value"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <parent full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase">
+    <extends full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    <member name="cache_id" default="NULL" visibility="public" static="false" line="57">
+      <docblock>
+        <description compact="Set this if you want different sets of cache files for the same templates."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="compile_id" default="NULL" visibility="public" static="false" line="65">
+      <docblock>
+        <description compact="Set this if you want different sets of compiled files for the same templates."/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="caching" default="" type="{unknown}" constant="Smarty::CACHING_OFF" visibility="public" static="false" line="72">
+      <docblock>
+        <description compact="caching enabled"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="compile_check" default="" type="{unknown}" constant="Smarty::COMPILECHECK_ON" visibility="public" static="false" line="79">
+      <docblock>
+        <description compact="check template for modifications?"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="cache_lifetime" default="3600" type="integer" visibility="public" static="false" line="86">
+      <docblock>
+        <description compact="cache lifetime in seconds"/>
+        <var type="integer"/>
+      </docblock>
+    </member>
+    <member name="tplFunctions" default="" type="array" visibility="public" static="false" line="93">
+      <docblock>
+        <description compact="Array of source information for known template functions"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="_cache" default="" type="array" visibility="public" static="false" line="100">
+      <docblock>
+        <description compact="universal cache"/>
+        <var type="object">
+          <type full="array()" namespace="" name="array()"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="fetch" start="114" end="118" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="fetches a rendered Smarty template"/>
+        <param description="the resource handle of the template file or template object" type="string" variable="$template"/>
+        <param description="cache id to be used with this template" type="mixed" variable="$cache_id"/>
+        <param description="compile id to be used with this template" type="mixed" variable="$compile_id"/>
+        <param description="next higher level of Smarty variables" type="object" variable="$parent"/>
+        <throws type="object">
+          <type full="Exception" namespace="" name="Exception"/>
+        </throws>
+        <throws type="object">
+          <type full="SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+        <return description="rendered template output" type="string"/>
+      </docblock>
+      <parameter name="template" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="parent" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="display" start="131" end="135" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="displays a Smarty template"/>
+        <param description="the resource handle of the template file or template object" type="string" variable="$template"/>
+        <param description="cache id to be used with this template" type="mixed" variable="$cache_id"/>
+        <param description="compile id to be used with this template" type="mixed" variable="$compile_id"/>
+        <param description="next higher level of Smarty variables" type="object" variable="$parent"/>
+        <throws type="object">
+          <type full="\Exception" namespace="" name="Exception"/>
+        </throws>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="template" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="parent" byreference="false" type="{unknown}" default="NULL"/>
+      <inline>
+        <comment value="display template" line="133"/>
+      </inline>
+    </method>
+    <method name="isCached" start="153" end="156" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="test if cache is valid"/>
+        <api value="Smarty::isCached()"/>
+        <link value="http://www.smarty.net/docs/en/api.is.cached.tpl"/>
+        <param description="the resource handle of the template file or template" type="object" variable="$template">object<type full="null|string|\Smarty_Internal_Template" namespace="null|string|" name="Smarty_Internal_Template"/></param>
+        <param description="cache id to be used with this template" type="mixed" variable="$cache_id"/>
+        <param description="compile id to be used with this template" type="mixed" variable="$compile_id"/>
+        <param description="next higher level of Smarty variables" type="object" variable="$parent"/>
+        <return description="cache status" type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <throws type="object">
+          <type full="\Exception" namespace="" name="Exception"/>
+        </throws>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="template" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="parent" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="registerPlugin" start="275" end="278" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Registers plugin to be used in templates"/>
+        <api value="Smarty::registerPlugin()"/>
+        <link value="http://www.smarty.net/docs/en/api.register.plugin.tpl"/>
+        <param description="plugin type" type="string" variable="$type"/>
+        <param description="name of template tag" type="string" variable="$name"/>
+        <param description="PHP callback to register" type="object" variable="$callback">
+          <type full="callback" namespace="" name="callback"/>
+        </param>
+        <param description="if true (default) this function is cache able" type="object" variable="$cacheable">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <param description="caching attributes if any" type="mixed" variable="$cache_attr"/>
+        <return type="object">
+          <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="callback" byreference="false" type="{unknown}"/>
+      <parameter name="cacheable" byreference="false" type="boolean" default="true"/>
+      <parameter name="cache_attr" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="loadFilter" start="292" end="295" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="load a filter of specified type and name"/>
+        <api value="Smarty::loadFilter()"/>
+        <link value="http://www.smarty.net/docs/en/api.load.filter.tpl"/>
+        <param description="filter type" type="string" variable="$type"/>
+        <param description="filter name" type="string" variable="$name"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="registerFilter" start="310" end="313" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Registers a filter function"/>
+        <api value="Smarty::registerFilter()"/>
+        <link value="http://www.smarty.net/docs/en/api.register.filter.tpl"/>
+        <param description="filter type" type="string" variable="$type"/>
+        <param type="object" variable="$callback">
+          <type full="callback" namespace="" name="callback"/>
+        </param>
+        <param description="optional filter name" type="object" variable="$name">
+          <type full="string|null" namespace="" name="string|null"/>
+        </param>
+        <return type="object">
+          <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <parameter name="callback" byreference="false" type="{unknown}"/>
+      <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="registerObject" start="330" end="345" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Registers object to be used in templates"/>
+        <api value="Smarty::registerObject()"/>
+        <link value="http://www.smarty.net/docs/en/api.register.object.tpl"/>
+        <param type="string" variable="$object_name"/>
+        <param description="the referenced PHP object to register" type="object" variable="$object"/>
+        <param description="list of allowed methods (empty = all)" type="array" variable="$allowed_methods_properties"/>
+        <param description="smarty argument format, else traditional" type="object" variable="$format">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <param description="list of block-methods" type="array" variable="$block_methods"/>
+        <return type="object">
+          <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="object_name" byreference="false" type="{unknown}"/>
+      <parameter name="object" byreference="false" type="{unknown}"/>
+      <parameter name="allowed_methods_properties" byreference="false" type="array" default=""/>
+      <parameter name="format" byreference="false" type="boolean" default="true"/>
+      <parameter name="block_methods" byreference="false" type="array" default=""/>
+    </method>
+    <method name="setCompileCheck" start="350" end="353" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="int" variable="$compile_check"/>
+      </docblock>
+      <parameter name="compile_check" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setCaching" start="358" end="361" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="int" variable="$caching"/>
+      </docblock>
+      <parameter name="caching" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setCacheLifetime" start="366" end="369" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="int" variable="$cache_lifetime"/>
+      </docblock>
+      <parameter name="cache_lifetime" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setCompileId" start="374" end="377" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="string" variable="$compile_id"/>
+      </docblock>
+      <parameter name="compile_id" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setCacheId" start="382" end="385" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <param type="string" variable="$cache_id"/>
+      </docblock>
+      <parameter name="cache_id" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <parent full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data">
+    <member name="_objType" default="4" type="integer" visibility="public" static="false" line="39">
+      <docblock>
+        <description compact="This object type (Smarty = 1, template = 2, data = 4)"/>
+        <var type="int"/>
+      </docblock>
+    </member>
+    <member name="template_class" default="'Smarty_Internal_Template'" type="string" visibility="public" static="false" line="46">
+      <docblock>
+        <description compact="name of class used for templates"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <member name="tpl_vars" default="" type="array" visibility="public" static="false" line="53">
+      <docblock>
+        <description compact="template variables"/>
+        <var type="array" of="object">
+          <type full="Smarty_Variable" namespace="" name="Smarty_Variable"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="parent" default="NULL" visibility="public" static="false" line="60">
+      <docblock>
+        <description compact="parent template (if any)"/>
+        <var type="object">
+          <type full="Smarty|Smarty_Internal_Template|Smarty_Data" namespace="" name="Smarty|Smarty_Internal_Template|Smarty_Data"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="config_vars" default="" type="array" visibility="public" static="false" line="67">
+      <docblock>
+        <description compact="configuration settings"/>
+        <var type="array" of="string"/>
+      </docblock>
+    </member>
+    <member name="ext" default="NULL" visibility="public" static="false" line="74">
+      <docblock>
+        <description compact="extension handler"/>
+        <var type="object">
+          <type full="Smarty_Internal_Extension_Handler" namespace="" name="Smarty_Internal_Extension_Handler"/>
+        </var>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="81" end="85" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Smarty_Internal_Data constructor.">Install extension handler</description>
+      </docblock>
+    </constructor>
+    <method name="assign" start="97" end="118" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="assigns a Smarty variable"/>
+        <param description="the template variable name(s)" type="object" variable="$tpl_var">
+          <type full="array|string" namespace="" name="array|string"/>
+        </param>
+        <param description="the value to assign" type="mixed" variable="$value"/>
+        <param description="if true any output of this variable will be not cached" type="boolean" variable="$nocache"/>
+        <return description="current Smarty_Internal_Data (or Smarty or Smarty_Internal_Template) instance for" type="object">chaining<type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/></return>
+      </docblock>
+      <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="append" start="134" end="137" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="appends values to template variables"/>
+        <api value="Smarty::append()"/>
+        <link value="http://www.smarty.net/docs/en/api.append.tpl"/>
+        <param description="the template variable name(s)" type="object" variable="$tpl_var">
+          <type full="array|string" namespace="" name="array|string"/>
+        </param>
+        <param description="the value to append" type="mixed" variable="$value"/>
+        <param description="flag if array elements shall be merged" type="object" variable="$merge">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <param description="if true any output of this variable will" type="object" variable="$nocache">be not cached<type full="bool" namespace="" name="bool"/></param>
+        <return type="object">
+          <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="merge" byreference="false" type="boolean" default="false"/>
+      <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="assignGlobal" start="148" end="151" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="assigns a global Smarty variable"/>
+        <param description="the global variable name" type="string" variable="$varName"/>
+        <param description="the value to assign" type="mixed" variable="$value"/>
+        <param description="if true any output of this variable will be not cached" type="boolean" variable="$nocache"/>
+        <return type="object">
+          <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="varName" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="appendByRef" start="162" end="165" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="appends values to template variables by reference"/>
+        <param description="the template variable name" type="string" variable="$tpl_var"/>
+        <param description="&amp;$value the referenced value to append" type="mixed"/>
+        <param description="flag if array elements shall be merged" type="boolean" variable="$merge"/>
+        <return type="object">
+          <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="true" type="{unknown}"/>
+      <parameter name="merge" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="assignByRef" start="176" end="179" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="assigns values to template variables by reference"/>
+        <param description="the template variable name" type="string" variable="$tpl_var"/>
+        <param variable="$value"/>
+        <param description="if true any output of this variable will be not cached" type="boolean" variable="$nocache"/>
+        <return type="object">
+          <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+        </return>
+      </docblock>
+      <parameter name="tpl_var" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="true" type="{unknown}"/>
+      <parameter name="nocache" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="getTemplateVars" start="193" end="196" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Returns a single or all template variables"/>
+        <api value="Smarty::getTemplateVars()"/>
+        <link value="http://www.smarty.net/docs/en/api.get.template.vars.tpl"/>
+        <param description="variable name or null" type="string" variable="$varName"/>
+        <param description="optional pointer to data object" type="object" variable="$_ptr">
+          <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+        </param>
+        <param description="include parent templates?" type="object" variable="$searchParents">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="variable value or or array of variables" type="mixed"/>
+      </docblock>
+      <parameter name="varName" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="_ptr" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+      </parameter>
+      <parameter name="searchParents" byreference="false" type="boolean" default="true"/>
+    </method>
+    <method name="getVariable" start="209" end="216" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="gets the object of a Smarty variable"/>
+        <param description="the name of the Smarty variable" type="string" variable="$variable"/>
+        <param description="optional pointer to data object" type="object" variable="$_ptr">
+          <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+        </param>
+        <param description="search also in parent data" type="boolean" variable="$searchParents"/>
+        <param type="object" variable="$error_enable">
+          <type full="bool" namespace="" name="bool"/>
+        </param>
+        <return description="the object of the variable" type="object">
+          <type full="Smarty_Variable|Smarty_Undefined_Variable" namespace="" name="Smarty_Variable|Smarty_Undefined_Variable"/>
+        </return>
+        <deprecated value="since 3.1.28 please use Smarty_Internal_Data::getTemplateVars() instead."/>
+      </docblock>
+      <parameter name="variable" byreference="false" type="{unknown}" default="NULL"/>
+      <parameter name="_ptr" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+      </parameter>
+      <parameter name="searchParents" byreference="false" type="boolean" default="true"/>
+      <parameter name="error_enable" byreference="false" type="boolean" default="true"/>
+    </method>
+    <method name="_mergeVars" start="223" end="238" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Follow the parent chain an merge template and config variables"/>
+        <param type="object" variable="$data">
+          <type full="\Smarty_Internal_Data|null" namespace="" name="Smarty_Internal_Data|null"/>
+        </param>
+      </docblock>
+      <parameter name="data" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+      </parameter>
+    </method>
+    <method name="_isDataObj" start="245" end="248" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return true if this instance is a Data obj"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="_isTplObj" start="255" end="258" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return true if this instance is a template obj"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="_isSmartyObj" start="265" end="268" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return true if this instance is a Smarty obj"/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="_getSmartyObj" start="275" end="278" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get Smarty object"/>
+        <return type="object">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="__call" start="288" end="291" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Handle unknown class methods"/>
+        <param description="unknown method-name" type="string" variable="$name"/>
+        <param description="argument array" type="array" variable="$args"/>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="args" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_ClearCache" namespace="" name="Smarty_Internal_Method_ClearCache" abstract="false" final="false" start="12" end="50">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_clearcache.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_clearcache.php" size="1335" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="cd1698d50cfb16af1b89afc8d17a8d5991b56931" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_clearcache.php"/>
+  <docblock>
+    <description compact="Smarty Method ClearCache">Smarty::clearCache() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="1" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="clearCache" start="37" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Empty cache for a specific template"/>
+      <api value="Smarty::clearCache()"/>
+      <link value="http://www.smarty.net/docs/en/api.clear.cache.tpl"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="template name" type="string" variable="$template_name"/>
+      <param description="cache id" type="string" variable="$cache_id"/>
+      <param description="compile id" type="string" variable="$compile_id"/>
+      <param description="expiration time" type="integer" variable="$exp_time"/>
+      <param description="resource type" type="string" variable="$type"/>
+      <return description="number of cache files deleted" type="int"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="template_name" byreference="false" type="{unknown}"/>
+    <parameter name="cache_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="compile_id" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="exp_time" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="load cache resource and call clear" line="46"/>
+    </inline>
+  </method>
+</class>

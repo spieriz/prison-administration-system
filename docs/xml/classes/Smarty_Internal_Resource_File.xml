@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Resource_File" namespace="" name="Smarty_Internal_Resource_File" abstract="false" final="false" start="18" end="180">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_resource_file.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_resource_file.php" size="6958" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="2977922711fb5d8f2f02b07297208021a64ec467" relative="includes/libs/Smarty/sysplugins/smarty_internal_resource_file.php"/>
+  <docblock>
+    <description compact="Smarty Internal Plugin Resource File Implements the file system as resource for Smarty templates"/>
+    <package value="Smarty"/>
+    <subpackage value="TemplateResources"/>
+  </docblock>
+  <extends full="Smarty_Resource" namespace="" name="Smarty_Resource"/>
+  <method name="populate" start="28" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="populate Source Object with meta data from Resource"/>
+      <param description="source object" type="object" variable="$source">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </param>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="source" byreference="false" type="object">
+      <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+    </parameter>
+    <parameter name="_template" byreference="false" type="object" default="NULL">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+  <method name="populateTimestamp" start="51" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="populate Source Object with timestamp and exists from Resource"/>
+      <param description="source object" type="object" variable="$source">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </param>
+    </docblock>
+    <parameter name="source" byreference="false" type="object">
+      <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+    </parameter>
+  </method>
+  <method name="getContent" start="69" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Load template's source from file into current template object"/>
+      <param description="source object" type="object" variable="$source">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </param>
+      <return description="template source" type="string"/>
+      <throws description="if source cannot be loaded" type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="source" byreference="false" type="object">
+      <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+    </parameter>
+  </method>
+  <method name="getBasename" start="87" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine basename for compiled filename"/>
+      <param description="source object" type="object" variable="$source">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </param>
+      <return description="resource's basename" type="string"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="object">
+      <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+    </parameter>
+  </method>
+  <method name="buildFilepath" start="101" end="179" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="build template filepath by traversing the template_dir array"/>
+      <param description="source object" type="object" variable="$source">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </param>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <return description="fully qualified filepath" type="string"/>
+      <throws type="object">
+        <type full="SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="source" byreference="false" type="object">
+      <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+    </parameter>
+    <parameter name="_template" byreference="false" type="object" default="NULL">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <inline>
+      <comment value="absolute file ?" line="104"/>
+      <comment value="go relative to a given template?" line="109"/>
+      <comment value="normalize DIRECTORY_SEPARATOR" line="124"/>
+      <comment value="template_dir index?" line="129"/>
+      <comment value="relative file name?" line="160"/>
+      <comment value="Use include path ?" line="174"/>
+    </inline>
+  </method>
+  <parent full="Smarty_Resource" namespace="" name="Smarty_Resource">
+    <member name="sysplugins" default="" type="array" visibility="public" static="true" line="28">
+      <docblock>
+        <description compact="resource types provided by the core"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="uncompiled" default="false" type="boolean" visibility="public" static="false" line="42">
+      <docblock>
+        <description compact="Source is bypassing compiler"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="recompiled" default="false" type="boolean" visibility="public" static="false" line="49">
+      <docblock>
+        <description compact="Source must be recompiled on every occasion"/>
+        <var type="boolean"/>
+      </docblock>
+    </member>
+    <member name="hasCompiledHandler" default="false" type="boolean" visibility="public" static="false" line="56">
+      <docblock>
+        <description compact="Flag if resource does implement populateCompiledFilepath() method"/>
+        <var type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="load" start="67" end="113" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="Load Resource Handler"/>
+        <param description="smarty object" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="name of the resource" type="string" variable="$type"/>
+        <throws type="object">
+          <type full="SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+        <return description="Resource Handler" type="object">
+          <type full="Smarty_Resource" namespace="" name="Smarty_Resource"/>
+        </return>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="type" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="try smarty's cache" line="69"/>
+        <comment value="try registered resource" line="73"/>
+        <comment value="try sysplugins dir" line="79"/>
+        <comment value="try plugins dir" line="84"/>
+        <comment value="try streams" line="101"/>
+        <todo value="try default_(template|config)_handler" line="110"/>
+        <comment value="give up" line="111"/>
+      </inline>
+    </method>
+    <method name="parseResourceName" start="125" end="137" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="extract resource_type and resource_name from template_resource and config_resource"/>
+        <note value="&quot;C:/foo.tpl&quot; was forced to file resource up till Smarty 3.1.3 (including)."/>
+        <param description="template_resource or config_resource to parse" type="string" variable="$resource_name"/>
+        <param description="the default resource_type defined in $smarty" type="string" variable="$default_resource"/>
+        <return description="with parsed resource name and type" type="array"/>
+      </docblock>
+      <parameter name="resource_name" byreference="false" type="{unknown}"/>
+      <parameter name="default_resource" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getUniqueTemplateName" start="149" end="163" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="modify template_resource according to resource handlers specifications"/>
+        <param description="Smarty instance" type="object" variable="$obj">
+          <type full="\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Template|" name="Smarty"/>
+        </param>
+        <param description="template_resource to extract resource handler and" type="string" variable="$template_resource">name of</param>
+        <return description="unique resource name" type="string"/>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="obj" byreference="false" type="{unknown}"/>
+      <parameter name="template_resource" byreference="false" type="{unknown}"/>
+      <inline>
+        <todo value="optimize for Smarty's internal resource types" line="153"/>
+        <comment value="go relative to a given template?" line="155"/>
+      </inline>
+    </method>
+    <method name="source" start="177" end="183" abstract="false" final="false" static="true" visibility="public">
+      <docblock>
+        <description compact="initialize Source Object for given resource wrapper for backward compatibility to versions &lt; 3.1.22 Either [$_template] or [$smarty, $template_resource] must be specified"/>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+        <param description="smarty object" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="resource identifier" type="string" variable="$template_resource"/>
+        <return description="Source Object" type="object">
+          <type full="\Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+        </return>
+        <throws type="object">
+          <type full="\SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="_template" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+      <parameter name="smarty" byreference="false" type="object" default="NULL">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="template_resource" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="getContent" start="193" end="193" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Load template's source into current template object"/>
+        <param description="source object" type="object" variable="$source">
+          <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+        </param>
+        <return description="template source" type="string"/>
+        <throws description="if source cannot be loaded" type="object">
+          <type full="SmartyException" namespace="" name="SmartyException"/>
+        </throws>
+      </docblock>
+      <parameter name="source" byreference="false" type="object">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </parameter>
+    </method>
+    <method name="populate" start="201" end="201" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="populate Source Object with meta data from Resource"/>
+        <param description="source object" type="object" variable="$source">
+          <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+        </param>
+        <param description="template object" type="object" variable="$_template">
+          <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+        </param>
+      </docblock>
+      <parameter name="source" byreference="false" type="object">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </parameter>
+      <parameter name="_template" byreference="false" type="object" default="NULL">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </parameter>
+    </method>
+    <method name="populateTimestamp" start="208" end="211" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="populate Source Object with timestamp and exists from Resource"/>
+        <param description="source object" type="object" variable="$source">
+          <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+        </param>
+      </docblock>
+      <parameter name="source" byreference="false" type="object">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </parameter>
+      <inline>
+        <comment value="intentionally left blank" line="210"/>
+      </inline>
+    </method>
+    <method name="buildUniqueResourceName" start="222" end="235" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="modify resource_name according to resource handlers specifications"/>
+        <param description="Smarty instance" type="object" variable="$smarty">
+          <type full="Smarty" namespace="" name="Smarty"/>
+        </param>
+        <param description="resource_name to make unique" type="string" variable="$resource_name"/>
+        <param description="flag for config resource" type="boolean" variable="$isConfig"/>
+        <return description="unique resource name" type="string"/>
+      </docblock>
+      <parameter name="smarty" byreference="false" type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </parameter>
+      <parameter name="resource_name" byreference="false" type="{unknown}"/>
+      <parameter name="isConfig" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="getBasename" start="250" end="253" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Determine basename for compiled filename"/>
+        <param description="source object" type="object" variable="$source">
+          <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+        </param>
+        <return description="resource's basename" type="string"/>
+      </docblock>
+      <parameter name="source" byreference="false" type="object">
+        <type full="Smarty_Template_Source" namespace="" name="Smarty_Template_Source"/>
+      </parameter>
+    </method>
+    <method name="checkTimestamps" start="258" end="261" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <return type="object">
+          <type full="bool" namespace="" name="bool"/>
+        </return>
+      </docblock>
+    </method>
+  </parent>
+  <extenders>
+    <extender full="Smarty_Internal_Resource_Php" namespace="" name="Smarty_Internal_Resource_Php"/>
+  </extenders>
+</class>

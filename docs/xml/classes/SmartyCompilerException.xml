@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="SmartyCompilerException" namespace="" name="SmartyCompilerException" abstract="false" final="false" start="8" end="45">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smartycompilerexception.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smartycompilerexception.php" size="816" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="6b43c4b9e71c7a76f28aec9969a27cdee3c3f1fb" relative="includes/libs/Smarty/sysplugins/smartycompilerexception.php"/>
+  <docblock>
+    <description compact="Smarty compiler exception class"/>
+    <package value="Smarty"/>
+  </docblock>
+  <extends full="SmartyException" namespace="" name="SmartyException"/>
+  <method name="__toString" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <member name="line" default="NULL" visibility="public" static="false" line="23">
+    <docblock>
+      <description compact="The line number of the template error"/>
+      <type value="int|null"/>
+    </docblock>
+  </member>
+  <member name="source" default="NULL" visibility="public" static="false" line="30">
+    <docblock>
+      <description compact="The template source snippet relating to the error"/>
+      <type value="string|null"/>
+    </docblock>
+  </member>
+  <member name="desc" default="NULL" visibility="public" static="false" line="37">
+    <docblock>
+      <description compact="The raw text of the error message"/>
+      <type value="string|null"/>
+    </docblock>
+  </member>
+  <member name="template" default="NULL" visibility="public" static="false" line="44">
+    <docblock>
+      <description compact="The resource identifier or template name"/>
+      <type value="string|null"/>
+    </docblock>
+  </member>
+  <parent full="SmartyException" namespace="" name="SmartyException">
+    <extends full="Exception" namespace="" name="Exception"/>
+    <member name="escape" default="false" type="boolean" visibility="public" static="true" line="10"/>
+    <method name="__toString" start="15" end="18" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description/>
+        <return type="string"/>
+      </docblock>
+    </method>
+  </parent>
+  <parent full="Exception" namespace="" name="Exception">
+    <member name="message" static="false" visibility="protected">
+    <default>null</default>
+    <docblock>
+      <description compact="The exception message"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+    <member name="code" static="false" visibility="protected">
+    <default>null</default>
+    <docblock>
+      <description compact="The exception code"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+    <member name="file" static="false" visibility="protected">
+    <default>null</default>
+    <docblock>
+      <description compact="The filename where the exception was created"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+    <member name="line" static="false" visibility="protected">
+    <default>null</default>
+    <docblock>
+      <description compact="The line where the exception was created"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+    <constructor name="__construct" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Construct the exception"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="message" optional="true" byreference="false" type="string"/>
+    <parameter name="code" optional="true" byreference="false" type="int"/>
+    <parameter name="previous" optional="true" byreference="false" type="object" class="Throwable"/>
+  </constructor>
+    <method name="getMessage" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Gets the Exception message"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+    <method name="getPrevious" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns previous Exception"/>
+      <return type="Throwable"/>
+    </docblock>
+  </method>
+    <method name="getCode" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Gets the Exception code"/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+    <method name="getFile" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Gets the file in which the exception was created"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+    <method name="getLine" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Gets the line in which the exception was created"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+    <method name="getTrace" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Gets the stack trace"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+    <method name="getTraceAsString" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Gets the stack trace as a string"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+    <method name="__toString" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="String representation of the exception"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  </parent>
+</class>

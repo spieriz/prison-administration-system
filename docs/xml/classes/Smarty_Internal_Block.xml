@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Block" namespace="" name="Smarty_Internal_Block" abstract="false" final="false" start="10" end="90">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_block.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_block.php" size="1717" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="6535cf14ede392d28b7c5471db9d31a4db452018" relative="includes/libs/Smarty/sysplugins/smarty_internal_block.php"/>
+  <docblock>
+    <description compact="Smarty {block} tag class"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="name" default="''" type="string" visibility="public" static="false" line="17">
+    <docblock>
+      <description compact="Block name"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="hide" default="false" type="boolean" visibility="public" static="false" line="24">
+    <docblock>
+      <description compact="Hide attribute"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="append" default="false" type="boolean" visibility="public" static="false" line="31">
+    <docblock>
+      <description compact="Append attribute"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="prepend" default="false" type="boolean" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="prepend attribute"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="callsChild" default="false" type="boolean" visibility="public" static="false" line="45">
+    <docblock>
+      <description compact="Block calls $smarty.block.child"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="child" default="NULL" visibility="public" static="false" line="52">
+    <docblock>
+      <description compact="Inheritance child block"/>
+      <var type="object">
+        <type full="Smarty_Internal_Block|null" namespace="" name="Smarty_Internal_Block|null"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="parent" default="NULL" visibility="public" static="false" line="59">
+    <docblock>
+      <description compact="Inheritance calling parent block"/>
+      <var type="object">
+        <type full="Smarty_Internal_Block|null" namespace="" name="Smarty_Internal_Block|null"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="tplIndex" default="0" type="integer" visibility="public" static="false" line="66">
+    <docblock>
+      <description compact="Inheritance Template index"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="76" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Smarty_Internal_Block constructor.">- if outer level {block} of child template ($state === 1) save it as child root block
+- otherwise process inheritance and render</description>
+      <param description="block name" type="string" variable="$name"/>
+      <param description="index of outer level {block} if nested" type="object" variable="$tplIndex">
+        <type full="int|null" namespace="" name="int|null"/>
+      </param>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="tplIndex" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="callBlock" start="87" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compiled block code overloaded by {block} class"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Compile_Private_ForeachSection" namespace="" name="Smarty_Internal_Compile_Private_ForeachSection" abstract="false" final="false" start="17" end="228">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_compile_private_foreachsection.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_compile_private_foreachsection.php" size="7305" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="218bc94c6f8548a15d9bf91379e2f3a5703129c9" relative="includes/libs/Smarty/sysplugins/smarty_internal_compile_private_foreachsection.php"/>
+  <docblock>
+    <description compact="Smarty Internal Plugin Compile ForeachSection Class"/>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+  </docblock>
+  <extends full="Smarty_Internal_CompileBase" namespace="" name="Smarty_Internal_CompileBase"/>
+  <member name="tagName" default="''" type="string" visibility="public" static="false" line="24">
+    <docblock>
+      <description compact="Name of this tag"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="nameProperties" default="" type="array" visibility="public" static="false" line="31">
+    <docblock>
+      <description compact="Valid properties of $smarty.xxx variable"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="itemProperties" default="NULL" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="{section} tag has no item properties"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="isNamed" default="true" type="boolean" visibility="public" static="false" line="45">
+    <docblock>
+      <description compact="{section} tag has always name attribute"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="matchResults" default="" type="array" visibility="public" static="false" line="50">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="propertyPreg" default="''" type="string" visibility="private" static="false" line="57">
+    <docblock>
+      <description compact="Preg search pattern"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="resultOffsets" default="" type="array" visibility="private" static="false" line="64">
+    <docblock>
+      <description compact="Offsets in preg match result"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="startOffset" default="0" type="integer" visibility="private" static="false" line="71">
+    <docblock>
+      <description compact="Start offset"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="scanForProperties" start="81" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Scan sources for used tag attributes"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$compiler">
+        <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+    <inline>
+      <comment value="Template source" line="97"/>
+      <comment value="Parent template source" line="99"/>
+      <comment value="{block} source" line="101"/>
+    </inline>
+  </method>
+  <method name="buildPropertyPreg" start="111" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Build property preg string"/>
+      <param type="object" variable="$named">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param type="array" variable="$attributes"/>
+    </docblock>
+    <parameter name="named" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="matchProperty" start="140" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Find matches in source string"/>
+      <param type="string" variable="$source"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="matchTemplateSource" start="157" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Find matches in template source"/>
+      <param type="object" variable="$compiler">
+        <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+    </docblock>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+  </method>
+  <method name="matchParentTemplateSource" start="169" end="193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Find matches in all parent template source"/>
+      <param type="object" variable="$compiler">
+        <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+    <inline>
+      <comment value="search parent compiler template source" line="171"/>
+    </inline>
+  </method>
+  <method name="matchBlockSource" start="200" end="202" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Find matches in {block} tag source"/>
+      <param type="object" variable="$compiler">
+        <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+    </docblock>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+  </method>
+  <method name="compileSpecialVariable" start="214" end="227" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compiles code for the {$smarty.foreach.xxx} or {$smarty.section.xxx}tag"/>
+      <param description="array with attributes from parser" type="array" variable="$args"/>
+      <param description="compiler object" type="object" variable="$compiler">
+        <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+      <param description="array with compilation parameter" type="array" variable="$parameter"/>
+      <return description="compiled code" type="string"/>
+      <throws type="object">
+        <type full="\SmartyCompilerException" namespace="" name="SmartyCompilerException"/>
+      </throws>
+    </docblock>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+    <parameter name="parameter" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="Smarty_Internal_Compile_Foreach" namespace="" name="Smarty_Internal_Compile_Foreach"/>
+    <extender full="Smarty_Internal_Compile_Section" namespace="" name="Smarty_Internal_Compile_Section"/>
+  </extenders>
+  <parent full="Smarty_Internal_CompileBase" namespace="" name="Smarty_Internal_CompileBase">
+    <member name="required_attributes" default="" type="array" visibility="public" static="false" line="23">
+      <docblock>
+        <description compact="Array of names of required attribute required by tag"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="optional_attributes" default="" type="array" visibility="public" static="false" line="31">
+      <docblock>
+        <description compact="Array of names of optional attribute required by tag use array('_any') if there is no restriction of attributes names"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="shorttag_order" default="" type="array" visibility="public" static="false" line="38">
+      <docblock>
+        <description compact="Shorttag attribute order defined by its names"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="option_flags" default="" type="array" visibility="public" static="false" line="45">
+      <docblock>
+        <description compact="Array of names of valid option flags"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="optionMap" default="" type="array" visibility="public" static="false" line="52">
+      <docblock>
+        <description compact="Mapping array for boolean option value"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="mapCache" default="" type="array" visibility="public" static="false" line="59">
+      <docblock>
+        <description compact="Mapping array with attributes as key"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="getAttributes" start="73" end="156" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="This function checks if the attributes passed are valid The attributes passed for the tag to compile are checked against the list of required and optional attributes. Required attributes must be present. Optional attributes are check against the corresponding list. The keyword '_any' specifies that any attribute will be accepted as valid"/>
+        <param description="compiler object" type="object" variable="$compiler"/>
+        <param description="attributes applied to the tag" type="array" variable="$attributes"/>
+        <return description="of mapped attributes for further processing" type="array"/>
+      </docblock>
+      <parameter name="compiler" byreference="false" type="{unknown}"/>
+      <parameter name="attributes" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="check if all required attributes present" line="121"/>
+        <comment value="check for not allowed attributes" line="127"/>
+        <comment value="default 'false' for all option flags not set" line="146"/>
+      </inline>
+    </method>
+    <method name="openTag" start="166" end="169" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Push opening tag name on stack Optionally additional data can be saved on stack"/>
+        <param description="compiler object" type="object" variable="$compiler"/>
+        <param description="the opening tag's name" type="string" variable="$openTag"/>
+        <param description="optional data saved" type="mixed" variable="$data"/>
+      </docblock>
+      <parameter name="compiler" byreference="false" type="{unknown}"/>
+      <parameter name="openTag" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="closeTag" start="180" end="202" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Pop closing tag Raise an error if this stack-top doesn't match with expected opening tags"/>
+        <param description="compiler object" type="object" variable="$compiler"/>
+        <param description="the expected opening tag names" type="object" variable="$expectedTag">
+          <type full="array|string" namespace="" name="array|string"/>
+        </param>
+        <return description="any type the opening tag's name or saved data" type="mixed"/>
+      </docblock>
+      <parameter name="compiler" byreference="false" type="{unknown}"/>
+      <parameter name="expectedTag" byreference="false" type="{unknown}"/>
+      <inline>
+        <comment value="wrong nesting of tags" line="199"/>
+      </inline>
+    </method>
+  </parent>
+</class>

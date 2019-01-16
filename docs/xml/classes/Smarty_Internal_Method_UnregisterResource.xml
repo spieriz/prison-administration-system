@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_UnregisterResource" namespace="" name="Smarty_Internal_Method_UnregisterResource" abstract="false" final="false" start="12" end="40">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_unregisterresource.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_unregisterresource.php" size="1094" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="9bfb1033f1ac50783e5f3241e9965953d1971200" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_unregisterresource.php"/>
+  <docblock>
+    <description compact="Smarty Method UnregisterResource">Smarty::unregisterResource() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="unregisterResource" start="32" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a resource to fetch a template"/>
+      <api value="Smarty::unregisterResource()"/>
+      <link value="http://www.smarty.net/docs/en/api.unregister.resource.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="name of resource type" type="string" variable="$type"/>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+</class>

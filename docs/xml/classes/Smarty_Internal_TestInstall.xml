@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_TestInstall" namespace="" name="Smarty_Internal_TestInstall" abstract="false" final="false" start="17" end="609">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_testinstall.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_testinstall.php" size="32653" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="3df9b382765e8150f872aa170a641fb7a11b4372" relative="includes/libs/Smarty/sysplugins/smarty_internal_testinstall.php"/>
+  <docblock>
+    <description compact="TestInstall class"/>
+    <package value="Smarty"/>
+    <subpackage value="Utilities"/>
+  </docblock>
+  <method name="testInstall" start="28" end="608" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="diagnose Smarty setup If $errors is secified, the diagnostic report will be appended to the array, rather than being output."/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param description="array to push results into rather than outputting them" type="array" variable="$errors"/>
+      <return description="status, true if everything is fine, false else" type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="errors" byreference="true" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="test if all registered template_dir are accessible" line="37"/>
+      <comment value="test if registered compile_dir is accessible" line="102"/>
+      <comment value="test if all registered plugins_dir are accessible" line="145"/>
+      <comment value="and if core plugins directory is still registered" line="146"/>
+      <comment value="test if all registered cache_dir is accessible" line="226"/>
+      <comment value="test if all registered config_dir are accessible" line="269"/>
+      <comment value="test if sysplugins are available" line="332"/>
+      <comment value="test if core plugins are available" line="522"/>
+    </inline>
+  </method>
+</class>

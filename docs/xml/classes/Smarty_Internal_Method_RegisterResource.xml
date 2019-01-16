@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_RegisterResource" namespace="" name="Smarty_Internal_Method_RegisterResource" abstract="false" final="false" start="12" end="46">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_registerresource.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_registerresource.php" size="1908" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="0005fa00604500e281ae889f9f16aa698ea1138c" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_registerresource.php"/>
+  <docblock>
+    <description compact="Smarty Method RegisterResource">Smarty::registerResource() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="registerResource" start="39" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a resource to fetch a template"/>
+      <api value="Smarty::registerResource()"/>
+      <link value="http://www.smarty.net/docs/en/api.register.resource.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="name of resource type" type="string" variable="$name"/>
+      <param description="or instance of" type="object" variable="$resource_handler">Smarty_Resource,
+                                                                                         or array of
+                                                                                         callbacks to
+                                                                                         handle
+                                                                                         resource
+                                                                                         (deprecated)<type full="Smarty_Resource|array" namespace="" name="Smarty_Resource|array"/></param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="resource_handler" byreference="false" type="{unknown}"/>
+  </method>
+</class>

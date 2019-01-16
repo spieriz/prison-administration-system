@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_ParseTree_Tag" namespace="" name="Smarty_Internal_ParseTree_Tag" abstract="false" final="false" start="19" end="67">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_parsetree_tag.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_parsetree_tag.php" size="1843" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="6ccbf3618079928637bc7d244e66ff11891dc9ba" relative="includes/libs/Smarty/sysplugins/smarty_internal_parsetree_tag.php"/>
+  <docblock>
+    <description compact="A complete smarty tag."/>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+    <ignore/>
+  </docblock>
+  <extends full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree"/>
+  <member name="saved_block_nesting" visibility="public" static="false" line="26">
+    <docblock>
+      <description compact="Saved block nesting level"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="34" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create parse tree buffer for Smarty tag"/>
+      <param description="parser object" type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <param description="content" type="string" variable="$data"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="to_smarty_php" start="47" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return buffer content"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <return description="content" type="string"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+  </method>
+  <method name="assign_to_var" start="59" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return complied code that loads the evaluated output of buffer content into a temporary variable"/>
+      <param type="object" variable="$parser">
+        <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </param>
+      <return description="template code" type="string"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+    </parameter>
+  </method>
+  <parent full="Smarty_Internal_ParseTree" namespace="" name="Smarty_Internal_ParseTree">
+    <member name="data" visibility="public" static="false" line="24">
+      <docblock>
+        <description compact="Buffer content"/>
+        <var type="mixed"/>
+      </docblock>
+    </member>
+    <member name="subtrees" default="" type="array" visibility="public" static="false" line="31">
+      <docblock>
+        <description compact="Subtree array"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="to_smarty_php" start="40" end="40" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return buffer"/>
+        <param type="object" variable="$parser">
+          <type full="\Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+        </param>
+        <return description="buffer content" type="string"/>
+      </docblock>
+      <parameter name="parser" byreference="false" type="object">
+        <type full="Smarty_Internal_Templateparser" namespace="" name="Smarty_Internal_Templateparser"/>
+      </parameter>
+    </method>
+    <destructor name="__destruct" start="45" end="49" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Template data object destructor"/>
+      </docblock>
+    </destructor>
+  </parent>
+</class>

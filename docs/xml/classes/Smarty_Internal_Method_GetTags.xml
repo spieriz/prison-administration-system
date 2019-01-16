@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_GetTags" namespace="" name="Smarty_Internal_Method_GetTags" abstract="false" final="false" start="12" end="63">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_gettags.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_gettags.php" size="2135" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="6f9157d5795f272349bbce1d1df415637c36b4f5" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_gettags.php"/>
+  <docblock>
+    <description compact="Smarty Method GetTags">Smarty::getTags() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="getTags" start="34" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return array of tag/attributes of all tags used by an template"/>
+      <api value="Smarty::getTags()"/>
+      <link value="http://www.smarty.net/docs/en/api.get.tags.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param type="object" variable="$template">
+        <type full="null|string|Smarty_Internal_Template" namespace="" name="null|string|Smarty_Internal_Template"/>
+      </param>
+      <return description="of tag/attributes" type="array"/>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="template" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>

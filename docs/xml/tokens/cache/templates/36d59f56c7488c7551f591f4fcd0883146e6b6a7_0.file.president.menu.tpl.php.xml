@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="D:/Programy/XAMPP/htdocs/pas/cache/templates" file="36d59f56c7488c7551f591f4fcd0883146e6b6a7_0.file.president.menu.tpl.php" realpath="D:/Programy/XAMPP/htdocs/pas/cache/templates/36d59f56c7488c7551f591f4fcd0883146e6b6a7_0.file.president.menu.tpl.php" size="2683" time="2019-01-07T14:15:19+01:00" unixtime="1546866919" sha1="8426627a48a5c83a79581a5b86b6bd8e1efc6bc1" relative="cache/templates/36d59f56c7488c7551f591f4fcd0883146e6b6a7_0.file.president.menu.tpl.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_COMMENT">/* Smarty version 3.1.33, created on 2019-01-07 14:15:19</token>
+  </line>
+  <line no="3">
+    <token name="T_COMMENT">  from 'D:\Programy\XAMPP\htdocs\pas\styles\templates\president\president.menu.tpl' */</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_COMMENT">/* @var Smarty_Internal_Template $_smarty_tpl */</token>
+  </line>
+  <line no="6">
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">_decodeProperties</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="7">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'version'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'3.1.33'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="8">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'unifunc'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'content_5c3350e7be29e9_00448164'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="9">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'has_nocache_code'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="10">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'file_dependency'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+  </line>
+  <line no="11">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="12">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'36d59f56c7488c7551f591f4fcd0883146e6b6a7'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+  </line>
+  <line no="13">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="14">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'D:\\Programy\\XAMPP\\htdocs\\pas\\styles\\templates\\president\\president.menu.tpl'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="15">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1546866888</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="16">
+    <token name="T_WHITESPACE">      </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'file'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="17">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="18">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="19">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'includes'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+  </line>
+  <line no="20">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+  </line>
+  <line no="21">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'file:main.header.tpl'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="22">
+    <token name="T_WHITESPACE">  </token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="23">
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="24">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">content_5c3350e7be29e9_00448164</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">Smarty_Internal_Template</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="25">
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">_subTemplateRender</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"file:main.header.tpl"</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">cache_id</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">compile_id</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_smarty_tpl</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">cache_lifetime</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ARRAY">array</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">false</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="26">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">    &lt;link rel="stylesheet" type="text/css" href="./styles/css/president.css"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">&lt;/head&gt;</token>
+  </line>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_INLINE_HTML">&lt;body class="h-100"&gt;</token>
+  </line>
+  <line no="31"/>
+  <line no="32">
+    <token name="T_INLINE_HTML">&lt;header&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">    &lt;div class="header_container" class="d-block"&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">        &lt;div class="w-100 text-center d-table"&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">            &lt;h1 class="d-table-cell"&gt;SYSTEM ADMINISTRACJI WI&#x118;ZIENIEM&lt;/h1&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">        &lt;div class="text-center logged_in_header"&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">            &lt;span&gt;Jeste&#x15B; zalogowany jako: Pawe&#x142; Ledwig.&lt;/span&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">            &lt;a href="index.php" class="logout_href"&gt;Wyloguj&lt;/a&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="43"/>
+  <line no="44">
+    <token name="T_INLINE_HTML">&lt;div id="content"&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">    &lt;div class="president_menu h-100 w-100 d-table align-middle small_window_buttons"&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">        &lt;div class="d-table-cell w-100 align-middle"&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">            &lt;form class="d-inline" action="#" method="post"&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                &lt;input type="submit" value="Wi&#x119;&#x17A;niowie" class="small_window president_menu_option d-inline-block col-xl-2 col-lg-3 col-md-3 col-sm-3 mx-xl-5 mx-lg-3 mx-md-2 mx-sm-1"&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">            &lt;/form&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">            &lt;form class="d-inline" action="president.php" method="post"&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                &lt;input type="submit" value="Pracownicy" class="small_window president_menu_option d-inline-block col-xl-2 col-lg-3 col-md-3 col-sm-3 mx-xl-5 mx-lg-3 mx-md-2 mx-sm-1"&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                &lt;input type="hidden" name="page" value="presidentEmployees"&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">            &lt;/form&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">            &lt;form class="d-inline" action="#" method="post"&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                &lt;input type="submit" value="Statystyki" class="small_window president_menu_option d-inline-block col-xl-2 col-lg-3 col-md-3 col-sm-3 mx-xl-5 mx-lg-3 mx-md-2 mx-sm-1"&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">            &lt;/form&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="60"/>
+  <line no="61">
+    <token name="T_INLINE_HTML">&lt;footer class="d-table"&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">    &lt;span class="w-100 text-center d-table-cell"&gt;Created by Pawe&#x142; Ledwig, 2019&lt;/span&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">&lt;/footer&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">&lt;/body&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">&lt;/html&gt;</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="66">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="67"/>
+</source>

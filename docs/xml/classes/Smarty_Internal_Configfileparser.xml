@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Configfileparser" namespace="" name="Smarty_Internal_Configfileparser" abstract="false" final="false" start="24" end="1046">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_configfileparser.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_configfileparser.php" size="35686" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="abf88224a435f1934faaae9a858921687bf37157" relative="includes/libs/Smarty/sysplugins/smarty_internal_configfileparser.php"/>
+  <docblock>
+    <description compact="Smarty Internal Plugin Configfileparse">This is the config file parser.
+It is generated from the smarty_internal_configfileparser.y file</description>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <constant type="integer" name="TPC_OPENB" value="1"/>
+  <constant type="integer" name="TPC_SECTION" value="2"/>
+  <constant type="integer" name="TPC_CLOSEB" value="3"/>
+  <constant type="integer" name="TPC_DOT" value="4"/>
+  <constant type="integer" name="TPC_ID" value="5"/>
+  <constant type="integer" name="TPC_EQUAL" value="6"/>
+  <constant type="integer" name="TPC_FLOAT" value="7"/>
+  <constant type="integer" name="TPC_INT" value="8"/>
+  <constant type="integer" name="TPC_BOOL" value="9"/>
+  <constant type="integer" name="TPC_SINGLE_QUOTED_STRING" value="10"/>
+  <constant type="integer" name="TPC_DOUBLE_QUOTED_STRING" value="11"/>
+  <constant type="integer" name="TPC_TRIPPLE_QUOTES" value="12"/>
+  <constant type="integer" name="TPC_TRIPPLE_TEXT" value="13"/>
+  <constant type="integer" name="TPC_TRIPPLE_QUOTES_END" value="14"/>
+  <constant type="integer" name="TPC_NAKED_STRING" value="15"/>
+  <constant type="integer" name="TPC_OTHER" value="16"/>
+  <constant type="integer" name="TPC_NEWLINE" value="17"/>
+  <constant type="integer" name="TPC_COMMENTSTART" value="18"/>
+  <constant type="integer" name="YY_NO_ACTION" value="60"/>
+  <constant type="integer" name="YY_ACCEPT_ACTION" value="59"/>
+  <constant type="integer" name="YY_ERROR_ACTION" value="58"/>
+  <constant type="integer" name="YY_SZ_ACTTAB" value="38"/>
+  <constant type="integer" name="YY_SHIFT_USE_DFLT" value="8"/>
+  <constant type="integer" name="YY_SHIFT_MAX" value="19"/>
+  <constant type="integer" name="YY_REDUCE_USE_DFLT" value="17"/>
+  <constant type="integer" name="YY_REDUCE_MAX" value="10"/>
+  <constant type="integer" name="YYNOCODE" value="29"/>
+  <constant type="integer" name="YYSTACKDEPTH" value="100"/>
+  <constant type="integer" name="YYNSTATE" value="36"/>
+  <constant type="integer" name="YYNRULE" value="22"/>
+  <constant type="integer" name="YYERRORSYMBOL" value="19"/>
+  <constant type="string" name="YYERRSYMDT" value="'yy0'"/>
+  <constant type="integer" name="YYFALLBACK" value="0"/>
+  <member name="yy_action" default="" type="array" visibility="public" static="true" line="61"/>
+  <member name="yy_lookahead" default="" type="array" visibility="public" static="true" line="68"/>
+  <member name="yy_shift_ofst" default="" type="array" visibility="public" static="true" line="75"/>
+  <member name="yy_reduce_ofst" default="" type="array" visibility="public" static="true" line="80"/>
+  <member name="yyExpectedTokens" default="" type="array" visibility="public" static="true" line="85"/>
+  <member name="yy_default" default="" type="array" visibility="public" static="true" line="124"/>
+  <member name="yyFallback" default="" type="array" visibility="public" static="true" line="131"/>
+  <member name="yyRuleName" default="" type="array" visibility="public" static="true" line="133"/>
+  <member name="yyRuleInfo" default="" type="array" visibility="public" static="true" line="158"/>
+  <member name="yyReduceMap" default="" type="array" visibility="public" static="true" line="183"/>
+  <member name="escapes_single" default="" type="array" visibility="private" static="true" line="213">
+    <docblock>
+      <description compact="helper map"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="successful" default="true" type="boolean" visibility="public" static="false" line="223">
+    <docblock>
+      <description compact="result status"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="retvalue" default="0" type="integer" visibility="public" static="false" line="230">
+    <docblock>
+      <description compact="return value"/>
+      <var type="mixed"/>
+    </docblock>
+  </member>
+  <member name="yymajor" visibility="public" static="false" line="235">
+    <docblock>
+      <description/>
+      <var/>
+    </docblock>
+  </member>
+  <member name="compiler" default="NULL" visibility="public" static="false" line="242">
+    <docblock>
+      <description compact="compiler object"/>
+      <var type="object">
+        <type full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="smarty" default="NULL" visibility="public" static="false" line="249">
+    <docblock>
+      <description compact="smarty object"/>
+      <var type="object">
+        <type full="Smarty" namespace="" name="Smarty"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="yyTraceFILE" visibility="public" static="false" line="251"/>
+  <member name="yyTracePrompt" visibility="public" static="false" line="253"/>
+  <member name="yyidx" visibility="public" static="false" line="255"/>
+  <member name="yyerrcnt" visibility="public" static="false" line="257"/>
+  <member name="yystack" default="" type="array" visibility="public" static="false" line="259"/>
+  <member name="yyTokenName" default="" type="array" visibility="public" static="false" line="261"/>
+  <member name="lex" visibility="private" static="false" line="276">
+    <docblock>
+      <description compact="lexer object"/>
+      <var type="object">
+        <type full="Smarty_Internal_Configfilelexer" namespace="" name="Smarty_Internal_Configfilelexer"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="internalError" default="false" type="boolean" visibility="private" static="false" line="283">
+    <docblock>
+      <description compact="internal error flag"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="configOverwrite" default="false" type="boolean" visibility="private" static="false" line="290">
+    <docblock>
+      <description compact="copy of config_overwrite property"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="configReadHidden" default="false" type="boolean" visibility="private" static="false" line="297">
+    <docblock>
+      <description compact="copy of config_read_hidden property"/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_retvalue" visibility="private" static="false" line="299"/>
+  <constructor name="__construct" start="307" end="314" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="constructor"/>
+      <param type="object" variable="$lex">
+        <type full="Smarty_Internal_Configfilelexer" namespace="" name="Smarty_Internal_Configfilelexer"/>
+      </param>
+      <param type="object" variable="$compiler">
+        <type full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler"/>
+      </param>
+    </docblock>
+    <parameter name="lex" byreference="false" type="object">
+      <type full="Smarty_Internal_Configfilelexer" namespace="" name="Smarty_Internal_Configfilelexer"/>
+    </parameter>
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Smarty_Internal_Config_File_Compiler" namespace="" name="Smarty_Internal_Config_File_Compiler"/>
+    </parameter>
+  </constructor>
+  <method name="yy_destructor" start="316" end="322" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="yymajor" byreference="false" type="{unknown}"/>
+    <parameter name="yypminor" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parse_single_quoted_string" start="333" end="347" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="parse single quoted string  remove outer quotes  unescape inner quotes"/>
+      <param type="string" variable="$qstr"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="qstr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="remove outer quotes" line="335"/>
+    </inline>
+  </method>
+  <method name="parse_double_quoted_string" start="355" end="359" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="parse double quoted string"/>
+      <param type="string" variable="$qstr"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="qstr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parse_tripple_double_quoted_string" start="367" end="370" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="parse triple quoted string"/>
+      <param type="string" variable="$qstr"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="qstr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="Trace" start="371" end="380" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="TraceFILE" byreference="false" type="{unknown}"/>
+    <parameter name="zTracePrompt" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="PrintTrace" start="382" end="386" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="tokenName" start="388" end="398" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tokenType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yy_pop_parser_stack" start="400" end="417" abstract="false" final="false" static="false" visibility="public"/>
+  <destructor name="__destruct" start="419" end="427" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_get_expected_tokens" start="429" end="512" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yy_is_expected_token" start="514" end="601" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yy_find_shift_action" start="603" end="634" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="iLookAhead" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if ($this-&gt;yyidx &lt; 0) return self::YY_NO_ACTION;" line="606"/>
+    </inline>
+  </method>
+  <method name="yy_find_reduce_action" start="636" end="656" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="stateno" byreference="false" type="{unknown}"/>
+    <parameter name="iLookAhead" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$stateno = $this-&gt;yystack[$this-&gt;yyidx]-&gt;stateno;" line="638"/>
+    </inline>
+  </method>
+  <method name="yy_shift" start="658" end="696" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="yyNewState" byreference="false" type="{unknown}"/>
+    <parameter name="yyMajor" byreference="false" type="{unknown}"/>
+    <parameter name="yypMinor" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yy_r0" start="698" end="701" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r1" start="703" end="707" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r4" start="709" end="713" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r5" start="716" end="725" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r6" start="728" end="731" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r7" start="734" end="738" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r8" start="741" end="744" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r9" start="747" end="754" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r10" start="757" end="760" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r11" start="763" end="766" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r12" start="769" end="772" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r13" start="775" end="778" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r14" start="781" end="784" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r15" start="787" end="790" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r16" start="793" end="796" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_r17" start="799" end="802" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_reduce" start="805" end="846" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="yyruleno" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="yy_parse_failed" start="849" end="857" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="yy_syntax_error" start="860" end="866" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="yymajor" byreference="false" type="{unknown}"/>
+    <parameter name="TOKEN" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="line 232 &quot;../smarty/lexer/smarty_internal_configfileparser.y&quot;" line="862"/>
+    </inline>
+  </method>
+  <method name="yy_accept" start="868" end="880" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="line 225 &quot;../smarty/lexer/smarty_internal_configfileparser.y&quot;" line="876"/>
+    </inline>
+  </method>
+  <method name="doParse" start="882" end="978" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="yymajor" byreference="false" type="{unknown}"/>
+    <parameter name="yytokenvalue" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="True if yymajor has invoked an error" line="884"/>
+    </inline>
+  </method>
+  <method name="parse_bool" start="987" end="996" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="parse optional boolean keywords"/>
+      <param type="string" variable="$str"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="set_var" start="1004" end="1014" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="set a config variable in target array"/>
+      <param type="array" variable="$var"/>
+      <param type="array" variable="$target_array"/>
+    </docblock>
+    <parameter name="var" byreference="false" type="array"/>
+    <parameter name="target_array" byreference="true" type="array"/>
+  </method>
+  <method name="add_global_vars" start="1021" end="1029" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="add config variable to global vars"/>
+      <param type="array" variable="$vars"/>
+    </docblock>
+    <parameter name="vars" byreference="false" type="array"/>
+  </method>
+  <method name="add_section_vars" start="1037" end="1045" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="add config variable to section"/>
+      <param type="string" variable="$section_name"/>
+      <param type="array" variable="$vars"/>
+    </docblock>
+    <parameter name="section_name" byreference="false" type="{unknown}"/>
+    <parameter name="vars" byreference="false" type="array"/>
+  </method>
+</class>

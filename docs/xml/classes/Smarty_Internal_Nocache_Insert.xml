@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Nocache_Insert" namespace="" name="Smarty_Internal_Nocache_Insert" abstract="false" final="false" start="17" end="51">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_nocache_insert.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_nocache_insert.php" size="1782" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="6b9b11c32ee5d0c0589d9c0156cf212d4fe2e0a3" relative="includes/libs/Smarty/sysplugins/smarty_internal_nocache_insert.php"/>
+  <docblock>
+    <description compact="Smarty Internal Plugin Compile Insert Class"/>
+    <package value="Smarty"/>
+    <subpackage value="Compiler"/>
+  </docblock>
+  <method name="compile" start="30" end="50" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Compiles code for the {insert} tag into cache file"/>
+      <param description="insert function name" type="string" variable="$_function"/>
+      <param description="array with parameter" type="array" variable="$_attr"/>
+      <param description="template object" type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="script name to load or 'null'" type="string" variable="$_script"/>
+      <param description="optional variable name" type="string" variable="$_assign"/>
+      <return description="compiled code" type="string"/>
+    </docblock>
+    <parameter name="_function" byreference="false" type="{unknown}"/>
+    <parameter name="_attr" byreference="false" type="{unknown}"/>
+    <parameter name="_template" byreference="false" type="{unknown}"/>
+    <parameter name="_script" byreference="false" type="{unknown}"/>
+    <parameter name="_assign" byreference="false" type="{unknown}" default="NULL"/>
+    <inline>
+      <comment value="call insert" line="38"/>
+    </inline>
+  </method>
+</class>

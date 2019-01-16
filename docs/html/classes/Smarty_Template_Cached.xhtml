@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Template_Cached</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Template_Cached</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_template_cached.php.xhtml#line17">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Template_Cached</h1>
+        <h4>Smarty Resource Data Object Cache Data Container for Template Files</h4>
+        <p/>
+        <ul>
+          <li>Author: Rodney Rehm</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Template_Cached
+                extends <a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base.xhtml">Smarty_Template_Resource_Base</a>
+            {<br/><ul class="none"><li>// members</li><li>public  <a href="#members">$valid</a> =
+                        NULL;
+                    </li><li>public <span title="Smarty_CacheResource">Smarty_CacheResource</span> <a href="#members">$handler</a> =
+                        NULL;
+                    </li><li>public  <a href="#members">$cache_id</a> =
+                        NULL;
+                    </li><li>public integer <a href="#members">$cache_lifetime</a> =
+                        0;
+                    </li><li>public  <a href="#members">$lock_id</a> =
+                        NULL;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$is_locked</a> =
+                        false;
+                    </li><li>public <span title="Smarty_Template_Source">Smarty_Template_Source</span> <a href="#members">$source</a> =
+                        NULL;
+                    </li><li>public array <a href="#members">$hashes</a> =
+                        ;
+                    </li><li>public <span title="bool">bool</span> <a href="#members">$isCache</a> =
+                        true;
+                    </li></ul><ul class="none"><li>// Inherited members from <span title="Smarty_Template_Resource_Base">Smarty_Template_Resource_Base</span></li><li>public  <a href="#members">$filepath</a>;
+                        </li><li>public <span title="integer|bool">integer|bool</span> <a href="#members">$timestamp</a>;
+                        </li><li>public boolean <a href="#members">$exists</a>;
+                        </li><li>public  <a href="#members">$compile_id</a>;
+                        </li><li>public boolean <a href="#members">$processed</a>;
+                        </li><li>public string <a href="#members">$unifunc</a>;
+                        </li><li>public <span title="bool">bool</span> <a href="#members">$has_nocache_code</a>;
+                        </li><li>public array <a href="#members">$file_dependency</a>;
+                        </li><li>public  <a href="#members">$content</a>;
+                        </li><li>public array <a href="#members">$includes</a>;
+                        </li><li>public <span title="bool">bool</span> <a href="#members">$isCache</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/__construct.xhtml">__construct</a>()
+                    </li><li>public static Smarty_Template_Cached <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/load.xhtml">load</a>()
+                    </li><li>public void <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/render.xhtml">render</a>()
+                    </li><li>public bool <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/isCached.xhtml">isCached</a>()
+                    </li><li>public void <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/process.xhtml">process</a>()
+                    </li><li>public string|false <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/read.xhtml">read</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Smarty_Template_Resource_Base">Smarty_Template_Resource_Base</span></li><li>public abstract void <a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base/process.xhtml">process</a>()
+                        </li><li>public void <a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base/getRenderedTemplateCode.xhtml">getRenderedTemplateCode</a>()
+                        </li><li>public int <a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base/getTimeStamp.xhtml">getTimeStamp</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base.xhtml">Smarty_Template_Resource_Base</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="cache_id"><strong>$cache_id</strong>
+                —
+                string<br/><span class="indent">Template Cache Id (Smarty_Internal_Template::$cache_id)</span></li>
+            <li id="cache_lifetime"><strong>$cache_lifetime</strong>
+                —
+                integer<br/><span class="indent">saved cache lifetime in seconds</span></li>
+            <li id="compile_id"><strong>$compile_id</strong>
+                —
+                string<br/><span class="indent">Template Compile Id (Smarty_Internal_Template::$compile_id)</span></li>
+            <li id="content"><strong>$content</strong>
+                —
+                string<br/><span class="indent">Content buffer</span></li>
+            <li id="exists"><strong>$exists</strong>
+                —
+                boolean<br/><span class="indent">Compiled Existence</span></li>
+            <li id="file_dependency"><strong>$file_dependency</strong>
+                —
+                array<br/><span class="indent">resource file dependency</span></li>
+            <li id="filepath"><strong>$filepath</strong>
+                —
+                string<br/><span class="indent">Compiled Filepath</span></li>
+            <li id="handler"><strong>$handler</strong>
+                —
+                <a title="Smarty_CacheResource" href="../classes/Smarty_CacheResource.xhtml">Smarty_CacheResource</a><br/><span class="indent">CacheResource Handler</span></li>
+            <li id="has_nocache_code"><strong>$has_nocache_code</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag if template does contain nocache code sections</span></li>
+            <li id="hashes"><strong>$hashes</strong>
+                —
+                array<br/><span class="indent">Nocache hash codes of processed compiled templates</span></li>
+            <li id="includes"><strong>$includes</strong>
+                —
+                array<br/><span class="indent">Included sub templates - index name - value use count</span></li>
+            <li id="isCache"><strong>$isCache</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag if this is a cache resource</span></li>
+            <li id="isCache"><strong>$isCache</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">Flag if this is a cache resource</span></li>
+            <li id="is_locked"><strong>$is_locked</strong>
+                —
+                <a title="bool" href="../classes/bool.xhtml">bool</a><br/><span class="indent">flag that cache is locked by this instance</span></li>
+            <li id="lock_id"><strong>$lock_id</strong>
+                —
+                string<br/><span class="indent">Id for cache locking</span></li>
+            <li id="processed"><strong>$processed</strong>
+                —
+                boolean<br/><span class="indent">Compiled Content Loaded</span></li>
+            <li id="source"><strong>$source</strong>
+                —
+                <a title="Smarty_Template_Source" href="../classes/Smarty_Template_Source.xhtml">Smarty_Template_Source</a><br/><span class="indent">Source Object</span></li>
+            <li id="timestamp"><strong>$timestamp</strong>
+                —
+                <a title="integer|bool" href="../classes/integer|bool.xhtml">integer|bool</a><br/><span class="indent">Compiled Timestamp</span></li>
+            <li id="unifunc"><strong>$unifunc</strong>
+                —
+                string<br/><span class="indent">unique function name for compiled template code</span></li>
+            <li id="valid"><strong>$valid</strong>
+                —
+                boolean<br/><span class="indent">Cache Is Valid</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/__construct.xhtml">__construct()</a>
+                — create Cached Object container</li>
+            <li id="isCached"><a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/isCached.xhtml">isCached()</a>
+                — Check if cache is valid, lock cache if required</li>
+            <li id="load">
+              <a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/load.xhtml">load()</a>
+            </li>
+            <li id="process"><a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/process.xhtml">process()</a>
+                — Process cached template</li>
+            <li id="read"><a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/read.xhtml">read()</a>
+                — Read cache content from handler</li>
+            <li id="render"><a title="Smarty_Template_Cached" href="../classes/Smarty_Template_Cached/render.xhtml">render()</a>
+                — Render cache template</li>
+          </ul>
+          <h3>Inherited from <a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base.xhtml">Smarty_Template_Resource_Base</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="getRenderedTemplateCode"><a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base/getRenderedTemplateCode.xhtml">getRenderedTemplateCode()</a>
+                — get rendered template content by calling compiled or cached template code</li>
+            <li id="getTimeStamp"><a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base/getTimeStamp.xhtml">getTimeStamp()</a>
+                — Get compiled time stamp</li>
+            <li id="process"><a title="Smarty_Template_Resource_Base" href="../classes/Smarty_Template_Resource_Base/process.xhtml">process()</a>
+                — Process resource</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

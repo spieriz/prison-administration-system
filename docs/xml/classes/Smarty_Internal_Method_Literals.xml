@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_Literals" namespace="" name="Smarty_Internal_Method_Literals" abstract="false" final="false" start="12" end="100">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_literals.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_literals.php" size="3149" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="b95850121fda9a01cb0572c52b0e917a23cf9b5b" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_literals.php"/>
+  <docblock>
+    <description compact="Smarty Method GetLiterals">Smarty::getLiterals() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="getLiterals" start="30" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get literals"/>
+      <api value="Smarty::getLiterals()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <return description="list of literals" type="array"/>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+  </method>
+  <method name="addLiterals" start="48" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add literals"/>
+      <api value="Smarty::addLiterals()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="literal or list of literals" type="object" variable="$literals">to addto add<type full="array|string" namespace="" name="array|string"/></param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="literals" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="setLiterals" start="68" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set literals"/>
+      <api value="Smarty::setLiterals()"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="literal or list of literals" type="object" variable="$literals">to setto set<type full="array|string" namespace="" name="array|string"/></param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="literals" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="set" start="87" end="99" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="common setter for literals for easier handling of duplicates the Smarty::$literals array gets filled with identical key values"/>
+      <param type="object" variable="$smarty">
+        <type full="\Smarty" namespace="" name="Smarty"/>
+      </param>
+      <param type="array" variable="$literals"/>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="smarty" byreference="false" type="object">
+      <type full="Smarty" namespace="" name="Smarty"/>
+    </parameter>
+    <parameter name="literals" byreference="false" type="{unknown}"/>
+  </method>
+</class>

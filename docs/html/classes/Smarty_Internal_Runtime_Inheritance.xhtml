@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Smarty_Internal_Runtime_Inheritance</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">Smarty_Internal_Runtime_Inheritance</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/libs/Smarty/sysplugins/smarty_internal_runtime_inheritance.php.xhtml#line10">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Smarty_Internal_Runtime_Inheritance</h1>
+        <h4>Inheritance Runtime Methods processBlock, endChild, init</h4>
+        <p/>
+        <ul>
+          <li>Author: Uwe Tews</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Smarty_Internal_Runtime_Inheritance
+            {<br/><ul class="none"><li>// members</li><li>public integer <a href="#members">$state</a> =
+                        0;
+                    </li><li>public array <a href="#members">$childRoot</a> =
+                        ;
+                    </li><li>public integer <a href="#members">$inheritanceLevel</a> =
+                        0;
+                    </li><li>public integer <a href="#members">$tplIndex</a> =
+                        1;
+                    </li><li>public array <a href="#members">$sources</a> =
+                        ;
+                    </li><li>public array <a href="#members">$sourceStack</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/init.xhtml">init</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/endChild.xhtml">endChild</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/instanceBlock.xhtml">instanceBlock</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/process.xhtml">process</a>()
+                    </li><li>public null|string <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/callChild.xhtml">callChild</a>()
+                    </li><li>public null|string <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/callParent.xhtml">callParent</a>()
+                    </li><li>public void <a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/callBlock.xhtml">callBlock</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>public</h4>
+          <ul class="members">
+            <li id="childRoot"><strong>$childRoot</strong>
+                —
+                array<br/><span class="indent">Array of root child {block} objects</span></li>
+            <li id="inheritanceLevel"><strong>$inheritanceLevel</strong>
+                —
+                int<br/><span class="indent">inheritance template nesting level</span></li>
+            <li id="sourceStack"><strong>$sourceStack</strong>
+                —
+                array<br/><span class="indent">Stack of source objects while executing block code</span></li>
+            <li id="sources"><strong>$sources</strong>
+                —
+                array<br/><span class="indent">Array of template source objects</span></li>
+            <li id="state"><strong>$state</strong>
+                —
+                int<br/><span class="indent">State machine - 0 idle next extends will create a new inheritance tree - 1 processing child template - 2 wait for next inheritance template - 3 assume parent template, if child will loaded goto state 1     a call to a sub template resets the state to 0</span></li>
+            <li id="tplIndex"><strong>$tplIndex</strong>
+                —
+                int<br/><span class="indent">inheritance template index</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="callBlock"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/callBlock.xhtml">callBlock()</a>
+                — render block</li>
+            <li id="callChild"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/callChild.xhtml">callChild()</a>
+                — Render child on \$smarty.block.child</li>
+            <li id="callParent"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/callParent.xhtml">callParent()</a>
+                — Render parent block on \$smarty.block.parent or {block append/prepend}</li>
+            <li id="endChild"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/endChild.xhtml">endChild()</a>
+                — End of child template(s) - if outer level is reached flush output buffer and switch to wait for parent template state</li>
+            <li id="init"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/init.xhtml">init()</a>
+                — Initialize inheritance</li>
+            <li id="instanceBlock"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/instanceBlock.xhtml">instanceBlock()</a>
+                — Smarty_Internal_Block constructor.</li>
+            <li id="process"><a title="Smarty_Internal_Runtime_Inheritance" href="../classes/Smarty_Internal_Runtime_Inheritance/process.xhtml">process()</a>
+                — Goto child block or render this</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

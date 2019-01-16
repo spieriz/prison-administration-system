@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ShowPresidentEmployeesPage" namespace="" name="ShowPresidentEmployeesPage" abstract="false" final="false" start="12" end="61">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/pages/president" file="ShowPresidentEmployeesPage.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/pages/president/ShowPresidentEmployeesPage.php" size="1760" time="2019-01-13T02:54:39+01:00" unixtime="1547344479" sha1="5cb454f3357057623a3e7adf3f0eaed813930cb9" relative="includes/pages/president/ShowPresidentEmployeesPage.php"/>
+  <extends full="AbstractPage" namespace="" name="AbstractPage"/>
+  <constructor name="__construct" start="14" end="17" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addEmployee" start="20" end="45" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="show" start="47" end="60" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="message_text" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="message_type" byreference="false" type="boolean" default="false"/>
+  </method>
+  <parent full="AbstractPage" namespace="" name="AbstractPage">
+    <member name="tpl" visibility="protected" static="false" line="16">
+      <docblock>
+        <description compact="reference of the template object"/>
+        <var type="object">
+          <type full="template" namespace="" name="template"/>
+        </var>
+      </docblock>
+    </member>
+    <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="protected"/>
+    <method name="initTemplate" start="23" end="29" abstract="false" final="false" static="false" visibility="protected"/>
+    <method name="assign" start="31" end="33" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="array" byreference="false" type="{unknown}"/>
+      <parameter name="nocache" byreference="false" type="boolean" default="true"/>
+    </method>
+    <method name="display" start="35" end="45" abstract="false" final="false" static="false" visibility="protected">
+      <parameter name="file" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_CodeFrame" namespace="" name="Smarty_Internal_Runtime_CodeFrame" abstract="false" final="false" start="15" end="100">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_codeframe.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_codeframe.php" size="4189" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="813575c15ebc3a0ab1f761342c95cd6fd45ece24" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_codeframe.php"/>
+  <docblock>
+    <description compact="Class Smarty_Internal_Extension_CodeFrame Create code frame for compiled and cached templates"/>
+  </docblock>
+  <method name="create" start="28" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create code frame for compiled and cached templates"/>
+      <param type="object" variable="$_template">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="optional template content" type="string" variable="$content"/>
+      <param description="compiled template function and block code" type="string" variable="$functions"/>
+      <param description="flag for cache file" type="object" variable="$cache">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <param type="object" variable="$compiler">
+        <type full="\Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="_template" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="content" byreference="false" type="string" default="''"/>
+    <parameter name="functions" byreference="false" type="string" default="''"/>
+    <parameter name="cache" byreference="false" type="boolean" default="false"/>
+    <parameter name="compiler" byreference="false" type="object" default="NULL">
+      <type full="Smarty_Internal_TemplateCompilerBase" namespace="" name="Smarty_Internal_TemplateCompilerBase"/>
+    </parameter>
+    <inline>
+      <comment value="build property code" line="35"/>
+      <comment value="remove unneeded PHP tags" line="69"/>
+    </inline>
+  </method>
+</class>

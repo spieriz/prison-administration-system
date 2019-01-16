@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_RegisterCacheResource" namespace="" name="Smarty_Internal_Method_RegisterCacheResource" abstract="false" final="false" start="12" end="42">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_registercacheresource.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_registercacheresource.php" size="1220" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="48a672b5e34264fa3ee791ab6a6deb0e1eebf4a5" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_registercacheresource.php"/>
+  <docblock>
+    <description compact="Smarty Method RegisterCacheResource">Smarty::registerCacheResource() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="3" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for Smarty and template object"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="registerCacheResource" start="33" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a resource to fetch a template"/>
+      <api value="Smarty::registerCacheResource()"/>
+      <link value="http://www.smarty.net/docs/en/api.register.cacheresource.tpl"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_TemplateBase|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="name of resource type" type="string" variable="$name"/>
+      <param type="object" variable="$resource_handler">
+        <type full="\Smarty_CacheResource" namespace="" name="Smarty_CacheResource"/>
+      </param>
+      <return type="object">
+        <type full="\Smarty|\Smarty_Internal_Template" namespace="\Smarty|" name="Smarty_Internal_Template"/>
+      </return>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="resource_handler" byreference="false" type="object">
+      <type full="Smarty_CacheResource" namespace="" name="Smarty_CacheResource"/>
+    </parameter>
+  </method>
+</class>

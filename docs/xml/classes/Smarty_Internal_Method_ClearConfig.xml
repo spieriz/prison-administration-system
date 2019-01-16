@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Method_ClearConfig" namespace="" name="Smarty_Internal_Method_ClearConfig" abstract="false" final="false" start="12" end="41">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_method_clearconfig.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_method_clearconfig.php" size="1018" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="565ee6769c2c576cab2dbbeb705f251d0135d4f7" relative="includes/libs/Smarty/sysplugins/smarty_internal_method_clearconfig.php"/>
+  <docblock>
+    <description compact="Smarty Method ClearConfig">Smarty::clearConfig() method</description>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <member name="objMap" default="7" type="integer" visibility="public" static="false" line="19">
+    <docblock>
+      <description compact="Valid for all objects"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="clearConfig" start="32" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="clear a single or all config variables"/>
+      <api value="Smarty::clearConfig()"/>
+      <link value="http://www.smarty.net/docs/en/api.clear.config.tpl"/>
+      <param type="object" variable="$data">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </param>
+      <param description="variable name or null" type="object" variable="$name">
+        <type full="string|null" namespace="" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="\Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty" namespace="\Smarty_Internal_Data|\Smarty_Internal_Template|" name="Smarty"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="object">
+      <type full="Smarty_Internal_Data" namespace="" name="Smarty_Internal_Data"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+</class>

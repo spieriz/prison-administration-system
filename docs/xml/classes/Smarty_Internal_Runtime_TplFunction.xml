@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Smarty_Internal_Runtime_TplFunction" namespace="" name="Smarty_Internal_Runtime_TplFunction" abstract="false" final="false" start="10" end="177">
+  <file path="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins" file="smarty_internal_runtime_tplfunction.php" realpath="D:/Programy/XAMPP/htdocs/pas/includes/libs/Smarty/sysplugins/smarty_internal_runtime_tplfunction.php" size="7759" time="2019-01-07T14:14:48+01:00" unixtime="1546866888" sha1="5b02410ce39742ff7c1e429c38043232b50dd944" relative="includes/libs/Smarty/sysplugins/smarty_internal_runtime_tplfunction.php"/>
+  <docblock>
+    <description compact="TplFunction Runtime Methods callTemplateFunction"/>
+    <package value="Smarty"/>
+    <subpackage value="PluginsInternal"/>
+    <author value="Uwe Tews"/>
+  </docblock>
+  <method name="callTemplateFunction" start="22" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Call template function"/>
+      <param description="template object" type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="template function name" type="string" variable="$name"/>
+      <param description="parameter array" type="array" variable="$params"/>
+      <param description="true if called nocache" type="object" variable="$nocache">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <throws type="object">
+        <type full="\SmartyException" namespace="" name="SmartyException"/>
+      </throws>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="nocache" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="registerTplFunctions" start="63" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register template functions defined by template"/>
+      <param type="object" variable="$obj">
+        <type full="\Smarty|\Smarty_Internal_Template|\Smarty_Internal_TemplateBase" namespace="\Smarty|\Smarty_Internal_Template|" name="Smarty_Internal_TemplateBase"/>
+      </param>
+      <param description="source information array of" type="array" variable="$tplFunctions">template functions defined
+                                                                                     in template</param>
+      <param description="if true replace existing" type="object" variable="$override">functions with same name<type full="bool" namespace="" name="bool"/></param>
+    </docblock>
+    <parameter name="obj" byreference="false" type="object">
+      <type full="Smarty_Internal_TemplateBase" namespace="" name="Smarty_Internal_TemplateBase"/>
+    </parameter>
+    <parameter name="tplFunctions" byreference="false" type="{unknown}"/>
+    <parameter name="override" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="make sure that the template functions are known in parent templates" line="67"/>
+    </inline>
+  </method>
+  <method name="getTplFunction" start="84" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return source parameter array for single or all template functions"/>
+      <param description="template object" type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="template function name" type="object" variable="$name">
+        <type full="null|string" namespace="" name="null|string"/>
+      </param>
+      <return type="object">
+        <type full="array|bool|mixed" namespace="" name="array|bool|mixed"/>
+      </return>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="addTplFuncToCache" start="103" end="149" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add template function to cache file for nocache calls"/>
+      <param type="object" variable="$tpl">
+        <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="template function name" type="string" variable="$_name"/>
+      <param description="PHP function name" type="string" variable="$_function"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="_name" byreference="false" type="{unknown}"/>
+    <parameter name="_function" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="saveTemplateVariables" start="157" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save current template variables on stack"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="stack name" type="string" variable="$name"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="restoreTemplateVariables" start="169" end="176" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Restore saved variables into template objects"/>
+      <param type="object" variable="$tpl">
+        <type full="\Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+      </param>
+      <param description="stack name" type="string" variable="$name"/>
+    </docblock>
+    <parameter name="tpl" byreference="false" type="object">
+      <type full="Smarty_Internal_Template" namespace="" name="Smarty_Internal_Template"/>
+    </parameter>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+</class>
