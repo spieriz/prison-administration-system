@@ -16,7 +16,14 @@ class ShowLoginPage extends AbstractPage
         parent::__construct();
     }
 
-    public function show(){
+    public function show($message_text = NULL, $message_type = false){
+
+        $this->assign(array(
+            'message'       => !is_null($message_text),
+            'message_text'  => $message_text,
+            'message_type'  => ($message_type) ? 'true' : 'false',
+        ));
+
         $this->display('login.tpl');
     }
 }

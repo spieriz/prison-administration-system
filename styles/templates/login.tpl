@@ -24,6 +24,17 @@
     </div>
 </div>
 
+<div id="message_box" class="w-100 my-1">
+    <div id="message_inner" class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-12 m-auto text-center">
+        <span>Dodano pracownika.</span>
+    </div>
+</div>
+{if $message == true}
+    <script>
+        showPopup({$message_type}, '{$message_text}');
+    </script>
+{/if}
+
 <footer class="d-table">
     <span class="w-100 text-center d-table-cell">Created by Paweł Ledwig, 2019</span>
 </footer>
