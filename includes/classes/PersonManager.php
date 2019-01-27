@@ -7,8 +7,8 @@
  * Time: 15:55
  */
 
-require_once ('./includes/classes/Guard.php');
-require_once ('./includes/classes/DutyOfficer.php');
+require_once ('Guard.php');
+require_once ('DutyOfficer.php');
 
 class PersonManager
 {
@@ -103,19 +103,28 @@ class PersonManager
 
     private static function validateData($name, $surname, $pesel, $address, $salary){
         if (is_null($name) || strlen($name) == 0){
-            throw new Exception('Imię jest puste.');
+            throw new EmptyNameException();
         }
         if (is_null($surname) || strlen($surname) == 0){
-            throw new Exception('Nazwisko jest puste.');
+            throw new EmptySurnameException();
         }
-        if (is_null($pesel) || strlen($pesel) != 11){
-            throw new Exception('Błędny numer PESEL.');
+        if (is_null($pesel)){
+            throw new EmptyPeselException();
+        }
+        if (strlen($pesel) < 11){
+            throw new ShortPeselException();
+        }
+        if (strlen($pesel) > 11){
+            throw new LongPeselException();
         }
         if (is_null($address) || strlen($address) == 0){
-            throw new Exception('Adres jest pusty.');
+            throw new EmptyAddressException();
         }
-        if (is_null($salary) || $salary < 0){
-            throw new Exception('Pensja nie może być ujemna.');
+        if (is_null($salary) || strlen($salary) == 0){
+            throw new EmptySalaryException();
+        }
+        if ($salary < 0){
+            throw new NegativeSalaryException();
         }
     }
 }
