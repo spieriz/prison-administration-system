@@ -7,7 +7,7 @@
  * Time: 15:22
  */
 
-require_once ('./includes/classes/Person.php');
+require_once ('Person.php');
 
 class Guard extends Person
 {
