@@ -107,6 +107,16 @@ class PersonManagerTest extends TestCase
         } catch (Exception $e){
             $this->assertInstanceOf(NegativeSalaryException::class, $e);
         }
+
+        // created successfully
+        $guard = PersonManager::createGuard(NULL, 'name', 'surname', '95100464578', 'Nowowiejska 13, Brzeg', 124.23);
+
+        $this->assertEquals($guard->getName(), 'name');
+        $this->assertEquals($guard->getSurname(), 'surname');
+        $this->assertEquals($guard->getPesel(), '95100464578');
+        $this->assertEquals($guard->getAddress(), 'Nowowiejska 13, Brzeg');
+        $this->assertEquals($guard->getSalary(), 124.23);
+
     }
 
     public function testCreateDutyOfficer()
@@ -194,6 +204,15 @@ class PersonManagerTest extends TestCase
         } catch (Exception $e){
             $this->assertInstanceOf(NegativeSalaryException::class, $e);
         }
+
+        // created successfully
+        $duty_officer = PersonManager::createGuard(NULL, 'name', 'surname', '95100464578', 'Nowowiejska 13, Brzeg', 124.23);
+
+        $this->assertEquals($duty_officer->getName(), 'name');
+        $this->assertEquals($duty_officer->getSurname(), 'surname');
+        $this->assertEquals($duty_officer->getPesel(), '95100464578');
+        $this->assertEquals($duty_officer->getAddress(), 'Nowowiejska 13, Brzeg');
+        $this->assertEquals($duty_officer->getSalary(), 124.23);
     }
 
     public function testAddGuardToDatabase()
